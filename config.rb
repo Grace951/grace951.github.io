@@ -4,7 +4,7 @@ sass_dir = "scss"
 images_dir = "images"
 javascripts_dir = "js"
 
-output_style = :expanded
+output_style = :compressed
 # output_style = :expanded or :nested or :compact or :compressed  
 
 line_comments = true

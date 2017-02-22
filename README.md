@@ -13,5 +13,14 @@ MIT
 ## Live Demo 
 Live demo: [`https://grace951.github.io/home-page/index.html`](https://grace951.github.io/home-page/index.html)
 
+# Build locally
+```
+git clone https://github.com/Grace951/home-page.git
+cd home-page
+npm install
+gulp
+```
+
+
 ![demo gif](https://github.com/Grace951/home-page/raw/master/screenshot.png)
 
