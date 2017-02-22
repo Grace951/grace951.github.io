@@ -1,0 +1,529 @@
+<mywork>
+          <work>
+               <index>0</index>
+               <title>廣告練習| Avent 奶瓶</title>
+               <desc>本廣告以小朋友在奶瓶中游泳為意象，象徵小朋友使用avent奶瓶就像在媽咪肚子裡游泳一般自然。 以水中漂浮的奶瓶強調其順暢流線型，以彩色立體字呼應LOGO的彩色文字。</desc>
+               <img>images/portfolio/full/poster1.jpg</img>
+          </work>
+          <work>
+               <index>1</index>
+               <title>廣告練習| iPhone6</title>
+               <desc>背景特別設計用以強調 iphone 6 螢慕的鮮豔色彩。以弧型光芒及iphnoe的側視圖製造空間感，使觀看者彷彿親眼所見。</desc>
+               <img>images/portfolio/full/poster2.jpg</img>
+               <relative>
+                    <img>
+                         <src>images/portfolio/small/poster6.jpg</src>
+                         <index>7</index>
+                    </img>
+               </relative>
+          </work>
+          <work>
+               <index>2</index>
+               <title>廣告練習| 萬中選一</title>
+               <desc>Vera Wang 的禮服以難預約聞名 ，因此想要向消費者傳達等待是值得的。沙漏代表時間流逝，千萬張設計稿經沙漏篩選出一件美麗的禮服一表達 Vera Wang 的禮服萬中選一，新娘的等待是值得的。</desc>
+               <img>images/portfolio/full/poster3.jpg</img>
+          </work>
+          <work>
+               <index>3</index>
+               <title>PS練習| Face Off</title>
+               <desc>此作品使用了"How to cheat in photoshop CS6"一書中的原始圖片， 運用photoshop中修圖的技巧為女主角化妝成美女。</desc>
+               <img>images/portfolio/full/photo1.jpg</img>
+          </work>
+          <work>
+               <index>4</index>
+               <title>PS練習| 水彩效果練習</title>
+               <desc>將自己在碧潭照的相片用 photoshop 改成水彩效果，運用了photoshop的濾鏡、色彩模色及遮色片功能。</desc>
+               <img>images/portfolio/full/photo2.jpg</img>
+               <relative>
+                    <img>
+                         <src>images/portfolio/small/photo3.jpg</src>
+                         <index>5</index>
+                    </img>
+               </relative>
+          </work>
+          <work>
+               <index>5</index>
+               <title>PS練習| 油畫效果練習</title>
+               <desc>將自己在碧潭照的相片用 photoshop 改成油畫效果，運用了photoshop的藝術家步驟筆刷工具、濾鏡、 色彩模色及遮色片功能。</desc>
+               <img>images/portfolio/full/photo3.jpg</img>
+               <relative>
+                    <img>
+                         <src>images/portfolio/small/photo2.jpg</src>
+                         <index>4</index>
+                    </img>
+               </relative>
+          </work>
+          <work>
+               <index>6</index>
+               <title>PS練習| 克蘭詩廣告</title>
+               <desc>本作品以以葉子包覆保養品，象徵克蘭詩的草本保養概念。綠色背景營造大自然意象，潑濺的水呼應其保濕功能。</desc>
+               <img>images/portfolio/full/poster5.jpg</img>
+          </work>
+          <work>
+               <index>7</index>
+               <title>廣告練習| iPhone6</title>
+               <desc>背景特別設計，用以強調 iphone 6 金色質感，以弧型光芒及蘋果Logo曲度柔化 iphone 6 的剛硬感。</desc>
+               <img>images/portfolio/full/poster6.jpg</img>
+               <relative>
+                    <img><src>images/portfolio/small/poster2.jpg</src>
+                         <index>1</index>
+                    </img>
+               </relative>
+          </work>
+          <work>
+               <index>8</index>
+               <title>廣告練習| 生活五峰</title>
+               <desc>這是為貓頭鷹親子教育協會所繪製的活動DM海報，本作品以繽紛色彩的小朋友插圖及高對比的標題字， 吸引觀看者注意。設計力求活動資訊一目了然。</desc>
+               <img>images/portfolio/full/poster7.jpg</img>
+               <relative>
+                    <img>
+                         <src>images/portfolio/small/web1.jpg</src>
+                         <index>41</index>
+                    </img>
+               </relative>
+          </work>
+          <work>
+               <index>9</index>
+               <title>雜誌排版練習| 滋味</title>
+               <desc>這一系列的雜誌排版練習想以不同風格表達同一內容，本作品 以大量的照片及夠大的標題營造豐富多樣感，引發讀者的食欲。</desc>
+               <img>images/portfolio/full/food4.jpg</img>
+               <relative>
+                    <img>
+                         <src>images/portfolio/small/food1.jpg</src>
+                         <index>11</index>
+                    </img>
+                    <img>
+                         <src>images/portfolio/small/food2.jpg</src>
+                         <index>16</index>
+                    </img>
+                    <img>
+                         <src>images/portfolio/small/food3.jpg</src>
+                         <index>15</index>
+                    </img>
+                    <img>
+                         <src>images/portfolio/small/food4.jpg</src>
+                         <index>9</index>
+                    </img>
+                    <img>
+                         <src>images/portfolio/small/food5.jpg</src>
+                         <index>17</index>
+                    </img>
+               </relative>
+          </work>
+          <work>
+               <index>10</index>
+               <title>廣告練習| Nike</title>
+               <desc>本作品使用 Illustrator 製造出如針織排汗衫的背景，配合明亮水藍色，給人清涼舒適排汗感，襯托鞋子輕巧透氣感。 並以飛濺的液體創造輕巧動感，比諭鞋子如流體般貼身動感。</desc>
+               <img>images/portfolio/full/poster4.jpg</img>
+          </work>
+          <work>
+               <index>11</index>
+               <title>雜誌排版練習| 滋味</title>
+               <desc>這一系列的雜誌排版練習想以不同風格表達同一內容，本作品以綠橘清爽風呈現， 並間接以大幅筷子圖像為主視覺引誘讀者的食欲。</desc>
+               <img>images/portfolio/full/food1.jpg</img>
+               <relative>
+                    <img>
+                         <src>images/portfolio/small/food2.jpg</src>
+                         <index>16</index>
+                    </img>
+                    <img>
+                         <src>images/portfolio/small/food3.jpg</src>
+                         <index>15</index>
+                    </img>
+                    <img>
+                         <src>images/portfolio/small/food4.jpg</src>
+                         <index>9</index>
+                    </img>
+                    <img>
+                         <src>images/portfolio/small/food5.jpg</src>
+                         <index>17</index>
+                    </img>
+               </relative>
+          </work>
+          <work>
+               <index>12</index>
+               <title>Logo| 方向</title>
+               <desc>右方Logo設計理念為:"書本給人方向"。 因此以由書本形狀組成方向指標牌，象徵閱讀給我們人生的方向。 左方Logo以帆船的帆桅為風向的意象，象徵藉由書本得到動力來源。</desc>
+               <img>images/portfolio/full/branding2.jpg</img>
+               <relative>
+                    <img>
+                         <src>images/portfolio/small/branding5.jpg</src>
+                         <index>26</index>
+                    </img>
+               </relative>
+          </work>
+          <work>
+               <index>13</index>
+               <title>Logo| Shen Bookstore</title>
+               <desc>這是一系列為書店LOGO設計練習，由於書店主人喜愛大自然，希望LOGO中有植物的元素， 且樹苗象徵生命力，因此右圖以樹苗為設計發想捷和書本，象徵書本帶給人生命力。左圖象徵赤子之心。</desc>
+               <img>images/portfolio/full/branding4.jpg</img>
+               <relative>
+                    <img>
+                         <src>images/portfolio/small/branding3.jpg</src>
+                         <index>14</index>
+                    </img>
+               </relative>
+          </work>
+          <work>
+               <index>14</index>
+               <title>Logo| Shen Bookstore</title>
+               <desc>這是一系列為書店LOGO設計練習，由於書店主人喜愛大自然，希望LOGO中有植物的元素， 且樹苗象徵生命力，因此以樹苗為設計發想結合書本，象徵書本帶給人生命力。</desc>
+               <img>images/portfolio/full/branding3.jpg</img>
+               <relative>
+                    <img>
+                         <src>images/portfolio/small/branding4.jpg</src>
+                         <index>13</index>
+                    </img>
+               </relative>
+          </work>
+          <work>
+               <index>15</index>
+               <title>雜誌排版練習| 滋味</title>
+               <desc>這一系列的雜誌排版練習想以不同風格表達同一內容，本作品 以活潑插圖及可愛文字呈現動感。</desc>
+               <img>images/portfolio/full/food3.jpg</img>
+               <relative>
+                    <img>
+                         <src>images/portfolio/small/food1.jpg</src>
+                         <index>11</index>
+                    </img>
+                    <img>
+                         <src>images/portfolio/small/food2.jpg</src>
+                         <index>16</index>
+                    </img>
+                    <img>
+                         <src>images/portfolio/small/food4.jpg</src>
+                         <index>9</index>
+                    </img>
+                    <img>
+                         <src>images/portfolio/small/food5.jpg</src>
+                         <index>17</index>
+                    </img>
+               </relative>
+          </work>
+          <work>
+               <index>16</index>
+               <title>雜誌排版練習| 滋味</title>
+               <desc>這一系列的雜誌排版練習想以不同風格表達同一內容，本作品 間接以日本茶道呈現日本人細膩精神，並以小張壽司圖引誘讀者的食欲。</desc>
+               <img>images/portfolio/full/food2.jpg</img>
+               <relative>
+                    <img>
+                         <src>images/portfolio/small/food1.jpg</src>
+                         <index>11</index>
+                    </img>
+                    <img>
+                         <src>images/portfolio/small/food3.jpg</src>
+                         <index>15</index>
+                    </img>
+                    <img>
+                         <src>images/portfolio/small/food4.jpg</src>
+                         <index>9</index>
+                    </img>
+                    <img>
+                         <src>images/portfolio/small/food5.jpg</src>
+                         <index>17</index>
+                    </img>
+               </relative>
+          </work>
+          <work>
+               <index>17</index>
+               <title>雜誌排版練習| 滋味</title>
+               <desc>這一系列的雜誌排版練習想以不同風格表達同一內容，本作品以綠橘清爽風呈現， 並間接以大幅筷子圖像為主視覺引誘讀者的食欲。</desc>
+               <img>images/portfolio/full/food5.jpg</img>
+               <relative>
+                    <img>
+                         <src>images/portfolio/small/food1.jpg</src>
+                         <index>11</index>
+                    </img>
+                    <img>
+                         <src>images/portfolio/small/food2.jpg</src>
+                         <index>16</index>
+                    </img>
+                    <img>
+                         <src>images/portfolio/small/food3.jpg</src>
+                         <index>15</index>
+                    </img>
+                    <img>
+                         <src>images/portfolio/small/food4.jpg</src>
+                         <index>9</index>
+                    </img>
+               </relative>
+          </work>
+          <work>
+               <index>18</index>
+               <title>DM練習| 木擊者</title>
+               <desc>以木琴同色系為主調，擊琴的圖片用十六分隔法切割，變化的圖片裁切增加律動感。</desc>
+               <img>images/portfolio/full/DM1.jpg</img>
+               <relative>
+                         <img>images/portfolio/small/DM1-1.jpg</img>
+                         <img>images/portfolio/small/DM1-2.jpg</img>
+               </relative>
+          </work>
+          <work>
+               <index>19</index>
+               <title>DM練習| Aveda</title>
+               <desc>這是一份三摺兩頁的DM設計練習。封面以草綠色嫩葉呈現 Aveda 的環保自然形象， 對比色的橘色標題字，呈現清新亮眼的效果。封底則以紅色營造節慶的感覺。</desc>
+               <img>images/portfolio/full/DM3.jpg</img>
+               <relative>
+                    <img>
+                         <src>images/portfolio/small/DM4.jpg</src>
+                         <index>20</index>
+                    </img>
+               </relative>
+          </work>
+          <work>
+               <index>20</index>
+               <title>DM練習| Aveda</title>
+               <desc>這是一份三摺兩頁的DM設計練習的內頁，主要訴求為資訊一目了然。並以刷淡LOGO為背景， 重覆出現於每個商品背後，營造品牌一致感。</desc>
+               <img>images/portfolio/full/DM4.jpg</img>
+               <relative>
+                    <img>
+                         <src>images/portfolio/small/DM3.jpg</src>
+                         <index>19</index>
+                    </img>
+               </relative>
+          </work>
+          <work>
+               <index>21</index>
+               <title>DM練習| 仲向</title>
+               <desc>建築展覽DM練習，以"仲向"標準字的造型與色彩為發想編排圖片。以圖片的裁切展現空間感。</desc>
+               <img>images/portfolio/full/DM2.jpg</img>
+          </work>
+          <work>
+               <index>22</index>
+               <title>Web Banner| 奶娃</title>
+               <desc>這一系列的 Web Banner 是為貓頭鷹親子教育協會所繪製，本作品以粉色系營造柔和舒適感， 插圖並以對比背景的綠色衣服來吸引觀看者注意奶娃。</desc>
+               <img>images/portfolio/full/web3.jpg</img>
+               <relative>
+                    <img>
+                         <src>images/portfolio/small/web1.jpg</src>
+                         <index>41</index>
+                    </img>
+                    <img>
+                         <src>images/portfolio/small/web2.jpg</src>
+                         <index>42</index>
+                    </img>
+                    <img>
+                         <src>images/portfolio/small/web4.jpg</src>
+                         <index>24</index>
+                    </img>
+                    <img>
+                         <src>images/portfolio/small/web5.jpg</src>
+                         <index>23</index>
+                    </img>
+               </relative>
+          </work>
+          <work>
+               <index>23</index>
+               <title>Web Banner| 青春</title>
+               <desc>這一系列的 Web Banner 是為貓頭鷹親子教育協會所繪製，本作品以晴空 、高飽和度的色彩及年輕人的運動剪影營造青春氣氛。</desc>
+               <img>images/portfolio/full/web5.jpg</img>
+               <relative>
+                    <img>
+                         <src>images/portfolio/small/web1.jpg</src>
+                         <index>41</index>
+                    </img>
+                    <img>
+                         <src>images/portfolio/small/web2.jpg</src>
+                         <index>42</index>
+                    </img>
+                    <img>
+                         <src>images/portfolio/small/web4.jpg</src>
+                         <index>24</index>
+                    </img>
+                    <img>
+                         <src>images/portfolio/small/web3.jpg</src>
+                         <index>22</index>
+                    </img>
+               </relative>
+          </work>
+          <work>
+               <index>24</index>
+               <title>Web Banner| 說故事</title>
+               <desc>這一系列的 Web Banner 是為貓頭鷹親子教育協會所繪製，本作品以可愛小人頭圍著老師聽故事為主視覺。</desc>
+               <img>images/portfolio/full/web4.jpg</img>
+               <relative>
+                    <img>
+                         <src>images/portfolio/small/web1.jpg</src>
+                         <index>41</index>
+                    </img>
+                    <img>
+                         <src>images/portfolio/small/web2.jpg</src>
+                         <index>42</index>
+                    </img>
+                    <img>
+                         <src>images/portfolio/small/web5.jpg</src>
+                         <index>23</index>
+                    </img>
+                    <img>
+                         <src>images/portfolio/small/web3.jpg</src>
+                         <index>22</index>
+                    </img>
+               </relative>
+          </work>
+          <work>
+               <index>25</index>
+               <title>廣告練習| 美好人生</title>
+               <desc>背景特別設計以襯托香水瓶的晶透高雅質感，整體的柔和半透明色調營造愉悅氣氛。</desc>
+               <img>images/portfolio/full/poster8.jpg</img>
+          </work>
+          <work>
+               <index>26</index>
+               <title>VI告練習| 方向</title>
+               <desc>此VI設計理念為:"書本給人方向"。 因此以由書本形狀組成方向指標牌，象徵閱讀給我們人生的方向。</desc>
+               <img>images/portfolio/full/branding5.jpg</img>
+               <relative>
+                    <img>
+                         <src>images/portfolio/small/branding2.jpg</src>
+                         <index>12</index>
+                    </img>
+               </relative>
+          </work>
+          <work>
+               <index>27</index>
+               <title>eDM練習| 洗衣機</title>
+               <desc>本eDM以居家的清爽色調背景營造清潔乾爽感，排版力求簡單明瞭，呈現資訊重要性的階層。</desc>
+               <img>images/portfolio/full/edm1.jpg</img>
+          </work>
+          <work>
+               <index>28</index>
+               <title>T-shirt設計| 閱向未來</title>
+               <desc>這是為貓頭鷹親子教育協會所設計的T-shirt，設計理念如下:"閱讀給我們人生的方向，象徵站 在人生十字路口的小朋友，藉由貓頭鷹親子教育協會獲得人生 未來的方向。</desc>
+               <img>images/portfolio/full/branding12.jpg</img>
+               <relative>
+                    <img>
+                         <src>images/portfolio/small/branding13.jpg</src>
+                         <index>29</index>
+                    </img>
+               </relative>
+          </work>
+          <work>
+               <index>29</index>
+               <title>T-shirt設計| 閱向未來</title>
+               <desc>這是為貓頭鷹親子教育協會所設計的T-shirt，設計理念如下:"閱讀給我們人生的方向，象徵站 在人生十字路口的小朋友，藉由貓頭鷹親子教育協會獲得人生 未來的方向。</desc>
+               <img>images/portfolio/full/branding13.jpg</img>
+               <relative>
+                    <img>
+                         <src>images/portfolio/small/branding12.jpg</src>
+                         <index>28</index>
+                    </img>
+               </relative>
+          </work>
+          <work>
+               <index>30</index>
+               <title>T-shirt設計| Let's Read</title>
+               <desc>這是為貓頭鷹親子教育協會所設計的T-shirt，用卡通風呼籲大家一起來閱讀，配色構圖力求活潑亮麗。</desc>
+               <img>images/portfolio/full/branding14.jpg</img>
+          </work>
+          <work>
+               <index>31</index>
+               <title>插畫練習| 小天使</title>
+               <desc>二頭身的插畫練習。</desc>
+               <img>images/portfolio/full/illustration1.jpg</img>
+          </work>
+          <work>
+               <index>32</index>
+               <title>插畫練習| 聖誕節</title>
+               <desc>聖誕節插畫練習。</desc>
+               <img>images/portfolio/full/illustration2.jpg</img>
+               <relative>
+                    <img><src>images/portfolio/small/illustration2-1.jpg</src>
+                    </img>
+               </relative>
+          </work>
+          <work>
+               <index>33</index>
+               <title>插畫練習| 海賊</title>
+               <desc>改為三頭身的Q版海賊。</desc>
+               <img>images/portfolio/full/illustration3.jpg</img>
+          </work>
+          <work>
+               <index>34</index>
+               <title>插畫練習| 愛心蜜蜂</title>
+               <desc>以條紋的愛心為身體，對比色的配色，生動的姿勢營造活潑感。</desc>
+               <img>images/portfolio/full/illustration4.jpg</img>
+          </work>
+          <work>
+               <index>35</index>
+               <title>插畫練習| 塗鴉</title>
+               <desc>鮮豔的前色配上留白的背景，運用了 illustrator 的漸層、漸變、3D、旋轉及路徑管理員功能。</desc>
+               <img>images/portfolio/full/illustration5.jpg</img>
+          </work>
+          <work>
+               <index>36</index>
+               <title>插畫練習| 小小人兒</title>
+               <desc>Painter的筆觸練習。</desc>
+               <img>images/portfolio/full/illustration6.jpg</img>
+          </work>
+          <work>
+               <index>37</index>
+               <title>插畫練習| 小人兒</title>
+               <desc>各年齡層的小人兒，photshop + illustrator的結合。</desc>
+               <img>images/portfolio/full/illustration7.jpg</img>
+          </work>
+          <work>
+               <index>38</index>
+               <title>插畫練習| 機器娃娃</title>
+               <desc>三頭身的機器娃娃，運用了 Illustrator 的漸層色票及繪圖樣式。</desc>
+               <img>images/portfolio/full/illustration8.jpg</img>
+          </work>
+          <work>
+               <index>39</index>
+               <title>eDM練習| 吸塵器</title>
+               <desc>本eDM以居家的清爽色調背景營造清潔乾爽感，排版力求簡單明瞭，呈現資訊重要性的階層。</desc>
+               <img>images/portfolio/full/edm2.jpg</img>
+          </work>
+          <work>
+               <index>40</index>
+               <title>插畫練習| 花</title>
+               <desc>配色鮮艷，使用 Illustrator 繪製的花，使用了扭曲與變形效果、3D效果、彎曲效果及圖樣筆刷。</desc>
+               <img>images/portfolio/full/illustration9.jpg</img>
+          </work>
+          <work>
+               <index>41</index>
+               <title>Web Banner| 生活五峰</title>
+               <desc>這一系列的 Web Banner 是為貓頭鷹親子教育協會所繪製，本作品以繽紛色彩的小朋友插圖及高對比的標題字， 吸引觀看者注意。設計力求活動資訊一目了然。</desc>
+               <img>images/portfolio/full/web1.jpg</img>
+               <relative>
+                    <img>
+                         <src>images/portfolio/small/web4.jpg</src>
+                         <index>24</index>
+                    </img>
+                    <img>
+                         <src>images/portfolio/small/web2.jpg</src>
+                         <index>42</index>
+                    </img>
+                    <img>
+                         <src>images/portfolio/small/web5.jpg</src>
+                         <index>23</index>
+                    </img>
+                    <img>
+                         <src>images/portfolio/small/web3.jpg</src>
+                         <index>22</index>
+                    </img>
+               </relative>
+          </work>
+          <work>
+               <index>42</index>
+               <title>Web Banner| 少年之心</title>
+               <desc>這一系列的 Web Banner 是為貓頭鷹親子教育協會所繪製，本作品以粉色系營造柔和舒適感， 特別用金鑰的影像呼籲關心少年的內心世界。</desc>
+               <img>images/portfolio/full/web2.jpg</img>
+               <relative>
+                    <img>
+                         <src>images/portfolio/small/web4.jpg</src>
+                         <index>41</index>
+                    </img>
+                    <img>
+                         <src>images/portfolio/small/web1.jpg</src>
+                         <index>42</index>
+                    </img>
+                    <img>
+                         <src>images/portfolio/small/web5.jpg</src>
+                         <index>23</index>
+                    </img>
+                    <img>
+                         <src>images/portfolio/small/web3.jpg</src>
+                         <index>22</index>
+                    </img>
+               </relative>
+          </work>
+</mywork>

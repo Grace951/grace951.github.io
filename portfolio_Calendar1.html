@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="希望園地設計|Portfolio|作品集|平面設計|網頁設計">
+    <meta name="description" content="產品型錄">
+    <meta name="author" content="">
+    <title>Portfolio | 希望園地設計</title>
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+            <link href="/css/bootstrap-ie7.css" rel="stylesheet">
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="menu/css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="menu/css/menu.css">
+
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+
+<style>
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    background-color: #333;
+}
+
+body.hide-overflow {
+    overflow: hidden;
+}
+
+/* helpers */
+
+.t {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.tc {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.rel {
+    position: relative;
+}
+
+/* book */
+
+.book {
+    margin: 0 auto;
+    width: 90%;
+    height: 90%;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow: visible !important;
+}
+
+.book .page {
+    height: 100%;
+    background-color: #fff;
+}
+
+.book .page img {
+    max-width: 100%;
+    height: 100%;
+}
+
+</style>
+</head><!--/head-->
+<body>
+
+    <section id="portfolio">
+        <div class="container">
+<div class="bookremind">
+	請用滑鼠從書的<span class="big">四角</span>翻頁
+</div>
+
+<div class="flipbook-viewport">
+	<div class="container tc rel">
+		<div class="flipbook" id="flipbook">
+			<div style="background-image:url(images/portfolio/full/2015Calendar1.jpg)"></div>
+			<div style="background-image:url(images/portfolio/full/2015Calendar2.jpg)"></div>
+			<div style="background-image:url(images/portfolio/full/2015Calendar3.jpg)"></div>
+			<div style="background-image:url(images/portfolio/full/2015Calendar4.jpg)"></div>
+			<div style="background-image:url(images/portfolio/full/2015Calendar5.jpg)"></div>
+			<div style="background-image:url(images/portfolio/full/2015Calendar6.jpg)"></div>
+			<div style="background-image:url(images/portfolio/full/2015Calendar7.jpg)"></div>
+			<div style="background-image:url(images/portfolio/full/2015Calendar8.jpg)"></div>
+			<div style="background-image:url(images/portfolio/full/2015Calendar9.jpg)"></div>
+            <div style="background-image:url(images/portfolio/full/2015Calendar10.jpg)"></div>
+            <div style="background-image:url(images/portfolio/full/2015Calendar11.jpg)"></div>
+            <div style="background-image:url(images/portfolio/full/2015Calendar12.jpg)"></div>
+		</div>
+	</div>
+    <div class="note">
+        這是2015月曆的排版練習，以清新典雅陽光的氣氛帶給使用者好心情。
+    </div>
+</div>
+
+
+    <script src="js/main-dist.js"></script>
+    <script type="text/javascript" src="turnjs4/extras/modernizr.2.5.3.min.js"></script>
+    <script type="text/javascript" src="turnjs4/lib/hash.js"></script>
+
+<script type="text/javascript">
+
+function loadApp() {
+	$('.flipbook').turn({
+			// Width
+
+//			width:922,
+
+			// Height
+
+//			height:600,
+
+			// Elevation
+
+//			elevation: 50,
+
+			// Enable gradients
+
+//			gradients: true,
+
+			// Auto center this flipbook
+
+			autoCenter: true,
+            display: "single",
+
+	});
+
+}
+
+
+
+// Load the HTML4 version if there's not CSS transform
+
+yepnope({
+	test : Modernizr.csstransforms,
+	yep: ['turnjs4/lib/turn.js'],
+	nope: ['turnjs4/lib/turn.html4.min.js'],
+	both: ['turnjs4/samples/basic/css/basic.css'],
+	complete: loadApp
+});
+
+/*
+ * Turn.js responsive book
+ */
+
+/*globals window, document, $*/
+
+(function () {
+    'use strict';
+
+    var module = {
+        ratio: 1.375,
+        init: function (id) {
+            var me = this;
+
+            // if older browser then don't run javascript
+            if (document.addEventListener) {
+                this.el = document.getElementById(id);
+                this.resize();
+                this.plugins();
+
+                // on window resize, update the plugin size
+                window.addEventListener('resize', function (e) {
+                    var size = me.resize();
+                    $(me.el).turn('size', size.width, size.height);
+                });
+            }
+        },
+        resize: function () {
+            // reset the width and height to the css defaults
+            this.el.style.width = '';
+            this.el.style.height = '';
+
+            var width = $(window).width(),
+                height = Math.round(width / this.ratio),
+                padded = Math.round(document.body.clientHeight * 0.9);
+
+            // if the height is too big for the window, constrain it
+            if (height > padded) {
+                height = padded;
+                width = Math.round(height * this.ratio);
+            }
+
+            // set the width and height matching the aspect ratio
+            width /= 2;
+            this.el.style.width = width + 'px';
+            this.el.style.height = height + 'px';
+            this.el.style.left = -( width/2) + 'px';
+            this.el.style.top = -(height/2) + 'px';
+            $('.note').css({
+                marginLeft: (width/2 + 40 )+'px'
+            });
+            return {
+                width: width,
+                height: height
+            };
+        },
+        plugins: function () {
+            // run the plugin
+            /*$(this.el).turn({
+                display: "single",
+                gradients: true,
+                acceleration: true
+            });
+            */
+
+            // hide the body overflow
+            document.body.className = 'hide-overflow';
+        }
+    };
+
+    module.init('flipbook');
+}());
+</script>
+    </section><!--/#portfolio-item-->
+
+
+
+</body>
+</html>
