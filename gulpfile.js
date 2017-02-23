@@ -79,11 +79,11 @@ gulp.task('images',  function() {
 
 gulp.task('sass', function () {
   return gulp.src(src_paths.scss)
-    .pipe(sourcemaps.init())
+    // .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss([ autoprefixer() ]))
     .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(sourcemaps.write())
+    // .pipe(sourcemaps.write())
     .pipe(gulp.dest(dest_paths.css));
 });
 
