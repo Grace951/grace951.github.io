@@ -68,6 +68,6 @@ img.other-img{
     padding:8px;
     background:#fff;
     margin:0 auto 1px auto;
-    @include box-shadow(rgba(0, 0, 0, 0.4));
+    box-shadow: rgba(0, 0, 0, 0.4);
 }
 

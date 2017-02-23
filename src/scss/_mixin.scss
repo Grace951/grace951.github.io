@@ -6,7 +6,7 @@
 }
 
 @mixin min-height-grace($h){
-    @include min-height($h);
+    min-height: $h;
     height: auto !important;
     height: $h;
     min-height: $h;
@@ -29,6 +29,6 @@
 }
 
 @mixin background-size-grace($w, $h){
-    @include background-size($w, $h);
+    background-size: $w, $h;
     // -ms-behavior: url('js/backgroundsize.min.htc');  /*ie*/
 }
