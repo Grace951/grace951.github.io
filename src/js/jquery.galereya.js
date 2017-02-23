@@ -405,8 +405,8 @@ window.$ = window.jQuery = require('jquery');
                 };
 
             if (!img.complete) {
-                //$(img).attr("src", img.src).load(onload);
-                $(img).load(onload).attr("src", img.src);
+                $(img).attr("src", img.src).load(onload);
+                // $(img).load(onload).attr("src", img.src);
                 //grace++
             } else {
                 onload.call(img);
