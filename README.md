@@ -11,7 +11,7 @@
 MIT
 
 ## Live Demo 
-Live demo: [`https://grace951.github.io/home-page/index.html`](https://grace951.github.io/home-page/index.html)
+Live demo: [`https://hopeshelter.herokuapp.com/#l`](https://grace951.github.io/home-page/index.html)
 
 # Build locally
 ```

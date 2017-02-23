@@ -1,0 +1,174 @@
+@import '../variable'
+@import '../mixin'
+
+#middle 
+	background: #fff
+
+.main-skill
+	margin-right: 5%
+	margin-left: 5%
+	@include respond-to(xs)
+		margin: 0 20px	
+	h2
+		font-family: 'Merriweather', serif
+		margin-bottom: 20px
+		padding-bottom: 10px
+		border-bottom: 1px solid #eee
+		text-align: left
+		padding-left: 10px
+  
+	.skilltree
+		width: 100%
+		height: auto
+		font-size: 16px
+		line-height: 40px
+		overflow: hidden
+		>ul
+			width: 100%
+			float: none
+			display: block
+			>li
+				width: 270px
+				display: block
+				text-align: center
+				float: left
+				margin-left: 30px		
+				position: relative
+				font-size: 18px
+				font-weight: 600
+				:after
+					content: "\f004"
+					position: absolute
+					color: #DB3615
+					left: 20px
+					top: 40px
+					font-size: 18px
+					font-family: FontAwesome
+				@include respond-to(xs)
+					margin-left: 10px
+		ul li ul
+			float: none
+			padding-top: 80px
+			margin-left: 0px
+			border: 1px solid #ccc
+			padding: 20px 0
+			li
+				width: 80px
+				text-align: left
+				margin-left: 170px
+				padding-left: 16px
+				position: relative
+				font-size: 14px
+				line-height: 2.5
+				img
+					position: absolute
+					right: 100%
+					top: 0
+					width: auto
+					max-height: 30px
+					margin-left: 10px
+			li:after
+				content: ""
+.progress-wrap
+	position: relative
+.skill-bar
+	margin: 20px 5px 0 5px
+	float: left
+	width: calc(33% - 10px)
+	padding: 20px
+	a
+		color: #4e4e4e
+	h2
+		margin-bottom: 10px
+		padding-bottom: 20px
+		border-bottom: 1px solid #bbb
+	p
+		padding: 20px
+		color: black
+		font-weight: 600
+		font-size: 16px
+		line-height: 2.3
+	ul.experience
+		float: none
+		padding-left: 30px
+		color: #4e4e4e
+		font-size: 16px
+		line-height: 2.2
+		font-weight: bold
+		text-align: left
+	ul.experience li
+		position: relative	
+	ul.experience li:after
+		content: '\f02e'
+		position: absolute
+		color: #DB3615
+		left: -20px
+		top: 2px
+		font-size: 14px
+		font-family: FontAwesome	
+	@include respond-to(xs)
+		width: 100%
+		float: none
+		padding: 0px
+.practice
+	margin: 0 auto
+	max-width: 600px
+	margin-top: 50px
+	clear: both
+	float: none
+%progressbar
+    height: 15px
+    background: #e6e6e6
+    line-height: 15px
+    box-shadow: none
+    border-radius: 0
+    overflow: visible
+    text-align: right
+.progress-wrap h3
+	margin: 0	
+.progress-wrap .progress-bar
+    @extend %progressbar
+.progress-wrap .progress	
+	@extend %progressbar
+	.color1, .color1 .bar-width
+		background: #3C5A96
+	.color2, .color2 .bar-width
+		background: $color2
+	.color3, .color3 .bar-width
+		background: $color3
+	.color4, .color4 .bar-width
+		background: $color4
+	.color5, .color5 .bar-width
+		background: $color1
+	.bar-width
+		position: absolute
+		width: 40px
+		height: 20px
+		line-height: 20px
+		text-align: center
+		font-size: 12px
+		font-weight: 700
+		top: -10px
+		border-radius: 2px
+		margin-left: -30px
+	span
+		position: relative
+	span:before
+		content: " "
+		position: absolute
+		width: auto
+		height: auto
+		border-width: 8px 5px
+		border-style: solid
+		bottom: -15px
+		right: 8px
+	.color1 span:before
+		border-color: #3C5A96 transparent transparent transparent
+	.color5 span:before
+		border-color: $color1 transparent transparent transparent
+	.color2 span:before
+		border-color: $color2 transparent transparent transparent
+	.color3 span:before
+		border-color: $color3 transparent transparent transparent
+	.color4 span:before
+		border-color: $color4 transparent transparent transparent

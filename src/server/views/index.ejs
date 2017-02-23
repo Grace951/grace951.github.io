@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= metaData.title %> - Hope Shelter Design</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="ChingChing Yeh">
+		<meta name="copyright" content="ChingChing Yeh">
+		<meta name="description" content='<%= metaData.description %>'>
+		
+		<link href="https://hopeshelter.herokuapp.com<%= metaData.image %>" rel='image_src'/>
+		<link href="<%= metaData.pathname %>" rel='canonical'/>
+
+		<meta property="og:url" content="<%= metaData.pathname %>"/>	
+		<meta property="og:title" content="<%= metaData.title %>" />
+		<meta property="og:site_name" content="<%= metaData.siteName %>"/>
+		<meta property="og:image" content="https://hopeshelter.herokuapp.com<%= metaData.image %>" />
+		<meta property="og:description" content="<%= metaData.description %>" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:type" content="website"/>
+
+		<meta itemprop="name" content="Hope Shelter Design">
+		<meta itemprop="image" content="https://hopeshelter.herokuapp.com<%= metaData.image %>">
+		<meta itemprop="description" content="<%= metaData.description %>">	
+
+		<meta name="twitter:card" content="<%= metaData.title %> - Hope Shelter Design"> 
+		<meta name="twitter:site" content="@Hope Shelter Design"> 
+		<meta name="twitter:title" content="<%= metaData.title %> - Hope Shelter Design"> 
+		<meta name="twitter:description" content='<%= metaData.description %>'> 
+		<meta name="twitter:image" content="https://hopeshelter.herokuapp.com<%= metaData.image %>">
+
+		<link href="https://fonts.googleapis.com/css?family=Merriweather::latin|Rajdhani:400,500,600:latin|Open+Sans::latin|Ubuntu:300italic:latin" rel="stylesheet">
+		<link rel="stylesheet" href="/build/css/main.css">
+		<link rel="shortcut icon" href="/images/ico/favicon.ico">
+		<link rel="apple-touch-icon" href="/img/Icon-60@3x.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/img/Icon-60@3x.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/img/Icon-60@3x.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/img/Icon-60@3x.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/img/Icon-60@3x.png">	
+		<meta name="apple-mobile-web-app-title" content="Hope Shelter Design">
+	
+	
+
+    <!--[if lt IE 9]>
+        <link href="galereya-master/src/css/jquery.galereya.ie.css" rel="stylesheet">
+    <![endif]-->
+    <!--[if lt IE 8]>
+        <link href="/css/bootstrap-ie7fix.css" rel="stylesheet">
+        <link href="/css/ie7.css" rel="stylesheet">
+        <script src="/js/jquery.pseudo.js"></script>
+    <![endif]-->
+
+   <!--[if lt IE 9]>
+        <script src="/js/modernizr.custom.31397.js"></script>
+        <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+	</head>
+	<body class="homepage">
+		<div id="rootWrap"><%- componentHTML %></div>
+		<script type="text/javascript" charset="utf-8">
+			 window.__REDUX_STATE__ = <%-JSON.stringify(reduxState)%>;
+		</script>	
+		<script src='<%= venderJs %>'></script>
+		<script src='/build/bundle.js'></script>
+	</body>
+</html>
