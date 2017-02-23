@@ -1,3 +1,4 @@
+window.$ = window.jQuery = require('jquery');
 /*!
  * Galereya v0.9.94
  * http://vodkabears.github.com/galereya

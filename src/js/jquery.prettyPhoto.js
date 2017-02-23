@@ -1,3 +1,4 @@
+window.$ = window.jQuery = require('jquery');
 /* ------------------------------------------------------------------------
 	Class: prettyPhoto
 	Use: Lightbox clone for jQuery
