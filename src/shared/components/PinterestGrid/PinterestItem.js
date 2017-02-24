@@ -13,20 +13,37 @@ let PinterestItem = class PinterestItem extends React.Component{
 			done: false,
 			top: props.top,
 			left: props.left,
-			passUpdate: false
 		}
 		this.updateImagePosition = this.updateImagePosition.bind(this);
 		this.setShowImage = this.setShowImage.bind(this);
 		this.updateLoaded = this.updateLoaded.bind(this);
 	}
-	componentDidMount() {
-	}	
-	componentWillMount() {
-		// // allow image display override
-		// if (this.props.showImage) {
-		// 	this.setShowImage(this.props.id, true);
-		// }
+	componentWillReceiveProps(nextProps){
+		if (nextProps.reRender && this.props.reRender !== nextProps.reRender){			
+			this.setState(
+				{
+					top: nextProps.top,
+					left: nextProps.left,
+					reRender: true
+				}
+			);
+		}
 	}
+	componentDidMount() {
+	}
+	componentWillMount() {
+	}
+	componentDidUpdate(prevProps, prevState) {
+		if(this.state.reRender){
+			this.props.updateLoaded(this.props.id, true, this.props.colid,  this.totoalHight);
+			this.setState(
+				{					
+					reRender: false
+				}
+			);
+		}
+	}
+	
 	updateImagePosition (top, height) {
 		// image is already displayed, no need to check anything
 		if (this.state.done) {
@@ -43,7 +60,6 @@ let PinterestItem = class PinterestItem extends React.Component{
 	}
 	setShowImage(id, show) {
 		let l = [...this.state.loadedImg];
-		// l[id] = {show: !!show, height};
 		this.setState({
 			loadedImg: [...l.slice(0, id), !!show, ...l.slice(id, l.length)],
 			done: (l.filter((i)=>!i).length <= 0)
@@ -60,9 +76,7 @@ let PinterestItem = class PinterestItem extends React.Component{
 		if (d) {
 			let totoalHight = this.ItemDesc.clientHeight + l.reduce((acc, val)=>(acc + val.height),0);
 			this.props.updateLoaded(this.props.id, true, this.props.colid,  totoalHight );
-			this.setState({
-				passUpdate: false
-			});	
+			this.totoalHight = totoalHight;	
 		}		
     }
 	render() {
@@ -74,7 +88,7 @@ let PinterestItem = class PinterestItem extends React.Component{
 				<div >
 				{
 					item.images.map((image,id) => (
-						<PinterestImg src={image} key={id} id={id} viewport={this.props.viewport} showImage={this.state.loadedImg[id]}
+						<PinterestImg src={image} key={id} id={id} viewport={this.props.viewport} showImage={this.state.loadedImg[id].loaded}
 							updateImagePosition={this.updateImagePosition} updateLoaded={this.updateLoaded} />
 					))
 				}
@@ -94,6 +108,7 @@ PinterestItem.defaultProps = {
 PinterestItem.propTypes = {
 	viewport: React.PropTypes.object.isRequired,
 	showImage: React.PropTypes.bool.isRequired,
+	reRender: React.PropTypes.bool.isRequired,
 	updateLoaded: React.PropTypes.func.isRequired,
 	id: React.PropTypes.number.isRequired,
 	top: React.PropTypes.number.isRequired,

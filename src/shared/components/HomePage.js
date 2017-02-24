@@ -361,7 +361,7 @@ let HomePage = class HomePage extends React.Component{
 		this.setState({
 			height
 		});	
-    }	
+    }
 	render() {		
 		let style = {height: this.state.height };
 		return (

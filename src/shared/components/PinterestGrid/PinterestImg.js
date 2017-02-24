@@ -5,31 +5,25 @@ import React from 'react';
 let PinterestImg = class PinterestImg extends React.Component{
 	constructor(props) {
 		super(props);
-		this.updatePosition = this.updatePosition.bind(this);
-		this.getImg = this.getImg.bind(this);
+		// this.updatePosition = this.updatePosition.bind(this);
 		this.handleImageLoaded = this.handleImageLoaded.bind(this);
 	}
 	componentDidUpdate(prevProps) {
-		// if (! this.props.showImage && prevProps.viewport) {
-		// 	this.updatePosition();
-		// }
 	}
-
-	updatePosition() {
-		let el = this.img;
-		this.props.updateImagePosition(el.offsetTop, el.offsetHeight);
-	}
-	getImg(el) {
-		this.img = el;
-	}
+	// updatePosition() {
+	// 	let el = this.img;
+	// 	this.props.updateImagePosition(el.offsetTop, el.offsetHeight);
+	// }
 	handleImageLoaded(e){
-		this.props.updateLoaded(this.props.id, true, e.target.clientHeight || 0);
+		// console.log(e.target.clientHeight);
+		this.props.updateLoaded(this.props.id, true, e.target.clientHeight);
 	}
 	render() {
-		let img = (this.props.showImage) ? this.props.src : this.props.loader;
+		// let img = (this.props.showImage) ? this.props.src : this.props.loader;
+		let img =  this.props.src;
 		return (
 			<div className="pinterest-img">
-				<img src={img} alt={this.props.alt} ref={this.getImg} onLoad={this.handleImageLoaded}/>
+				<img src={img} alt={this.props.alt} onLoad={this.handleImageLoaded}/>
 			</div>
 		);
 	}
