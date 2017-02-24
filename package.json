@@ -6,9 +6,9 @@
   "engines": {
     "node": ">=6.0 <8",
     "npm": ">=3.0 <5"
-  },  
+  },
   "scripts": {
-    "build:dll": "webpack  --verbose --colors --display-error-details --config=webpack/webpack.config.dll.js",    
+    "build:dll": "webpack  --verbose --colors --display-error-details --config=webpack/webpack.config.dll.js",
     "build": "cross-env NODE_ENV=production webpack --verbose --colors --display-error-details --config=webpack/webpack.config.prod.js",
     "postbuild": "node server.generated.js",
     "lint": "node_modules/.bin/esw webpack.config.* src tools",
@@ -35,7 +35,7 @@
     "compression": "^1.6.2",
     "concurrently": "^3.1.0",
     "cookie-parser": "^1.4.3",
-    "ejs": "^2.5.5",    
+    "ejs": "^2.5.5",
     "es6-promise": "^4.0.5",
     "express": "^4.14.0",
     "fs": "0.0.1-security",
@@ -101,6 +101,6 @@
     "url-loader": "^0.5.7",
     "webpack": "^2.2.1",
     "webpack-dev-middleware": "^1.8.4",
-    "webpack-hot-middleware": "^2.13.2"        
+    "webpack-hot-middleware": "^2.13.2"
   }
 }
