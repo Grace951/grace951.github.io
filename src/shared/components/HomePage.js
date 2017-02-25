@@ -349,25 +349,50 @@ let items = [
 ];
 
 
+let LoadingDiv = class LoadingDiv extends React.Component{
+	constructor(props) {
+		super(props);	
+    }
+	render() {		
+		return (
+			<div className="loading-wrap"><img src="/images/Preloader_8.gif" alt="" /></div>
+		);
+	}
+};
+
+LoadingDiv.propTypes = {
+};
+
+
 let HomePage = class HomePage extends React.Component{
 	constructor(props) {
 		super(props);	
+	
 		this.state = {
-			height: 0
+			height: 0,
+			loading: true
 		};
 		this.updateHeight = this.updateHeight.bind(this);
     }
+	componentDidMount() {
+		this.setState({
+			loading: false
+		});
+	}	
     updateHeight( height ) {
 		this.setState({
 			height
 		});	
     }
-	render() {		
-		let style = {height: this.state.height };
+	render() {
+		let style = {height: this.state.height };	
 		return (
-			<div id="home"  ref={(el) => { this.homeDom = el; }} style={style}>
+			<div id="home"  ref={(el) => { this.homeDom = el; }} style={style}>				
 				<div id="containerb">
-					<PinterestGrid items={items} columnWidth={280} gutter={20} columns={5} updateHeight={this.updateHeight}/>
+					{(this.state.loading)
+						?<LoadingDiv />
+						:<PinterestGrid items={items} columnWidth={280} gutter={20} columns={5} updateHeight={this.updateHeight}/>
+					}
 				</div>
 			</div>
 		);
