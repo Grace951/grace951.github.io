@@ -5,6 +5,7 @@ import { renderToString } from 'react-dom/server';
 import { match, RouterContext, createMemoryHistory } from 'react-router';
 import createRoutes from '../shared/route/index';
 import configureStore from '../shared/store/configureStore';
+import MobileDetect from 'mobile-detect';
 
 import { fetchComponentsData,
          getMetaDataFromState
@@ -21,7 +22,9 @@ function handleRender(req, res)
   const venderJs =(process.env.NODE_ENV === 'production')
 					? '/build/vendor.js'
 					: '/dll.vendor.js';
-					
+
+  const md = new MobileDetect(req.headers['user-agent']);
+  let device = {mobile: md.mobile()||md.phone(), tablet: md.tablet(), os: md.os() };
   match({ routes, location }, (error, redirectLocation, renderProps) => {
 	if (redirectLocation) {
 		res.redirect(301, redirectLocation.pathname + redirectLocation.search);
@@ -36,7 +39,8 @@ function handleRender(req, res)
                  components : renderProps.components,
                  params     : renderProps.params,
                  query      : renderProps.location.query,
-                 route      : renderProps.routes[renderProps.routes.length - 1]
+                 route      : renderProps.routes[renderProps.routes.length - 1],
+				device,
                 })
                 .then(() => {
                 const reduxState = store.getState();
@@ -54,7 +58,7 @@ function handleRender(req, res)
                         <RouterContext {...renderProps} />
                     </Provider>
                 );
-                res.render('index', { componentHTML, reduxState, venderJs, metaData });	
+                res.render('index', { componentHTML, reduxState, venderJs, metaData, device });	
                 })
                 .catch(error => {
                     // console.log(error);

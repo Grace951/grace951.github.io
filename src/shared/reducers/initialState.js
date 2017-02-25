@@ -2,6 +2,7 @@ export default {
   details: {},
   portfolio: [],
   recents: [],
+  device : {},
   modal: {showXsNav: false},
-  ajaxCallsInProgress: 0,
+  ajaxCallsInProgress: 0
 };

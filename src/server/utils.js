@@ -1,13 +1,13 @@
 /* eslint import/no-unresolved: 0*/
 
-export function fetchComponentsData({ dispatch, components, params, query, locale, route }) {
+export function fetchComponentsData({ dispatch, components, params, query, locale, route, device }) {
     const promises = components.map(current => {
         //console.log(current);
 		if (!current)  return null;
         const component = current.WrappedComponent ? current.WrappedComponent : current;
         
         return component.fetchData
-            ? component.fetchData({ dispatch, params, query, locale, route })
+            ? component.fetchData({ dispatch, params, query, locale, route, device })
             : null;
     });
 

@@ -2,6 +2,10 @@ if (process.env.BROWSER) {
 	require ('./home.sass');
 }
 import React from 'react';
+import { connect } from 'react-redux';
+
+import { getDevice } from '../actions/deviceAction';
+import connectDataFetchers from '../lib/connectDataFetchers.jsx';
 import {PinterestGrid} from './PinterestGrid/PinterestGrid';
 let items = [
 	{
@@ -426,7 +430,7 @@ let HomePage = class HomePage extends React.Component{
 		return (
 			<div id="home" >				
 				<div id="containerb"  style={style}>
-					<PinterestGrid items={items} columnWidth={280} gutter={20} columns={5} updateHeight={this.updateHeight} delay={100}/>					
+					<PinterestGrid items={items} columnWidth={280} gutter={20} columns={5} updateHeight={this.updateHeight} delay={100} device={this.props.device}/>					
 				</div>
 			</div>
 		);
@@ -434,6 +438,18 @@ let HomePage = class HomePage extends React.Component{
 };
 
 HomePage.propTypes = {
+	device:  React.PropTypes.object.isRequired
 };
+
+function mapStateToProps(state, ownProps) {
+  return {
+    device: state.device
+  };
+}
+
+HomePage = connect(mapStateToProps)(
+    connectDataFetchers(HomePage, [ getDevice ])
+);
+
 
 export default HomePage;

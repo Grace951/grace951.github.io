@@ -8,28 +8,50 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 	constructor(props) {
 		super(props);
 		const { columnWidth, gutter, items,  } = props;
-		let loadedItems = Array.from({ length: items.length }, () => ({loaded:false, top: 0, left: 0, height:0}))
+		let loadedItems = Array.from({ length: items.length }, () => ({loaded:false, top: 0, left: 0}))
 			, columns = props.columns
-			, columnHeights = Array.from({ length:  columns}, () => 0)
+			, columnHeights
+			, height = 0
 			, viewport = {
 				top: 0,
 				height: 0
 			};
 
+		let shortestColumnIndex, loadedIndex = 0;
+		props.device && (props.device.phone || props.device.mobile) && (columns = 1);
+		props.device && (props.device.tablet) && (columns = 2);
+
+		columnHeights = Array.from({ length:  columns}, () => 0)
 		for (let i=0; i<items.length; i++){
-			loadedItems[i].height = items[i].img_height;	
+			let item = loadedItems[i];
+			item.height = items[i].img_height;	
+			if(i <= columns * 2){
+				shortestColumnIndex = columnHeights.indexOf(Math.min(...columnHeights));			
+				item.top = columnHeights[shortestColumnIndex];	
+				item.left = ( columnWidth + gutter ) * shortestColumnIndex;	
+				item.loaded = true;
+				height = columnHeights[shortestColumnIndex] += items[i].img_height + this.props.gutter ;				
+				loadedIndex++;	
+			}
 		}
 
+		// console.log(loadedIndex, columns, props.device, loadedItems, columnHeights);
 		this.state={
 			viewport,
+			height,
 			columns,
 			columnHeights,
 			loadedItems, 
 			loading: true,
-			loadedIndex : 0
+			loadedIndex
 		};
 		this.updatePosition = this.updatePosition.bind(this);
 	}
+	
+	componentWillMount() {
+		this.props.updateHeight(this.state.height + this.props.gutter);
+	}
+	
 	componentDidMount() {
 		window.addEventListener('scroll', this.updatePosition, false);
 		window.addEventListener('resize', this.updatePosition, false);
@@ -45,7 +67,7 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 	updatePosition (first) {
 		const { columnWidth, gutter, items, delay } = this.props;
 		let { loadedItems, columns, columnHeights, loadedIndex} = this.state;
-		let top, left, shortestColumnIndex;
+		let shortestColumnIndex;
 		let colHeights = [...columnHeights];
 		let newLoadedItems = [...loadedItems];
 		let containerWidth = 1600; 
@@ -57,19 +79,17 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 					top: window.pageYOffset,
 					height: window.innerHeight
 				};
-		shortestColumnIndex = colHeights.indexOf(Math.min(...colHeights));	
 		if (newColumns !== this.state.columns ){
 			loadedIndex = 0;
 			colHeights = Array.from({ length:  newColumns}, () => 0);
+			newLoadedItems = Array.from({ length: items.length }, () => ({loaded:false, top: 0, left: 0}))
 		}
+		shortestColumnIndex = colHeights.indexOf(Math.min(...colHeights));	
 		if (newColumns === this.state.columns && viewport.height + viewport.top < colHeights[shortestColumnIndex] + delay)
 			return; 
 
 
-		for (let i=0; i<items.length; i++){
-			if (newColumns !== this.state.columns ){
-				newLoadedItems[i] = {loaded:false, top: 0, left: 0, height:items[i].img_height};
-			}			
+		for (let i=0; i<items.length; i++){	
 			let item = newLoadedItems[i];
 			if(item.loaded){
 				continue;
@@ -79,9 +99,10 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 			item.left = ( columnWidth + gutter ) * shortestColumnIndex;		
 
 			if (viewport.height + viewport.top > colHeights[shortestColumnIndex] + delay ){
+				// console.log(i, item, newColumns, colHeights, shortestColumnIndex);			
 				item.loaded = true;
 				colHeights[shortestColumnIndex] += items[i].img_height + this.props.gutter ;				
-				loadedIndex++;				
+				loadedIndex++;	
 			}else{
 				break;
 			}
@@ -97,6 +118,7 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 				loadedIndex,
 			});			
 		}
+		// console.log(loadedIndex, newColumns, newLoadedItems, colHeights);
 		this.props.updateHeight(Math.max(...colHeights) + gutter);
 	}
 	
@@ -124,6 +146,7 @@ PinterestGrid.propTypes = {
 	gutter: React.PropTypes.number.isRequired,	
 	updateHeight: React.PropTypes.func.isRequired,	
 	delay: React.PropTypes.number.isRequired,	
+	device:  React.PropTypes.object	
 };
 
 PinterestItem.defaultProps = {

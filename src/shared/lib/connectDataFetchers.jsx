@@ -15,11 +15,11 @@ export default function connectDataFetchers(Component, actionCreators) {
             }).isRequired
         };
 
-        static fetchData({ dispatch, params = {}, query = {}, locale , route= []}) {          
+        static fetchData({ dispatch, params = {}, query = {}, locale , route= [], device}) {          
             //console.log("fetchData", actionCreators);  
             let promiseArray = actionCreators.map(actionCreator => {                    
-                    return actionCreator?(dispatch(actionCreator({ params, query, locale }))):null;
-                });       
+                    return actionCreator?(dispatch(actionCreator({ params, query, locale, device }))):null;
+                });
             return Promise.all( promiseArray );
         }
         componentDidUpdate(prevProps) {
@@ -35,14 +35,7 @@ export default function connectDataFetchers(Component, actionCreators) {
         }
 
         componentDidMount() {
-            if (IS_FIRST_MOUNT_AFTER_LOAD) {
-                let {dispatch, routes} = this.props; 
-                const routeRoles = _flow(
-                    _filter(item => item.authorize), // access to custom attribute
-                    _map(item => item.authorize),
-                    _flattenDeep,                    
-                )(routes);
-            }else{
+            if (!IS_FIRST_MOUNT_AFTER_LOAD) {
                 this._fetchDataOnClient();
             }
 
