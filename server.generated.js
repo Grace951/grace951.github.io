@@ -10739,7 +10739,7 @@ var PinterestGrid = function (_React$Component) {
 	PinterestGrid.prototype.componentDidMount = function componentDidMount() {
 		// window.addEventListener('scroll', this.updateViewport, false);
 		window.addEventListener('resize', this.updatePosition, false);
-		// this.updatePosition();
+		this.updatePosition();
 	};
 
 	PinterestGrid.prototype.componentWillUnmount = function componentWillUnmount() {
@@ -10859,7 +10859,7 @@ var PinterestGrid = function (_React$Component) {
 _PinterestItem.PinterestItem.defaultProps = {
 	showImage: false,
 	columns: 5,
-	columnWidth: 280,
+	columnWidth: 1600,
 	gutter: 15
 };
 

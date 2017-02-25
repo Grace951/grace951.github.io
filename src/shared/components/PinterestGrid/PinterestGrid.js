@@ -28,7 +28,7 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 	componentDidMount() {
 		// window.addEventListener('scroll', this.updateViewport, false);
 		window.addEventListener('resize', this.updatePosition, false);
-		// this.updatePosition();
+		this.updatePosition();
 	}
 
 	componentWillUnmount() {
@@ -126,7 +126,7 @@ PinterestGrid.propTypes = {
 PinterestItem.defaultProps = {
 	showImage: false,
     columns: 5,
-    columnWidth: 280,
+    columnWidth: 1600,
     gutter: 15	
 };
 
