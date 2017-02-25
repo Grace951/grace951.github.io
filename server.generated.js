@@ -10322,6 +10322,7 @@ if (false) {
 
 var items = [{
 	images: ["images/portfolio/small/poster1.jpg"],
+	img_height: 516,
 	fullsrc: "images/portfolio/full/poster1.jpg",
 	category: "poster",
 	note: "廣告練習 - 飛利浦奶瓶。以小朋友在奶瓶中游泳為意象，象徵小朋友使用avent奶瓶就像在...",
@@ -10329,6 +10330,7 @@ var items = [{
 	index: "0"
 }, {
 	images: ["images/portfolio/small/poster2.jpg", "images/portfolio/small/poster6.jpg"],
+	img_height: 900,
 	fullsrc: "images/portfolio/full/poster2.jpg",
 	category: "poster",
 	note: "廣告練習 - iPhone6 廣告。背景特別設計用以強調 iphone 6 螢慕的鮮豔色彩。以弧型光芒...",
@@ -10336,6 +10338,7 @@ var items = [{
 	index: "1"
 }, {
 	images: ["images/portfolio/small/poster3.jpg"],
+	img_height: 527,
 	fullsrc: "images/portfolio/full/poster3.jpg",
 	category: "poster",
 	note: "廣告練習 - Vera Wang 婚紗廣告。Vera Wang 的禮服以難預約聞名 ，因此想要向消費者傳達...",
@@ -10343,6 +10346,7 @@ var items = [{
 	index: "2"
 }, {
 	images: ["images/portfolio/small/photo1.jpg"],
+	img_height: 336,
 	fullsrc: "images/portfolio/full/photo1.jpg",
 	category: "Misc",
 	note: "PS修補練習 - 人臉瘦身化妝。此作品使用了'How to cheat in photoshop CS6'一書中的原始圖片...",
@@ -10350,6 +10354,7 @@ var items = [{
 	index: "3"
 }, {
 	images: ["images/portfolio/small/poster7.jpg"],
+	img_height: 503,
 	fullsrc: "images/portfolio/full/poster7.jpg",
 	category: "poster",
 	note: "營會招募活動海報。這是為貓頭鷹親子教育協會所繪製的活動DM海報...",
@@ -10357,6 +10362,7 @@ var items = [{
 	index: "8"
 }, {
 	images: ["images/portfolio/small/poster4.jpg"],
+	img_height: 336,
 	fullsrc: "images/portfolio/full/poster4.jpg",
 	category: "poster",
 	note: "廣告練習 - Nike 球鞋廣告。使用 Illustrator 製造出如針織排汗衫的背景，配合明亮水藍色...",
@@ -10364,6 +10370,7 @@ var items = [{
 	index: "10"
 }, {
 	images: ["images/portfolio/small/poster5.jpg"],
+	img_height: 503,
 	fullsrc: "images/portfolio/full/poster5.jpg",
 	category: "poster",
 	note: "廣告練習 - 克蘭詩化妝品廣告。以葉子包覆保養品，象徵克蘭詩的草本保養概念...",
@@ -10371,6 +10378,7 @@ var items = [{
 	index: "6"
 }, {
 	images: ["images/portfolio/small/poster8.jpg"],
+	img_height: 503,
 	fullsrc: "images/portfolio/full/poster8.jpg",
 	category: "poster",
 	note: "廣告練習 - 美好人生淡香水廣告。背景特別設計以襯托香水瓶的晶透高雅質感...",
@@ -10378,6 +10386,7 @@ var items = [{
 	index: "25"
 }, {
 	images: ["images/portfolio/small/magazine0.jpg", "images/portfolio/small/magazine1.jpg", "images/portfolio/small/magazine2.jpg", "images/portfolio/small/magazine3.jpg", "images/portfolio/small/magazine4.jpg", "images/portfolio/small/magazine5.jpg", "images/portfolio/small/magazine6.jpg", "images/portfolio/small/magazine7.jpg", "images/portfolio/small/magazine8.jpg", "images/portfolio/small/magazine9.jpg", "images/portfolio/small/magazine10.jpg", "images/portfolio/small/magazine11.jpg"],
+	img_height: 2628,
 	fullsrc: "images/portfolio/full/branding2.jpg",
 	category: "branding",
 	note: "排版練習 -雜誌排版。以高對比大標題吸引讀者的目光，並以留白使版面...",
@@ -10385,6 +10394,7 @@ var items = [{
 	index: "-1" /*none*/
 }, {
 	images: ["images/portfolio/small/branding2.jpg", "images/portfolio/small/branding3.jpg", "images/portfolio/small/branding4.jpg"],
+	img_height: 728,
 	fullsrc: "images/portfolio/full/branding2.jpg",
 	category: "branding",
 	note: "LOGO練習 - Direction Book Store。Logo設計理念為:'書本給人方向'。 因此以由書本形狀組成方向指標牌...",
@@ -10392,6 +10402,7 @@ var items = [{
 	index: "12"
 }, {
 	images: ["images/portfolio/small/DM1.jpg"],
+	img_height: 330,
 	fullsrc: "images/portfolio/full/DM1.jpg",
 	category: "DM",
 	note: "DM設計練習-朱宗慶打擊樂團冬季巡演。以木琴同色系為主調，擊琴的圖片用十六分隔法...",
@@ -10399,6 +10410,7 @@ var items = [{
 	index: "18"
 }, {
 	images: ["images/portfolio/small/DM2.jpg"],
+	img_height: 307,
 	fullsrc: "images/portfolio/full/DM2.jpg",
 	category: "DM",
 	note: "DM設計練習-仲向。建築展覽DM練習，以'仲向'標準字的造型與色彩為發想...",
@@ -10406,6 +10418,7 @@ var items = [{
 	index: "21"
 }, {
 	images: ["images/portfolio/small/branding5.jpg"],
+	img_height: 318,
 	fullsrc: "images/portfolio/full/branding5.jpg",
 	category: "branding",
 	note: "VI 練習 - Direction Publishing。以由書本形狀組成方向指標牌，象徵閱讀給我們人生的方向...",
@@ -10413,6 +10426,7 @@ var items = [{
 	index: "26"
 }, {
 	images: ["images/portfolio/small/DM3.jpg", "images/portfolio/small/DM4.jpg"],
+	img_height: 506,
 	fullsrc: "images/portfolio/full/DM3.jpg",
 	category: "DM",
 	note: "三摺兩面DM設計練習- AVEDA。封面以草綠色嫩葉呈現 Aveda 的環保自然形象， 對比色的橘色標題字...",
@@ -10420,6 +10434,7 @@ var items = [{
 	index: "20"
 }, {
 	images: ["images/portfolio/small/photo2.jpg", "images/portfolio/small/photo3.jpg"],
+	img_height: 498,
 	fullsrc: "images/portfolio/full/photo2.jpg",
 	category: "Misc",
 	note: "PS特效練習 - 水彩油畫效果。將自己在碧潭照的相片用 photoshop 改成水彩油畫效果...",
@@ -10427,6 +10442,7 @@ var items = [{
 	index: "4"
 }, {
 	images: ["images/portfolio/small/web1.jpg", "images/portfolio/small/web2.jpg", "images/portfolio/small/web3.jpg", "images/portfolio/small/web4.jpg", "images/portfolio/small/web5.jpg"],
+	img_height: 634,
 	fullsrc: "images/portfolio/full/web1.jpg",
 	category: "Web banner",
 	note: "為貓頭鷹親子教育協會製作的banner...",
@@ -10434,6 +10450,7 @@ var items = [{
 	index: "41"
 }, {
 	images: ["images/portfolio/small/branding12.jpg", "images/portfolio/small/branding13.jpg"],
+	img_height: 922,
 	fullsrc: "images/portfolio/full/branding12.jpg",
 	category: "branding",
 	note: "T-Shirt設計 閱向未來。象徵站 在人生十字路口的小朋友，藉由貓頭鷹親子教育協會獲得人生 未來的方向...",
@@ -10441,6 +10458,7 @@ var items = [{
 	index: "28"
 }, {
 	images: ["images/portfolio/small/branding14.jpg"],
+	img_height: 527,
 	fullsrc: "images/portfolio/full/branding14.jpg",
 	category: "branding",
 	note: "T-Shirt設計 Let's Read。這是為貓頭鷹親子教育協會所設計的T-shirt，用卡通風呼籲大家一起來閱讀...",
@@ -10448,6 +10466,7 @@ var items = [{
 	index: "30"
 }, {
 	images: ["images/portfolio/small/illustration11.png"],
+	img_height: 520,
 	fullsrc: "images/portfolio/full/illustration11.png",
 	category: "illustration",
 	note: "插畫練習 - 愛哭鬼，躺臥在祢懷裡，今天讓我當個愛哭鬼，盡情的哭...",
@@ -10455,6 +10474,7 @@ var items = [{
 	index: "43"
 }, {
 	images: ["images/portfolio/small/illustration12.png"],
+	img_height: 520,
 	fullsrc: "images/portfolio/full/illustration12.png",
 	category: "illustration",
 	note: "插畫練習 - 頑皮鬼，偶爾也讓心中的頑皮鬼出來搗蛋一下...",
@@ -10462,6 +10482,7 @@ var items = [{
 	index: "44"
 }, {
 	images: ["images/portfolio/small/illustration13.png"],
+	img_height: 520,
 	fullsrc: "images/portfolio/full/illustration13.png",
 	category: "illustration",
 	note: "插畫練習 - 熱情鬼，當一個溫柔的熱情鬼!!",
@@ -10469,6 +10490,7 @@ var items = [{
 	index: "45"
 }, {
 	images: ["images/portfolio/small/illustration14.png"],
+	img_height: 521,
 	fullsrc: "images/portfolio/full/illustration14.png",
 	category: "illustration",
 	note: "插畫練習 - 開心鬼，要頭髮快掉光光牙齒快掉光光也要開開心心的!!",
@@ -10476,6 +10498,7 @@ var items = [{
 	index: "46"
 }, {
 	images: ["images/portfolio/small/illustration15.png"],
+	img_height: 520,
 	fullsrc: "images/portfolio/full/illustration15.png",
 	category: "illustration",
 	note: "插畫練習 - 韌性鬼，再倒楣也要勇敢面對每一天!!",
@@ -10483,6 +10506,7 @@ var items = [{
 	index: "47"
 }, {
 	images: ["images/portfolio/small/illustration16.png"],
+	img_height: 298,
 	fullsrc: "images/portfolio/full/illustration16.png",
 	category: "illustration",
 	note: "插畫練習 - 滿足鬼，要像滿足鬼一樣，天天滿足的感謝上帝!!",
@@ -10490,12 +10514,14 @@ var items = [{
 	index: "48"
 }, {
 	images: ["images/portfolio/small/name1.jpg", "images/portfolio/small/name7.jpg"],
+	img_height: 930,
 	fullsrc: "images/portfolio/full/name1.jpg",
 	category: "illustration",
 	note: "夏令營名牌設計 - 這是給夏令營小朋友設計的名牌，共有六組加一款老師的名牌。",
 	index: "53"
 }, {
 	images: ["images/portfolio/small/illustration2.jpg"],
+	img_height: 265,
 	fullsrc: "images/portfolio/full/illustration2.jpg",
 	category: "illustration",
 	note: "插畫練習 - 聖誕卡",
@@ -10503,6 +10529,7 @@ var items = [{
 	index: "32"
 }, {
 	images: ["images/portfolio/small/illustration3.jpg"],
+	img_height: 291,
 	fullsrc: "images/portfolio/full/illustration3.jpg",
 	category: "illustration",
 	note: "插畫練習 - 三頭身的海賊。改為三頭身的Q版海賊。",
@@ -10510,6 +10537,7 @@ var items = [{
 	index: "33"
 }, {
 	images: ["images/portfolio/small/illustration4.jpg"],
+	img_height: 291,
 	fullsrc: "images/portfolio/full/illustration4.jpg",
 	category: "illustration",
 	note: "插畫練習 - 愛心蜜蜂。以條紋的愛心為身體，對比色的配色，生動的姿勢",
@@ -10517,6 +10545,7 @@ var items = [{
 	index: "34"
 }, {
 	images: ["images/portfolio/small/illustration5.jpg"],
+	img_height: 503,
 	fullsrc: "images/portfolio/full/illustration5.jpg",
 	category: "illustration",
 	note: "插畫練習 - 塗鴉異想世界。鮮豔的前色配上留白的背景...",
@@ -10524,6 +10553,7 @@ var items = [{
 	index: "35"
 }, {
 	images: ["images/portfolio/small/illustration6.jpg"],
+	img_height: 527,
 	fullsrc: "images/portfolio/full/illustration6.jpg",
 	category: "illustration",
 	note: "插畫練習 - 小小人兒。Painter的筆觸練習。",
@@ -10531,6 +10561,7 @@ var items = [{
 	index: "36"
 }, {
 	images: ["images/portfolio/small/illustration8.jpg"],
+	img_height: 506,
 	fullsrc: "images/portfolio/full/illustration8.jpg",
 	category: "illustration",
 	note: "插畫練習 - 機器娃娃。三頭身的機器娃娃，運用了 Illustrator 的漸層色票及繪圖樣式。",
@@ -10538,6 +10569,7 @@ var items = [{
 	index: "38"
 }, {
 	images: ["images/portfolio/small/illustration9.jpg"],
+	img_height: 503,
 	fullsrc: "images/portfolio/full/illustration9.jpg",
 	category: "illustration",
 	note: "插畫練習 - 花團錦簇。配色鮮艷，使用了Illustrator扭曲與變形效果、3D效果...",
@@ -10545,54 +10577,63 @@ var items = [{
 	index: "40"
 }, {
 	images: ["images/portfolio/small/book1.jpg"],
+	img_height: 572,
 	fullsrc: "images/portfolio/full/book1.jpg",
 	category: "illustration",
 	note: "夏令營學生手冊封面 - 以清爽的白綠色為主軸，標題搭配一點對比色紅色，畫龍點睛。插圖，標準字皆為自己所繪製設計。希望活潑的版面能讓小朋友愉快地閱讀吸收。朋友愉快地閱讀吸收。",
 	index: "49"
 }, {
 	images: ["images/portfolio/small/book2.jpg"],
+	img_height: 551,
 	fullsrc: "images/portfolio/full/book2.jpg",
 	category: "illustration",
 	note: "夏令營手冊 - 這是夏令營學生手冊第一課的封面。自己繪、設計的插圖，標準字，希望活潑的版面能讓小朋友愉快地閱讀吸收。",
 	index: "50"
 }, {
 	images: ["images/portfolio/small/book3.jpg"],
+	img_height: 551,
 	fullsrc: "images/portfolio/full/book3.jpg",
 	category: "illustration",
 	note: "夏令營手冊 - 這是夏令營學生手冊第二課的封面。自己繪、設計的插圖，標準字，希望活潑的版面能讓小朋友愉快地閱讀吸收。",
 	index: "51"
 }, {
 	images: ["images/portfolio/small/book4.jpg"],
+	img_height: 551,
 	fullsrc: "images/portfolio/full/book4.jpg",
 	category: "illustration",
 	note: "夏令營手冊 - 這是夏令營學生手冊第三課的封面。自己繪、設計的插圖，標準字，希望活潑的版面能讓小朋友愉快地閱讀吸收。",
 	index: "52"
 }, {
 	images: ["images/portfolio/small/illustration17.jpg"],
+	img_height: 527,
 	fullsrc: "images/portfolio/full/illustration17.jpg",
 	category: "illustration",
 	note: "吉祥物設計練習 - 這是練習給憂鬱症防治機構的吉祥物-陽光小雞。這是小雞正面。",
 	index: "54"
 }, {
 	images: ["images/portfolio/small/illustration18.jpg"],
+	img_height: 331,
 	fullsrc: "images/portfolio/full/illustration18.jpg",
 	category: "illustration",
 	note: "吉祥物設計練習 - 這是練習給憂鬱症防治機構的吉祥物-陽光小雞。這幅主題是擁抱。",
 	index: "55"
 }, {
 	images: ["images/portfolio/small/illustration19.jpg"],
+	img_height: 527,
 	fullsrc: "images/portfolio/full/illustration19.jpg",
 	category: "illustration",
 	note: "吉祥物設計練習 - 這是練習給憂鬱症防治機構的吉祥物-陽光小雞。這幅主題是陪伴。",
 	index: "56"
 }, {
 	images: ["images/portfolio/small/illustration20.jpg"],
+	img_height: 330,
 	fullsrc: "images/portfolio/full/illustration20.jpg",
 	category: "illustration",
 	note: "吉祥物設計練習 - 這是練習給憂鬱症防治機構的吉祥物-陽光小雞。這是小雞側面。",
 	index: "57"
 }, {
 	images: ["images/portfolio/small/illustration21.jpg"],
+	img_height: 527,
 	fullsrc: "images/portfolio/full/illustration21.jpg",
 	category: "illustration",
 	note: "吉祥物設計練習 - 這是練習給憂鬱症防治機構的吉祥物-陽光小雞。這是小雞四分之三側面。",
@@ -10621,8 +10662,6 @@ var LoadingDiv = function (_React$Component) {
 	return LoadingDiv;
 }(_react2.default.Component);
 
-var _ref2 = _react2.default.createElement(LoadingDiv, null);
-
 var HomePage = function (_React$Component2) {
 	_inherits(HomePage, _React$Component2);
 
@@ -10632,18 +10671,13 @@ var HomePage = function (_React$Component2) {
 		var _this2 = _possibleConstructorReturn(this, _React$Component2.call(this, props));
 
 		_this2.state = {
-			height: 0,
-			loading: true
+			height: 0
 		};
 		_this2.updateHeight = _this2.updateHeight.bind(_this2);
 		return _this2;
 	}
 
-	HomePage.prototype.componentDidMount = function componentDidMount() {
-		this.setState({
-			loading: false
-		});
-	};
+	HomePage.prototype.componentDidMount = function componentDidMount() {};
 
 	HomePage.prototype.updateHeight = function updateHeight(height) {
 		this.setState({
@@ -10652,18 +10686,14 @@ var HomePage = function (_React$Component2) {
 	};
 
 	HomePage.prototype.render = function render() {
-		var _this3 = this;
-
-		var style = { height: this.state.height };
+		var style = { height: this.state.height, width: "100%" };
 		return _react2.default.createElement(
 			'div',
-			{ id: 'home', ref: function ref(el) {
-					_this3.homeDom = el;
-				}, style: style },
+			{ id: 'home' },
 			_react2.default.createElement(
 				'div',
-				{ id: 'containerb' },
-				this.state.loading ? _ref2 : _react2.default.createElement(_PinterestGrid.PinterestGrid, { items: items, columnWidth: 280, gutter: 20, columns: 5, updateHeight: this.updateHeight })
+				{ id: 'containerb', style: style },
+				_react2.default.createElement(_PinterestGrid.PinterestGrid, { items: items, columnWidth: 280, gutter: 20, columns: 5, updateHeight: this.updateHeight, delay: 100 })
 			)
 		);
 	};
@@ -10710,140 +10740,133 @@ var PinterestGrid = function (_React$Component) {
 
 		var _this = _possibleConstructorReturn(this, _React$Component.call(this, props));
 
-		_this.state = {
-			viewport: {
-				top: 0,
-				height: 0
-			},
-			renderState: 0, //0:not render, 1:rerender
-			columns: props.columns,
-			columnHeights: Array.from({ length: props.columns }, function () {
-				return 0;
-			}),
-			loadedItem: Array.from({ length: props.items.length }, function () {
-				return false;
-			}),
-			itemHeight: Array.from({ length: _this.props.items.length }, function () {
-				return 0;
-			}),
-			done: false
+		var columnWidth = props.columnWidth,
+		    gutter = props.gutter,
+		    items = props.items;
+
+		var loadedItems = Array.from({ length: items.length }, function () {
+			return { loaded: false, top: 0, left: 0, height: 0 };
+		}),
+		    columns = props.columns,
+		    columnHeights = Array.from({ length: columns }, function () {
+			return 0;
+		}),
+		    viewport = {
+			top: 0,
+			height: 0
 		};
-		_this.updateViewport = _this.updateViewport.bind(_this);
-		_this.updateLoaded = _this.updateLoaded.bind(_this);
-		_this.getShortestColumn = _this.getShortestColumn.bind(_this);
-		_this.getLongestLength = _this.getLongestLength.bind(_this);
+
+		for (var i = 0; i < items.length; i++) {
+			loadedItems[i].height = items[i].img_height;
+		}
+
+		_this.state = {
+			viewport: viewport,
+			columns: columns,
+			columnHeights: columnHeights,
+			loadedItems: loadedItems,
+			loading: true,
+			loadedIndex: 0
+		};
 		_this.updatePosition = _this.updatePosition.bind(_this);
 		return _this;
 	}
 
 	PinterestGrid.prototype.componentDidMount = function componentDidMount() {
-		// window.addEventListener('scroll', this.updateViewport, false);
+		window.addEventListener('scroll', this.updatePosition, false);
 		window.addEventListener('resize', this.updatePosition, false);
-		this.updatePosition();
+		this.updatePosition(true);
 	};
 
 	PinterestGrid.prototype.componentWillUnmount = function componentWillUnmount() {
-		// window.removeEventListener('scroll', this.updateViewport);
+		window.removeEventListener('scroll', this.updatePosition);
 		window.removeEventListener('resize', this.updatePosition);
 	};
 
 	PinterestGrid.prototype.componentDidUpdate = function componentDidUpdate(prevProps, prevState) {};
 
-	PinterestGrid.prototype.updateViewport = function updateViewport() {
-		// this.setState({
-		// 	viewport: {
-		// 		top: window.pageYOffset,
-		// 		height: window.innerHeight
-		// 	},
-		// });
-	};
-
-	PinterestGrid.prototype.updatePosition = function updatePosition() {
+	PinterestGrid.prototype.updatePosition = function updatePosition(first) {
 		var _props = this.props,
 		    columnWidth = _props.columnWidth,
-		    gutter = _props.gutter;
+		    gutter = _props.gutter,
+		    items = _props.items,
+		    delay = _props.delay;
+		var _state = this.state,
+		    loadedItems = _state.loadedItems,
+		    columns = _state.columns,
+		    columnHeights = _state.columnHeights,
+		    loadedIndex = _state.loadedIndex;
 
+		var top = void 0,
+		    left = void 0,
+		    shortestColumnIndex = void 0;
+		var colHeights = [].concat(columnHeights);
+		var newLoadedItems = [].concat(loadedItems);
 		var containerWidth = 1600;
 		if (false) {
 			containerWidth = document.getElementById("containerb").clientWidth;
 		}
-		var columns = Math.floor(containerWidth / (columnWidth + gutter));
-
-		if (columns !== this.state.columns) {
-			this.setState({
-				// viewport: {
-				// 	top: window.pageYOffset,
-				// 	height: window.innerHeight
-				// },
-				columns: columns,
-				columnHeights: Array.from({ length: columns }, function () {
-					return 0;
-				}),
-				loadedItem: Array.from({ length: this.props.items.length }, function () {
-					return false;
-				}),
-				done: false
+		var newColumns = Math.floor(containerWidth / (columnWidth + gutter));
+		var viewport = {
+			top: window.pageYOffset,
+			height: window.innerHeight
+		};
+		shortestColumnIndex = colHeights.indexOf(Math.min.apply(Math, colHeights));
+		if (newColumns !== this.state.columns) {
+			loadedIndex = 0;
+			colHeights = Array.from({ length: newColumns }, function () {
+				return 0;
 			});
 		}
-	};
+		if (newColumns === this.state.columns && viewport.height + viewport.top < colHeights[shortestColumnIndex] + delay) return;
 
-	PinterestGrid.prototype.getShortestColumn = function getShortestColumn() {
-		var minValue = Math.min.apply(Math, this.state.columnHeights);
-		return this.state.columnHeights.indexOf(minValue);
-	};
+		for (var i = 0; i < items.length; i++) {
+			if (newColumns !== this.state.columns) {
+				newLoadedItems[i] = { loaded: false, top: 0, left: 0, height: items[i].img_height };
+			}
+			var item = newLoadedItems[i];
+			if (item.loaded) {
+				continue;
+			}
+			shortestColumnIndex = colHeights.indexOf(Math.min.apply(Math, colHeights));
+			item.top = colHeights[shortestColumnIndex];
+			item.left = (columnWidth + gutter) * shortestColumnIndex;
 
-	PinterestGrid.prototype.getLongestLength = function getLongestLength() {
-		return Math.max.apply(Math, this.state.columnHeights);
-	};
+			if (viewport.height + viewport.top > colHeights[shortestColumnIndex] + delay) {
+				item.loaded = true;
+				colHeights[shortestColumnIndex] += items[i].img_height + this.props.gutter;
+				loadedIndex++;
+			} else {
+				break;
+			}
+		}
 
-	PinterestGrid.prototype.updateLoaded = function updateLoaded(id, done, colid, height) {
-		var loadedItem = [].concat(this.state.loadedItem);
-		if (loadedItem[id] === done) return;
-
-		loadedItem[id] = done;
-
-		var columnHeights = [].concat(this.state.columnHeights);
-		columnHeights[colid] += height + this.props.gutter;
-		var finishRender = loadedItem.filter(function (i) {
-			return !i;
-		}).length <= 0;
-		this.setState({
-			loadedItem: loadedItem,
-			done: finishRender,
-			columnHeights: columnHeights
-		});
-		this.props.updateHeight(this.getLongestLength());
+		if (first || newColumns !== this.state.columns) {
+			this.setState({
+				viewport: viewport,
+				columns: newColumns,
+				columnHeights: colHeights,
+				loadedItems: newLoadedItems,
+				loadedIndex: loadedIndex
+			});
+		}
+		this.props.updateHeight(Math.max.apply(Math, colHeights) + gutter);
 	};
 
 	PinterestGrid.prototype.render = function render() {
-		var _this2 = this;
-
 		var _props2 = this.props,
 		    columnWidth = _props2.columnWidth,
-		    gutter = _props2.gutter;
-		var _state = this.state,
-		    reRender = _state.reRender,
-		    itemHeight = _state.itemHeight,
-		    loadedItem = _state.loadedItem,
-		    columns = _state.columns;
+		    gutter = _props2.gutter,
+		    items = _props2.items;
+		var _state2 = this.state,
+		    loadedItems = _state2.loadedItems,
+		    loadedIndex = _state2.loadedIndex,
+		    columns = _state2.columns;
 
-		var loadedItemsCnt = loadedItem.filter(function (i) {
-			return i;
-		}).length;
-		var top = void 0,
-		    left = void 0,
-		    shortestColumnIndex = void 0;
-		var colHeights = [].concat(this.state.columnHeights);
 		var style = { width: (columnWidth + gutter) * columns };
 
-		shortestColumnIndex = this.getShortestColumn();
-		top = this.state.columnHeights[shortestColumnIndex];
-		left = (columnWidth + gutter) * shortestColumnIndex;
-		// console.log(top, left, loadedItem, colHeights, shortestColumnIndex, loadedItemsCnt);
-
-		var ItemViews = this.props.items.slice(0, loadedItemsCnt + 1).map(function (item, id) {
-			return _react2.default.createElement(_PinterestItem.PinterestItem, { key: id, item: item, viewport: _this2.state.viewport, reRender: !loadedItem[id],
-				id: id, updateLoaded: _this2.updateLoaded, loadedItemsCnt: loadedItemsCnt, top: top, left: left, colid: shortestColumnIndex });
+		var ItemViews = loadedItems.slice(0, loadedIndex).map(function (item, id) {
+			return _react2.default.createElement(_PinterestItem.PinterestItem, { key: id, item: items[id], reRender: !item.loaded, id: id, top: item.top, left: item.left });
 		});
 
 		return _react2.default.createElement(
@@ -10859,8 +10882,9 @@ var PinterestGrid = function (_React$Component) {
 _PinterestItem.PinterestItem.defaultProps = {
 	showImage: false,
 	columns: 5,
-	columnWidth: 1600,
-	gutter: 15
+	columnWidth: 280,
+	gutter: 15,
+	delay: 300
 };
 
 exports.PinterestGrid = PinterestGrid;
@@ -10905,14 +10929,8 @@ var PinterestImg = function (_React$Component) {
 	}
 
 	PinterestImg.prototype.componentDidUpdate = function componentDidUpdate(prevProps) {};
-	// updatePosition() {
-	// 	let el = this.img;
-	// 	this.props.updateImagePosition(el.offsetTop, el.offsetHeight);
-	// }
-
 
 	PinterestImg.prototype.handleImageLoaded = function handleImageLoaded(e) {
-		// console.log(e.target.clientHeight);
 		this.props.updateLoaded(this.props.id, true, e.target.clientHeight);
 	};
 
@@ -10922,7 +10940,7 @@ var PinterestImg = function (_React$Component) {
 		return _react2.default.createElement(
 			'div',
 			{ className: 'pinterest-img' },
-			_react2.default.createElement('img', { src: img, alt: this.props.alt, onLoad: this.handleImageLoaded })
+			_react2.default.createElement('img', { src: img, alt: this.props.alt /*onLoad={this.handleImageLoaded}*/ })
 		);
 	};
 
@@ -10930,9 +10948,7 @@ var PinterestImg = function (_React$Component) {
 }(_react2.default.Component);
 
 PinterestImg.defaultProps = {
-	showImage: false,
-	alt: "",
-	loader: "/images/Preloader_8.gif"
+	alt: ""
 };
 exports.PinterestImg = PinterestImg;
 
@@ -10972,69 +10988,23 @@ var PinterestItem = function (_React$Component) {
 
 		var _this = _possibleConstructorReturn(this, _React$Component.call(this, props));
 
-		var top = void 0;
-		var left = void 0;
 		_this.state = {
 			loadedImg: Array.from({ length: props.item.images.length }, function () {
 				return { loaded: false, height: 0 };
 			}),
-			done: false,
-			top: props.top,
-			left: props.left
+			done: false
 		};
-		_this.updateImagePosition = _this.updateImagePosition.bind(_this);
-		_this.setShowImage = _this.setShowImage.bind(_this);
 		_this.updateLoaded = _this.updateLoaded.bind(_this);
 		return _this;
 	}
 
-	PinterestItem.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
-		if (nextProps.reRender && this.props.reRender !== nextProps.reRender) {
-			this.setState({
-				top: nextProps.top,
-				left: nextProps.left,
-				reRender: true
-			});
-		}
-	};
+	PinterestItem.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {};
 
 	PinterestItem.prototype.componentDidMount = function componentDidMount() {};
 
 	PinterestItem.prototype.componentWillMount = function componentWillMount() {};
 
-	PinterestItem.prototype.componentDidUpdate = function componentDidUpdate(prevProps, prevState) {
-		if (this.state.reRender) {
-			this.props.updateLoaded(this.props.id, true, this.props.colid, this.totoalHight);
-			this.setState({
-				reRender: false
-			});
-		}
-	};
-
-	PinterestItem.prototype.updateImagePosition = function updateImagePosition(top, height) {
-		// image is already displayed, no need to check anything
-		if (this.state.done) {
-			return;
-		}
-
-		// update showImage state if component element is in the viewport
-		var min = this.props.viewport.top;
-		var max = this.props.viewport.top + this.props.viewport.height;
-
-		if (min <= top + height && top <= max - 300) {
-			this.setShowImage(this.props.id, true);
-		}
-	};
-
-	PinterestItem.prototype.setShowImage = function setShowImage(id, show) {
-		var l = [].concat(this.state.loadedImg);
-		this.setState({
-			loadedImg: [].concat(l.slice(0, id), [!!show], l.slice(id, l.length)),
-			done: l.filter(function (i) {
-				return !i;
-			}).length <= 0
-		});
-	};
+	PinterestItem.prototype.componentDidUpdate = function componentDidUpdate(prevProps, prevState) {};
 
 	PinterestItem.prototype.updateLoaded = function updateLoaded(id, done, height) {
 		var l = [].concat(this.state.loadedImg);
@@ -11050,18 +11020,20 @@ var PinterestItem = function (_React$Component) {
 			var totoalHight = this.ItemDesc.clientHeight + l.reduce(function (acc, val) {
 				return acc + val.height;
 			}, 0);
-			this.props.updateLoaded(this.props.id, true, this.props.colid, totoalHight);
-			this.totoalHight = totoalHight;
+			// console.log(totoalHight);
+			// use this to get total hight!!!!!!!!!!!!!!!!!!!!!!!!
 		}
 	};
 
 	PinterestItem.prototype.render = function render() {
 		var _this2 = this;
 
-		// console.log(this.props);
-		var item = this.props.item;
+		var _props = this.props,
+		    item = _props.item,
+		    top = _props.top,
+		    left = _props.left;
 
-		var style = { top: this.state.top, left: this.state.left };
+		var style = { top: top, left: left };
 		return _react2.default.createElement(
 			'div',
 			{ className: 'pinterest-item', style: style },
@@ -11069,8 +11041,7 @@ var PinterestItem = function (_React$Component) {
 				'div',
 				null,
 				item.images.map(function (image, id) {
-					return _react2.default.createElement(_PinterestImg.PinterestImg, { src: image, key: id, id: id, viewport: _this2.props.viewport, showImage: _this2.state.loadedImg[id].loaded,
-						updateImagePosition: _this2.updateImagePosition, updateLoaded: _this2.updateLoaded });
+					return _react2.default.createElement(_PinterestImg.PinterestImg, { src: image, key: id, id: id /*updateLoaded={this.updateLoaded}*/ });
 				})
 			),
 			_react2.default.createElement(
@@ -11096,9 +11067,7 @@ var PinterestItem = function (_React$Component) {
 	return PinterestItem;
 }(_react2.default.Component);
 
-PinterestItem.defaultProps = {
-	showImage: false
-};
+PinterestItem.defaultProps = {};
 exports.PinterestItem = PinterestItem;
 
 /***/ }),

@@ -7,104 +7,106 @@ import { PinterestItem } from './PinterestItem';
 let PinterestGrid = class PinterestGrid extends React.Component{
 	constructor(props) {
 		super(props);
-		this.state={
-			viewport: {
+		const { columnWidth, gutter, items,  } = props;
+		let loadedItems = Array.from({ length: items.length }, () => ({loaded:false, top: 0, left: 0, height:0}))
+			, columns = props.columns
+			, columnHeights = Array.from({ length:  columns}, () => 0)
+			, viewport = {
 				top: 0,
 				height: 0
-			},
-			renderState: 0,   //0:not render, 1:rerender
-			columns: props.columns,
-			columnHeights : Array.from({ length:  props.columns}, () => 0),
-			loadedItem: Array.from({ length: props.items.length }, () => false), 
-			itemHeight: Array.from({ length: this.props.items.length }, () => 0), 
-			done: false
+			};
+
+		for (let i=0; i<items.length; i++){
+			loadedItems[i].height = items[i].img_height;	
+		}
+
+		this.state={
+			viewport,
+			columns,
+			columnHeights,
+			loadedItems, 
+			loading: true,
+			loadedIndex : 0
 		};
-		this.updateViewport = this.updateViewport.bind(this);
-		this.updateLoaded = this.updateLoaded.bind(this);
-		this.getShortestColumn = this.getShortestColumn.bind(this);
-		this.getLongestLength = this.getLongestLength.bind(this);
 		this.updatePosition = this.updatePosition.bind(this);
 	}
 	componentDidMount() {
-		// window.addEventListener('scroll', this.updateViewport, false);
+		window.addEventListener('scroll', this.updatePosition, false);
 		window.addEventListener('resize', this.updatePosition, false);
-		this.updatePosition();
+		this.updatePosition(true);
 	}
 
 	componentWillUnmount() {
-		// window.removeEventListener('scroll', this.updateViewport);
+		window.removeEventListener('scroll', this.updatePosition);
 		window.removeEventListener('resize', this.updatePosition);
 	}
 	componentDidUpdate(prevProps, prevState) {
 	}	
-	updateViewport () {
-		// this.setState({
-		// 	viewport: {
-		// 		top: window.pageYOffset,
-		// 		height: window.innerHeight
-		// 	},
-		// });
-	}
-	updatePosition () {
-		let {columnWidth, gutter} = this.props;
+	updatePosition (first) {
+		const { columnWidth, gutter, items, delay } = this.props;
+		let { loadedItems, columns, columnHeights, loadedIndex} = this.state;
+		let top, left, shortestColumnIndex;
+		let colHeights = [...columnHeights];
+		let newLoadedItems = [...loadedItems];
 		let containerWidth = 1600; 
 		if (process.env.BROWSER) {
 			containerWidth = document.getElementById("containerb").clientWidth;
 		}
-		let columns = Math.floor(containerWidth / (columnWidth + gutter));
-
-		if (columns !== this.state.columns ){
-			this.setState({
-				// viewport: {
-				// 	top: window.pageYOffset,
-				// 	height: window.innerHeight
-				// },
-				columns,
-				columnHeights : Array.from({ length: columns }, () => 0),
-				loadedItem: Array.from({ length: this.props.items.length }, () => false), 				
-				done: false
-			});
+		let newColumns = Math.floor(containerWidth / (columnWidth + gutter));
+		let viewport = {
+					top: window.pageYOffset,
+					height: window.innerHeight
+				};
+		shortestColumnIndex = colHeights.indexOf(Math.min(...colHeights));	
+		if (newColumns !== this.state.columns ){
+			loadedIndex = 0;
+			colHeights = Array.from({ length:  newColumns}, () => 0);
 		}
+		if (newColumns === this.state.columns && viewport.height + viewport.top < colHeights[shortestColumnIndex] + delay)
+			return; 
+
+
+		for (let i=0; i<items.length; i++){
+			if (newColumns !== this.state.columns ){
+				newLoadedItems[i] = {loaded:false, top: 0, left: 0, height:items[i].img_height};
+			}			
+			let item = newLoadedItems[i];
+			if(item.loaded){
+				continue;
+			}
+			shortestColumnIndex = colHeights.indexOf(Math.min(...colHeights));			
+			item.top = colHeights[shortestColumnIndex];	
+			item.left = ( columnWidth + gutter ) * shortestColumnIndex;		
+
+			if (viewport.height + viewport.top > colHeights[shortestColumnIndex] + delay ){
+				item.loaded = true;
+				colHeights[shortestColumnIndex] += items[i].img_height + this.props.gutter ;				
+				loadedIndex++;				
+			}else{
+				break;
+			}
+
+		}
+
+		if (first || newColumns !== this.state.columns ){
+			this.setState({
+				viewport,
+				columns: newColumns,
+				columnHeights : colHeights,
+				loadedItems: newLoadedItems,
+				loadedIndex,
+			});			
+		}
+		this.props.updateHeight(Math.max(...colHeights) + gutter);
 	}
-    getShortestColumn() {
-        const minValue = Math.min(...this.state.columnHeights);
-        return this.state.columnHeights.indexOf(minValue);
-    }
-    getLongestLength() {
-        return Math.max(...this.state.columnHeights);
-    }
-    updateLoaded(id, done, colid, height) {
-		let loadedItem = [...this.state.loadedItem];
-		if (loadedItem[id] === done)	return;
-
-		loadedItem[id] = done;
-
-		let columnHeights = [...this.state.columnHeights];
-		columnHeights[colid] += height + this.props.gutter ;
-		let finishRender = (loadedItem.filter((i)=>!i).length <= 0);
-		this.setState({
-			loadedItem,
-			done: finishRender,
-			columnHeights,
-		});
-		this.props.updateHeight(this.getLongestLength());		
-    }	
+	
 	render() {
-		const { columnWidth, gutter } = this.props;
-		let {reRender,itemHeight,loadedItem,columns} = this.state;
-		let loadedItemsCnt = loadedItem.filter((i)=>i).length;
-		let top,left,shortestColumnIndex;
-		let colHeights = [...this.state.columnHeights];
+		const { columnWidth, gutter, items } = this.props;
+		let { loadedItems,  loadedIndex, columns} = this.state;
 		let style = {width: (columnWidth + gutter) * columns};
-		
-		shortestColumnIndex = this.getShortestColumn();
-		top = this.state.columnHeights[shortestColumnIndex];
-		left = ( columnWidth + gutter ) * shortestColumnIndex;
-		// console.log(top, left, loadedItem, colHeights, shortestColumnIndex, loadedItemsCnt);
 
-		let ItemViews = this.props.items.slice(0, loadedItemsCnt + 1).map((item,id) => {
-			return (<PinterestItem key={id} item={item} viewport={this.state.viewport} reRender={!loadedItem[id]} 
-						id={id} updateLoaded={this.updateLoaded} loadedItemsCnt={loadedItemsCnt} top={top} left={left} colid={shortestColumnIndex}/>);
+		let ItemViews = loadedItems.slice(0, loadedIndex ).map((item,id) => {
+			return (<PinterestItem key={id} item={items[id]} reRender={!item.loaded} id={id} top={item.top} left={item.left} />);
 		});
 
 		return (
@@ -121,13 +123,15 @@ PinterestGrid.propTypes = {
 	columnWidth: React.PropTypes.number.isRequired,
 	gutter: React.PropTypes.number.isRequired,	
 	updateHeight: React.PropTypes.func.isRequired,	
+	delay: React.PropTypes.number.isRequired,	
 };
 
 PinterestItem.defaultProps = {
 	showImage: false,
     columns: 5,
-    columnWidth: 1600,
-    gutter: 15	
+    columnWidth: 280,
+    gutter: 15,
+	delay: 300
 };
 
 export {PinterestGrid};
