@@ -10711,7 +10711,7 @@ var HomePage = function (_React$Component2) {
 		var _this2 = _possibleConstructorReturn(this, _React$Component2.call(this, props));
 
 		_this2.state = {
-			height: 0
+			height: "100vh"
 		};
 		_this2.updateHeight = _this2.updateHeight.bind(_this2);
 		return _this2;
@@ -10793,7 +10793,7 @@ var PinterestGrid = function (_React$Component) {
 		    items = props.items;
 
 		var loadedItems = Array.from({ length: items.length }, function () {
-			return { loaded: false, top: 0, left: 0 };
+			return { loaded: false, top: 0, left: 0, ssr: false };
 		}),
 		    columns = props.columns,
 		    columnHeights = void 0,
@@ -10816,6 +10816,7 @@ var PinterestGrid = function (_React$Component) {
 			item.height = items[i].img_height;
 			if (i <= columns * 2) {
 				shortestColumnIndex = columnHeights.indexOf(Math.min.apply(Math, columnHeights));
+				item.ssr = true;
 				item.top = columnHeights[shortestColumnIndex];
 				item.left = (columnWidth + gutter) * shortestColumnIndex;
 				item.loaded = true;
@@ -10845,6 +10846,7 @@ var PinterestGrid = function (_React$Component) {
 	PinterestGrid.prototype.componentDidMount = function componentDidMount() {
 		window.addEventListener('scroll', this.updatePosition, false);
 		window.addEventListener('resize', this.updatePosition, false);
+		this.props.updateHeight(this.state.height + this.props.gutter);
 		this.updatePosition(true);
 	};
 
@@ -10884,8 +10886,8 @@ var PinterestGrid = function (_React$Component) {
 			colHeights = Array.from({ length: newColumns }, function () {
 				return 0;
 			});
-			newLoadedItems = Array.from({ length: items.length }, function () {
-				return { loaded: false, top: 0, left: 0 };
+			newLoadedItems = Array.from({ length: items.length }, function (v, i) {
+				return { loaded: false, top: 0, left: 0, ssr: loadedItems[i].ssr };
 			});
 		}
 		shortestColumnIndex = colHeights.indexOf(Math.min.apply(Math, colHeights));
@@ -10936,7 +10938,7 @@ var PinterestGrid = function (_React$Component) {
 		var style = { width: (columnWidth + gutter) * columns };
 
 		var ItemViews = loadedItems.slice(0, loadedIndex).map(function (item, id) {
-			return _react2.default.createElement(_PinterestItem.PinterestItem, { key: id, item: items[id], reRender: !item.loaded, id: id, top: item.top, left: item.left });
+			return _react2.default.createElement(_PinterestItem.PinterestItem, { key: id, item: items[id], reRender: !item.loaded, id: id, top: item.top, left: item.left, ssr: item.ssr });
 		});
 
 		return _react2.default.createElement(
@@ -10991,26 +10993,36 @@ var PinterestImg = function (_React$Component) {
 	function PinterestImg(props) {
 		_classCallCheck(this, PinterestImg);
 
-		// this.updatePosition = this.updatePosition.bind(this);
 		var _this = _possibleConstructorReturn(this, _React$Component.call(this, props));
 
+		_this.state = {
+			show: false
+		};
+		// this.updatePosition = this.updatePosition.bind(this);
 		_this.handleImageLoaded = _this.handleImageLoaded.bind(_this);
 		return _this;
 	}
 
 	PinterestImg.prototype.componentDidUpdate = function componentDidUpdate(prevProps) {};
 
+	PinterestImg.prototype.componentDidMount = function componentDidMount() {};
+
 	PinterestImg.prototype.handleImageLoaded = function handleImageLoaded(e) {
-		this.props.updateLoaded(this.props.id, true, e.target.clientHeight);
+		this.setState({
+			show: true
+		});
+		// this.props.updateLoaded(this.props.id, true, e.target.clientHeight);
 	};
 
 	PinterestImg.prototype.render = function render() {
 		// let img = (this.props.showImage) ? this.props.src : this.props.loader;
 		var img = this.props.src;
+		var show = this.state.show || this.props.ssr;
+		var style = { opacity: show ? "1" : "0" };
 		return _react2.default.createElement(
 			'div',
 			{ className: 'pinterest-img' },
-			_react2.default.createElement('img', { src: img, alt: this.props.alt /*onLoad={this.handleImageLoaded}*/ })
+			_react2.default.createElement('img', { src: img, alt: this.props.alt, style: style, onLoad: this.handleImageLoaded })
 		);
 	};
 
@@ -11101,7 +11113,8 @@ var PinterestItem = function (_React$Component) {
 		var _props = this.props,
 		    item = _props.item,
 		    top = _props.top,
-		    left = _props.left;
+		    left = _props.left,
+		    ssr = _props.ssr;
 
 		var style = { top: top, left: left };
 		return _react2.default.createElement(
@@ -11111,7 +11124,7 @@ var PinterestItem = function (_React$Component) {
 				'div',
 				null,
 				item.images.map(function (image, id) {
-					return _react2.default.createElement(_PinterestImg.PinterestImg, { src: image, key: id, id: id /*updateLoaded={this.updateLoaded}*/ });
+					return _react2.default.createElement(_PinterestImg.PinterestImg, { src: image, key: id, id: id, ssr: ssr /*updateLoaded={this.updateLoaded}*/ });
 				})
 			),
 			_react2.default.createElement(

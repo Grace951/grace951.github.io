@@ -35,14 +35,14 @@ let PinterestItem = class PinterestItem extends React.Component{
 		}		
     }
 	render() {
-		let {item, top, left} = this.props;
+		let {item, top, left, ssr} = this.props;
 		let style = {top, left };
 		return (
 			<div className="pinterest-item" style={style}  >
 				<div >
 				{
 					item.images.map((image,id) => (
-						<PinterestImg src={image} key={id} id={id} /*updateLoaded={this.updateLoaded}*/ />
+						<PinterestImg src={image} key={id} id={id}  ssr={ssr} /*updateLoaded={this.updateLoaded}*/ />
 					))
 				}
 				</div>
@@ -61,6 +61,7 @@ PinterestItem.propTypes = {
 	top: React.PropTypes.number.isRequired,
 	left: React.PropTypes.number.isRequired,
 	item: React.PropTypes.object.isRequired,
+	ssr: React.PropTypes.bool.isRequired,	
 };
 
 

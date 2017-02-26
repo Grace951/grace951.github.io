@@ -414,7 +414,7 @@ let HomePage = class HomePage extends React.Component{
 		super(props);	
 	
 		this.state = {
-			height: 0
+			height: "100vh"
 		};
 		this.updateHeight = this.updateHeight.bind(this);
     }

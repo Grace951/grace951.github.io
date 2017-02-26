@@ -8,7 +8,7 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 	constructor(props) {
 		super(props);
 		const { columnWidth, gutter, items,  } = props;
-		let loadedItems = Array.from({ length: items.length }, () => ({loaded:false, top: 0, left: 0}))
+		let loadedItems = Array.from({ length: items.length }, () => ({loaded:false, top: 0, left: 0, ssr:false}))
 			, columns = props.columns
 			, columnHeights
 			, height = 0
@@ -27,7 +27,8 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 			item.height = items[i].img_height;	
 			if(i <= columns * 2){
 				shortestColumnIndex = columnHeights.indexOf(Math.min(...columnHeights));			
-				item.top = columnHeights[shortestColumnIndex];	
+				item.ssr = true;
+				item.top = columnHeights[shortestColumnIndex];
 				item.left = ( columnWidth + gutter ) * shortestColumnIndex;	
 				item.loaded = true;
 				height = columnHeights[shortestColumnIndex] += items[i].img_height + this.props.gutter ;				
@@ -55,6 +56,7 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 	componentDidMount() {
 		window.addEventListener('scroll', this.updatePosition, false);
 		window.addEventListener('resize', this.updatePosition, false);
+		this.props.updateHeight(this.state.height + this.props.gutter);
 		this.updatePosition(true);
 	}
 
@@ -82,7 +84,7 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 		if (newColumns !== this.state.columns ){
 			loadedIndex = 0;
 			colHeights = Array.from({ length:  newColumns}, () => 0);
-			newLoadedItems = Array.from({ length: items.length }, () => ({loaded:false, top: 0, left: 0}))
+			newLoadedItems = Array.from({ length: items.length }, (v, i) => ({loaded:false, top: 0, left: 0, ssr:loadedItems[i].ssr}));
 		}
 		shortestColumnIndex = colHeights.indexOf(Math.min(...colHeights));	
 		if (newColumns === this.state.columns && viewport.height + viewport.top < colHeights[shortestColumnIndex] + delay)
@@ -128,7 +130,7 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 		let style = {width: (columnWidth + gutter) * columns};
 
 		let ItemViews = loadedItems.slice(0, loadedIndex ).map((item,id) => {
-			return (<PinterestItem key={id} item={items[id]} reRender={!item.loaded} id={id} top={item.top} left={item.left} />);
+			return (<PinterestItem key={id} item={items[id]} reRender={!item.loaded} id={id} top={item.top} left={item.left} ssr={item.ssr}/>);
 		});
 
 		return (
