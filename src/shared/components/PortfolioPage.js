@@ -4,14 +4,16 @@ if (process.env.BROWSER) {
 import React from 'react';
 
 const PortfolioPage = (props) => (
-	<div className="container">
-		<div className="row">
-			PortfolioPage
-		</div>
+	<div className="portfolio">
+		{props.children}
 	</div>
 );
 
 PortfolioPage.propTypes = {
+    children: React.PropTypes.oneOfType([
+      React.PropTypes.arrayOf(React.PropTypes.node),
+      React.PropTypes.node
+    ])		
 };
 
 export default PortfolioPage;
