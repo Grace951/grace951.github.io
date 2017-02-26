@@ -1,4 +1,5 @@
 # Portfolio Home Page
+* React + Redux
 * Portfolio Home Page
 * Bootstrap + SASS 
 * RWD (Responsive Web Design)
@@ -11,14 +12,14 @@
 MIT
 
 ## Live Demo 
-Live demo: [`https://hopeshelter.herokuapp.com/#l`](https://grace951.github.io/home-page/index.html)
+Live demo: [`https://hopeshelter.herokuapp.com/`](https://hopeshelter.herokuapp.com/)
 
 # Build locally
 ```
-git clone https://github.com/Grace951/home-page.git
+git clone https://github.com/Grace951/grace951.github.io.git
 cd home-page
 npm install
-gulp
+npm run dev
 ```
 
 
