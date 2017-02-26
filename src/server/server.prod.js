@@ -30,7 +30,7 @@ app.use(helmet.contentSecurityPolicy({
 	directives: {
 		defaultSrc: ["'none'"],
 		scriptSrc: ["'self'", "'unsafe-inline'", "https://www.google-analytics.com/", "http://cse.google.com/", "https://cse.google.com/", "https://connect.facebook.net/"
-												, "https://apis.google.com/"	],
+												, "https://apis.google.com/", "https://cdn.jsdelivr.net/", "https://ajax.googleapis.com/"	],
 		styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
 		imgSrc: ["'self'", "data:", "https://www.google-analytics.com/", "https://www.facebook.com/", "https://staticxx.facebook.com/"],
 		fontSrc: ["'self'", "https://fonts.gstatic.com", "data:", ],

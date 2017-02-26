@@ -11754,6 +11754,7 @@ var Root = function (_React$Component) {
 			showSmNav: false
 		};
 		_this.getGoogleAuth2 = _this.getGoogleAuth2.bind(_this);
+		_this.loadScript = _this.loadScript.bind(_this);
 		return _this;
 	}
 
@@ -11761,15 +11762,35 @@ var Root = function (_React$Component) {
 		return this.googleAuth2;
 	};
 
+	Root.prototype.loadScript = function loadScript(src) {
+		return new Promise(function (resolve, reject) {
+			var s = void 0;
+			s = document.createElement('script');
+			s.src = src;
+			s.onload = resolve;
+			s.onerror = reject;
+			document.head.appendChild(s);
+		});
+	};
+
 	Root.prototype.componentDidMount = function componentDidMount() {
 		//GA
-		(function (i, s, o, g, r, a, m) {
-			i['GoogleAnalyticsObject'] = r;i[r] = i[r] || function () {
-				(i[r].q = i[r].q || []).push(arguments);
-			}, i[r].l = 1 * new Date();a = s.createElement(o), m = s.getElementsByTagName(o)[0];a.async = 1;a.src = g;m.parentNode.insertBefore(a, m);
-		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-		ga('create', 'UA-50969260-4', 'auto');
-		ga('send', 'pageview');
+		// (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		// (i[r].q=i[r].q||[]).push(arguments);},i[r].l=1*new Date();a=s.createElement(o),
+		// m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m);
+		// })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+		// ga('create', 'UA-50969260-4', 'auto');
+		// ga('send', 'pageview');
+		// for google page speed insight, https://www.keycdn.com/blog/google-pagespeed-insights-wordpress/
+		this.loadScript("https://cdn.jsdelivr.net/ga-lite/latest/ga-lite.min.js").then(function () {
+			var galite = galite || {};galite.UA = 'UA-50969260-4';
+		});
+
+		//Google Web fonts
+		var WebFontConfig = {
+			google: { families: ['Merriweather::latin', 'Rajdhani:400,500,600:latin', 'Open+Sans::latin', 'Ubuntu:300italic:latin'] }
+		};
+		this.loadScript("https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js").then(function () {});
 	};
 
 	Root.prototype.render = function render() {
@@ -23443,7 +23464,7 @@ app.use(_helmet2.default.noCache());
 app.use(_helmet2.default.contentSecurityPolicy({
 	directives: {
 		defaultSrc: ["'none'"],
-		scriptSrc: ["'self'", "'unsafe-inline'", "https://www.google-analytics.com/", "http://cse.google.com/", "https://cse.google.com/", "https://connect.facebook.net/", "https://apis.google.com/"],
+		scriptSrc: ["'self'", "'unsafe-inline'", "https://www.google-analytics.com/", "http://cse.google.com/", "https://cse.google.com/", "https://connect.facebook.net/", "https://apis.google.com/", "https://cdn.jsdelivr.net/", "https://ajax.googleapis.com/"],
 		styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
 		imgSrc: ["'self'", "data:", "https://www.google-analytics.com/", "https://www.facebook.com/", "https://staticxx.facebook.com/"],
 		fontSrc: ["'self'", "https://fonts.gstatic.com", "data:"],
