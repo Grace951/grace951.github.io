@@ -11234,21 +11234,105 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 if (false) {
-	require('./edit.sass');
+    require('./edit.sass');
 }
 
 var _ref = _react2.default.createElement(
-	'div',
-	{ className: 'container' },
-	_react2.default.createElement(
-		'div',
-		{ className: 'row' },
-		'EDIT'
-	)
+    'section',
+    { id: 'editorial' },
+    _react2.default.createElement(
+        'div',
+        { className: 'container' },
+        _react2.default.createElement(
+            'div',
+            { className: 'row' },
+            _react2.default.createElement(
+                'div',
+                { className: 'col-lg-2 col-md-2 col-sm-2 col-lg-2' },
+                _react2.default.createElement(
+                    'h2',
+                    { id: 'edit-title', className: 'cat-right right' },
+                    '\u6392\u7248',
+                    _react2.default.createElement('br', null),
+                    '\u4F5C\u54C1'
+                )
+            ),
+            _react2.default.createElement(
+                'div',
+                { id: 'bookshelf', className: ' col-lg-10 col-md-10 col-sm-10 bookshelf' },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'row' },
+                    _react2.default.createElement(
+                        'div',
+                        { className: ' col-xs-12 col-sm-6 col-md-6 col-lg-6 ' },
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'div',
+                                { className: ' col-xs-12 col-sm-12 col-md-4 col-lg-4 ' },
+                                _react2.default.createElement(
+                                    'h3',
+                                    { className: 'book-title' },
+                                    '\u4F5C\u54C1\u96C6'
+                                ),
+                                _react2.default.createElement(
+                                    'p',
+                                    null,
+                                    '\u9019\u662F\u6211\u7684\u66F8\u9762\u4F5C\u54C1\u96C6\uFF0C\u7C21\u55AE\u7684\u81EA\u6211\u4ECB\u7D39\u52A0\u4E0A\u55AE\u7D14\u5927\u65B9\u7684\u4F5C\u54C1\u7DE8\u6392\u3002'
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'right col-xs-12 col-sm-12 col-md-8 col-lg-8 ' },
+                                _react2.default.createElement(
+                                    'a',
+                                    { href: 'https://issuu.com/grace_yeh/docs/portfilio_issuu', target: '_blank' },
+                                    _react2.default.createElement('img', { className: 'book img-responsive', src: '/images/portfolio/full/portfolio01.jpg' })
+                                )
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: ' col-xs-12 col-sm-6 col-md-6 col-lg-6' },
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'div',
+                                { className: ' col-xs-12 col-sm-12 col-md-4 col-lg-4 ' },
+                                _react2.default.createElement(
+                                    'h3',
+                                    { className: 'book-title' },
+                                    '\u516C\u53F8\u7522\u54C1\u578B\u9304'
+                                ),
+                                _react2.default.createElement(
+                                    'p',
+                                    null,
+                                    '\u9019\u662F\u4E00\u672C\u7522\u54C1\u578B\u9304\u7684\u6392\u7248\u7DF4\u7FD2\uFF0C\u4EE5\u9AD8\u5C0D\u6BD4\u5927\u6A19\u984C\u5438\u5F15\u8B80\u8005\u7684\u76EE\u5149\uFF0C\u4E26\u4EE5\u7559\u767D\u4F7F\u7248\u9762\u8212\u9069\u5927\u65B9\u3002'
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'right col-xs-12 col-sm-12 col-md-8 col-lg-8 ' },
+                                _react2.default.createElement(
+                                    'a',
+                                    { href: 'https://issuu.com/grace_yeh/docs/______?e=11793034/12474947', target: '_blank' },
+                                    _react2.default.createElement('img', { className: 'book img-responsive', src: '/images/book1/front.jpg' })
+                                )
+                            )
+                        )
+                    )
+                )
+            )
+        )
+    )
 );
 
 var EditoralPage = function EditoralPage(props) {
-	return _ref;
+    return _ref;
 };
 
 exports.default = EditoralPage;
@@ -12242,8 +12326,8 @@ var Routes = function Routes(props) {
 				{ path: 'portfolio', component: _PortfolioPage2.default },
 				_react2.default.createElement(_reactRouter.Route, { path: 'f2e', component: _F2EPage2.default, onEnter: props.hideXsNav }),
 				_react2.default.createElement(_reactRouter.Route, { path: 'graphic', component: _GraphicPage2.default, onEnter: props.hideXsNav }),
-				_react2.default.createElement(_reactRouter.Route, { path: ':id', component: _DetailsPage2.default, onEnter: props.hideXsNav }),
-				_react2.default.createElement(_reactRouter.Route, { path: 'editoral', component: _EditoralPage2.default, onEnter: props.hideXsNav })
+				_react2.default.createElement(_reactRouter.Route, { path: 'editoral', component: _EditoralPage2.default, onEnter: props.hideXsNav }),
+				_react2.default.createElement(_reactRouter.Route, { path: ':id', component: _DetailsPage2.default, onEnter: props.hideXsNav })
 			),
 			_react2.default.createElement(_reactRouter.Route, { path: 'aboutme', component: _AboutPage2.default, onEnter: props.hideXsNav }),
 			_ref2

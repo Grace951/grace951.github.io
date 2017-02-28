@@ -23,8 +23,8 @@ const Routes = (props) => {
 			<Route path="portfolio" component={PortfolioPage} >
 				<Route path="f2e" component={F2EPage} onEnter={props.hideXsNav} />
 				<Route path="graphic" component={GraphicPage} onEnter={props.hideXsNav} />
-				<Route path=":id" component={DetailsPage} onEnter={props.hideXsNav} />
 				<Route path="editoral" component={EditoralPage} onEnter={props.hideXsNav} />
+				<Route path=":id" component={DetailsPage} onEnter={props.hideXsNav} />
 			</Route>
 			<Route path="aboutme" component={AboutPage} onEnter={props.hideXsNav} />
 			<Route path="*" component={NotFoundPage} />
