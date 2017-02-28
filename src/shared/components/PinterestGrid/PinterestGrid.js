@@ -7,7 +7,7 @@ import { PinterestItem } from './PinterestItem';
 let PinterestGrid = class PinterestGrid extends React.Component{
 	constructor(props) {
 		super(props);
-		const { columnWidth, gutter, items,  } = props;
+		const { columnWidth, gutter, items, hideDesc } = props;
 		let loadedItems = Array.from({ length: items.length }, () => ({loaded:false, top: 0, left: 0, ssr:false}))
 			, columns = props.columns
 			, columnHeights
@@ -25,13 +25,13 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 		for (let i=0; i<items.length; i++){
 			let item = loadedItems[i];
 			item.height = items[i].img_height;	
-			if(i <= columns * 2){
+			if(i < columns * 2){
 				shortestColumnIndex = columnHeights.indexOf(Math.min(...columnHeights));			
 				item.ssr = true;
 				item.top = columnHeights[shortestColumnIndex];
 				item.left = ( columnWidth + gutter ) * shortestColumnIndex;	
 				item.loaded = true;
-				height = columnHeights[shortestColumnIndex] += items[i].img_height + this.props.gutter ;				
+				height = columnHeights[shortestColumnIndex] += (items[i].img_height + this.props.gutter + (hideDesc?30:0));
 				loadedIndex++;	
 			}
 		}
@@ -67,14 +67,14 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 	componentDidUpdate(prevProps, prevState) {
 	}	
 	updatePosition (first) {
-		const { columnWidth, gutter, items, delay } = this.props;
+		const { columnWidth, gutter, items, delay, container, hideDesc } = this.props;
 		let { loadedItems, columns, columnHeights, loadedIndex} = this.state;
 		let shortestColumnIndex;
 		let colHeights = [...columnHeights];
 		let newLoadedItems = [...loadedItems];
 		let containerWidth = 1600; 
 		if (process.env.BROWSER) {
-			containerWidth = document.getElementById("containerb").clientWidth;
+			containerWidth = document.getElementById(container).clientWidth;
 		}
 		let newColumns = Math.floor(containerWidth / (columnWidth + gutter));
 		let viewport = {
@@ -103,7 +103,7 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 			if (viewport.height + viewport.top > colHeights[shortestColumnIndex] + delay ){
 				// console.log(i, item, newColumns, colHeights, shortestColumnIndex);			
 				item.loaded = true;
-				colHeights[shortestColumnIndex] += items[i].img_height + this.props.gutter ;				
+				colHeights[shortestColumnIndex] += (items[i].img_height + this.props.gutter + (hideDesc?30:0));
 				loadedIndex++;	
 			}else{
 				break;
@@ -125,16 +125,19 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 	}
 	
 	render() {
-		const { columnWidth, gutter, items } = this.props;
+		const { columnWidth, gutter, items, hideDesc } = this.props;
 		let { loadedItems,  loadedIndex, columns} = this.state;
-		let style = {width: (columnWidth + gutter) * columns};
+		let style = {
+			width: (columnWidth + gutter) * columns,			
+		};
 
 		let ItemViews = loadedItems.slice(0, loadedIndex ).map((item,id) => {
-			return (<PinterestItem key={id} item={items[id]} reRender={!item.loaded} id={id} top={item.top} left={item.left} ssr={item.ssr}/>);
+			return (<PinterestItem key={id} item={items[id]} reRender={!item.loaded} id={id} top={item.top} left={item.left} ssr={item.ssr} 
+							hideDesc={hideDesc} columnWidth={columnWidth}/>);
 		});
 
 		return (
-			<div className="pinterest-grid" style={style}>
+			<div className="pinterest-grid gp-grid" style={style}>
 				{ItemViews}
 			</div>
 		);
@@ -144,15 +147,17 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 PinterestGrid.propTypes = {
 	items: React.PropTypes.array.isRequired,
 	columns: React.PropTypes.number,
+	hideDesc: React.PropTypes.bool,
 	columnWidth: React.PropTypes.number.isRequired,
 	gutter: React.PropTypes.number.isRequired,	
 	updateHeight: React.PropTypes.func.isRequired,	
 	delay: React.PropTypes.number.isRequired,	
-	device:  React.PropTypes.object	
+	device:  React.PropTypes.object	,
+	container:  React.PropTypes.string.isRequired,
 };
 
 PinterestItem.defaultProps = {
-	showImage: false,
+	hideDesc: false,
     columns: 5,
     columnWidth: 280,
     gutter: 15,

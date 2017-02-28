@@ -21,7 +21,10 @@ let PinterestImg = class PinterestImg extends React.Component{
 		this.setState({
 			show: true,
 		});
+
+		// use this to get total hight!!!!!!!!!!!!!!!!!!!!!!!!
 		// this.props.updateLoaded(this.props.id, true, e.target.clientHeight);
+		// use this to get total hight!!!!!!!!!!!!!!!!!!!!!!!!
 	}
 	render() {
 		// let img = (this.props.showImage) ? this.props.src : this.props.loader;

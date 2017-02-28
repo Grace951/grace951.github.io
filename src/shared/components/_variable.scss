@@ -20,6 +20,7 @@ $break-xs: 767px;
 $break-smmd: 991px;
 $break-lg: 1440px;
 
+
 $navoffset: 100px;
 $nav-xs-height: 50px;
 $slidermtop: $navoffset + $nav-xs-height + 3px;
@@ -55,9 +56,12 @@ $secondary-font: 'Open Sans', sans-serif;
 
 
 @mixin respond-to($media) {
-  @if $media == xs {
-    @media only screen and (max-width: $break-xs) { @content; }
+  @if $media == xxs {
+    @media only screen and (max-width: $break-xxs) { @content; }
   }
+  @else if $media == xs {
+    @media only screen and (max-width: $break-xs) { @content; }
+  }  
   @else if $media == sm {
     @media only screen and (min-width: $break-xs + 1) and (max-width: $break-smmd - 1) { @content; }
   }
@@ -68,6 +72,7 @@ $secondary-font: 'Open Sans', sans-serif;
     @media only screen and (min-width: $break-lg) { @content; }
   }
 }
+
 
 
 @mixin media($width) {

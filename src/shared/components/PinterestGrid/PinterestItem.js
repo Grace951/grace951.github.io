@@ -30,15 +30,15 @@ let PinterestItem = class PinterestItem extends React.Component{
 		});	
 		if (d) {
 			let totoalHight = this.ItemDesc.clientHeight + l.reduce((acc, val)=>(acc + val.height),0);
-			// console.log(totoalHight);
+			// console.log(l.reduce((acc, val)=>(acc + val.height),0));
 			// use this to get total hight!!!!!!!!!!!!!!!!!!!!!!!!
 		}		
     }
 	render() {
-		let {item, top, left, ssr} = this.props;
-		let style = {top, left };
+		let {item, top, left, ssr, hideDesc, columnWidth} = this.props;
+		let style = {top: top , left, width: `${columnWidth}px` };
 		return (
-			<div className="pinterest-item" style={style}  >
+			<div className={`pinterest-item ${hideDesc?'hide-response':''}`}  style={style}  >
 				<div >
 				{
 					item.images.map((image,id) => (
@@ -46,7 +46,7 @@ let PinterestItem = class PinterestItem extends React.Component{
 					))
 				}
 				</div>
-				<div className="pinterest-item-desc"  ref={(el) => { this.ItemDesc = el; }} >	
+				<div className={`pinterest-item-desc ${hideDesc?'hide-response':''}`}  ref={(el) => { this.ItemDesc = el; }} >	
 					<div className="pinterest-item-desc-text">{item.note} </div>
 					<div className="pinterest-item-desc-title">{item.title}</div>
 				</div>
@@ -62,6 +62,7 @@ PinterestItem.propTypes = {
 	left: React.PropTypes.number.isRequired,
 	item: React.PropTypes.object.isRequired,
 	ssr: React.PropTypes.bool.isRequired,	
+	hideDesc: React.PropTypes.bool.isRequired,	
 };
 
 

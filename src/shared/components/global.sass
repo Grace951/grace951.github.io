@@ -2,13 +2,21 @@ $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/"
 @import "~bootstrap-sass/assets/stylesheets/bootstrap"
 @import 'mixin'
 
+body
+	@include respond-to('xxs')
+		width: 320px
+		min-width: 320px
+		max-width: 320px
+	@include respond-to(xs) 
+		width: 100%
+
 *
 	box-sizing: border-box
 
 article
-	padding-top: $nav-height - 17px
+	padding-top: calc(#{$nav-height} - 17px)
 	@include respond-to(xs) 
-		padding-top: $nav-xs-height - 17px
+		padding-top: calc(#{$nav-xs-height} - 10px)
 		padding-bottom: $footer-height 
   
 
@@ -22,7 +30,7 @@ body
 	color: #4e4e4e
 
 section
-	padding: 30px 0
+	padding: 0
 
 
 p 

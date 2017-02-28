@@ -430,7 +430,8 @@ let HomePage = class HomePage extends React.Component{
 		return (
 			<div id="home" >				
 				<div id="containerb"  style={style}>
-					<PinterestGrid items={items} columnWidth={280} gutter={20} columns={5} updateHeight={this.updateHeight} delay={100} device={this.props.device}/>					
+					<PinterestGrid items={items} columnWidth={280} gutter={20} columns={5} container="containerb" updateHeight={this.updateHeight}
+						delay={100} device={this.props.device} hideDesc={false}/>					
 				</div>
 			</div>
 		);
