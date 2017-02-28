@@ -78,11 +78,14 @@ let Root = class Root extends React.Component{
 		});
 
 		//Google Web fonts
-		let WebFontConfig = {
-			google: { families: [ 'Merriweather::latin' , 'Rajdhani:400,500,600:latin' , 'Open+Sans::latin', 'Ubuntu:300italic:latin'] }
-		};
-		this.loadScript("https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js")
-		.then(()=>{});
+		this.loadScript("https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js")
+		.then(()=>{
+			WebFont.load({
+				google: {
+					families: [ 'Merriweather::latin' , 'Rajdhani:400,500,600:latin' , 'Open+Sans::latin', 'Ubuntu:300italic:latin']
+				}
+			});
+		});	
 	}
 	render() {
 		return (

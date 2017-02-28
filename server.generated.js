@@ -11787,10 +11787,13 @@ var Root = function (_React$Component) {
 		});
 
 		//Google Web fonts
-		var WebFontConfig = {
-			google: { families: ['Merriweather::latin', 'Rajdhani:400,500,600:latin', 'Open+Sans::latin', 'Ubuntu:300italic:latin'] }
-		};
-		this.loadScript("https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js").then(function () {});
+		this.loadScript("https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js").then(function () {
+			WebFont.load({
+				google: {
+					families: ['Merriweather::latin', 'Rajdhani:400,500,600:latin', 'Open+Sans::latin', 'Ubuntu:300italic:latin']
+				}
+			});
+		});
 	};
 
 	Root.prototype.render = function render() {
