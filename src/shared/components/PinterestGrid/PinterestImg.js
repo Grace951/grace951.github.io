@@ -6,39 +6,38 @@ import React from 'react';
 let PinterestImg = class PinterestImg extends React.Component{
 	constructor(props) {
 		super(props);
-		this.state = {
-			show: false
-		};
-		// this.updatePosition = this.updatePosition.bind(this);
 		this.handleImageLoaded = this.handleImageLoaded.bind(this);
 	}
+	componentWillReceiveProps(nextProps){
+		if (nextProps.src === this.props.src)
+			return;
+
+		this.props.updateLoaded(this.props.id, false, 0);
+	}
 	componentDidUpdate(prevProps) {
+		if (prevProps.src === this.props.src)
+			return;
+
+		let img = this.Img;
+		if (img && img.complete && img.naturalHeight !== 0){
+			this.props.updateLoaded(this.props.id, true, img.clientHeight);
+		}		
 	}
 	componentDidMount() {
 		let img = this.Img;
-		if (img.complete && img.naturalHeight !== 0){
-			this.setState({
-				show: true,
-			});
+		if (img && img.complete && img.naturalHeight !== 0){
+			this.props.updateLoaded(this.props.id, true, img.clientHeight);
 		}		
 	}
 	handleImageLoaded(e){
-		this.setState({
-			show: true,
-		});
-
-		// use this to get total hight!!!!!!!!!!!!!!!!!!!!!!!!
-		// this.props.updateLoaded(this.props.id, true, e.target.clientHeight);
-		// use this to get total hight!!!!!!!!!!!!!!!!!!!!!!!!
+		this.props.updateLoaded(this.props.id, true, e.target.clientHeight);
 	}
 	render() {
 		// let img = (this.props.showImage) ? this.props.src : this.props.loader;
 		let img =  this.props.src;
-		let show = this.state.show;
-		let style = {opacity:  show?"1":"0"};
 		return (
 			<div className="pinterest-img">
-				<img src={img} alt={this.props.alt} style={style} onLoad={this.handleImageLoaded} ref={(el) => { this.Img = el; }}/>
+				<img src={img} alt={this.props.alt} onLoad={this.handleImageLoaded} ref={(el) => { this.Img = el; }}/>
 			</div>
 		);
 	}

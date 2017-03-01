@@ -11114,33 +11114,34 @@ var PinterestImg = function (_React$Component) {
 
 		var _this = _possibleConstructorReturn(this, _React$Component.call(this, props));
 
-		_this.state = {
-			show: false
-		};
-		// this.updatePosition = this.updatePosition.bind(this);
 		_this.handleImageLoaded = _this.handleImageLoaded.bind(_this);
 		return _this;
 	}
 
-	PinterestImg.prototype.componentDidUpdate = function componentDidUpdate(prevProps) {};
+	PinterestImg.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
+		if (nextProps.src === this.props.src) return;
+
+		this.props.updateLoaded(this.props.id, false, 0);
+	};
+
+	PinterestImg.prototype.componentDidUpdate = function componentDidUpdate(prevProps) {
+		if (prevProps.src === this.props.src) return;
+
+		var img = this.Img;
+		if (img && img.complete && img.naturalHeight !== 0) {
+			this.props.updateLoaded(this.props.id, true, img.clientHeight);
+		}
+	};
 
 	PinterestImg.prototype.componentDidMount = function componentDidMount() {
 		var img = this.Img;
-		if (img.complete && img.naturalHeight !== 0) {
-			this.setState({
-				show: true
-			});
+		if (img && img.complete && img.naturalHeight !== 0) {
+			this.props.updateLoaded(this.props.id, true, img.clientHeight);
 		}
 	};
 
 	PinterestImg.prototype.handleImageLoaded = function handleImageLoaded(e) {
-		this.setState({
-			show: true
-		});
-
-		// use this to get total hight!!!!!!!!!!!!!!!!!!!!!!!!
-		// this.props.updateLoaded(this.props.id, true, e.target.clientHeight);
-		// use this to get total hight!!!!!!!!!!!!!!!!!!!!!!!!
+		this.props.updateLoaded(this.props.id, true, e.target.clientHeight);
 	};
 
 	PinterestImg.prototype.render = function render() {
@@ -11148,12 +11149,10 @@ var PinterestImg = function (_React$Component) {
 
 		// let img = (this.props.showImage) ? this.props.src : this.props.loader;
 		var img = this.props.src;
-		var show = this.state.show;
-		var style = { opacity: show ? "1" : "0" };
 		return _react2.default.createElement(
 			'div',
 			{ className: 'pinterest-img' },
-			_react2.default.createElement('img', { src: img, alt: this.props.alt, style: style, onLoad: this.handleImageLoaded, ref: function ref(el) {
+			_react2.default.createElement('img', { src: img, alt: this.props.alt, onLoad: this.handleImageLoaded, ref: function ref(el) {
 					_this2.Img = el;
 				} })
 		);
@@ -11213,7 +11212,12 @@ var PinterestItem = function (_React$Component) {
 		return _this;
 	}
 
-	PinterestItem.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {};
+	PinterestItem.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
+		if (nextProps.item === this.props.item) return;
+		this.setState({
+			done: false
+		});
+	};
 
 	PinterestItem.prototype.componentDidMount = function componentDidMount() {};
 
@@ -11232,15 +11236,15 @@ var PinterestItem = function (_React$Component) {
 			done: d
 		});
 		if (d) {
-			var totoalHight = this.ItemDesc.clientHeight + l.reduce(function (acc, val) {
-				return acc + val.height;
-			}, 0);
+			// let totoalHight = l.reduce((acc, val)=>(acc + val.height),0);
 			// console.log(l.reduce((acc, val)=>(acc + val.height),0));
 			// use this to get total hight!!!!!!!!!!!!!!!!!!!!!!!!
 		}
 	};
 
 	PinterestItem.prototype.render = function render() {
+		var _this2 = this;
+
 		var _props = this.props,
 		    item = _props.item,
 		    top = _props.top,
@@ -11248,16 +11252,17 @@ var PinterestItem = function (_React$Component) {
 		    ssr = _props.ssr,
 		    hideDesc = _props.hideDesc,
 		    columnWidth = _props.columnWidth;
+		var done = this.state.done;
 
 		var style = { top: top, left: left, width: columnWidth + 'px' };
 		return _react2.default.createElement(
 			'div',
-			{ className: 'pinterest-item ' + (hideDesc ? 'hide-response' : ''), style: style },
+			{ className: 'pinterest-item ' + (hideDesc ? 'hide-response' : '') + ' ' + (done ? 'show-item' : 'hide-item'), style: style },
 			_react2.default.createElement(
 				'div',
 				null,
 				item.images.map(function (image, id) {
-					return _react2.default.createElement(_PinterestImg.PinterestImg, { src: image, key: id, id: id, ssr: ssr /*updateLoaded={this.updateLoaded}*/ });
+					return _react2.default.createElement(_PinterestImg.PinterestImg, { src: image, key: id, id: id, ssr: ssr, updateLoaded: _this2.updateLoaded });
 				})
 			),
 			_react2.default.createElement(

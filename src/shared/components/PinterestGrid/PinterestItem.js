@@ -13,6 +13,11 @@ let PinterestItem = class PinterestItem extends React.Component{
 		this.updateLoaded = this.updateLoaded.bind(this);
 	}
 	componentWillReceiveProps(nextProps){
+		if (nextProps.item === this.props.item)
+			return;
+		this.setState({
+			done: false,
+		});
 	}
 	componentDidMount() {
 	}
@@ -29,20 +34,21 @@ let PinterestItem = class PinterestItem extends React.Component{
 			done: d
 		});	
 		if (d) {
-			let totoalHight = this.ItemDesc.clientHeight + l.reduce((acc, val)=>(acc + val.height),0);
+			// let totoalHight = l.reduce((acc, val)=>(acc + val.height),0);
 			// console.log(l.reduce((acc, val)=>(acc + val.height),0));
 			// use this to get total hight!!!!!!!!!!!!!!!!!!!!!!!!
 		}		
     }
 	render() {
 		let {item, top, left, ssr, hideDesc, columnWidth} = this.props;
-		let style = {top: top , left, width: `${columnWidth}px` };
+		let {done} = this.state;
+		let style = {top: top , left, width: `${columnWidth}px`};
 		return (
-			<div className={`pinterest-item ${hideDesc?'hide-response':''}`}  style={style}  >
+			<div className={`pinterest-item ${hideDesc?'hide-response':''} ${done?'show-item':'hide-item'}`}  style={style}  >
 				<div >
 				{
 					item.images.map((image,id) => (
-						<PinterestImg src={image} key={id} id={id}  ssr={ssr} /*updateLoaded={this.updateLoaded}*/ />
+						<PinterestImg src={image} key={id} id={id}  ssr={ssr} updateLoaded={this.updateLoaded} />
 					))
 				}
 				</div>
@@ -60,6 +66,7 @@ PinterestItem.defaultProps = {
 PinterestItem.propTypes = {
 	top: React.PropTypes.number.isRequired,
 	left: React.PropTypes.number.isRequired,
+	columnWidth: React.PropTypes.number.isRequired,
 	item: React.PropTypes.object.isRequired,
 	ssr: React.PropTypes.bool.isRequired,	
 	hideDesc: React.PropTypes.bool.isRequired,	
