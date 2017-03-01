@@ -5836,6 +5836,9 @@ var PinterestGrid = function (_React$Component) {
 
 	PinterestGrid.prototype.componentDidUpdate = function componentDidUpdate(prevProps, prevState) {
 		if (this.state.height != prevState.height) this.props.updateHeight(this.state.height + this.props.gutter);
+		if (this.props.items !== prevProps.items) {
+			this.updatePosition(true);
+		}
 	};
 
 	PinterestGrid.prototype.loadProps = function loadProps(props) {
@@ -11145,7 +11148,7 @@ var PinterestImg = function (_React$Component) {
 
 		// let img = (this.props.showImage) ? this.props.src : this.props.loader;
 		var img = this.props.src;
-		var show = this.state.show || this.props.ssr;
+		var show = this.state.show;
 		var style = { opacity: show ? "1" : "0" };
 		return _react2.default.createElement(
 			'div',

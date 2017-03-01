@@ -34,7 +34,7 @@ let PinterestImg = class PinterestImg extends React.Component{
 	render() {
 		// let img = (this.props.showImage) ? this.props.src : this.props.loader;
 		let img =  this.props.src;
-		let show = this.state.show || this.props.ssr;
+		let show = this.state.show;
 		let style = {opacity:  show?"1":"0"};
 		return (
 			<div className="pinterest-img">

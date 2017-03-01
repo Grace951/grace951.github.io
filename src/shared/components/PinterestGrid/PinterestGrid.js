@@ -37,6 +37,9 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 	componentDidUpdate(prevProps, prevState) {
 		if (this.state.height != prevState.height)
 			this.props.updateHeight(this.state.height + this.props.gutter);
+		if (this.props.items !== prevProps.items){
+			this.updatePosition(true);
+		}
 	}
 	loadProps(props){		
 		const { columnWidth, gutter, items, hideDesc } = props;		
