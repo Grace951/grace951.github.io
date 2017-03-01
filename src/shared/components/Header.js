@@ -10,21 +10,32 @@ import * as modalActions from '../actions/modalAction';
 let Header = class Header extends React.Component{
 	constructor(props) {
 		super(props);
+		this.state = {
+			showSmallMenu: false
+		}
+		this.toggleSmallMenu = this.toggleSmallMenu.bind(this);
+	}
+	toggleSmallMenu(){
+		this.setState({showSmallMenu: !this.state.showSmallMenu});
 	}
 	render() {
 		let Baselink = "https://hopeshelter.herokuapp.com";
 		// let link = Baselink;
 		// this.props.location.pathname && (link = Baselink + this.props.location.pathname);
 		// console.log(link, this.props.location.pathname);		
-		
+		let sMenuStyle ={
+			transform: this.state.showSmallMenu?"translateY(0)":"translateY(-130%)"
+		}
 		return (
 			<header id="grace_header_h">
 				<div id="grace_header_bg"><h1 style={{display:"none"}}>希望園地設計|Portfolio|作品集|平面設計|網頁設計</h1> </div>
-					<div id="grace_header" >
-						<div id="navigation_grace" className="inner relative">
-							<Link id="menu-toggle_grace" className="button dark" to="home"><i className="fa fa-bars" aria-hidden="true"></i></Link>
+					<div >
+						<div className="inner relative">
+							<div id="menu-toggle_grace" className="button dark" onClick={this.toggleSmallMenu}>
+								<i className="fa fa-bars" aria-hidden="true" />
+							</div>
 							<div id="navigation_grace">
-								<Link to="home" className="logo" ><img src="/images/logo.png" alt="hope shelter design web"/></Link>
+								<Link to="/home" className="logo" ><img src="/images/logo.png" alt="hope shelter design web"/></Link>
 								<ul id="main-menu_grace">
 									<li className="current-menu-item"><Link to="/home">Home</Link></li>
 									<li><Link to="/aboutme">About Me</Link></li>
@@ -40,10 +51,10 @@ let Header = class Header extends React.Component{
 						</div>
 
 						<div id="logo_small" className="logo_small">
-							<Link to="home"> <img src="/images/ico.png"/></Link>
+							<Link to="/home"> <img src="/images/ico.png"/></Link>
 						</div>
-					<div id="navigation_grace_small">
-							<ul id="main-menu_grace_small">
+						<div id="navigation_grace_small">
+							<ul id="main-menu_grace_small"  style={sMenuStyle}>
 								<li className="current-menu-item"><Link to="/home">Home</Link></li>
 								<li><Link to="/aboutme">About me</Link></li>
 								<li className="parent">
@@ -56,7 +67,7 @@ let Header = class Header extends React.Component{
 								</li>
 							</ul>
 						</div>
-						<div className="clear"></div>
+						<div className="clear"/>
 					</div>
 				</div>
 			</header>

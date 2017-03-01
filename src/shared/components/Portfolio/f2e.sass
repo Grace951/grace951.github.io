@@ -1,4 +1,4 @@
-@import '../_variable.scss'
+@import '../_mixin.scss'
 
 #webdesign
 	margin: 0
@@ -52,7 +52,7 @@
 							text-align: center
 							vertical-align: middle
 							border-radius: 50%
-							display: block
+							display: inline-block
 							text-align: center
 							\:hover
 								color: $color4
@@ -63,25 +63,10 @@
 						display: block
 						position: relative
 						top: 10px
-						left: 20px
 						font-family: 'Rajdhani',  "文泉驛正黑", "WenQuanYi Zen Hei", "儷黑 Pro", "LiHei Pro", "微軟正黑體", "Microsoft JhengHei", "標楷體", DFKai-SB, sans-serif
 						font-weight: normal
 						font-size: 45px
-						line-height: 45px
-						+respond-to(xs)
-							padding: 0
-							a, h1, h2
-								width: 100%
-								float: none
-								margin: 10px 0 0 0
-								padding: 0
-								display: block
-								text-align: center
-								a, img
-									margin: 0 auto
-									display: block
-							h1
-								left: 0					
+						line-height: 45px		
 				.tech_logo
 					border-left: 1px solid #e2e2e2
 					.web_logo
@@ -105,3 +90,39 @@
 						height: 36px
 						border-radius: 18px
 						cursor: pointer
+
++respond-to(xs) 
+	#webdesign
+		.container
+			.siteshelf
+				.tech_logo
+					text-align: left				
+				.tech_logo p
+					padding: 20px 10px
+					text-align: left
+				.web_desc
+					text-align: left
+					p
+						padding: 20px 10px
+				.web_brief
+					padding: 30px 0
+					.web_link						
+						padding: 0
+						a, h1, h2
+							width: 100%
+							float: none
+							margin: 10px 0 0 0
+							padding: 0
+							display: block
+							text-align: center
+						h2
+							text-align: center
+						h1
+							height: 60px
+							text-align: center
+							padding: 0
+						a, img
+							margin: 0 auto
+							display: block
+						h1
+							left: 0	

@@ -11528,35 +11528,55 @@ if (false) {
 	require('./header.sass');
 }
 
-var _ref = _react2.default.createElement(
+var _ref = _react2.default.createElement('i', { className: 'fa fa-bars', 'aria-hidden': 'true' });
+
+var _ref2 = _react2.default.createElement(
 	'div',
-	{ id: 'grace_header' },
+	{ id: 'navigation_grace' },
 	_react2.default.createElement(
-		'div',
-		{ id: 'navigation_grace', className: 'inner relative' },
+		_reactRouter.Link,
+		{ to: '/home', className: 'logo' },
+		_react2.default.createElement('img', { src: '/images/logo.png', alt: 'hope shelter design web' })
+	),
+	_react2.default.createElement(
+		'ul',
+		{ id: 'main-menu_grace' },
 		_react2.default.createElement(
-			_reactRouter.Link,
-			{ id: 'menu-toggle_grace', className: 'button dark', to: 'home' },
-			_react2.default.createElement('i', { className: 'fa fa-bars', 'aria-hidden': 'true' })
-		),
-		_react2.default.createElement(
-			'div',
-			{ id: 'navigation_grace' },
+			'li',
+			{ className: 'current-menu-item' },
 			_react2.default.createElement(
 				_reactRouter.Link,
-				{ to: 'home', className: 'logo' },
-				_react2.default.createElement('img', { src: '/images/logo.png', alt: 'hope shelter design web' })
+				{ to: '/home' },
+				'Home'
+			)
+		),
+		_react2.default.createElement(
+			'li',
+			null,
+			_react2.default.createElement(
+				_reactRouter.Link,
+				{ to: '/aboutme' },
+				'About Me'
+			)
+		),
+		_react2.default.createElement(
+			'li',
+			{ className: 'parent' },
+			_react2.default.createElement(
+				_reactRouter.Link,
+				{ to: '/portfolio/f2e' },
+				'Portfolio'
 			),
 			_react2.default.createElement(
 				'ul',
-				{ id: 'main-menu_grace' },
+				{ className: 'sub-menu_grace' },
 				_react2.default.createElement(
 					'li',
-					{ className: 'current-menu-item' },
+					null,
 					_react2.default.createElement(
 						_reactRouter.Link,
-						{ to: '/home' },
-						'Home'
+						{ to: '/portfolio/f2e' },
+						' Front-end App'
 					)
 				),
 				_react2.default.createElement(
@@ -11564,75 +11584,8 @@ var _ref = _react2.default.createElement(
 					null,
 					_react2.default.createElement(
 						_reactRouter.Link,
-						{ to: '/aboutme' },
-						'About Me'
-					)
-				),
-				_react2.default.createElement(
-					'li',
-					{ className: 'parent' },
-					_react2.default.createElement(
-						_reactRouter.Link,
-						{ to: '/portfolio/f2e' },
-						'Portfolio'
-					),
-					_react2.default.createElement(
-						'ul',
-						{ className: 'sub-menu_grace' },
-						_react2.default.createElement(
-							'li',
-							null,
-							_react2.default.createElement(
-								_reactRouter.Link,
-								{ to: '/portfolio/f2e' },
-								' Front-end App'
-							)
-						),
-						_react2.default.createElement(
-							'li',
-							null,
-							_react2.default.createElement(
-								_reactRouter.Link,
-								{ to: '/portfolio/graphic' },
-								'Graphic Design'
-							)
-						),
-						_react2.default.createElement(
-							'li',
-							null,
-							_react2.default.createElement(
-								_reactRouter.Link,
-								{ to: '/portfolio/editoral' },
-								'Editorial'
-							)
-						)
-					)
-				)
-			)
-		),
-		_react2.default.createElement(
-			'div',
-			{ id: 'logo_small', className: 'logo_small' },
-			_react2.default.createElement(
-				_reactRouter.Link,
-				{ to: 'home' },
-				' ',
-				_react2.default.createElement('img', { src: '/images/ico.png' })
-			)
-		),
-		_react2.default.createElement(
-			'div',
-			{ id: 'navigation_grace_small' },
-			_react2.default.createElement(
-				'ul',
-				{ id: 'main-menu_grace_small' },
-				_react2.default.createElement(
-					'li',
-					{ className: 'current-menu-item' },
-					_react2.default.createElement(
-						_reactRouter.Link,
-						{ to: '/home' },
-						'Home'
+						{ to: '/portfolio/graphic' },
+						'Graphic Design'
 					)
 				),
 				_react2.default.createElement(
@@ -11640,55 +11593,88 @@ var _ref = _react2.default.createElement(
 					null,
 					_react2.default.createElement(
 						_reactRouter.Link,
-						{ to: '/aboutme' },
-						'About me'
-					)
-				),
-				_react2.default.createElement(
-					'li',
-					{ className: 'parent' },
-					_react2.default.createElement(
-						_reactRouter.Link,
-						{ to: '/portfolio/f2e' },
-						'Portfolio'
-					),
-					_react2.default.createElement(
-						'ul',
-						{ className: 'sub-menu_grace_small' },
-						_react2.default.createElement(
-							'li',
-							null,
-							_react2.default.createElement(
-								_reactRouter.Link,
-								{ to: '/portfolio/f2e' },
-								'Front-end App'
-							)
-						),
-						_react2.default.createElement(
-							'li',
-							null,
-							_react2.default.createElement(
-								_reactRouter.Link,
-								{ to: '/portfolio/graphic' },
-								'Graphic Design'
-							)
-						),
-						_react2.default.createElement(
-							'li',
-							null,
-							_react2.default.createElement(
-								_reactRouter.Link,
-								{ to: '/portfolio/editoral' },
-								'Editorial'
-							)
-						)
+						{ to: '/portfolio/editoral' },
+						'Editorial'
 					)
 				)
 			)
-		),
-		_react2.default.createElement('div', { className: 'clear' })
+		)
 	)
 );
+
+var _ref3 = _react2.default.createElement(
+	'div',
+	{ id: 'logo_small', className: 'logo_small' },
+	_react2.default.createElement(
+		_reactRouter.Link,
+		{ to: '/home' },
+		' ',
+		_react2.default.createElement('img', { src: '/images/ico.png' })
+	)
+);
+
+var _ref4 = _react2.default.createElement(
+	'li',
+	{ className: 'current-menu-item' },
+	_react2.default.createElement(
+		_reactRouter.Link,
+		{ to: '/home' },
+		'Home'
+	)
+);
+
+var _ref5 = _react2.default.createElement(
+	'li',
+	null,
+	_react2.default.createElement(
+		_reactRouter.Link,
+		{ to: '/aboutme' },
+		'About me'
+	)
+);
+
+var _ref6 = _react2.default.createElement(
+	'li',
+	{ className: 'parent' },
+	_react2.default.createElement(
+		_reactRouter.Link,
+		{ to: '/portfolio/f2e' },
+		'Portfolio'
+	),
+	_react2.default.createElement(
+		'ul',
+		{ className: 'sub-menu_grace_small' },
+		_react2.default.createElement(
+			'li',
+			null,
+			_react2.default.createElement(
+				_reactRouter.Link,
+				{ to: '/portfolio/f2e' },
+				'Front-end App'
+			)
+		),
+		_react2.default.createElement(
+			'li',
+			null,
+			_react2.default.createElement(
+				_reactRouter.Link,
+				{ to: '/portfolio/graphic' },
+				'Graphic Design'
+			)
+		),
+		_react2.default.createElement(
+			'li',
+			null,
+			_react2.default.createElement(
+				_reactRouter.Link,
+				{ to: '/portfolio/editoral' },
+				'Editorial'
+			)
+		)
+	)
+);
+
+var _ref7 = _react2.default.createElement('div', { className: 'clear' });
 
 var Header = function (_React$Component) {
 	_inherits(Header, _React$Component);
@@ -11696,15 +11682,27 @@ var Header = function (_React$Component) {
 	function Header(props) {
 		_classCallCheck(this, Header);
 
-		return _possibleConstructorReturn(this, _React$Component.call(this, props));
+		var _this = _possibleConstructorReturn(this, _React$Component.call(this, props));
+
+		_this.state = {
+			showSmallMenu: false
+		};
+		_this.toggleSmallMenu = _this.toggleSmallMenu.bind(_this);
+		return _this;
 	}
+
+	Header.prototype.toggleSmallMenu = function toggleSmallMenu() {
+		this.setState({ showSmallMenu: !this.state.showSmallMenu });
+	};
 
 	Header.prototype.render = function render() {
 		var Baselink = "https://hopeshelter.herokuapp.com";
 		// let link = Baselink;
 		// this.props.location.pathname && (link = Baselink + this.props.location.pathname);
 		// console.log(link, this.props.location.pathname);		
-
+		var sMenuStyle = {
+			transform: this.state.showSmallMenu ? "translateY(0)" : "translateY(-130%)"
+		};
 		return _react2.default.createElement(
 			'header',
 			{ id: 'grace_header_h' },
@@ -11718,7 +11716,33 @@ var Header = function (_React$Component) {
 				),
 				' '
 			),
-			_ref
+			_react2.default.createElement(
+				'div',
+				null,
+				_react2.default.createElement(
+					'div',
+					{ className: 'inner relative' },
+					_react2.default.createElement(
+						'div',
+						{ id: 'menu-toggle_grace', className: 'button dark', onClick: this.toggleSmallMenu },
+						_ref
+					),
+					_ref2,
+					_ref3,
+					_react2.default.createElement(
+						'div',
+						{ id: 'navigation_grace_small' },
+						_react2.default.createElement(
+							'ul',
+							{ id: 'main-menu_grace_small', style: sMenuStyle },
+							_ref4,
+							_ref5,
+							_ref6
+						)
+					),
+					_ref7
+				)
+			)
 		);
 	};
 
