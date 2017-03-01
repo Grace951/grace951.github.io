@@ -5806,11 +5806,45 @@ var PinterestGrid = function (_React$Component) {
 
 		var _this = _possibleConstructorReturn(this, _React$Component.call(this, props));
 
+		_this.loadProps = _this.loadProps.bind(_this);
+		_this.updatePosition = _this.updatePosition.bind(_this);
+		_this.state = _this.loadProps(props);
+		return _this;
+	}
+
+	PinterestGrid.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
+		if (this.props.items !== nextProps.items) {
+			this.setState(this.loadProps(nextProps));
+			window.scrollTo(0, 0);
+		}
+	};
+
+	PinterestGrid.prototype.componentWillMount = function componentWillMount() {};
+
+	PinterestGrid.prototype.componentDidMount = function componentDidMount() {
+		window.addEventListener('scroll', this.updatePosition, false);
+		window.addEventListener('resize', this.updatePosition, false);
+		window.scrollTo(0, 0);
+		this.props.updateHeight(this.state.height + this.props.gutter);
+		this.updatePosition(true);
+	};
+
+	PinterestGrid.prototype.componentWillUnmount = function componentWillUnmount() {
+		window.removeEventListener('scroll', this.updatePosition);
+		window.removeEventListener('resize', this.updatePosition);
+	};
+
+	PinterestGrid.prototype.componentDidUpdate = function componentDidUpdate(prevProps, prevState) {
+		if (this.state.height != prevState.height) this.props.updateHeight(this.state.height + this.props.gutter);
+	};
+
+	PinterestGrid.prototype.loadProps = function loadProps(props) {
 		var columnWidth = props.columnWidth,
 		    gutter = props.gutter,
 		    items = props.items,
 		    hideDesc = props.hideDesc;
 
+		var state = {};
 		var loadedItems = Array.from({ length: items.length }, function () {
 			return { loaded: false, top: 0, left: 0, ssr: false };
 		}),
@@ -5839,13 +5873,12 @@ var PinterestGrid = function (_React$Component) {
 				item.top = columnHeights[shortestColumnIndex];
 				item.left = (columnWidth + gutter) * shortestColumnIndex;
 				item.loaded = true;
-				height = columnHeights[shortestColumnIndex] += items[i].img_height + _this.props.gutter + (hideDesc ? 30 : 0);
+				height = columnHeights[shortestColumnIndex] += items[i].img_height + this.props.gutter + (hideDesc ? 30 : 0);
 				loadedIndex++;
 			}
 		}
 
-		// console.log(loadedIndex, columns, props.device, loadedItems, columnHeights);
-		_this.state = {
+		state = {
 			viewport: viewport,
 			height: height,
 			columns: columns,
@@ -5854,27 +5887,8 @@ var PinterestGrid = function (_React$Component) {
 			loading: true,
 			loadedIndex: loadedIndex
 		};
-		_this.updatePosition = _this.updatePosition.bind(_this);
-		return _this;
-	}
-
-	PinterestGrid.prototype.componentWillMount = function componentWillMount() {
-		this.props.updateHeight(this.state.height + this.props.gutter);
+		return state;
 	};
-
-	PinterestGrid.prototype.componentDidMount = function componentDidMount() {
-		window.addEventListener('scroll', this.updatePosition, false);
-		window.addEventListener('resize', this.updatePosition, false);
-		this.props.updateHeight(this.state.height + this.props.gutter);
-		this.updatePosition(true);
-	};
-
-	PinterestGrid.prototype.componentWillUnmount = function componentWillUnmount() {
-		window.removeEventListener('scroll', this.updatePosition);
-		window.removeEventListener('resize', this.updatePosition);
-	};
-
-	PinterestGrid.prototype.componentDidUpdate = function componentDidUpdate(prevProps, prevState) {};
 
 	PinterestGrid.prototype.updatePosition = function updatePosition(first) {
 		var _props = this.props,
@@ -11107,7 +11121,14 @@ var PinterestImg = function (_React$Component) {
 
 	PinterestImg.prototype.componentDidUpdate = function componentDidUpdate(prevProps) {};
 
-	PinterestImg.prototype.componentDidMount = function componentDidMount() {};
+	PinterestImg.prototype.componentDidMount = function componentDidMount() {
+		var img = this.Img;
+		if (img.complete && img.naturalHeight !== 0) {
+			this.setState({
+				show: true
+			});
+		}
+	};
 
 	PinterestImg.prototype.handleImageLoaded = function handleImageLoaded(e) {
 		this.setState({
@@ -11120,6 +11141,8 @@ var PinterestImg = function (_React$Component) {
 	};
 
 	PinterestImg.prototype.render = function render() {
+		var _this2 = this;
+
 		// let img = (this.props.showImage) ? this.props.src : this.props.loader;
 		var img = this.props.src;
 		var show = this.state.show || this.props.ssr;
@@ -11127,7 +11150,9 @@ var PinterestImg = function (_React$Component) {
 		return _react2.default.createElement(
 			'div',
 			{ className: 'pinterest-img' },
-			_react2.default.createElement('img', { src: img, alt: this.props.alt, style: style, onLoad: this.handleImageLoaded })
+			_react2.default.createElement('img', { src: img, alt: this.props.alt, style: style, onLoad: this.handleImageLoaded, ref: function ref(el) {
+					_this2.Img = el;
+				} })
 		);
 	};
 
@@ -11213,8 +11238,6 @@ var PinterestItem = function (_React$Component) {
 	};
 
 	PinterestItem.prototype.render = function render() {
-		var _this2 = this;
-
 		var _props = this.props,
 		    item = _props.item,
 		    top = _props.top,
@@ -11236,9 +11259,7 @@ var PinterestItem = function (_React$Component) {
 			),
 			_react2.default.createElement(
 				'div',
-				{ className: 'pinterest-item-desc ' + (hideDesc ? 'hide-response' : ''), ref: function ref(el) {
-						_this2.ItemDesc = el;
-					} },
+				{ className: 'pinterest-item-desc ' + (hideDesc ? 'hide-response' : '') /* ref={(el) => { this.ItemDesc = el; }}*/ },
 				_react2.default.createElement(
 					'div',
 					{ className: 'pinterest-item-desc-text' },
@@ -11353,17 +11374,7 @@ var _ref = _react2.default.createElement(
         _react2.default.createElement(
             'div',
             { className: 'row' },
-            _react2.default.createElement(
-                'div',
-                { className: 'col-lg-2 col-md-2 col-sm-2 col-lg-2' },
-                _react2.default.createElement(
-                    'h2',
-                    { id: 'edit-title', className: 'cat-right right' },
-                    '\u6392\u7248',
-                    _react2.default.createElement('br', null),
-                    '\u4F5C\u54C1'
-                )
-            ),
+            _react2.default.createElement('div', { className: 'col-lg-2 col-md-2 col-sm-2 col-lg-2' }),
             _react2.default.createElement(
                 'div',
                 { id: 'bookshelf', className: ' col-lg-10 col-md-10 col-sm-10 bookshelf' },
@@ -12158,21 +12169,14 @@ var items = [{
 	index: "58"
 }];
 
-var _ref = _react2.default.createElement(
-	'div',
-	{ className: 'row' },
-	_react2.default.createElement(
-		'div',
-		{ className: 'col-md-2 col-sm-2' },
-		_react2.default.createElement(
-			'h2',
-			{ id: 'gp-title', className: 'cat-right right ' },
-			'\u5E73\u9762',
-			_react2.default.createElement('br', null),
-			'\u8A2D\u8A08'
-		)
-	)
-);
+function uniqArray(arrArg) {
+	return arrArg.filter(function (elem, pos, arr) {
+		return arr.indexOf(elem) == pos;
+	});
+}
+var categories = uniqArray(items.map(function (item, index) {
+	return item.category;
+}));
 
 var GraphicPage = function (_React$Component) {
 	_inherits(GraphicPage, _React$Component);
@@ -12183,9 +12187,11 @@ var GraphicPage = function (_React$Component) {
 		var _this = _possibleConstructorReturn(this, _React$Component.call(this, props));
 
 		_this.state = {
-			height: "100vh"
+			height: "100vh",
+			items: items
 		};
 		_this.updateHeight = _this.updateHeight.bind(_this);
+		_this.chooseCategory = _this.chooseCategory.bind(_this);
 		return _this;
 	}
 
@@ -12197,7 +12203,17 @@ var GraphicPage = function (_React$Component) {
 		});
 	};
 
+	GraphicPage.prototype.chooseCategory = function chooseCategory(e) {
+		var select = e.target.getAttribute("data-cat");
+		var newItems = items.filter(function (item) {
+			return select === "All" || select === "all" || item.category === select;
+		});
+		this.setState({ items: newItems });
+	};
+
 	GraphicPage.prototype.render = function render() {
+		var _this2 = this;
+
 		var style = { height: this.state.height, width: "100%" };
 		return _react2.default.createElement(
 			'section',
@@ -12205,17 +12221,36 @@ var GraphicPage = function (_React$Component) {
 			_react2.default.createElement(
 				'div',
 				{ className: 'container' },
-				_ref,
+				_react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'ul',
+						{ className: 'galereya-cats' },
+						_react2.default.createElement(
+							'li',
+							{ className: 'galereya-cats-item', 'data-cat': 'all', onClick: this.chooseCategory },
+							'All'
+						),
+						categories.map(function (item, id) {
+							return _react2.default.createElement(
+								'li',
+								{ key: id, 'data-cat': item, onClick: _this2.chooseCategory, className: 'galereya-cats-item' },
+								item
+							);
+						})
+					)
+				),
 				_react2.default.createElement(
 					'div',
 					{ className: 'row' },
 					_react2.default.createElement(
 						'div',
-						{ className: 'col-lg-offset-2 col-lg-10 col-md-offset-2 col-md-10 col-sm-offset-1 col-sm-11' },
+						{ className: 'col-lg-offset-2 col-lg-10 col-md-offset-3 col-md-9 col-sm-offset-2 col-sm-10', style: { padding: 0 } },
 						_react2.default.createElement(
 							'div',
 							{ id: 'graphic-design', style: style },
-							_react2.default.createElement(_PinterestGrid.PinterestGrid, { items: items, columnWidth: 300, gutter: 15, columns: 3, container: 'graphic-design',
+							_react2.default.createElement(_PinterestGrid.PinterestGrid, { items: this.state.items, columnWidth: 300, gutter: 15, columns: 3, container: 'graphic-design',
 								updateHeight: this.updateHeight, delay: 100, device: this.props.device, hideDesc: true })
 						)
 					)
