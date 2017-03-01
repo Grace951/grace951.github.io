@@ -8,7 +8,7 @@ const EditoralPage = (props) => (
        <div className="container">
             <div className="row">
                 <div className="col-lg-2 col-md-2 col-sm-2 col-lg-2">
-                    <h2 id="edit-title" className="cat-right right">排版<br/>作品</h2>
+                    
                 </div>
                 <div id="bookshelf" className=" col-lg-10 col-md-10 col-sm-10 bookshelf">
                     <div className="row" >

@@ -466,14 +466,21 @@ let items = [{
 		index: "58",
 	}];
 
+function uniqArray(arrArg){
+	return arrArg.filter((elem, pos, arr) => arr.indexOf(elem) == pos);
+}
+let categories = uniqArray(items.map((item, index) => (item.category)));
+
 let GraphicPage = class GraphicPage extends React.Component{
 	constructor(props) {
 		super(props);	
 	
 		this.state = {
-			height: "100vh"
+			height: "100vh",
+			items: items
 		};
 		this.updateHeight = this.updateHeight.bind(this);
+		this.chooseCategory = this.chooseCategory.bind(this);
     }
 	componentDidMount() {
 	}	
@@ -482,20 +489,26 @@ let GraphicPage = class GraphicPage extends React.Component{
 			height
 		});	
     }
+	chooseCategory(e){
+		let select = e.target.getAttribute("data-cat");
+		let newItems = items.filter((item) => ( select === "All" || select === "all" || item.category===select));
+		this.setState({items:newItems});
+	}
 	render() {
 		let style = {height: this.state.height , width:"100%"};	
 		return (
 	<section id="graphicdesign-section">
         <div className="container">
               <div className="row">
-                <div className="col-md-2 col-sm-2">
-                   <h2 id="gp-title" className="cat-right right ">平面<br/>設計</h2>
-                </div>
+				<ul className="galereya-cats">
+					<li className="galereya-cats-item" data-cat="all" onClick={this.chooseCategory} >All</li>
+					{categories.map((item, id)=>(<li key={id} data-cat={item} onClick={this.chooseCategory} className="galereya-cats-item">{item}</li>))}
+				</ul>
               </div>
               <div className="row">
-               <div className="col-lg-offset-2 col-lg-10 col-md-offset-2 col-md-10 col-sm-offset-1 col-sm-11">
+               <div className="col-lg-offset-2 col-lg-10 col-md-offset-3 col-md-9 col-sm-offset-2 col-sm-10" style={{padding: 0}}>
                  <div id="graphic-design"  style={style}>
-					<PinterestGrid items={items} columnWidth={300} gutter={15} columns={3} container="graphic-design" 
+					<PinterestGrid items={this.state.items} columnWidth={300} gutter={15} columns={3} container="graphic-design" 
 						updateHeight={this.updateHeight} delay={100} device={this.props.device} hideDesc={true}/>					
 				</div>
               </div>

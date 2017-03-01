@@ -46,7 +46,7 @@ let PinterestItem = class PinterestItem extends React.Component{
 					))
 				}
 				</div>
-				<div className={`pinterest-item-desc ${hideDesc?'hide-response':''}`}  ref={(el) => { this.ItemDesc = el; }} >	
+				<div className={`pinterest-item-desc ${hideDesc?'hide-response':''}`} /* ref={(el) => { this.ItemDesc = el; }}*/ >	
 					<div className="pinterest-item-desc-text">{item.note} </div>
 					<div className="pinterest-item-desc-title">{item.title}</div>
 				</div>

@@ -10,7 +10,7 @@
 			margin-right: 40px
 #graphic-design
 	margin-left: 0px
-	margin-top: -35px
+	margin-top: 0px
 	font-family: #{$font-title}
 	@include respond-to(xs) 
 		margin-left: 0px
@@ -19,9 +19,10 @@
 
 .pinterest-grid.gp-grid
 	margin: 0
+	@include respond-to(md) 
+		margin: 0 auto 0 0
 	@include respond-to(sm) 
-		margin-left: auto
-		margin-right: 0
+		margin: 0 auto 0 0
 	@include respond-to(xs) 
 		margin: 0 auto
 #gd-bar
@@ -52,4 +53,53 @@ img.other-img
 	margin: 0 auto 1px auto
 	box-shadow: rgba(0, 0, 0, 0.4)
 
-
+/* Gallery category select(begin) */
+#graphicdesign-section
+	.galereya-cats 
+		position: fixed
+		z-index: 10
+		display: block
+		overflow: hidden
+		width: 125px
+		height: auto
+		padding: 0
+		margin-left: 82px
+		margin-top: 0px
+		list-style: none
+		cursor: pointer
+		color: #fff
+		background: #2d2d2d
+		background-image: url(data:image/svg+xmlbase64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzJkMmQyZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+)
+		background-image: linear-gradient(to bottom,  #2d2d2d 0%,#000000 100%)
+		border-radius: 9px
+		box-shadow: 0 0 5px 0 rgba(0, 0, 0, .7)
+	.galereya-cats-item 
+		display: none
+		display: block
+		padding: 1px 25px 1px 10px
+		border-top: 1px solid #343434
+		padding: 7px 25px 7px 14px
+	.galereya-cats-item span 
+		font-size: 10pt
+		display: block
+		overflow: hidden
+		width: 93%
+		text-overflow: ellipsis
+		text-transform: capitalize
+	.galereya-cats-item:first-child 
+		display: block
+		border: none
+		background: none
+	.galereya-cats.user-close
+		height: 40px
+		.galereya-cats-item:first-child 
+			background: url('/images/galereya/galereya-arrow_down.png') no-repeat 90% 50%
+	.galereya-cats.user-open
+		height: auto
+		.galereya-cats-item:first-child 
+			background: url('/images/galereya/galereya-arrow_up.png') no-repeat 90% 50%
+@include respond-to(xs) 
+	.galereya-cats		
+		right: 0px
+		float: right
+	/* Gallery category select(end) */

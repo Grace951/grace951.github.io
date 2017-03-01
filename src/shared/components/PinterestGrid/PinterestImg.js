@@ -15,7 +15,12 @@ let PinterestImg = class PinterestImg extends React.Component{
 	componentDidUpdate(prevProps) {
 	}
 	componentDidMount() {
-		
+		let img = this.Img;
+		if (img.complete && img.naturalHeight !== 0){
+			this.setState({
+				show: true,
+			});
+		}		
 	}
 	handleImageLoaded(e){
 		this.setState({
@@ -33,7 +38,7 @@ let PinterestImg = class PinterestImg extends React.Component{
 		let style = {opacity:  show?"1":"0"};
 		return (
 			<div className="pinterest-img">
-				<img src={img} alt={this.props.alt} style={style} onLoad={this.handleImageLoaded}/>
+				<img src={img} alt={this.props.alt} style={style} onLoad={this.handleImageLoaded} ref={(el) => { this.Img = el; }}/>
 			</div>
 		);
 	}

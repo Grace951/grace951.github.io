@@ -18,8 +18,10 @@ article
 	@include respond-to(xs) 
 		padding-top: calc(#{$nav-xs-height} - 10px)
 		padding-bottom: $footer-height 
-  
 
+article#main  
+    min-height: calc(100vh - 90px)
+	
 body, p 
 	font-family: $font-p
 	font-size: $fontsize-p

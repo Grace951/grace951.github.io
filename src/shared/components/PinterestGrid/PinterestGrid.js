@@ -7,7 +7,40 @@ import { PinterestItem } from './PinterestItem';
 let PinterestGrid = class PinterestGrid extends React.Component{
 	constructor(props) {
 		super(props);
-		const { columnWidth, gutter, items, hideDesc } = props;
+		this.loadProps = this.loadProps.bind(this);
+		this.updatePosition = this.updatePosition.bind(this);
+		this.state = this.loadProps(props);
+	}
+	componentWillReceiveProps(nextProps){
+		if (this.props.items !== nextProps.items){
+			this.setState(
+				this.loadProps(nextProps)
+			);
+			window.scrollTo(0, 0);
+		}
+	}	
+	componentWillMount() {
+	}
+	
+	componentDidMount() {
+		window.addEventListener('scroll', this.updatePosition, false);
+		window.addEventListener('resize', this.updatePosition, false);
+		window.scrollTo(0, 0);
+		this.props.updateHeight(this.state.height + this.props.gutter);
+		this.updatePosition(true);
+	}
+
+	componentWillUnmount() {
+		window.removeEventListener('scroll', this.updatePosition);
+		window.removeEventListener('resize', this.updatePosition);
+	}
+	componentDidUpdate(prevProps, prevState) {
+		if (this.state.height != prevState.height)
+			this.props.updateHeight(this.state.height + this.props.gutter);
+	}
+	loadProps(props){		
+		const { columnWidth, gutter, items, hideDesc } = props;		
+		let state ={};
 		let loadedItems = Array.from({ length: items.length }, () => ({loaded:false, top: 0, left: 0, ssr:false}))
 			, columns = props.columns
 			, columnHeights
@@ -35,9 +68,8 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 				loadedIndex++;	
 			}
 		}
-
-		// console.log(loadedIndex, columns, props.device, loadedItems, columnHeights);
-		this.state={
+		
+		state={
 			viewport,
 			height,
 			columns,
@@ -46,26 +78,8 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 			loading: true,
 			loadedIndex
 		};
-		this.updatePosition = this.updatePosition.bind(this);
+		return state;
 	}
-	
-	componentWillMount() {
-		this.props.updateHeight(this.state.height + this.props.gutter);
-	}
-	
-	componentDidMount() {
-		window.addEventListener('scroll', this.updatePosition, false);
-		window.addEventListener('resize', this.updatePosition, false);
-		this.props.updateHeight(this.state.height + this.props.gutter);
-		this.updatePosition(true);
-	}
-
-	componentWillUnmount() {
-		window.removeEventListener('scroll', this.updatePosition);
-		window.removeEventListener('resize', this.updatePosition);
-	}
-	componentDidUpdate(prevProps, prevState) {
-	}	
 	updatePosition (first) {
 		const { columnWidth, gutter, items, delay, container, hideDesc } = this.props;
 		let { loadedItems, columns, columnHeights, loadedIndex} = this.state;
