@@ -12196,14 +12196,39 @@ var GraphicPage = function (_React$Component) {
 
 		_this.state = {
 			height: "100vh",
-			items: items
+			items: items,
+			chooseItem: -1,
+			minCategory: props.device.phone || props.device.mobile,
+			userOpenCategory: false
 		};
+
 		_this.updateHeight = _this.updateHeight.bind(_this);
 		_this.chooseCategory = _this.chooseCategory.bind(_this);
+		_this.userOpenCategory = _this.userOpenCategory.bind(_this);
+		_this.handleCategory = _this.handleCategory.bind(_this);
 		return _this;
 	}
 
-	GraphicPage.prototype.componentDidMount = function componentDidMount() {};
+	GraphicPage.prototype.componentDidMount = function componentDidMount() {
+		window.addEventListener('resize', this.handleCategory, false);
+	};
+
+	GraphicPage.prototype.componentWillUnmount = function componentWillUnmount() {
+		window.removeEventListener('resize', this.handleCategory);
+	};
+
+	GraphicPage.prototype.handleCategory = function handleCategory() {
+		var device = this.props.device;
+
+		this.setState({
+			minCategory: window.outerWidth < 991 || device.phone || device.mobile,
+			userOpenCategory: !(window.outerWidth < 991)
+		});
+	};
+
+	GraphicPage.prototype.userOpenCategory = function userOpenCategory(e) {
+		this.setState({ userOpenCategory: !this.state.userOpenCategory });
+	};
 
 	GraphicPage.prototype.updateHeight = function updateHeight(height) {
 		this.setState({
@@ -12212,17 +12237,41 @@ var GraphicPage = function (_React$Component) {
 	};
 
 	GraphicPage.prototype.chooseCategory = function chooseCategory(e) {
-		var select = e.target.getAttribute("data-cat");
+		var _state = this.state,
+		    userOpenCategory = _state.userOpenCategory,
+		    minCategory = _state.minCategory;
+
+		minCategory && (userOpenCategory = !userOpenCategory);
+		var id = parseInt(e.target.getAttribute("data-id"));
+		var select = id === -1 ? "All" : categories[id];
 		var newItems = items.filter(function (item) {
 			return select === "All" || select === "all" || item.category === select;
 		});
-		this.setState({ items: newItems });
+		this.setState({
+			items: newItems,
+			userOpenCategory: userOpenCategory,
+			chooseItem: id
+		});
 	};
 
 	GraphicPage.prototype.render = function render() {
 		var _this2 = this;
 
-		var style = { height: this.state.height, width: "100%" };
+		var _state2 = this.state,
+		    minCategory = _state2.minCategory,
+		    items = _state2.items,
+		    height = _state2.height,
+		    userOpenCategory = _state2.userOpenCategory,
+		    chooseItem = _state2.chooseItem;
+
+		var style = {
+			height: height,
+			width: "100%",
+			paddingTop: minCategory ? "40px" : "0"
+		};
+		var categoryClass = minCategory ? userOpenCategory ? "user-open" : "user-close" : "ori-open";
+		var Category = minCategory ? chooseItem === -1 ? "All" : categories[chooseItem] : "Category";
+
 		return _react2.default.createElement(
 			'section',
 			{ id: 'graphicdesign-section' },
@@ -12234,16 +12283,21 @@ var GraphicPage = function (_React$Component) {
 					{ className: 'row' },
 					_react2.default.createElement(
 						'ul',
-						{ className: 'galereya-cats' },
+						{ className: 'galereya-cats ' + categoryClass },
 						_react2.default.createElement(
 							'li',
-							{ className: 'galereya-cats-item', 'data-cat': 'all', onClick: this.chooseCategory },
+							{ className: 'galereya-cats-item', onClick: this.userOpenCategory },
+							Category
+						),
+						_react2.default.createElement(
+							'li',
+							{ className: 'galereya-cats-item ' + (chooseItem === -1 ? 'active' : ''), 'data-id': '-1', onClick: this.chooseCategory },
 							'All'
 						),
 						categories.map(function (item, id) {
 							return _react2.default.createElement(
 								'li',
-								{ key: id, 'data-cat': item, onClick: _this2.chooseCategory, className: 'galereya-cats-item' },
+								{ key: id, 'data-id': id, onClick: _this2.chooseCategory, className: 'galereya-cats-item ' + (chooseItem === id ? 'active' : '') },
 								item
 							);
 						})
@@ -12258,7 +12312,7 @@ var GraphicPage = function (_React$Component) {
 						_react2.default.createElement(
 							'div',
 							{ id: 'graphic-design', style: style },
-							_react2.default.createElement(_PinterestGrid.PinterestGrid, { items: this.state.items, columnWidth: 300, gutter: 15, columns: 3, container: 'graphic-design',
+							_react2.default.createElement(_PinterestGrid.PinterestGrid, { items: items, columnWidth: 300, gutter: 15, columns: 3, container: 'graphic-design',
 								updateHeight: this.updateHeight, delay: 100, device: this.props.device, hideDesc: true })
 						)
 					)

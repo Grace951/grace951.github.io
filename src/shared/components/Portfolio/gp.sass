@@ -74,22 +74,29 @@ img.other-img
 		border-radius: 9px
 		box-shadow: 0 0 5px 0 rgba(0, 0, 0, .7)
 	.galereya-cats-item 
-		display: none
+		width: 100%
 		display: block
 		padding: 1px 25px 1px 10px
 		border-top: 1px solid #343434
-		padding: 7px 25px 7px 14px
-	.galereya-cats-item span 
-		font-size: 10pt
-		display: block
-		overflow: hidden
-		width: 93%
+		padding: 7px 4px 7px 14px
 		text-overflow: ellipsis
 		text-transform: capitalize
+		font-size: 10pt
+		overflow: hidden
+		text-align: left
+		text-shadow: none
+	.galereya-cats-item.active
+		background-color: #ad3
+		text-shadow: 2px 1px 1px rgba(0, 0, 0, 0.5)
 	.galereya-cats-item:first-child 
+		height: 40px
 		display: block
 		border: none
 		background: none
+	.galereya-cats.ori-open
+		height: auto
+		.galereya-cats-item:first-child 
+			background: none
 	.galereya-cats.user-close
 		height: 40px
 		.galereya-cats-item:first-child 
