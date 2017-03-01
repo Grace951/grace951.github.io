@@ -64,7 +64,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "/build/";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 211);
+/******/ 	return __webpack_require__(__webpack_require__.s = 213);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -275,7 +275,7 @@ module.exports = require("react");
 
 var _prodInvariant = __webpack_require__(2);
 
-var DOMProperty = __webpack_require__(19);
+var DOMProperty = __webpack_require__(20);
 var ReactDOMComponentFlags = __webpack_require__(60);
 
 var invariant = __webpack_require__(0);
@@ -593,7 +593,7 @@ var _prodInvariant = __webpack_require__(2),
 var CallbackQueue = __webpack_require__(58);
 var PooledClass = __webpack_require__(12);
 var ReactFeatureFlags = __webpack_require__(160);
-var ReactReconciler = __webpack_require__(22);
+var ReactReconciler = __webpack_require__(23);
 var Transaction = __webpack_require__(27);
 
 var invariant = __webpack_require__(0);
@@ -1272,6 +1272,12 @@ module.exports = ReactCurrentOwner;
 
 /***/ }),
 /* 14 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-router");
+
+/***/ }),
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1288,7 +1294,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1634,7 +1640,7 @@ ReactElement.isValidElement = function (object) {
 module.exports = ReactElement;
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1678,7 +1684,7 @@ function reactProdInvariant(code) {
 module.exports = reactProdInvariant;
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1703,7 +1709,7 @@ if (false) {
 module.exports = emptyObject;
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1826,7 +1832,7 @@ DOMLazyTree.queueText = queueText;
 module.exports = DOMLazyTree;
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2041,7 +2047,7 @@ var DOMProperty = {
 module.exports = DOMProperty;
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2324,7 +2330,7 @@ var EventPluginHub = {
 module.exports = EventPluginHub;
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2340,7 +2346,7 @@ module.exports = EventPluginHub;
 
 
 
-var EventPluginHub = __webpack_require__(20);
+var EventPluginHub = __webpack_require__(21);
 var EventPluginUtils = __webpack_require__(34);
 
 var accumulateInto = __webpack_require__(69);
@@ -2463,7 +2469,7 @@ var EventPropagators = {
 module.exports = EventPropagators;
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2636,7 +2642,7 @@ var ReactReconciler = {
 module.exports = ReactReconciler;
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2700,7 +2706,7 @@ SyntheticEvent.augmentClass(SyntheticUIEvent, UIEventInterface);
 module.exports = SyntheticUIEvent;
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2723,7 +2729,7 @@ var ReactComponent = __webpack_require__(48);
 var ReactPureComponent = __webpack_require__(203);
 var ReactClass = __webpack_require__(199);
 var ReactDOMFactories = __webpack_require__(200);
-var ReactElement = __webpack_require__(15);
+var ReactElement = __webpack_require__(16);
 var ReactPropTypes = __webpack_require__(201);
 var ReactVersion = __webpack_require__(204);
 
@@ -2794,12 +2800,6 @@ var React = {
 module.exports = React;
 
 /***/ }),
-/* 25 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-router");
-
-/***/ }),
 /* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2816,7 +2816,7 @@ module.exports = require("react-router");
 
 
 
-var SyntheticUIEvent = __webpack_require__(23);
+var SyntheticUIEvent = __webpack_require__(24);
 var ViewportMetrics = __webpack_require__(68);
 
 var getEventModifierState = __webpack_require__(43);
@@ -3330,7 +3330,7 @@ module.exports = shallowEqual;
 
 
 
-var DOMLazyTree = __webpack_require__(18);
+var DOMLazyTree = __webpack_require__(19);
 var Danger = __webpack_require__(137);
 var ReactDOMComponentTree = __webpack_require__(5);
 var ReactInstrumentation = __webpack_require__(8);
@@ -4142,7 +4142,7 @@ module.exports = KeyEscapeUtils;
 
 var _prodInvariant = __webpack_require__(2);
 
-var React = __webpack_require__(24);
+var React = __webpack_require__(25);
 var ReactPropTypesSecret = __webpack_require__(166);
 
 var invariant = __webpack_require__(0);
@@ -5534,12 +5534,12 @@ module.exports = validateDOMNesting;
 
 
 
-var _prodInvariant = __webpack_require__(16);
+var _prodInvariant = __webpack_require__(17);
 
 var ReactNoopUpdateQueue = __webpack_require__(49);
 
 var canDefineProperty = __webpack_require__(80);
-var emptyObject = __webpack_require__(17);
+var emptyObject = __webpack_require__(18);
 var invariant = __webpack_require__(0);
 var warning = __webpack_require__(1);
 
@@ -5785,6 +5785,8 @@ var _react2 = _interopRequireDefault(_react);
 
 var _PinterestItem = __webpack_require__(102);
 
+var _reactRouter = __webpack_require__(14);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -5979,8 +5981,12 @@ var PinterestGrid = function (_React$Component) {
 		};
 
 		var ItemViews = loadedItems.slice(0, loadedIndex).map(function (item, id) {
-			return _react2.default.createElement(_PinterestItem.PinterestItem, { key: id, item: items[id], reRender: !item.loaded, id: id, top: item.top, left: item.left, ssr: item.ssr,
-				hideDesc: hideDesc, columnWidth: columnWidth });
+			return _react2.default.createElement(
+				_reactRouter.Link,
+				{ key: id, to: '/portfolio/' + items[id].index },
+				_react2.default.createElement(_PinterestItem.PinterestItem, { item: items[id], reRender: !item.loaded, id: id, top: item.top, left: item.left, ssr: item.ssr,
+					hideDesc: hideDesc, columnWidth: columnWidth })
+			);
 		});
 
 		return _react2.default.createElement(
@@ -6552,7 +6558,7 @@ module.exports = PooledClass.addPoolingTo(CallbackQueue);
 
 
 
-var DOMProperty = __webpack_require__(19);
+var DOMProperty = __webpack_require__(20);
 var ReactDOMComponentTree = __webpack_require__(5);
 var ReactInstrumentation = __webpack_require__(8);
 
@@ -8302,7 +8308,7 @@ module.exports = traverseAllChildren;
 
 
 
-var _prodInvariant = __webpack_require__(16);
+var _prodInvariant = __webpack_require__(17);
 
 var ReactCurrentOwner = __webpack_require__(13);
 
@@ -8774,7 +8780,7 @@ var _reactRedux = __webpack_require__(29);
 
 var _server = __webpack_require__(195);
 
-var _reactRouter = __webpack_require__(25);
+var _reactRouter = __webpack_require__(14);
 
 var _index = __webpack_require__(117);
 
@@ -8784,7 +8790,7 @@ var _configureStore = __webpack_require__(118);
 
 var _configureStore2 = _interopRequireDefault(_configureStore);
 
-var _mobileDetect = __webpack_require__(207);
+var _mobileDetect = __webpack_require__(209);
 
 var _mobileDetect2 = _interopRequireDefault(_mobileDetect);
 
@@ -10338,7 +10344,7 @@ exports.Timeline = Timeline;
 
 exports.__esModule = true;
 
-var _reactRouter = __webpack_require__(25);
+var _reactRouter = __webpack_require__(14);
 
 var _react = __webpack_require__(4);
 
@@ -10421,7 +10427,7 @@ exports.Header = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _reactRouter = __webpack_require__(25);
+var _reactRouter = __webpack_require__(14);
 
 var _react = __webpack_require__(4);
 
@@ -10689,320 +10695,320 @@ if (false) {
 }
 
 var items = [{
-	images: ["images/portfolio/small/poster1.jpg"],
+	images: ["/images/portfolio/small/poster1.jpg"],
 	img_height: 516,
-	fullsrc: "images/portfolio/full/poster1.jpg",
+	fullsrc: "/images/portfolio/full/poster1.jpg",
 	category: "poster",
 	note: "廣告練習 - 飛利浦奶瓶。以小朋友在奶瓶中游泳為意象，象徵小朋友使用avent奶瓶就像在...",
 	hlink: "portfolio/avent.html",
 	index: "0"
 }, {
-	images: ["images/portfolio/small/poster2.jpg", "images/portfolio/small/poster6.jpg"],
+	images: ["/images/portfolio/small/poster2.jpg", "/images/portfolio/small/poster6.jpg"],
 	img_height: 900,
-	fullsrc: "images/portfolio/full/poster2.jpg",
+	fullsrc: "/images/portfolio/full/poster2.jpg",
 	category: "poster",
 	note: "廣告練習 - iPhone6 廣告。背景特別設計用以強調 iphone 6 螢慕的鮮豔色彩。以弧型光芒...",
 	hlink: "portfolio/iphone-dark.html",
 	index: "1"
 }, {
-	images: ["images/portfolio/small/poster3.jpg"],
+	images: ["/images/portfolio/small/poster3.jpg"],
 	img_height: 527,
-	fullsrc: "images/portfolio/full/poster3.jpg",
+	fullsrc: "/images/portfolio/full/poster3.jpg",
 	category: "poster",
 	note: "廣告練習 - Vera Wang 婚紗廣告。Vera Wang 的禮服以難預約聞名 ，因此想要向消費者傳達...",
 	hlink: "portfolio/vw-wang.html",
 	index: "2"
 }, {
-	images: ["images/portfolio/small/photo1.jpg"],
+	images: ["/images/portfolio/small/photo1.jpg"],
 	img_height: 336,
-	fullsrc: "images/portfolio/full/photo1.jpg",
+	fullsrc: "/images/portfolio/full/photo1.jpg",
 	category: "Misc",
 	note: "PS修補練習 - 人臉瘦身化妝。此作品使用了'How to cheat in photoshop CS6'一書中的原始圖片...",
 	hlink: "portfolio/makeup.html",
 	index: "3"
 }, {
-	images: ["images/portfolio/small/poster7.jpg"],
+	images: ["/images/portfolio/small/poster7.jpg"],
 	img_height: 503,
-	fullsrc: "images/portfolio/full/poster7.jpg",
+	fullsrc: "/images/portfolio/full/poster7.jpg",
 	category: "poster",
 	note: "營會招募活動海報。這是為貓頭鷹親子教育協會所繪製的活動DM海報...",
 	hlink: "portfolio/five.html",
 	index: "8"
 }, {
-	images: ["images/portfolio/small/poster4.jpg"],
+	images: ["/images/portfolio/small/poster4.jpg"],
 	img_height: 336,
-	fullsrc: "images/portfolio/full/poster4.jpg",
+	fullsrc: "/images/portfolio/full/poster4.jpg",
 	category: "poster",
 	note: "廣告練習 - Nike 球鞋廣告。使用 Illustrator 製造出如針織排汗衫的背景，配合明亮水藍色...",
 	hlink: "portfolio/nike.html",
 	index: "10"
 }, {
-	images: ["images/portfolio/small/poster5.jpg"],
+	images: ["/images/portfolio/small/poster5.jpg"],
 	img_height: 503,
-	fullsrc: "images/portfolio/full/poster5.jpg",
+	fullsrc: "/images/portfolio/full/poster5.jpg",
 	category: "poster",
 	note: "廣告練習 - 克蘭詩化妝品廣告。以葉子包覆保養品，象徵克蘭詩的草本保養概念...",
 	hlink: "portfolio/clarins.html",
 	index: "6"
 }, {
-	images: ["images/portfolio/small/poster8.jpg"],
+	images: ["/images/portfolio/small/poster8.jpg"],
 	img_height: 503,
-	fullsrc: "images/portfolio/full/poster8.jpg",
+	fullsrc: "/images/portfolio/full/poster8.jpg",
 	category: "poster",
 	note: "廣告練習 - 美好人生淡香水廣告。背景特別設計以襯托香水瓶的晶透高雅質感...",
 	hlink: "portfolio/happylife.html",
 	index: "25"
 }, {
-	images: ["images/portfolio/small/magazine0.jpg", "images/portfolio/small/magazine1.jpg", "images/portfolio/small/magazine2.jpg", "images/portfolio/small/magazine3.jpg", "images/portfolio/small/magazine4.jpg", "images/portfolio/small/magazine5.jpg", "images/portfolio/small/magazine6.jpg", "images/portfolio/small/magazine7.jpg", "images/portfolio/small/magazine8.jpg", "images/portfolio/small/magazine9.jpg", "images/portfolio/small/magazine10.jpg", "images/portfolio/small/magazine11.jpg"],
+	images: ["/images/portfolio/small/magazine0.jpg", "/images/portfolio/small/magazine1.jpg", "/images/portfolio/small/magazine2.jpg", "/images/portfolio/small/magazine3.jpg", "/images/portfolio/small/magazine4.jpg", "/images/portfolio/small/magazine5.jpg", "/images/portfolio/small/magazine6.jpg", "/images/portfolio/small/magazine7.jpg", "/images/portfolio/small/magazine8.jpg", "/images/portfolio/small/magazine9.jpg", "/images/portfolio/small/magazine10.jpg", "/images/portfolio/small/magazine11.jpg"],
 	img_height: 2628,
-	fullsrc: "images/portfolio/full/branding2.jpg",
+	fullsrc: "/images/portfolio/full/branding2.jpg",
 	category: "branding",
 	note: "排版練習 -雜誌排版。以高對比大標題吸引讀者的目光，並以留白使版面...",
 	hlink: "http://issuu.com/grace_yeh/docs/______?e=11793034/12474947",
 	index: "-1" /*none*/
 }, {
-	images: ["images/portfolio/small/branding2.jpg", "images/portfolio/small/branding3.jpg", "images/portfolio/small/branding4.jpg"],
+	images: ["/images/portfolio/small/branding2.jpg", "/images/portfolio/small/branding3.jpg", "/images/portfolio/small/branding4.jpg"],
 	img_height: 728,
-	fullsrc: "images/portfolio/full/branding2.jpg",
+	fullsrc: "/images/portfolio/full/branding2.jpg",
 	category: "branding",
 	note: "LOGO練習 - Direction Book Store。Logo設計理念為:'書本給人方向'。 因此以由書本形狀組成方向指標牌...",
 	hlink: "portfolio/branding2.html",
 	index: "12"
 }, {
-	images: ["images/portfolio/small/DM1.jpg"],
+	images: ["/images/portfolio/small/DM1.jpg"],
 	img_height: 330,
-	fullsrc: "images/portfolio/full/DM1.jpg",
+	fullsrc: "/images/portfolio/full/DM1.jpg",
 	category: "DM",
 	note: "DM設計練習-朱宗慶打擊樂團冬季巡演。以木琴同色系為主調，擊琴的圖片用十六分隔法...",
 	hlink: "portfolio/witness.html",
 	index: "18"
 }, {
-	images: ["images/portfolio/small/DM2.jpg"],
+	images: ["/images/portfolio/small/DM2.jpg"],
 	img_height: 307,
-	fullsrc: "images/portfolio/full/DM2.jpg",
+	fullsrc: "/images/portfolio/full/DM2.jpg",
 	category: "DM",
 	note: "DM設計練習-仲向。建築展覽DM練習，以'仲向'標準字的造型與色彩為發想...",
 	hlink: "portfolio/dm2.html",
 	index: "21"
 }, {
-	images: ["images/portfolio/small/branding5.jpg"],
+	images: ["/images/portfolio/small/branding5.jpg"],
 	img_height: 318,
-	fullsrc: "images/portfolio/full/branding5.jpg",
+	fullsrc: "/images/portfolio/full/branding5.jpg",
 	category: "branding",
 	note: "VI 練習 - Direction Publishing。以由書本形狀組成方向指標牌，象徵閱讀給我們人生的方向...",
 	hlink: "portfolio/directions.html",
 	index: "26"
 }, {
-	images: ["images/portfolio/small/DM3.jpg", "images/portfolio/small/DM4.jpg"],
+	images: ["/images/portfolio/small/DM3.jpg", "/images/portfolio/small/DM4.jpg"],
 	img_height: 506,
-	fullsrc: "images/portfolio/full/DM3.jpg",
+	fullsrc: "/images/portfolio/full/DM3.jpg",
 	category: "DM",
 	note: "三摺兩面DM設計練習- AVEDA。封面以草綠色嫩葉呈現 Aveda 的環保自然形象， 對比色的橘色標題字...",
 	hlink: "portfolio/aveda1.html",
 	index: "20"
 }, {
-	images: ["images/portfolio/small/photo2.jpg", "images/portfolio/small/photo3.jpg"],
+	images: ["/images/portfolio/small/photo2.jpg", "/images/portfolio/small/photo3.jpg"],
 	img_height: 498,
-	fullsrc: "images/portfolio/full/photo2.jpg",
+	fullsrc: "/images/portfolio/full/photo2.jpg",
 	category: "Misc",
 	note: "PS特效練習 - 水彩油畫效果。將自己在碧潭照的相片用 photoshop 改成水彩油畫效果...",
 	hlink: "portfolio/watercolor.html",
 	index: "4"
 }, {
-	images: ["images/portfolio/small/web1.jpg", "images/portfolio/small/web2.jpg", "images/portfolio/small/web3.jpg", "images/portfolio/small/web4.jpg", "images/portfolio/small/web5.jpg"],
+	images: ["/images/portfolio/small/web1.jpg", "/images/portfolio/small/web2.jpg", "/images/portfolio/small/web3.jpg", "/images/portfolio/small/web4.jpg", "/images/portfolio/small/web5.jpg"],
 	img_height: 634,
-	fullsrc: "images/portfolio/full/web1.jpg",
+	fullsrc: "/images/portfolio/full/web1.jpg",
 	category: "Web banner",
 	note: "為貓頭鷹親子教育協會製作的banner...",
 	hlink: "portfolio/baby.html",
 	index: "41"
 }, {
-	images: ["images/portfolio/small/branding12.jpg", "images/portfolio/small/branding13.jpg"],
+	images: ["/images/portfolio/small/branding12.jpg", "/images/portfolio/small/branding13.jpg"],
 	img_height: 922,
-	fullsrc: "images/portfolio/full/branding12.jpg",
+	fullsrc: "/images/portfolio/full/branding12.jpg",
 	category: "branding",
 	note: "T-Shirt設計 閱向未來。象徵站 在人生十字路口的小朋友，藉由貓頭鷹親子教育協會獲得人生 未來的方向...",
 	hlink: "portfolio/future1.html",
 	index: "28"
 }, {
-	images: ["images/portfolio/small/branding14.jpg"],
+	images: ["/images/portfolio/small/branding14.jpg"],
 	img_height: 527,
-	fullsrc: "images/portfolio/full/branding14.jpg",
+	fullsrc: "/images/portfolio/full/branding14.jpg",
 	category: "branding",
 	note: "T-Shirt設計 Let's Read。這是為貓頭鷹親子教育協會所設計的T-shirt，用卡通風呼籲大家一起來閱讀...",
 	hlink: "portfolio/letsread.html",
 	index: "30"
 }, {
-	images: ["images/portfolio/small/illustration11.png"],
+	images: ["/images/portfolio/small/illustration11.png"],
 	img_height: 520,
-	fullsrc: "images/portfolio/full/illustration11.png",
+	fullsrc: "/images/portfolio/full/illustration11.png",
 	category: "illustration",
 	note: "插畫練習 - 愛哭鬼，躺臥在祢懷裡，今天讓我當個愛哭鬼，盡情的哭...",
 	hlink: "portfolio/ghost.html",
 	index: "43"
 }, {
-	images: ["images/portfolio/small/illustration12.png"],
+	images: ["/images/portfolio/small/illustration12.png"],
 	img_height: 520,
-	fullsrc: "images/portfolio/full/illustration12.png",
+	fullsrc: "/images/portfolio/full/illustration12.png",
 	category: "illustration",
 	note: "插畫練習 - 頑皮鬼，偶爾也讓心中的頑皮鬼出來搗蛋一下...",
 	hlink: "portfolio/ghost.html",
 	index: "44"
 }, {
-	images: ["images/portfolio/small/illustration13.png"],
+	images: ["/images/portfolio/small/illustration13.png"],
 	img_height: 520,
-	fullsrc: "images/portfolio/full/illustration13.png",
+	fullsrc: "/images/portfolio/full/illustration13.png",
 	category: "illustration",
 	note: "插畫練習 - 熱情鬼，當一個溫柔的熱情鬼!!",
 	hlink: "portfolio/ghost.html",
 	index: "45"
 }, {
-	images: ["images/portfolio/small/illustration14.png"],
+	images: ["/images/portfolio/small/illustration14.png"],
 	img_height: 521,
-	fullsrc: "images/portfolio/full/illustration14.png",
+	fullsrc: "/images/portfolio/full/illustration14.png",
 	category: "illustration",
 	note: "插畫練習 - 開心鬼，要頭髮快掉光光牙齒快掉光光也要開開心心的!!",
 	hlink: "portfolio/ghost.html",
 	index: "46"
 }, {
-	images: ["images/portfolio/small/illustration15.png"],
+	images: ["/images/portfolio/small/illustration15.png"],
 	img_height: 520,
-	fullsrc: "images/portfolio/full/illustration15.png",
+	fullsrc: "/images/portfolio/full/illustration15.png",
 	category: "illustration",
 	note: "插畫練習 - 韌性鬼，再倒楣也要勇敢面對每一天!!",
 	hlink: "portfolio/ghost.html",
 	index: "47"
 }, {
-	images: ["images/portfolio/small/illustration16.png"],
+	images: ["/images/portfolio/small/illustration16.png"],
 	img_height: 298,
-	fullsrc: "images/portfolio/full/illustration16.png",
+	fullsrc: "/images/portfolio/full/illustration16.png",
 	category: "illustration",
 	note: "插畫練習 - 滿足鬼，要像滿足鬼一樣，天天滿足的感謝上帝!!",
 	hlink: "portfolio/ghost.html",
 	index: "48"
 }, {
-	images: ["images/portfolio/small/name1.jpg", "images/portfolio/small/name7.jpg"],
+	images: ["/images/portfolio/small/name1.jpg", "/images/portfolio/small/name7.jpg"],
 	img_height: 930,
-	fullsrc: "images/portfolio/full/name1.jpg",
+	fullsrc: "/images/portfolio/full/name1.jpg",
 	category: "illustration",
 	note: "夏令營名牌設計 - 這是給夏令營小朋友設計的名牌，共有六組加一款老師的名牌。",
 	index: "53"
 }, {
-	images: ["images/portfolio/small/illustration2.jpg"],
+	images: ["/images/portfolio/small/illustration2.jpg"],
 	img_height: 265,
-	fullsrc: "images/portfolio/full/illustration2.jpg",
+	fullsrc: "/images/portfolio/full/illustration2.jpg",
 	category: "illustration",
 	note: "插畫練習 - 聖誕卡",
 	hlink: "portfolio/christmas.html",
 	index: "32"
 }, {
-	images: ["images/portfolio/small/illustration3.jpg"],
+	images: ["/images/portfolio/small/illustration3.jpg"],
 	img_height: 291,
-	fullsrc: "images/portfolio/full/illustration3.jpg",
+	fullsrc: "/images/portfolio/full/illustration3.jpg",
 	category: "illustration",
 	note: "插畫練習 - 三頭身的海賊。改為三頭身的Q版海賊。",
 	hlink: "portfolio/ocean.html",
 	index: "33"
 }, {
-	images: ["images/portfolio/small/illustration4.jpg"],
+	images: ["/images/portfolio/small/illustration4.jpg"],
 	img_height: 291,
-	fullsrc: "images/portfolio/full/illustration4.jpg",
+	fullsrc: "/images/portfolio/full/illustration4.jpg",
 	category: "illustration",
 	note: "插畫練習 - 愛心蜜蜂。以條紋的愛心為身體，對比色的配色，生動的姿勢",
 	hlink: "portfolio/bee.html",
 	index: "34"
 }, {
-	images: ["images/portfolio/small/illustration5.jpg"],
+	images: ["/images/portfolio/small/illustration5.jpg"],
 	img_height: 503,
-	fullsrc: "images/portfolio/full/illustration5.jpg",
+	fullsrc: "/images/portfolio/full/illustration5.jpg",
 	category: "illustration",
 	note: "插畫練習 - 塗鴉異想世界。鮮豔的前色配上留白的背景...",
 	hlink: "portfolio/sketch.html",
 	index: "35"
 }, {
-	images: ["images/portfolio/small/illustration6.jpg"],
+	images: ["/images/portfolio/small/illustration6.jpg"],
 	img_height: 527,
-	fullsrc: "images/portfolio/full/illustration6.jpg",
+	fullsrc: "/images/portfolio/full/illustration6.jpg",
 	category: "illustration",
 	note: "插畫練習 - 小小人兒。Painter的筆觸練習。",
 	hlink: "portfolio/smallguy.html",
 	index: "36"
 }, {
-	images: ["images/portfolio/small/illustration8.jpg"],
+	images: ["/images/portfolio/small/illustration8.jpg"],
 	img_height: 506,
-	fullsrc: "images/portfolio/full/illustration8.jpg",
+	fullsrc: "/images/portfolio/full/illustration8.jpg",
 	category: "illustration",
 	note: "插畫練習 - 機器娃娃。三頭身的機器娃娃，運用了 Illustrator 的漸層色票及繪圖樣式。",
 	hlink: "portfolio/ebaby.html",
 	index: "38"
 }, {
-	images: ["images/portfolio/small/illustration9.jpg"],
+	images: ["/images/portfolio/small/illustration9.jpg"],
 	img_height: 503,
-	fullsrc: "images/portfolio/full/illustration9.jpg",
+	fullsrc: "/images/portfolio/full/illustration9.jpg",
 	category: "illustration",
 	note: "插畫練習 - 花團錦簇。配色鮮艷，使用了Illustrator扭曲與變形效果、3D效果...",
 	hlink: "portfolio/flowers.html",
 	index: "40"
 }, {
-	images: ["images/portfolio/small/book1.jpg"],
+	images: ["/images/portfolio/small/book1.jpg"],
 	img_height: 572,
-	fullsrc: "images/portfolio/full/book1.jpg",
+	fullsrc: "/images/portfolio/full/book1.jpg",
 	category: "illustration",
 	note: "夏令營學生手冊封面 - 以清爽的白綠色為主軸，標題搭配一點對比色紅色，畫龍點睛。插圖，標準字皆為自己所繪製設計。希望活潑的版面能讓小朋友愉快地閱讀吸收。朋友愉快地閱讀吸收。",
 	index: "49"
 }, {
-	images: ["images/portfolio/small/book2.jpg"],
+	images: ["/images/portfolio/small/book2.jpg"],
 	img_height: 551,
-	fullsrc: "images/portfolio/full/book2.jpg",
+	fullsrc: "/images/portfolio/full/book2.jpg",
 	category: "illustration",
 	note: "夏令營手冊 - 這是夏令營學生手冊第一課的封面。自己繪、設計的插圖，標準字，希望活潑的版面能讓小朋友愉快地閱讀吸收。",
 	index: "50"
 }, {
-	images: ["images/portfolio/small/book3.jpg"],
+	images: ["/images/portfolio/small/book3.jpg"],
 	img_height: 551,
-	fullsrc: "images/portfolio/full/book3.jpg",
+	fullsrc: "/images/portfolio/full/book3.jpg",
 	category: "illustration",
 	note: "夏令營手冊 - 這是夏令營學生手冊第二課的封面。自己繪、設計的插圖，標準字，希望活潑的版面能讓小朋友愉快地閱讀吸收。",
 	index: "51"
 }, {
-	images: ["images/portfolio/small/book4.jpg"],
+	images: ["/images/portfolio/small/book4.jpg"],
 	img_height: 551,
-	fullsrc: "images/portfolio/full/book4.jpg",
+	fullsrc: "/images/portfolio/full/book4.jpg",
 	category: "illustration",
 	note: "夏令營手冊 - 這是夏令營學生手冊第三課的封面。自己繪、設計的插圖，標準字，希望活潑的版面能讓小朋友愉快地閱讀吸收。",
 	index: "52"
 }, {
-	images: ["images/portfolio/small/illustration17.jpg"],
+	images: ["/images/portfolio/small/illustration17.jpg"],
 	img_height: 527,
-	fullsrc: "images/portfolio/full/illustration17.jpg",
+	fullsrc: "/images/portfolio/full/illustration17.jpg",
 	category: "illustration",
 	note: "吉祥物設計練習 - 這是練習給憂鬱症防治機構的吉祥物-陽光小雞。這是小雞正面。",
 	index: "54"
 }, {
-	images: ["images/portfolio/small/illustration18.jpg"],
+	images: ["/images/portfolio/small/illustration18.jpg"],
 	img_height: 331,
-	fullsrc: "images/portfolio/full/illustration18.jpg",
+	fullsrc: "/images/portfolio/full/illustration18.jpg",
 	category: "illustration",
 	note: "吉祥物設計練習 - 這是練習給憂鬱症防治機構的吉祥物-陽光小雞。這幅主題是擁抱。",
 	index: "55"
 }, {
-	images: ["images/portfolio/small/illustration19.jpg"],
+	images: ["/images/portfolio/small/illustration19.jpg"],
 	img_height: 527,
-	fullsrc: "images/portfolio/full/illustration19.jpg",
+	fullsrc: "/images/portfolio/full/illustration19.jpg",
 	category: "illustration",
 	note: "吉祥物設計練習 - 這是練習給憂鬱症防治機構的吉祥物-陽光小雞。這幅主題是陪伴。",
 	index: "56"
 }, {
-	images: ["images/portfolio/small/illustration20.jpg"],
+	images: ["/images/portfolio/small/illustration20.jpg"],
 	img_height: 330,
-	fullsrc: "images/portfolio/full/illustration20.jpg",
+	fullsrc: "/images/portfolio/full/illustration20.jpg",
 	category: "illustration",
 	note: "吉祥物設計練習 - 這是練習給憂鬱症防治機構的吉祥物-陽光小雞。這是小雞側面。",
 	index: "57"
 }, {
-	images: ["images/portfolio/small/illustration21.jpg"],
+	images: ["/images/portfolio/small/illustration21.jpg"],
 	img_height: 527,
-	fullsrc: "images/portfolio/full/illustration21.jpg",
+	fullsrc: "/images/portfolio/full/illustration21.jpg",
 	category: "illustration",
 	note: "吉祥物設計練習 - 這是練習給憂鬱症防治機構的吉祥物-陽光小雞。這是小雞四分之三側面。",
 	index: "58"
@@ -11011,7 +11017,7 @@ var items = [{
 var _ref = _react2.default.createElement(
 	'div',
 	{ className: 'loading-wrap' },
-	_react2.default.createElement('img', { src: '/images/Preloader_8.gif', alt: '' })
+	_react2.default.createElement('img', { src: '//images/Preloader_8.gif', alt: '' })
 );
 
 var LoadingDiv = function (_React$Component) {
@@ -11126,7 +11132,6 @@ var PinterestImg = function (_React$Component) {
 
 	PinterestImg.prototype.componentDidUpdate = function componentDidUpdate(prevProps) {
 		if (prevProps.src === this.props.src) return;
-
 		var img = this.Img;
 		if (img && img.complete && img.naturalHeight !== 0) {
 			this.props.updateLoaded(this.props.id, true, img.clientHeight);
@@ -11176,6 +11181,10 @@ exports.PinterestImg = PinterestImg;
 exports.__esModule = true;
 exports.PinterestItem = undefined;
 
+var _immutabilityHelper = __webpack_require__(208);
+
+var _immutabilityHelper2 = _interopRequireDefault(_immutabilityHelper);
+
 var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
@@ -11208,13 +11217,18 @@ var PinterestItem = function (_React$Component) {
 			}),
 			done: false
 		};
-		_this.updateLoaded = _this.updateLoaded.bind(_this);
+		_this.loadedImgDirty = Array.from({ length: props.item.images.length }, function () {
+			return { loaded: false, height: 0 };
+		}), _this.updateLoaded = _this.updateLoaded.bind(_this);
 		return _this;
 	}
 
 	PinterestItem.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
 		if (nextProps.item === this.props.item) return;
 		this.setState({
+			loadedImg: Array.from({ length: nextProps.item.images.length }, function () {
+				return { loaded: false, height: 0 };
+			}),
 			done: false
 		});
 	};
@@ -11226,15 +11240,21 @@ var PinterestItem = function (_React$Component) {
 	PinterestItem.prototype.componentDidUpdate = function componentDidUpdate(prevProps, prevState) {};
 
 	PinterestItem.prototype.updateLoaded = function updateLoaded(id, done, height) {
-		var l = [].concat(this.state.loadedImg);
-		l[id] = { loaded: !!done, height: height };
+		var _loadedImg;
+
+		// Do not get source from this.state.loadedImg, because loadedImg may not update( due to setState() will not update sync )
+		var newLoad = { loaded: !!done, height: height };
+		this.loadedImgDirty[id] = newLoad;
+		var l = this.loadedImgDirty;
+		l[id] = newLoad;
 		var d = l.filter(function (i) {
 			return !i.loaded;
 		}).length <= 0;
-		this.setState({
-			loadedImg: l,
-			done: d
+		var newState = (0, _immutabilityHelper2.default)(this.state, {
+			loadedImg: (_loadedImg = {}, _loadedImg[id] = { $set: newLoad }, _loadedImg),
+			done: { $set: d }
 		});
+		this.setState(newState);
 		if (d) {
 			// let totoalHight = l.reduce((acc, val)=>(acc + val.height),0);
 			// console.log(l.reduce((acc, val)=>(acc + val.height),0));
@@ -11332,25 +11352,254 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouter = __webpack_require__(14);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 if (false) {
+	require('../global.sass');
 	require('./details.sass');
 }
 
+
+var worksData = __webpack_require__(207).mywork.works;
+
 var _ref = _react2.default.createElement(
 	'div',
-	{ className: 'container' },
+	{ className: 'next' },
+	_react2.default.createElement('i', { className: 'fa fa-angle-right' })
+);
+
+var _ref2 = _react2.default.createElement(
+	'div',
+	{ className: 'prev' },
+	_react2.default.createElement('i', { className: 'fa fa-angle-left' })
+);
+
+var _ref3 = _react2.default.createElement(
+	'div',
+	{ className: 'back' },
 	_react2.default.createElement(
-		'div',
-		{ className: 'row' },
-		'DETAILS'
+		_reactRouter.Link,
+		{ to: '/portfolio/graphic' },
+		_react2.default.createElement(
+			'div',
+			{ className: 'backtop' },
+			'top'
+		)
 	)
 );
 
-var DetailsPage = function DetailsPage(props) {
-	return _ref;
-};
+var _ref4 = _react2.default.createElement(
+	'div',
+	{ className: 'others-title' },
+	'\u76F8\u95DC\u4F5C\u54C1\u5716\u7247'
+);
+
+var _ref5 = _react2.default.createElement(
+	'div',
+	{ className: 'others-title' },
+	'\u76F8\u95DC\u4F5C\u54C1\u5716\u7247'
+);
+
+var _ref6 = _react2.default.createElement(
+	'div',
+	{ className: 'next' },
+	_react2.default.createElement('i', { className: 'fa fa-angle-right' })
+);
+
+var _ref7 = _react2.default.createElement(
+	'div',
+	{ className: 'prev' },
+	_react2.default.createElement('i', { className: 'fa fa-angle-left' })
+);
+
+var _ref8 = _react2.default.createElement(
+	'div',
+	{ className: 'back' },
+	_react2.default.createElement(
+		_reactRouter.Link,
+		{ to: '/portfolio/graphic' },
+		_react2.default.createElement(
+			'div',
+			{ className: 'backtop' },
+			'top'
+		)
+	)
+);
+
+var DetailsPage = function (_React$Component) {
+	_inherits(DetailsPage, _React$Component);
+
+	function DetailsPage(props) {
+		_classCallCheck(this, DetailsPage);
+
+		var _this = _possibleConstructorReturn(this, _React$Component.call(this, props));
+
+		_this.state = {
+			showImg: false
+		};
+		_this.handleImageLoaded = _this.handleImageLoaded.bind(_this);
+		return _this;
+	}
+
+	DetailsPage.prototype.componentDidUpdate = function componentDidUpdate(prevProps) {
+		if (prevProps.params.id === this.props.params.id) return;
+
+		var bigImg = this.bigImg;
+		if (!this.state.showImg && bigImg && bigImg.complete && bigImg.naturalHeight !== 0) {
+			this.setState({ showImg: true });
+		}
+	};
+
+	DetailsPage.prototype.componentDidMount = function componentDidMount() {
+		var bigImg = this.bigImg;
+		if (!this.state.showImg && bigImg && bigImg.complete && bigImg.naturalHeight !== 0) {
+			this.setState({ showImg: true });
+		}
+	};
+
+	DetailsPage.prototype.handleImageLoaded = function handleImageLoaded(e) {
+		this.setState({ showImg: true });
+	};
+
+	DetailsPage.prototype.render = function render() {
+		var _this2 = this;
+
+		var id = parseInt(this.props.params.id);
+		var item = id < worksData.length && worksData[id] || {};
+		var bigImgStyle = {
+			opacity: this.state.showImg ? "1" : "0"
+		};
+		var bigImgWrapStyle = {
+			width: this.state.showImg && this.bigImg && this.bigImg.naturalWidth ? this.bigImg.naturalWidth + 30 : "100%"
+		};
+		return _react2.default.createElement(
+			'section',
+			{ id: 'detailinfo' },
+			_react2.default.createElement(
+				'div',
+				{ className: 'container' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'col-lg-3 col-md-4 col-sm-6 col-xs-12 work-title' },
+						_react2.default.createElement(
+							'h2',
+							{ className: 'cat-left' },
+							item.title
+						)
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'col-lg-offset-7 col-lg-2 col-md-8 col-sm-6 work-change' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'nextpre' },
+							_react2.default.createElement(
+								_reactRouter.Link,
+								{ to: '/portfolio/' + (id + worksData.length + 1) % worksData.length },
+								_ref
+							),
+							_react2.default.createElement(
+								_reactRouter.Link,
+								{ to: '/portfolio/' + (id + worksData.length - 1) % worksData.length },
+								_ref2
+							)
+						),
+						_ref3
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'row ' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'col-lg-2 col-sm-3 col-xs-12 work-desc' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'bigimgdesc' },
+							_react2.default.createElement(
+								'p',
+								null,
+								' ',
+								item.desc
+							)
+						),
+						item.relative && item.relative.img && _react2.default.createElement(
+							'div',
+							{ className: 'hidden-xs relative' },
+							_ref4,
+							item.relative.img.map(function (item, id) {
+								return _react2.default.createElement(
+									_reactRouter.Link,
+									{ key: id, to: '/portfolio/' + item.index },
+									_react2.default.createElement('img', { className: 'img-responsive other-img', src: item.src })
+								);
+							})
+						)
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'col-lg-10 col-sm-9 col-xs-12 ' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'bigimg loading', style: bigImgWrapStyle },
+							_react2.default.createElement('img', { className: 'img-responsive', src: item.img, alt: '', onLoad: this.handleImageLoaded, style: bigImgStyle, ref: function ref(el) {
+									_this2.bigImg = el;
+								} })
+						),
+						item.relative && item.relative.img && _react2.default.createElement(
+							'div',
+							{ className: 'visible-xs relative' },
+							_ref5,
+							item.relative.img.map(function (item, id) {
+								return _react2.default.createElement(
+									_reactRouter.Link,
+									{ key: id, to: '/portfolio/' + item.index },
+									_react2.default.createElement('img', { className: 'img-responsive other-img', src: item.src })
+								);
+							})
+						)
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'col-xs-12' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'nextpre' },
+							_react2.default.createElement(
+								_reactRouter.Link,
+								{ to: '/portfolio/' + (id + worksData.length + 1) % worksData.length },
+								_ref6
+							),
+							_react2.default.createElement(
+								_reactRouter.Link,
+								{ to: '/portfolio/' + (id + worksData.length - 1) % worksData.length },
+								_ref7
+							)
+						),
+						_ref8
+					)
+				)
+			)
+		);
+	};
+
+	return DetailsPage;
+}(_react2.default.Component);
 
 exports.default = DetailsPage;
 
@@ -12493,9 +12742,9 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouter = __webpack_require__(25);
+var _reactRouter = __webpack_require__(14);
 
-var _reactShare = __webpack_require__(209);
+var _reactShare = __webpack_require__(211);
 
 var _Header = __webpack_require__(99);
 
@@ -12657,7 +12906,7 @@ var _actionTypes = __webpack_require__(11);
 
 var types = _interopRequireWildcard(_actionTypes);
 
-var _initialState = __webpack_require__(14);
+var _initialState = __webpack_require__(15);
 
 var _initialState2 = _interopRequireDefault(_initialState);
 
@@ -12700,7 +12949,7 @@ var _actionTypes = __webpack_require__(11);
 
 var types = _interopRequireWildcard(_actionTypes);
 
-var _initialState = __webpack_require__(14);
+var _initialState = __webpack_require__(15);
 
 var _initialState2 = _interopRequireDefault(_initialState);
 
@@ -12734,7 +12983,7 @@ var _actionTypes = __webpack_require__(11);
 
 var types = _interopRequireWildcard(_actionTypes);
 
-var _initialState = __webpack_require__(14);
+var _initialState = __webpack_require__(15);
 
 var _initialState2 = _interopRequireDefault(_initialState);
 
@@ -12787,7 +13036,7 @@ var _ajaxStatusReducer = __webpack_require__(110);
 
 var _ajaxStatusReducer2 = _interopRequireDefault(_ajaxStatusReducer);
 
-var _reactRouterRedux = __webpack_require__(208);
+var _reactRouterRedux = __webpack_require__(210);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -12817,7 +13066,7 @@ var _actionTypes = __webpack_require__(11);
 
 var types = _interopRequireWildcard(_actionTypes);
 
-var _initialState = __webpack_require__(14);
+var _initialState = __webpack_require__(15);
 
 var _initialState2 = _interopRequireDefault(_initialState);
 
@@ -12849,7 +13098,7 @@ var _actionTypes = __webpack_require__(11);
 
 var types = _interopRequireWildcard(_actionTypes);
 
-var _initialState = __webpack_require__(14);
+var _initialState = __webpack_require__(15);
 
 var _initialState2 = _interopRequireDefault(_initialState);
 
@@ -12883,7 +13132,7 @@ var _actionTypes = __webpack_require__(11);
 
 var types = _interopRequireWildcard(_actionTypes);
 
-var _initialState = __webpack_require__(14);
+var _initialState = __webpack_require__(15);
 
 var _initialState2 = _interopRequireDefault(_initialState);
 
@@ -12916,7 +13165,7 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouter = __webpack_require__(25);
+var _reactRouter = __webpack_require__(14);
 
 var _HomePage = __webpack_require__(100);
 
@@ -13011,7 +13260,7 @@ var _reducers = __webpack_require__(113);
 
 var _reducers2 = _interopRequireDefault(_reducers);
 
-var _reduxThunk = __webpack_require__(210);
+var _reduxThunk = __webpack_require__(212);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
@@ -13815,7 +14064,7 @@ module.exports = AutoFocusUtils;
 
 
 
-var EventPropagators = __webpack_require__(21);
+var EventPropagators = __webpack_require__(22);
 var ExecutionEnvironment = __webpack_require__(6);
 var FallbackCompositionState = __webpack_require__(140);
 var SyntheticCompositionEvent = __webpack_require__(178);
@@ -14419,8 +14668,8 @@ module.exports = CSSPropertyOperations;
 
 
 
-var EventPluginHub = __webpack_require__(20);
-var EventPropagators = __webpack_require__(21);
+var EventPluginHub = __webpack_require__(21);
+var EventPropagators = __webpack_require__(22);
 var ExecutionEnvironment = __webpack_require__(6);
 var ReactDOMComponentTree = __webpack_require__(5);
 var ReactUpdates = __webpack_require__(9);
@@ -14747,7 +14996,7 @@ module.exports = ChangeEventPlugin;
 
 var _prodInvariant = __webpack_require__(2);
 
-var DOMLazyTree = __webpack_require__(18);
+var DOMLazyTree = __webpack_require__(19);
 var ExecutionEnvironment = __webpack_require__(6);
 
 var createNodesFromMarkup = __webpack_require__(124);
@@ -14829,7 +15078,7 @@ module.exports = DefaultEventPluginOrder;
 
 
 
-var EventPropagators = __webpack_require__(21);
+var EventPropagators = __webpack_require__(22);
 var ReactDOMComponentTree = __webpack_require__(5);
 var SyntheticMouseEvent = __webpack_require__(26);
 
@@ -15034,7 +15283,7 @@ module.exports = FallbackCompositionState;
 
 
 
-var DOMProperty = __webpack_require__(19);
+var DOMProperty = __webpack_require__(20);
 
 var MUST_USE_PROPERTY = DOMProperty.injection.MUST_USE_PROPERTY;
 var HAS_BOOLEAN_VALUE = DOMProperty.injection.HAS_BOOLEAN_VALUE;
@@ -15251,7 +15500,7 @@ module.exports = HTMLDOMPropertyConfig;
 
 
 
-var ReactReconciler = __webpack_require__(22);
+var ReactReconciler = __webpack_require__(23);
 
 var instantiateReactComponent = __webpack_require__(72);
 var KeyEscapeUtils = __webpack_require__(35);
@@ -15448,20 +15697,20 @@ module.exports = ReactComponentBrowserEnvironment;
 var _prodInvariant = __webpack_require__(2),
     _assign = __webpack_require__(3);
 
-var React = __webpack_require__(24);
+var React = __webpack_require__(25);
 var ReactComponentEnvironment = __webpack_require__(38);
 var ReactCurrentOwner = __webpack_require__(13);
 var ReactErrorUtils = __webpack_require__(39);
 var ReactInstanceMap = __webpack_require__(40);
 var ReactInstrumentation = __webpack_require__(8);
 var ReactNodeTypes = __webpack_require__(164);
-var ReactReconciler = __webpack_require__(22);
+var ReactReconciler = __webpack_require__(23);
 
 if (false) {
   var checkReactTypeSpec = require('./checkReactTypeSpec');
 }
 
-var emptyObject = __webpack_require__(17);
+var emptyObject = __webpack_require__(18);
 var invariant = __webpack_require__(0);
 var shallowEqual = __webpack_require__(30);
 var shouldUpdateReactComponent = __webpack_require__(75);
@@ -16359,11 +16608,11 @@ var _prodInvariant = __webpack_require__(2),
 
 var AutoFocusUtils = __webpack_require__(133);
 var CSSPropertyOperations = __webpack_require__(135);
-var DOMLazyTree = __webpack_require__(18);
+var DOMLazyTree = __webpack_require__(19);
 var DOMNamespaces = __webpack_require__(32);
-var DOMProperty = __webpack_require__(19);
+var DOMProperty = __webpack_require__(20);
 var DOMPropertyOperations = __webpack_require__(59);
-var EventPluginHub = __webpack_require__(20);
+var EventPluginHub = __webpack_require__(21);
 var EventPluginRegistry = __webpack_require__(33);
 var ReactBrowserEventEmitter = __webpack_require__(37);
 var ReactDOMComponentFlags = __webpack_require__(60);
@@ -17398,7 +17647,7 @@ module.exports = ReactDOMContainerInfo;
 
 var _assign = __webpack_require__(3);
 
-var DOMLazyTree = __webpack_require__(18);
+var DOMLazyTree = __webpack_require__(19);
 var ReactDOMComponentTree = __webpack_require__(5);
 
 var ReactDOMEmptyComponent = function (instantiate) {
@@ -17785,7 +18034,7 @@ module.exports = ReactDOMInput;
 
 var _assign = __webpack_require__(3);
 
-var React = __webpack_require__(24);
+var React = __webpack_require__(25);
 var ReactDOMComponentTree = __webpack_require__(5);
 var ReactDOMSelect = __webpack_require__(61);
 
@@ -18163,7 +18412,7 @@ var _prodInvariant = __webpack_require__(2),
     _assign = __webpack_require__(3);
 
 var DOMChildrenOperations = __webpack_require__(31);
-var DOMLazyTree = __webpack_require__(18);
+var DOMLazyTree = __webpack_require__(19);
 var ReactDOMComponentTree = __webpack_require__(5);
 
 var escapeTextContentForBrowser = __webpack_require__(28);
@@ -18750,7 +18999,7 @@ module.exports = REACT_ELEMENT_TYPE;
 
 
 
-var EventPluginHub = __webpack_require__(20);
+var EventPluginHub = __webpack_require__(21);
 
 function runEventQueueInBatch(events) {
   EventPluginHub.enqueueEvents(events);
@@ -18975,8 +19224,8 @@ module.exports = ReactFeatureFlags;
 
 
 
-var DOMProperty = __webpack_require__(19);
-var EventPluginHub = __webpack_require__(20);
+var DOMProperty = __webpack_require__(20);
+var EventPluginHub = __webpack_require__(21);
 var EventPluginUtils = __webpack_require__(34);
 var ReactComponentEnvironment = __webpack_require__(38);
 var ReactEmptyComponent = __webpack_require__(63);
@@ -19076,7 +19325,7 @@ var ReactInstanceMap = __webpack_require__(40);
 var ReactInstrumentation = __webpack_require__(8);
 
 var ReactCurrentOwner = __webpack_require__(13);
-var ReactReconciler = __webpack_require__(22);
+var ReactReconciler = __webpack_require__(23);
 var ReactChildReconciler = __webpack_require__(142);
 
 var emptyFunction = __webpack_require__(7);
@@ -19527,7 +19776,7 @@ module.exports = ReactMultiChild;
 
 var _prodInvariant = __webpack_require__(2);
 
-var React = __webpack_require__(24);
+var React = __webpack_require__(25);
 
 var invariant = __webpack_require__(0);
 
@@ -19995,17 +20244,17 @@ module.exports = ReactServerBatchingStrategy;
 
 var _prodInvariant = __webpack_require__(2);
 
-var React = __webpack_require__(24);
+var React = __webpack_require__(25);
 var ReactDOMContainerInfo = __webpack_require__(146);
 var ReactDefaultBatchingStrategy = __webpack_require__(62);
 var ReactInstrumentation = __webpack_require__(8);
 var ReactMarkupChecksum = __webpack_require__(162);
-var ReactReconciler = __webpack_require__(22);
+var ReactReconciler = __webpack_require__(23);
 var ReactServerBatchingStrategy = __webpack_require__(169);
 var ReactServerRenderingTransaction = __webpack_require__(66);
 var ReactUpdates = __webpack_require__(9);
 
-var emptyObject = __webpack_require__(17);
+var emptyObject = __webpack_require__(18);
 var instantiateReactComponent = __webpack_require__(72);
 var invariant = __webpack_require__(0);
 
@@ -20559,7 +20808,7 @@ module.exports = SVGDOMPropertyConfig;
 
 
 
-var EventPropagators = __webpack_require__(21);
+var EventPropagators = __webpack_require__(22);
 var ExecutionEnvironment = __webpack_require__(6);
 var ReactDOMComponentTree = __webpack_require__(5);
 var ReactInputSelection = __webpack_require__(65);
@@ -20759,7 +21008,7 @@ module.exports = SelectEventPlugin;
 var _prodInvariant = __webpack_require__(2);
 
 var EventListener = __webpack_require__(54);
-var EventPropagators = __webpack_require__(21);
+var EventPropagators = __webpack_require__(22);
 var ReactDOMComponentTree = __webpack_require__(5);
 var SyntheticAnimationEvent = __webpack_require__(176);
 var SyntheticClipboardEvent = __webpack_require__(177);
@@ -20770,7 +21019,7 @@ var SyntheticMouseEvent = __webpack_require__(26);
 var SyntheticDragEvent = __webpack_require__(179);
 var SyntheticTouchEvent = __webpack_require__(183);
 var SyntheticTransitionEvent = __webpack_require__(184);
-var SyntheticUIEvent = __webpack_require__(23);
+var SyntheticUIEvent = __webpack_require__(24);
 var SyntheticWheelEvent = __webpack_require__(185);
 
 var emptyFunction = __webpack_require__(7);
@@ -21157,7 +21406,7 @@ module.exports = SyntheticDragEvent;
 
 
 
-var SyntheticUIEvent = __webpack_require__(23);
+var SyntheticUIEvent = __webpack_require__(24);
 
 /**
  * @interface FocusEvent
@@ -21240,7 +21489,7 @@ module.exports = SyntheticInputEvent;
 
 
 
-var SyntheticUIEvent = __webpack_require__(23);
+var SyntheticUIEvent = __webpack_require__(24);
 
 var getEventCharCode = __webpack_require__(42);
 var getEventKey = __webpack_require__(189);
@@ -21329,7 +21578,7 @@ module.exports = SyntheticKeyboardEvent;
 
 
 
-var SyntheticUIEvent = __webpack_require__(23);
+var SyntheticUIEvent = __webpack_require__(24);
 
 var getEventModifierState = __webpack_require__(43);
 
@@ -22166,7 +22415,7 @@ module.exports = KeyEscapeUtils;
 
 
 
-var _prodInvariant = __webpack_require__(16);
+var _prodInvariant = __webpack_require__(17);
 
 var invariant = __webpack_require__(0);
 
@@ -22283,7 +22532,7 @@ module.exports = PooledClass;
 
 
 var PooledClass = __webpack_require__(197);
-var ReactElement = __webpack_require__(15);
+var ReactElement = __webpack_require__(16);
 
 var emptyFunction = __webpack_require__(7);
 var traverseAllChildren = __webpack_require__(206);
@@ -22478,15 +22727,15 @@ module.exports = ReactChildren;
 
 
 
-var _prodInvariant = __webpack_require__(16),
+var _prodInvariant = __webpack_require__(17),
     _assign = __webpack_require__(3);
 
 var ReactComponent = __webpack_require__(48);
-var ReactElement = __webpack_require__(15);
+var ReactElement = __webpack_require__(16);
 var ReactPropTypeLocationNames = __webpack_require__(79);
 var ReactNoopUpdateQueue = __webpack_require__(49);
 
-var emptyObject = __webpack_require__(17);
+var emptyObject = __webpack_require__(18);
 var invariant = __webpack_require__(0);
 var warning = __webpack_require__(1);
 
@@ -23200,7 +23449,7 @@ module.exports = ReactClass;
 
 
 
-var ReactElement = __webpack_require__(15);
+var ReactElement = __webpack_require__(16);
 
 /**
  * Create a factory that creates HTML tag elements.
@@ -23375,7 +23624,7 @@ module.exports = ReactDOMFactories;
 
 
 
-var ReactElement = __webpack_require__(15);
+var ReactElement = __webpack_require__(16);
 var ReactPropTypeLocationNames = __webpack_require__(79);
 var ReactPropTypesSecret = __webpack_require__(202);
 
@@ -23841,7 +24090,7 @@ var _assign = __webpack_require__(3);
 var ReactComponent = __webpack_require__(48);
 var ReactNoopUpdateQueue = __webpack_require__(49);
 
-var emptyObject = __webpack_require__(17);
+var emptyObject = __webpack_require__(18);
 
 /**
  * Base class helpers for the updating state of a component.
@@ -23901,9 +24150,9 @@ module.exports = '15.4.2';
  */
 
 
-var _prodInvariant = __webpack_require__(16);
+var _prodInvariant = __webpack_require__(17);
 
-var ReactElement = __webpack_require__(15);
+var ReactElement = __webpack_require__(16);
 
 var invariant = __webpack_require__(0);
 
@@ -23945,7 +24194,7 @@ module.exports = onlyChild;
 
 
 
-var _prodInvariant = __webpack_require__(16);
+var _prodInvariant = __webpack_require__(17);
 
 var ReactCurrentOwner = __webpack_require__(13);
 var REACT_ELEMENT_TYPE = __webpack_require__(78);
@@ -24113,28 +24362,1057 @@ module.exports = traverseAllChildren;
 /* 207 */
 /***/ (function(module, exports) {
 
-module.exports = require("mobile-detect");
+module.exports = {
+	"mywork": {
+		"works": [
+			{
+				"index": "0",
+				"title": "廣告練習| Avent 奶瓶",
+				"desc": "本廣告以小朋友在奶瓶中游泳為意象，象徵小朋友使用avent奶瓶就像在媽咪肚子裡游泳一般自然。 以水中漂浮的奶瓶強調其順暢流線型，以彩色立體字呼應LOGO的彩色文字。",
+				"img": "/images/portfolio/full/poster1.jpg"
+			},
+			{
+				"index": "1",
+				"title": "廣告練習| iPhone6",
+				"desc": "背景特別設計用以強調 iphone 6 螢慕的鮮豔色彩。以弧型光芒及iphnoe的側視圖製造空間感，使觀看者彷彿親眼所見。",
+				"img": "/images/portfolio/full/poster2.jpg",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/poster6.jpg",
+							"index": "7"
+						}
+					]
+				}
+			},
+			{
+				"index": "2",
+				"title": "廣告練習| 萬中選一",
+				"desc": "Vera Wang 的禮服以難預約聞名 ，因此想要向消費者傳達等待是值得的。沙漏代表時間流逝，千萬張設計稿經沙漏篩選出一件美麗的禮服一表達 Vera Wang 的禮服萬中選一，新娘的等待是值得的。",
+				"img": "/images/portfolio/full/poster3.jpg"
+			},
+			{
+				"index": "3",
+				"title": "PS練習| Face Off",
+				"desc": "此作品使用了\"How to cheat in photoshop CS6\"一書中的原始圖片， 運用photoshop中修圖的技巧為女主角化妝成美女。",
+				"img": "/images/portfolio/full/photo1.jpg"
+			},
+			{
+				"index": "4",
+				"title": "PS練習| 水彩效果練習",
+				"desc": "將自己在碧潭照的相片用 photoshop 改成水彩效果，運用了photoshop的濾鏡、色彩模色及遮色片功能。",
+				"img": "/images/portfolio/full/photo2.jpg",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/photo3.jpg",
+							"index": "5"
+						}
+					]
+				}
+			},
+			{
+				"index": "5",
+				"title": "PS練習| 油畫效果練習",
+				"desc": "將自己在碧潭照的相片用 photoshop 改成油畫效果，運用了photoshop的藝術家步驟筆刷工具、濾鏡、 色彩模色及遮色片功能。",
+				"img": "/images/portfolio/full/photo3.jpg",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/photo2.jpg",
+							"index": "4"
+						}
+					]
+				}
+			},
+			{
+				"index": "6",
+				"title": "PS練習| 克蘭詩廣告",
+				"desc": "本作品以以葉子包覆保養品，象徵克蘭詩的草本保養概念。綠色背景營造大自然意象，潑濺的水呼應其保濕功能。",
+				"img": "/images/portfolio/full/poster5.jpg"
+			},
+			{
+				"index": "7",
+				"title": "廣告練習| iPhone6",
+				"desc": "背景特別設計，用以強調 iphone 6 金色質感，以弧型光芒及蘋果Logo曲度柔化 iphone 6 的剛硬感。",
+				"img": "/images/portfolio/full/poster6.jpg",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/poster2.jpg",
+							"index": "1"
+						}
+					]
+				}
+			},
+			{
+				"index": "8",
+				"title": "廣告練習| 生活五峰",
+				"desc": "這是為貓頭鷹親子教育協會所繪製的活動DM海報，本作品以繽紛色彩的小朋友插圖及高對比的標題字， 吸引觀看者注意。設計力求活動資訊一目了然。",
+				"img": "/images/portfolio/full/poster7.jpg",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/web1.jpg",
+							"index": "41"
+						}
+					]
+				}
+			},
+			{
+				"index": "9",
+				"title": "雜誌排版練習| 滋味",
+				"desc": "這一系列的雜誌排版練習想以不同風格表達同一內容，本作品 以大量的照片及夠大的標題營造豐富多樣感，引發讀者的食欲。",
+				"img": "/images/portfolio/full/food4.jpg",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/food1.jpg",
+							"index": "11"
+						},
+						{
+							"src": "/images/portfolio/small/food2.jpg",
+							"index": "16"
+						},
+						{
+							"src": "/images/portfolio/small/food3.jpg",
+							"index": "15"
+						},
+						{
+							"src": "/images/portfolio/small/food4.jpg",
+							"index": "9"
+						},
+						{
+							"src": "/images/portfolio/small/food5.jpg",
+							"index": "17"
+						}
+					]
+				}
+			},
+			{
+				"index": "10",
+				"title": "廣告練習| Nike",
+				"desc": "本作品使用 Illustrator 製造出如針織排汗衫的背景，配合明亮水藍色，給人清涼舒適排汗感，襯托鞋子輕巧透氣感。 並以飛濺的液體創造輕巧動感，比諭鞋子如流體般貼身動感。",
+				"img": "/images/portfolio/full/poster4.jpg"
+			},
+			{
+				"index": "11",
+				"title": "雜誌排版練習| 滋味",
+				"desc": "這一系列的雜誌排版練習想以不同風格表達同一內容，本作品以綠橘清爽風呈現， 並間接以大幅筷子圖像為主視覺引誘讀者的食欲。",
+				"img": "/images/portfolio/full/food1.jpg",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/food2.jpg",
+							"index": "16"
+						},
+						{
+							"src": "/images/portfolio/small/food3.jpg",
+							"index": "15"
+						},
+						{
+							"src": "/images/portfolio/small/food4.jpg",
+							"index": "9"
+						},
+						{
+							"src": "/images/portfolio/small/food5.jpg",
+							"index": "17"
+						}
+					]
+				}
+			},
+			{
+				"index": "12",
+				"title": "Logo| 方向",
+				"desc": "右方Logo設計理念為:\"書本給人方向\"。 因此以由書本形狀組成方向指標牌，象徵閱讀給我們人生的方向。 左方Logo以帆船的帆桅為風向的意象，象徵藉由書本得到動力來源。",
+				"img": "/images/portfolio/full/branding2.jpg",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/branding5.jpg",
+							"index": "26"
+						}
+					]
+				}
+			},
+			{
+				"index": "13",
+				"title": "Logo| Shen Bookstore",
+				"desc": "這是一系列為書店LOGO設計練習，由於書店主人喜愛大自然，希望LOGO中有植物的元素， 且樹苗象徵生命力，因此右圖以樹苗為設計發想捷和書本，象徵書本帶給人生命力。左圖象徵赤子之心。",
+				"img": "/images/portfolio/full/branding4.jpg",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/branding3.jpg",
+							"index": "14"
+						}
+					]
+				}
+			},
+			{
+				"index": "14",
+				"title": "Logo| Shen Bookstore",
+				"desc": "這是一系列為書店LOGO設計練習，由於書店主人喜愛大自然，希望LOGO中有植物的元素， 且樹苗象徵生命力，因此以樹苗為設計發想結合書本，象徵書本帶給人生命力。",
+				"img": "/images/portfolio/full/branding3.jpg",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/branding4.jpg",
+							"index": "13"
+						}
+					]
+				}
+			},
+			{
+				"index": "15",
+				"title": "雜誌排版練習| 滋味",
+				"desc": "這一系列的雜誌排版練習想以不同風格表達同一內容，本作品 以活潑插圖及可愛文字呈現動感。",
+				"img": "/images/portfolio/full/food3.jpg",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/food1.jpg",
+							"index": "11"
+						},
+						{
+							"src": "/images/portfolio/small/food2.jpg",
+							"index": "16"
+						},
+						{
+							"src": "/images/portfolio/small/food4.jpg",
+							"index": "9"
+						},
+						{
+							"src": "/images/portfolio/small/food5.jpg",
+							"index": "17"
+						}
+					]
+				}
+			},
+			{
+				"index": "16",
+				"title": "雜誌排版練習| 滋味",
+				"desc": "這一系列的雜誌排版練習想以不同風格表達同一內容，本作品 間接以日本茶道呈現日本人細膩精神，並以小張壽司圖引誘讀者的食欲。",
+				"img": "/images/portfolio/full/food2.jpg",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/food1.jpg",
+							"index": "11"
+						},
+						{
+							"src": "/images/portfolio/small/food3.jpg",
+							"index": "15"
+						},
+						{
+							"src": "/images/portfolio/small/food4.jpg",
+							"index": "9"
+						},
+						{
+							"src": "/images/portfolio/small/food5.jpg",
+							"index": "17"
+						}
+					]
+				}
+			},
+			{
+				"index": "17",
+				"title": "雜誌排版練習| 滋味",
+				"desc": "這一系列的雜誌排版練習想以不同風格表達同一內容，本作品以綠橘清爽風呈現， 並間接以大幅筷子圖像為主視覺引誘讀者的食欲。",
+				"img": "/images/portfolio/full/food5.jpg",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/food1.jpg",
+							"index": "11"
+						},
+						{
+							"src": "/images/portfolio/small/food2.jpg",
+							"index": "16"
+						},
+						{
+							"src": "/images/portfolio/small/food3.jpg",
+							"index": "15"
+						},
+						{
+							"src": "/images/portfolio/small/food4.jpg",
+							"index": "9"
+						}
+					]
+				}
+			},
+			{
+				"index": "18",
+				"title": "DM練習| 木擊者",
+				"desc": "以木琴同色系為主調，擊琴的圖片用十六分隔法切割，變化的圖片裁切增加律動感。",
+				"img": "/images/portfolio/full/DM1.jpg",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/DM1-1.jpg"
+						},
+						{
+							"src": "/images/portfolio/small/DM1-2.jpg"
+						}
+					]
+				}
+			},
+			{
+				"index": "19",
+				"title": "DM練習| Aveda",
+				"desc": "這是一份三摺兩頁的DM設計練習。封面以草綠色嫩葉呈現 Aveda 的環保自然形象， 對比色的橘色標題字，呈現清新亮眼的效果。封底則以紅色營造節慶的感覺。",
+				"img": "/images/portfolio/full/DM3.jpg",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/DM4.jpg",
+							"index": "20"
+						}
+					]
+				}
+			},
+			{
+				"index": "20",
+				"title": "DM練習| Aveda",
+				"desc": "這是一份三摺兩頁的DM設計練習的內頁，主要訴求為資訊一目了然。並以刷淡LOGO為背景， 重覆出現於每個商品背後，營造品牌一致感。",
+				"img": "/images/portfolio/full/DM4.jpg",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/DM3.jpg",
+							"index": "19"
+						}
+					]
+				}
+			},
+			{
+				"index": "21",
+				"title": "DM練習| 仲向",
+				"desc": "建築展覽DM練習，以\"仲向\"標準字的造型與色彩為發想編排圖片。以圖片的裁切展現空間感。",
+				"img": "/images/portfolio/full/DM2.jpg"
+			},
+			{
+				"index": "22",
+				"title": "Web Banner| 奶娃",
+				"desc": "這一系列的 Web Banner 是為貓頭鷹親子教育協會所繪製，本作品以粉色系營造柔和舒適感， 插圖並以對比背景的綠色衣服來吸引觀看者注意奶娃。",
+				"img": "/images/portfolio/full/web3.jpg",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/web1.jpg",
+							"index": "41"
+						},
+						{
+							"src": "/images/portfolio/small/web2.jpg",
+							"index": "42"
+						},
+						{
+							"src": "/images/portfolio/small/web4.jpg",
+							"index": "24"
+						},
+						{
+							"src": "/images/portfolio/small/web5.jpg",
+							"index": "23"
+						}
+					]
+				}
+			},
+			{
+				"index": "23",
+				"title": "Web Banner| 青春",
+				"desc": "這一系列的 Web Banner 是為貓頭鷹親子教育協會所繪製，本作品以晴空 、高飽和度的色彩及年輕人的運動剪影營造青春氣氛。",
+				"img": "/images/portfolio/full/web5.jpg",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/web1.jpg",
+							"index": "41"
+						},
+						{
+							"src": "/images/portfolio/small/web2.jpg",
+							"index": "42"
+						},
+						{
+							"src": "/images/portfolio/small/web4.jpg",
+							"index": "24"
+						},
+						{
+							"src": "/images/portfolio/small/web3.jpg",
+							"index": "22"
+						}
+					]
+				}
+			},
+			{
+				"index": "24",
+				"title": "Web Banner| 說故事",
+				"desc": "這一系列的 Web Banner 是為貓頭鷹親子教育協會所繪製，本作品以可愛小人頭圍著老師聽故事為主視覺。",
+				"img": "/images/portfolio/full/web4.jpg",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/web1.jpg",
+							"index": "41"
+						},
+						{
+							"src": "/images/portfolio/small/web2.jpg",
+							"index": "42"
+						},
+						{
+							"src": "/images/portfolio/small/web5.jpg",
+							"index": "23"
+						},
+						{
+							"src": "/images/portfolio/small/web3.jpg",
+							"index": "22"
+						}
+					]
+				}
+			},
+			{
+				"index": "25",
+				"title": "廣告練習| 美好人生",
+				"desc": "背景特別設計以襯托香水瓶的晶透高雅質感，整體的柔和半透明色調營造愉悅氣氛。",
+				"img": "/images/portfolio/full/poster8.jpg"
+			},
+			{
+				"index": "26",
+				"title": "VI告練習| 方向",
+				"desc": "此VI設計理念為:\"書本給人方向\"。 因此以由書本形狀組成方向指標牌，象徵閱讀給我們人生的方向。",
+				"img": "/images/portfolio/full/branding5.jpg",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/branding2.jpg",
+							"index": "12"
+						}
+					]
+				}
+			},
+			{
+				"index": "27",
+				"title": "eDM練習| 洗衣機",
+				"desc": "本eDM以居家的清爽色調背景營造清潔乾爽感，排版力求簡單明瞭，呈現資訊重要性的階層。",
+				"img": "/images/portfolio/full/edm1.jpg"
+			},
+			{
+				"index": "28",
+				"title": "T-shirt設計| 閱向未來",
+				"desc": "這是為貓頭鷹親子教育協會所設計的T-shirt，設計理念如下:\"閱讀給我們人生的方向，象徵站 在人生十字路口的小朋友，藉由貓頭鷹親子教育協會獲得人生 未來的方向。",
+				"img": "/images/portfolio/full/branding12.jpg",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/branding13.jpg",
+							"index": "29"
+						}
+					]
+				}
+			},
+			{
+				"index": "29",
+				"title": "T-shirt設計| 閱向未來",
+				"desc": "這是為貓頭鷹親子教育協會所設計的T-shirt，設計理念如下:\"閱讀給我們人生的方向，象徵站 在人生十字路口的小朋友，藉由貓頭鷹親子教育協會獲得人生 未來的方向。",
+				"img": "/images/portfolio/full/branding13.jpg",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/branding12.jpg",
+							"index": "28"
+						}
+					]
+				}
+			},
+			{
+				"index": "30",
+				"title": "T-shirt設計| Let's Read",
+				"desc": "這是為貓頭鷹親子教育協會所設計的T-shirt，用卡通風呼籲大家一起來閱讀，配色構圖力求活潑亮麗。",
+				"img": "/images/portfolio/full/branding14.jpg"
+			},
+			{
+				"index": "31",
+				"title": "插畫練習| 小天使",
+				"desc": "二頭身的插畫練習。",
+				"img": "/images/portfolio/full/illustration1.jpg"
+			},
+			{
+				"index": "32",
+				"title": "插畫練習| 聖誕節",
+				"desc": "聖誕節插畫練習。",
+				"img": "/images/portfolio/full/illustration2.jpg",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/illustration2-1.jpg"
+						}
+					]
+				}
+			},
+			{
+				"index": "33",
+				"title": "插畫練習| 海賊",
+				"desc": "改為三頭身的Q版海賊。",
+				"img": "/images/portfolio/full/illustration3.jpg"
+			},
+			{
+				"index": "34",
+				"title": "插畫練習| 愛心蜜蜂",
+				"desc": "以條紋的愛心為身體，對比色的配色，生動的姿勢營造活潑感。",
+				"img": "/images/portfolio/full/illustration4.jpg"
+			},
+			{
+				"index": "35",
+				"title": "插畫練習| 塗鴉",
+				"desc": "鮮豔的前色配上留白的背景，運用了 illustrator 的漸層、漸變、3D、旋轉及路徑管理員功能。",
+				"img": "/images/portfolio/full/illustration5.jpg"
+			},
+			{
+				"index": "36",
+				"title": "插畫練習| 小小人兒",
+				"desc": "Painter的筆觸練習。",
+				"img": "/images/portfolio/full/illustration6.jpg"
+			},
+			{
+				"index": "37",
+				"title": "插畫練習| 小人兒",
+				"desc": "各年齡層的小人兒，photshop + illustrator的結合。",
+				"img": "/images/portfolio/full/illustration7.jpg"
+			},
+			{
+				"index": "38",
+				"title": "插畫練習| 機器娃娃",
+				"desc": "三頭身的機器娃娃，運用了 Illustrator 的漸層色票及繪圖樣式。",
+				"img": "/images/portfolio/full/illustration8.jpg"
+			},
+			{
+				"index": "39",
+				"title": "eDM練習| 吸塵器",
+				"desc": "本eDM以居家的清爽色調背景營造清潔乾爽感，排版力求簡單明瞭，呈現資訊重要性的階層。",
+				"img": "/images/portfolio/full/edm2.jpg"
+			},
+			{
+				"index": "40",
+				"title": "插畫練習| 花",
+				"desc": "配色鮮艷，使用 Illustrator 繪製的花，使用了扭曲與變形效果、3D效果、彎曲效果及圖樣筆刷。",
+				"img": "/images/portfolio/full/illustration9.jpg"
+			},
+			{
+				"index": "41",
+				"title": "Web Banner| 生活五峰",
+				"desc": "這一系列的 Web Banner 是為貓頭鷹親子教育協會所繪製，本作品以繽紛色彩的小朋友插圖及高對比的標題字， 吸引觀看者注意。設計力求活動資訊一目了然。",
+				"img": "/images/portfolio/full/web1.jpg",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/web4.jpg",
+							"index": "24"
+						},
+						{
+							"src": "/images/portfolio/small/web2.jpg",
+							"index": "42"
+						},
+						{
+							"src": "/images/portfolio/small/web5.jpg",
+							"index": "23"
+						},
+						{
+							"src": "/images/portfolio/small/web3.jpg",
+							"index": "22"
+						}
+					]
+				}
+			},
+			{
+				"index": "42",
+				"title": "Web Banner| 少年之心",
+				"desc": "這一系列的 Web Banner 是為貓頭鷹親子教育協會所繪製，本作品以粉色系營造柔和舒適感， 特別用金鑰的影像呼籲關心少年的內心世界。",
+				"img": "/images/portfolio/full/web2.jpg",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/web4.jpg",
+							"index": "41"
+						},
+						{
+							"src": "/images/portfolio/small/web1.jpg",
+							"index": "42"
+						},
+						{
+							"src": "/images/portfolio/small/web5.jpg",
+							"index": "23"
+						},
+						{
+							"src": "/images/portfolio/small/web3.jpg",
+							"index": "22"
+						}
+					]
+				}
+			},
+			{
+				"index": "43",
+				"title": "插畫練習| 愛哭鬼",
+				"desc": "鬼鬼系列，希望可以畫出能拭去傷心人淚水的畫，傳達喜樂!!愛哭鬼 - 躺臥在祢懷裡，今天讓我當個愛哭鬼，盡情的哭",
+				"img": "/images/portfolio/full/illustration11.png",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/illustration12.png",
+							"index": "44"
+						},
+						{
+							"src": "/images/portfolio/small/illustration13.png",
+							"index": "45"
+						},
+						{
+							"src": "/images/portfolio/small/illustration14.png",
+							"index": "46"
+						},
+						{
+							"src": "/images/portfolio/small/illustration15.png",
+							"index": "47"
+						},
+						{
+							"src": "/images/portfolio/small/illustration16.png",
+							"index": "48"
+						}
+					]
+				}
+			},
+			{
+				"index": "44",
+				"title": "插畫練習| 頑皮鬼",
+				"desc": "鬼鬼系列，希望可以畫出能拭去傷心人淚水的畫，傳達喜樂!!頑皮鬼 - 偶爾也讓心中的頑皮鬼出來搗蛋一下",
+				"img": "/images/portfolio/full/illustration12.png",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/illustration11.png",
+							"index": "43"
+						},
+						{
+							"src": "/images/portfolio/small/illustration13.png",
+							"index": "45"
+						},
+						{
+							"src": "/images/portfolio/small/illustration14.png",
+							"index": "46"
+						},
+						{
+							"src": "/images/portfolio/small/illustration15.png",
+							"index": "47"
+						},
+						{
+							"src": "/images/portfolio/small/illustration16.png",
+							"index": "48"
+						}
+					]
+				}
+			},
+			{
+				"index": "45",
+				"title": "插畫練習| 熱情鬼",
+				"desc": "鬼鬼系列，希望可以畫出能拭去傷心人淚水的畫，傳達喜樂!!熱情鬼 - 當一個溫柔的熱情鬼!!",
+				"img": "/images/portfolio/full/illustration13.png",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/illustration11.png",
+							"index": "43"
+						},
+						{
+							"src": "/images/portfolio/small/illustration12.png",
+							"index": "44"
+						},
+						{
+							"src": "/images/portfolio/small/illustration14.png",
+							"index": "46"
+						},
+						{
+							"src": "/images/portfolio/small/illustration15.png",
+							"index": "47"
+						},
+						{
+							"src": "/images/portfolio/small/illustration16.png",
+							"index": "48"
+						}
+					]
+				}
+			},
+			{
+				"index": "46",
+				"title": "插畫練習| 開心鬼",
+				"desc": "鬼鬼系列，希望可以畫出能拭去傷心人淚水的畫，傳達喜樂!!開心鬼 - 要頭髮快掉光光牙齒快掉光光也要開開心心的!!",
+				"img": "/images/portfolio/full/illustration14.png",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/illustration11.png",
+							"index": "43"
+						},
+						{
+							"src": "/images/portfolio/small/illustration12.png",
+							"index": "44"
+						},
+						{
+							"src": "/images/portfolio/small/illustration13.png",
+							"index": "45"
+						},
+						{
+							"src": "/images/portfolio/small/illustration15.png",
+							"index": "47"
+						},
+						{
+							"src": "/images/portfolio/small/illustration16.png",
+							"index": "48"
+						}
+					]
+				}
+			},
+			{
+				"index": "47",
+				"title": "插畫練習| 韌性鬼",
+				"desc": "鬼鬼系列，希望可以畫出能拭去傷心人淚水的畫，傳達喜樂!! 韌性鬼 - 再倒楣也要勇敢面對每一天!!",
+				"img": "/images/portfolio/full/illustration15.png",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/illustration11.png",
+							"index": "43"
+						},
+						{
+							"src": "/images/portfolio/small/illustration12.png",
+							"index": "44"
+						},
+						{
+							"src": "/images/portfolio/small/illustration13.png",
+							"index": "45"
+						},
+						{
+							"src": "/images/portfolio/small/illustration14.png",
+							"index": "46"
+						},
+						{
+							"src": "/images/portfolio/small/illustration16.png",
+							"index": "48"
+						}
+					]
+				}
+			},
+			{
+				"index": "48",
+				"title": "插畫練習| 滿足鬼",
+				"desc": "鬼鬼系列，希望可以畫出能拭去傷心人淚水的畫，傳達喜樂!! 滿足鬼 - 要像滿足鬼一樣，天天滿足的感謝上帝!!",
+				"img": "/images/portfolio/full/illustration16.png",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/illustration11.png",
+							"index": "43"
+						},
+						{
+							"src": "/images/portfolio/small/illustration12.png",
+							"index": "44"
+						},
+						{
+							"src": "/images/portfolio/small/illustration13.png",
+							"index": "45"
+						},
+						{
+							"src": "/images/portfolio/small/illustration14.png",
+							"index": "46"
+						},
+						{
+							"src": "/images/portfolio/small/illustration15.png",
+							"index": "47"
+						}
+					]
+				}
+			},
+			{
+				"index": "49",
+				"title": "夏令營學生手冊封面",
+				"desc": "以清爽的白綠色為主軸，標題搭配一點對比色紅色，畫龍點睛。插圖，標準字皆為自己所繪製設計。希望活潑的版面能讓小朋友愉快地閱讀吸收。",
+				"img": "/images/portfolio/full/book1.jpg",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/book2.jpg",
+							"index": "50"
+						},
+						{
+							"src": "/images/portfolio/small/book3.jpg",
+							"index": "51"
+						},
+						{
+							"src": "/images/portfolio/small/book4.jpg",
+							"index": "51"
+						}
+					]
+				}
+			},
+			{
+				"index": "50",
+				"title": "馬雅各宣教士封面",
+				"desc": "這是夏令營學生手冊第一課的封面。自己繪、設計的插圖，標準字，希望活潑的版面能讓小朋友愉快地閱讀吸收。",
+				"img": "/images/portfolio/full/book2.jpg",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/book1.jpg",
+							"index": "49"
+						},
+						{
+							"src": "/images/portfolio/small/book3.jpg",
+							"index": "51"
+						},
+						{
+							"src": "/images/portfolio/small/book4.jpg",
+							"index": "51"
+						}
+					]
+				}
+			},
+			{
+				"index": "51",
+				"title": "馬諧博士封面",
+				"desc": "這是夏令營學生手冊第二課的封面。自己繪、設計的插圖，標準字，希望活潑的版面能讓小朋友愉快地閱讀吸收。",
+				"img": "/images/portfolio/full/book3.jpg",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/book1.jpg",
+							"index": "49"
+						},
+						{
+							"src": "/images/portfolio/small/book2.jpg",
+							"index": "50"
+						},
+						{
+							"src": "/images/portfolio/small/book4.jpg",
+							"index": "52"
+						}
+					]
+				}
+			},
+			{
+				"index": "52",
+				"title": "孫裡連宣教士封面",
+				"desc": "這是夏令營學生手冊第三課的封面。自己繪、設計的插圖，標準字，希望活潑的版面能讓小朋友愉快地閱讀吸收。",
+				"img": "/images/portfolio/full/book4.jpg",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/book1.jpg",
+							"index": "49"
+						},
+						{
+							"src": "/images/portfolio/small/book2.jpg",
+							"index": "50"
+						},
+						{
+							"src": "/images/portfolio/small/book3.jpg",
+							"index": "51"
+						}
+					]
+				}
+			},
+			{
+				"index": "53",
+				"title": "夏令營名牌設計",
+				"desc": "這是給夏令營小朋友設計的名牌，共有六組加一款老師的名牌。",
+				"img": "/images/portfolio/full/name0.jpg",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/name1.jpg"
+						},
+						{
+							"src": "/images/portfolio/small/name2.jpg"
+						},
+						{
+							"src": "/images/portfolio/small/name3.jpg"
+						},
+						{
+							"src": "/images/portfolio/small/name4.jpg"
+						},
+						{
+							"src": "/images/portfolio/small/name5.jpg"
+						},
+						{
+							"src": "/images/portfolio/small/name6.jpg"
+						},
+						{
+							"src": "/images/portfolio/small/name7.jpg"
+						}
+					]
+				}
+			},
+			{
+				"index": "54",
+				"title": "吉祥物設計練習| 陽光小雞",
+				"desc": "這是練習給憂鬱症防治機構的吉祥物-陽光小雞。這是小雞正面。",
+				"img": "/images/portfolio/full/illustration17.jpg",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/illustration18.jpg",
+							"index": "55"
+						},
+						{
+							"src": "/images/portfolio/small/illustration19.jpg",
+							"index": "56"
+						},
+						{
+							"src": "/images/portfolio/small/illustration20.jpg",
+							"index": "57"
+						},
+						{
+							"src": "/images/portfolio/small/illustration21.jpg",
+							"index": "58"
+						}
+					]
+				}
+			},
+			{
+				"index": "55",
+				"title": "吉祥物設計練習| 陽光小雞",
+				"desc": "這是練習給憂鬱症防治機構的吉祥物-陽光小雞。這幅主題是一起走。",
+				"img": "/images/portfolio/full/illustration18.jpg",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/illustration17.jpg",
+							"index": "54"
+						},
+						{
+							"src": "/images/portfolio/small/illustration19.jpg",
+							"index": "56"
+						},
+						{
+							"src": "/images/portfolio/small/illustration20.jpg",
+							"index": "57"
+						},
+						{
+							"src": "/images/portfolio/small/illustration21.jpg",
+							"index": "58"
+						}
+					]
+				}
+			},
+			{
+				"index": "56",
+				"title": "吉祥物設計練習| 陽光小雞",
+				"desc": "這是練習給憂鬱症防治機構的吉祥物-陽光小雞。這幅主題是陪伴。",
+				"img": "/images/portfolio/full/illustration19.jpg",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/illustration17.jpg",
+							"index": "54"
+						},
+						{
+							"src": "/images/portfolio/small/illustration18.jpg",
+							"index": "55"
+						},
+						{
+							"src": "/images/portfolio/small/illustration20.jpg",
+							"index": "57"
+						},
+						{
+							"src": "/images/portfolio/small/illustration21.jpg",
+							"index": "58"
+						}
+					]
+				}
+			},
+			{
+				"index": "57",
+				"title": "吉祥物設計練習| 陽光小雞",
+				"desc": "這是練習給憂鬱症防治機構的吉祥物-陽光小雞。這是小雞側面。",
+				"img": "/images/portfolio/full/illustration20.jpg",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/illustration17.jpg",
+							"index": "54"
+						},
+						{
+							"src": "/images/portfolio/small/illustration18.jpg",
+							"index": "55"
+						},
+						{
+							"src": "/images/portfolio/small/illustration19.jpg",
+							"index": "56"
+						},
+						{
+							"src": "/images/portfolio/small/illustration21.jpg",
+							"index": "58"
+						}
+					]
+				}
+			},
+			{
+				"index": "58",
+				"title": "吉祥物設計練習| 陽光小雞",
+				"desc": "這是練習給憂鬱症防治機構的吉祥物-陽光小雞。這是小雞四分之三側面。",
+				"img": "/images/portfolio/full/illustration21.jpg",
+				"relative": {
+					"img": [
+						{
+							"src": "/images/portfolio/small/illustration17.jpg",
+							"index": "54"
+						},
+						{
+							"src": "/images/portfolio/small/illustration19.jpg",
+							"index": "56"
+						},
+						{
+							"src": "/images/portfolio/small/illustration18.jpg",
+							"index": "55"
+						},
+						{
+							"src": "/images/portfolio/small/illustration20.jpg",
+							"index": "57"
+						}
+					]
+				}
+			}
+		]
+	}
+};
 
 /***/ }),
 /* 208 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-router-redux");
+module.exports = require("immutability-helper");
 
 /***/ }),
 /* 209 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-share");
+module.exports = require("mobile-detect");
 
 /***/ }),
 /* 210 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux-thunk");
+module.exports = require("react-router-redux");
 
 /***/ }),
 /* 211 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-share");
+
+/***/ }),
+/* 212 */
+/***/ (function(module, exports) {
+
+module.exports = require("redux-thunk");
+
+/***/ }),
+/* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

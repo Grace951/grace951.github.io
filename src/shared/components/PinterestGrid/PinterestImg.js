@@ -17,7 +17,6 @@ let PinterestImg = class PinterestImg extends React.Component{
 	componentDidUpdate(prevProps) {
 		if (prevProps.src === this.props.src)
 			return;
-
 		let img = this.Img;
 		if (img && img.complete && img.naturalHeight !== 0){
 			this.props.updateLoaded(this.props.id, true, img.clientHeight);
@@ -27,7 +26,7 @@ let PinterestImg = class PinterestImg extends React.Component{
 		let img = this.Img;
 		if (img && img.complete && img.naturalHeight !== 0){
 			this.props.updateLoaded(this.props.id, true, img.clientHeight);
-		}		
+		}
 	}
 	handleImageLoaded(e){
 		this.props.updateLoaded(this.props.id, true, e.target.clientHeight);

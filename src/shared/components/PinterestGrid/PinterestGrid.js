@@ -3,6 +3,7 @@ if (process.env.BROWSER) {
 }
 import React from 'react';
 import { PinterestItem } from './PinterestItem';
+import { Link } from 'react-router';
 
 let PinterestGrid = class PinterestGrid extends React.Component{
 	constructor(props) {
@@ -149,8 +150,12 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 		};
 
 		let ItemViews = loadedItems.slice(0, loadedIndex ).map((item,id) => {
-			return (<PinterestItem key={id} item={items[id]} reRender={!item.loaded} id={id} top={item.top} left={item.left} ssr={item.ssr} 
-							hideDesc={hideDesc} columnWidth={columnWidth}/>);
+			return (
+				<Link  key={id} to={`/portfolio/${items[id].index}`}>
+					<PinterestItem item={items[id]} reRender={!item.loaded} id={id} top={item.top} left={item.left} ssr={item.ssr} 
+							hideDesc={hideDesc} columnWidth={columnWidth}/>
+				</Link>
+			);
 		});
 
 		return (

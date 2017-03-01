@@ -97,6 +97,25 @@ a:hover, a:focus
 	color: #d43133
 
 
+.container
+	max-width: 1440px
+	width: 100%
+	ul 
+		float: right
+  
+
+@include respond-to(sm)
+	.container
+		margin: 0
+		width: 100%
+	
+
+@include respond-to(xs)
+	.container
+		margin: 0
+		width: 100%
+
+
 .shake
 	z-index: 100
 	transition: animation 1000ms
@@ -154,7 +173,7 @@ a:hover, a:focus
 
 
 .cat-left
-	border-left: 10px solid #F90
+	border-left: 10px solid #7FBF34
 	padding-left: 5px
 	font-size: 24px
 	color: #000
@@ -164,24 +183,6 @@ a:hover, a:focus
 	border-left: 7px solid #6F6
 	margin-left: -30px
 	padding-left: 10px
-
-.work-title
-	margin-bottom: 20px
-
-.bigimgdesc 
-	border:solid 1px #ccc
-	margin-bottom: 30px
-	padding: 13px
-
-
-.bigimg 
-	margin-top: -35px
-	padding: 15px
-	margin: 0 auto
-	float: none
-	@include respond-to(xs) 
-		margin-top: 0px
-  
 
 
 .web_loading
@@ -217,90 +218,6 @@ a:hover, a:focus
 		background: none #fff
 		width: auto
 		height: auto
-  
-#detailinfo
-	@include respond-to(xs) 
-		margin-top: -0px
- 
-.detailBG
-	background: $timeline_bg
 
-.center_containter 
-	text-align: center
-
-.nextpre 
-	position: static
-	max-width: 80px
-	height: 35px
-	float: right
-	i
-		color: #999
-		display: block
-		margin-right: 5px
-		float: right
-		width: 32px
-		height: 32px
-		line-height: 30px
-		text-align: center
-		font-size: 24px
-		border: 1px solid #999
-
-.container
-	max-width: 1440px
-	width: 100%
-	ul 
-		float: right
-  
-
-@include respond-to(sm)
-	.container
-		margin: 0
-		width: 100%
-	
-
-@include respond-to(xs)
-	.container
-		margin: 0
-		width: 100%
-    
-.backtop
-	background: #fafafa
-	float: right
-	width: 100%
-	height: 100%
-	bottom: 0
-	text-align: center
-	padding: 3px 0px 3px 0px
-	border: 1px solid #999
-
-
-.back
-	position: static
-	margin-bottom: 5px
-	margin-right: 5px
-	width: 60px
-	height: 30px
-	float: right
-
-
-.back a
-	width: 100%
-	display: block
-	float: right
-	color: #333
-	text-align: center
-
-
-
-#back_small_screen
-	@include respond-to(lg) 
-		display: none
-		float: none
-  
-
-	@include respond-to(md) 
-		display: none
-		float: none
-  
 
 

@@ -1,6 +1,7 @@
 if (process.env.BROWSER) {
 	require ('./pinterestItem.sass');
 }
+import update from 'immutability-helper';
 import React from 'react';
 import { PinterestImg } from './PinterestImg';
 let PinterestItem = class PinterestItem extends React.Component{
@@ -10,12 +11,14 @@ let PinterestItem = class PinterestItem extends React.Component{
 			loadedImg: Array.from({ length: props.item.images.length }, () => ( {loaded: false, height: 0})), 			
 			done: false,
 		}
+		this.loadedImgDirty = Array.from({ length: props.item.images.length }, () => ( {loaded: false, height: 0})), 		
 		this.updateLoaded = this.updateLoaded.bind(this);
 	}
 	componentWillReceiveProps(nextProps){
 		if (nextProps.item === this.props.item)
 			return;
 		this.setState({
+			loadedImg: Array.from({ length: nextProps.item.images.length }, () => ( {loaded: false, height: 0})), 						
 			done: false,
 		});
 	}
@@ -26,13 +29,17 @@ let PinterestItem = class PinterestItem extends React.Component{
 	componentDidUpdate(prevProps, prevState) {
 	}
     updateLoaded(id, done, height ) {
-		let l = [...this.state.loadedImg];
-		l[id] = {loaded: !!done, height};
+		// Do not get source from this.state.loadedImg, because loadedImg may not update( due to setState() will not update sync )
+		let newLoad = {loaded: !!done, height};
+		this.loadedImgDirty[id] = newLoad;
+		let l = this.loadedImgDirty;
+		l[id] = newLoad;
 		let d = (l.filter((i)=>!i.loaded).length <= 0);
-		this.setState({
-			loadedImg: l,
-			done: d
-		});	
+		const newState  = update(this.state, {
+			loadedImg : {[id]: {$set: newLoad}},
+			done:  {$set: d}
+		});
+		this.setState(newState);
 		if (d) {
 			// let totoalHight = l.reduce((acc, val)=>(acc + val.height),0);
 			// console.log(l.reduce((acc, val)=>(acc + val.height),0));
