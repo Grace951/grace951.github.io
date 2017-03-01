@@ -24,7 +24,7 @@ let SiteShlef = class SiteShlef extends React.Component{
 	<div className="siteshelf col-sm-12">
 		<div className="row web_brief">
 			<div className="row ">
-				<div className="web_link col-sm-12"><a href={this.props.web_link.src} target="_blank"><img src={this.props.web_link.img}/></a>
+				<div className="web_link col-sm-12"><a href={this.props.web_link.src} target="_blank"><img src={this.props.web_link.img} alt={this.props.children}  title={this.props.children}/></a>
 					{this.props.web_link.title}
 					<h2><a href={this.props.web_link.src} target="_blank"> Go </a></h2>
 				</div>

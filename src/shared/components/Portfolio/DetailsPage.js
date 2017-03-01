@@ -4,6 +4,7 @@ if (process.env.BROWSER) {
 }
 import React from 'react';
 import { Link } from 'react-router';
+import RelativeItems from './RelativeItems';
 
 let worksData = require('../../data/works.json').mywork.works;
 
@@ -76,26 +77,19 @@ let DetailsPage = class DetailsPage extends React.Component{
 					{ item.relative && item.relative.img &&
 						<div className="hidden-xs relative">
 							<div className="others-title">相關作品圖片</div>
-							{item.relative.img.map( (imgItem, i) => (
-								<Link key={i} to={`/portfolio/${imgItem.index||item.index}`}>
-									<img className="img-responsive other-img" src={imgItem.src}/>
-								</Link>
-							))}
+							<RelativeItems relative={item.relative} parentIndex={item.index}/>
 						</div>
 					}
 				</div>
 				<div className="col-lg-10 col-sm-9 col-xs-12 ">
 					<div className="bigimg loading" style={bigImgWrapStyle} >
-						<img className="img-responsive" src={item.img} alt="" onLoad={this.handleImageLoaded}  style={bigImgStyle} ref={(el) => { this.bigImg = el; }}/>
+						<img className="img-responsive" src={item.img} alt={`${item.title} - ${item.desc}`} title={`${item.title} - ${item.desc}`} 
+							onLoad={this.handleImageLoaded}  style={bigImgStyle} ref={(el) => { this.bigImg = el; }}/>
 					</div>
 					{ item.relative && item.relative.img &&
 						<div className="visible-xs relative">
 							<div className="others-title">相關作品圖片</div>
-							{item.relative.img.map( (imgItem, i) => (
-								<Link key={i} to={`/portfolio/${imgItem.index||item.index}`}>
-									<img className="img-responsive other-img" src={imgItem.src}/>
-								</Link>
-							))}
+							<RelativeItems relative={item.relative} parentIndex={item.index}/>
 						</div>
 					}
 				</div>

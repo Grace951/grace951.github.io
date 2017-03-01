@@ -56,7 +56,7 @@ class Timeline extends React.Component{
                         </ul>
                     </div>
                     <div className="media-img">
-                        <a href="http://www.sce.pccu.edu.tw/" target="_blank"><img className="img-responsive" src="/images/sce_logo.jpg" alt=""/></a>
+                        <a href="http://www.sce.pccu.edu.tw/" target="_blank"><img className="img-responsive" src="/images/sce_logo.jpg" alt="職訓局文化多媒體班"  title="職訓局文化多媒體班"/></a>
                     </div>
 
                 </div>
@@ -81,7 +81,7 @@ class Timeline extends React.Component{
                         </ul>
                     </div>
                     <div className="media-img">
-                        <a href="http://www.accmedia.com.tw/" target="_blank"><img className="img-responsive" src="/images/ecdesign.jpg" alt=""/></a>
+                        <a href="http://www.accmedia.com.tw/" target="_blank"><img className="img-responsive" src="/images/ecdesign.jpg" alt="易禧創意平面美編職人班" title="易禧創意平面美編職人班"/></a>
                     </div>
 
                 </div>
@@ -106,7 +106,7 @@ class Timeline extends React.Component{
                         </ul>
                     </div>
                     <div className="media-img">
-                        <a href="http://www.owltale.org.tw/ap/index.aspx" target="_blank"><img className="img-responsive" src="/images/owl.png" alt=""/></a>
+                        <a href="http://www.owltale.org.tw/ap/index.aspx" target="_blank"><img className="img-responsive" src="/images/owl.png" alt="貓頭鷹親子教育協會" title="貓頭鷹親子教育協會"/></a>
                     </div>
 
                 </div>
@@ -130,7 +130,7 @@ class Timeline extends React.Component{
                         </ul>
                     </div>
                     <div className="media-img">
-                        <a href="http://www.flycan.com.tw/" target="_blank"><img className="img-responsive" src="/images/flycan.jpg" alt=""/></a>
+                        <a href="http://www.flycan.com.tw/" target="_blank"><img className="img-responsive" src="/images/flycan.jpg" alt="飛肯設計 Flycan"  title="飛肯設計 Flycan"/></a>
                     </div>
 
                 </div>
@@ -162,7 +162,7 @@ class Timeline extends React.Component{
                         </ul>
                     </div>
                     <div className="media-img">
-                        <a href="http://www.accmedia.com.tw/" target="_blank"><img className="img-responsive" src="/images/ecdesign.jpg" alt=""/></a>
+                        <a href="http://www.accmedia.com.tw/" target="_blank"><img className="img-responsive" src="/images/ecdesign.jpg" alt="易禧創意商業插畫訓練班"  title="易禧創意商業插畫訓練班"/></a>
                     </div>
                 </div>
                 <p>在商業插畫課程中，除了學習手繪轉數位(向量與點陣)的上色流程與方式之外，老師亦常常耐心的一對一教學，針對我們的作品，以構圖、色彩、風格來分析講解，收穫良多。</p>
@@ -187,9 +187,9 @@ class Timeline extends React.Component{
                         </ul>
                     </div>
                     <div className="media-img online">
-                        <a href="https://www.pluralsight.com/" target="_blank"><img className="img-responsive" src="/images/skills/pluralsight.png" alt=""/></a>
-                        <a href="https://www.udemy.com/" target="_blank" ><img className="img-responsive" src="/images/skills/codeSchool.svg" style={{maxWidth: "140px"}} alt=""/></a>
-                        <a href="https://egghead.io/" target="_blank" ><img className="img-responsive" src="/images/skills/egghead.svg" style={{width: "50px"}} alt=""/></a>
+                        <a href="https://www.pluralsight.com/" target="_blank"><img className="img-responsive" src="/images/skills/pluralsight.png" alt="Pluralsight"  title="Pluralsight"/></a>
+                        <a href="https://www.udemy.com/" target="_blank" ><img className="img-responsive" src="/images/skills/codeSchool.svg" style={{maxWidth: "140px"}} alt="Udemy" title="Udemy"/></a>
+                        <a href="https://egghead.io/" target="_blank" ><img className="img-responsive" src="/images/skills/egghead.svg" style={{width: "50px"}} alt="egghead" title="egghead"/></a>
                     </div>
                 </div>
                 <ul className="background">
@@ -222,7 +222,7 @@ class Timeline extends React.Component{
                         </ul>
                     </div>
                     <div className="media-img">
-                        <a href="http://www.flycan.com.tw/" target="_blank"><img className="img-responsive" src="/images/flycan.jpg" alt=""/></a>
+                        <a href="http://www.flycan.com.tw/" target="_blank"><img className="img-responsive" src="/images/flycan.jpg" alt="飛肯設計 Flycan" title="飛肯設計 Flycan"/></a>
                     </div>
 
                 </div>

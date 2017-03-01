@@ -36,7 +36,7 @@ let PinterestImg = class PinterestImg extends React.Component{
 		let img =  this.props.src;
 		return (
 			<div className="pinterest-img">
-				<img src={img} alt={this.props.alt} onLoad={this.handleImageLoaded} ref={(el) => { this.Img = el; }}/>
+				<img src={img} alt={this.props.alt} title={this.props.alt}  onLoad={this.handleImageLoaded} ref={(el) => { this.Img = el; }}/>
 			</div>
 		);
 	}

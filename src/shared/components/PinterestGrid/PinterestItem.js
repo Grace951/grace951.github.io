@@ -55,7 +55,7 @@ let PinterestItem = class PinterestItem extends React.Component{
 				<div >
 				{
 					item.images.map((image,id) => (
-						<PinterestImg src={image} key={id} id={id}  ssr={ssr} updateLoaded={this.updateLoaded} />
+						<PinterestImg src={image} key={id} id={id}  ssr={ssr} updateLoaded={this.updateLoaded} alt={`${item.title} - ${item.desc}`}/>
 					))
 				}
 				</div>
