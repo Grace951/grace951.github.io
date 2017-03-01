@@ -11449,6 +11449,13 @@ var DetailsPage = function (_React$Component) {
 		return _this;
 	}
 
+	DetailsPage.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
+		if (nextProps.params.id === this.props.params.id) return;
+		if (this.state.showImg) {
+			this.setState({ showImg: false });
+		}
+	};
+
 	DetailsPage.prototype.componentDidUpdate = function componentDidUpdate(prevProps) {
 		if (prevProps.params.id === this.props.params.id) return;
 
@@ -11538,11 +11545,11 @@ var DetailsPage = function (_React$Component) {
 							'div',
 							{ className: 'hidden-xs relative' },
 							_ref4,
-							item.relative.img.map(function (item, id) {
+							item.relative.img.map(function (imgItem, i) {
 								return _react2.default.createElement(
 									_reactRouter.Link,
-									{ key: id, to: '/portfolio/' + item.index },
-									_react2.default.createElement('img', { className: 'img-responsive other-img', src: item.src })
+									{ key: i, to: '/portfolio/' + (imgItem.index || item.index) },
+									_react2.default.createElement('img', { className: 'img-responsive other-img', src: imgItem.src })
 								);
 							})
 						)
@@ -11561,11 +11568,11 @@ var DetailsPage = function (_React$Component) {
 							'div',
 							{ className: 'visible-xs relative' },
 							_ref5,
-							item.relative.img.map(function (item, id) {
+							item.relative.img.map(function (imgItem, i) {
 								return _react2.default.createElement(
 									_reactRouter.Link,
-									{ key: id, to: '/portfolio/' + item.index },
-									_react2.default.createElement('img', { className: 'img-responsive other-img', src: item.src })
+									{ key: i, to: '/portfolio/' + (imgItem.index || item.index) },
+									_react2.default.createElement('img', { className: 'img-responsive other-img', src: imgItem.src })
 								);
 							})
 						)

@@ -37,7 +37,8 @@
 	border: solid 1px #ccc
 	margin-bottom: 30px
 	padding: 13px
-
+	@include respond-to(xs) 
+		margin-top: 10px
 
 .bigimg 
 	max-width: 800px
@@ -45,12 +46,11 @@
 	padding: 15px
 	margin: 0 auto
 	float: none
-	background: white
+	background-color: white
 	padding: 15px
 	box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4)
 	img
-		opacity: 0
-		transition: opacity 1s
+		transition: opacity .8s
 	@include respond-to(xs) 
 		margin-top: 0px
   

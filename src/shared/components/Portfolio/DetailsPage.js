@@ -15,6 +15,13 @@ let DetailsPage = class DetailsPage extends React.Component{
 		}
 		this.handleImageLoaded = this.handleImageLoaded.bind(this);
 	}
+	componentWillReceiveProps(nextProps){
+		if (nextProps.params.id === this.props.params.id)
+			return;
+		if (this.state.showImg){
+			this.setState({showImg: false});
+		}
+	}	
 	componentDidUpdate(prevProps) {
 		if (prevProps.params.id === this.props.params.id)
 			return;
@@ -69,9 +76,9 @@ let DetailsPage = class DetailsPage extends React.Component{
 					{ item.relative && item.relative.img &&
 						<div className="hidden-xs relative">
 							<div className="others-title">相關作品圖片</div>
-							{item.relative.img.map( (item, id) => (
-								<Link key={id} to={`/portfolio/${item.index}`}>
-									<img className="img-responsive other-img" src={item.src}/>
+							{item.relative.img.map( (imgItem, i) => (
+								<Link key={i} to={`/portfolio/${imgItem.index||item.index}`}>
+									<img className="img-responsive other-img" src={imgItem.src}/>
 								</Link>
 							))}
 						</div>
@@ -84,9 +91,9 @@ let DetailsPage = class DetailsPage extends React.Component{
 					{ item.relative && item.relative.img &&
 						<div className="visible-xs relative">
 							<div className="others-title">相關作品圖片</div>
-							{item.relative.img.map( (item, id) => (
-								<Link key={id} to={`/portfolio/${item.index}`}>
-									<img className="img-responsive other-img" src={item.src}/>
+							{item.relative.img.map( (imgItem, i) => (
+								<Link key={i} to={`/portfolio/${imgItem.index||item.index}`}>
+									<img className="img-responsive other-img" src={imgItem.src}/>
 								</Link>
 							))}
 						</div>
