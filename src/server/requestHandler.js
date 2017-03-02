@@ -6,6 +6,7 @@ import { match, RouterContext, createMemoryHistory } from 'react-router';
 import createRoutes from '../shared/route/index';
 import configureStore from '../shared/store/configureStore';
 import MobileDetect from 'mobile-detect';
+import serializeJs  from 'serialize-javascript';
 
 import { fetchComponentsData,
          getMetaDataFromState
@@ -43,7 +44,7 @@ function handleRender(req, res)
 				device,
                 })
                 .then(() => {
-                const reduxState = store.getState();
+                let reduxState = store.getState();
                 const metaData = getMetaDataFromState({
                     params : renderProps.params,
                     query  : renderProps.location.query,
@@ -58,7 +59,8 @@ function handleRender(req, res)
                         <RouterContext {...renderProps} />
                     </Provider>
                 );
-                res.render('index', { componentHTML, reduxState, venderJs, metaData, device });	
+				reduxState = serializeJs(reduxState, { isJSON: true });
+                res.render('index', { componentHTML, reduxState, venderJs, metaData });	
                 })
                 .catch(error => {
                     // console.log(error);

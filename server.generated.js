@@ -64,7 +64,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "/build/";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 216);
+/******/ 	return __webpack_require__(__webpack_require__.s = 217);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -9817,6 +9817,10 @@ var _mobileDetect = __webpack_require__(212);
 
 var _mobileDetect2 = _interopRequireDefault(_mobileDetect);
 
+var _serializeJavascript = __webpack_require__(216);
+
+var _serializeJavascript2 = _interopRequireDefault(_serializeJavascript);
+
 var _utils = __webpack_require__(94);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -9863,7 +9867,8 @@ function handleRender(req, res) {
           { store: store },
           _react2.default.createElement(_reactRouter.RouterContext, renderProps)
         ));
-        res.render('index', { componentHTML: componentHTML, reduxState: reduxState, venderJs: venderJs, metaData: metaData, device: device });
+        reduxState = (0, _serializeJavascript2.default)(reduxState, { isJSON: true });
+        res.render('index', { componentHTML: componentHTML, reduxState: reduxState, venderJs: venderJs, metaData: metaData });
       }).catch(function (error) {
         // console.log(error);
         res.status(500).json({
@@ -11546,7 +11551,7 @@ var _ref2 = _react2.default.createElement(
 			{ className: 'current-menu-item' },
 			_react2.default.createElement(
 				_reactRouter.Link,
-				{ to: '/home' },
+				{ to: '/home', activeClassName: 'active' },
 				'Home'
 			)
 		),
@@ -11555,7 +11560,7 @@ var _ref2 = _react2.default.createElement(
 			null,
 			_react2.default.createElement(
 				_reactRouter.Link,
-				{ to: '/aboutme' },
+				{ to: '/aboutme', activeClassName: 'active' },
 				'About Me'
 			)
 		),
@@ -11564,7 +11569,7 @@ var _ref2 = _react2.default.createElement(
 			{ className: 'parent' },
 			_react2.default.createElement(
 				_reactRouter.Link,
-				{ to: '/portfolio/f2e' },
+				{ to: '/portfolio/f2e', activeClassName: 'active' },
 				'Portfolio'
 			),
 			_react2.default.createElement(
@@ -25558,6 +25563,12 @@ module.exports = require("redux-thunk");
 
 /***/ }),
 /* 216 */
+/***/ (function(module, exports) {
+
+module.exports = require("serialize-javascript");
+
+/***/ }),
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

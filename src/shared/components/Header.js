@@ -37,12 +37,12 @@ let Header = class Header extends React.Component{
 							<div id="navigation_grace">
 								<Link to="/home" className="logo" ><img src="/images/logo.png" alt="hope shelter design web"/></Link>
 								<ul id="main-menu_grace">
-									<li className="current-menu-item"><Link to="/home">Home</Link></li>
-									<li><Link to="/aboutme">About Me</Link></li>
+									<li className="current-menu-item"><Link to="/home" activeClassName="active" >Home</Link></li>
+									<li><Link to="/aboutme" activeClassName="active" >About Me</Link></li>
 									<li className="parent">
-										<Link to="/portfolio/f2e">Portfolio</Link>
+										<Link to="/portfolio/f2e" activeClassName="active" >Portfolio</Link>
 										<ul className="sub-menu_grace">
-											<li><Link to="/portfolio/f2e"> Front-end App</Link></li>
+											<li><Link to="/portfolio/f2e" > Front-end App</Link></li>
 											<li><Link to="/portfolio/graphic">Graphic Design</Link></li>
 											<li><Link to="/portfolio/editoral">Editorial</Link></li>
 										</ul>

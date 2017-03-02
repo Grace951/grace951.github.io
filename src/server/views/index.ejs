@@ -57,8 +57,7 @@
 	<body class="homepage">
 		<div id="rootWrap"><%- componentHTML %></div>
 		<script type="text/javascript" charset="utf-8">
-			 window.__REDUX_STATE__ = <%-JSON.stringify(reduxState)%>;
-			 window.__DEVICE_DETECTED__ = <%-JSON.stringify(device)%>;
+			 window.__REDUX_STATE__ = <%- reduxState %>;
 		</script>	
 		<script src='<%= venderJs %>'></script>
 		<script src='/build/bundle.js'></script>
