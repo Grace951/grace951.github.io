@@ -22,7 +22,6 @@ let GraphicPage = class GraphicPage extends React.Component{
 			minCategory: (props.device.phone || props.device.mobile),
 			userOpenCategory: false
 		};
-		console.log("GraphicPage", (props.device.phone || props.device.mobile));
 		this.updateHeight = this.updateHeight.bind(this);
 		this.chooseCategory = this.chooseCategory.bind(this);
 		this.userOpenCategory = this.userOpenCategory.bind(this);
@@ -30,7 +29,6 @@ let GraphicPage = class GraphicPage extends React.Component{
     }
 	componentWillReceiveProps(nextProps) {
 		let isMobile = (nextProps.device.phone || nextProps.device.mobile);
-		console.log("componentWillReceiveProps", isMobile);
 		if (this.state.minCategory != isMobile){
 			this.setState({minCategory: isMobile});
 		}

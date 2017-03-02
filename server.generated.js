@@ -12849,7 +12849,6 @@ var GraphicPage = function (_React$Component) {
 			minCategory: props.device.phone || props.device.mobile,
 			userOpenCategory: false
 		};
-		console.log("GraphicPage", props.device.phone || props.device.mobile);
 		_this.updateHeight = _this.updateHeight.bind(_this);
 		_this.chooseCategory = _this.chooseCategory.bind(_this);
 		_this.userOpenCategory = _this.userOpenCategory.bind(_this);
