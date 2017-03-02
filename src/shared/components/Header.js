@@ -27,10 +27,16 @@ let Header = class Header extends React.Component{
 	constructor(props) {
 		super(props);
 		this.state = {
-			showSmallMenu: false
+			showSmallMenu: props.showXsNav
 		}
 		this.toggleSmallMenu = this.toggleSmallMenu.bind(this);
 	}
+	componentWillReceiveProps(nextProps) {
+		if (this.state.showSmallMenu != nextProps.showXsNav){
+			this.setState({showSmallMenu: nextProps.showXsNav});
+		}
+	}
+	
 	toggleSmallMenu(){
 		this.setState({showSmallMenu: !this.state.showSmallMenu});
 	}

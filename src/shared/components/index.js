@@ -3,10 +3,12 @@ if (process.env.BROWSER) {
 }
 import React from 'react';
 import { Link } from 'react-router';
+import { connect } from 'react-redux';
 import { ShareButtons, generateShareIcon} from 'react-share';
 import { Header } from '../components/Header';
 import  Footer from "./Footer";
-
+import { getDevice } from '../actions/deviceAction';
+import connectDataFetchers from '../lib/connectDataFetchers.jsx';
 
 const {
   FacebookShareButton,
@@ -106,5 +108,9 @@ Root.propTypes = {
       React.PropTypes.node
     ])	
 };
+
+Root = connect(null)(
+    connectDataFetchers(Root, [ getDevice ])
+);
 
 export { Root, NotFoundPage, UnauthorizedPage};

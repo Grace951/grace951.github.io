@@ -594,7 +594,7 @@ var CallbackQueue = __webpack_require__(59);
 var PooledClass = __webpack_require__(13);
 var ReactFeatureFlags = __webpack_require__(165);
 var ReactReconciler = __webpack_require__(23);
-var Transaction = __webpack_require__(27);
+var Transaction = __webpack_require__(28);
 
 var invariant = __webpack_require__(0);
 
@@ -2801,6 +2801,12 @@ module.exports = React;
 
 /***/ }),
 /* 26 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-redux");
+
+/***/ }),
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2877,7 +2883,7 @@ SyntheticUIEvent.augmentClass(SyntheticMouseEvent, MouseEventInterface);
 module.exports = SyntheticMouseEvent;
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3107,7 +3113,7 @@ var TransactionImpl = {
 module.exports = TransactionImpl;
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3233,12 +3239,6 @@ function escapeTextContentForBrowser(text) {
 }
 
 module.exports = escapeTextContentForBrowser;
-
-/***/ }),
-/* 29 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-redux");
 
 /***/ }),
 /* 30 */
@@ -8054,7 +8054,7 @@ module.exports = ReactDOMSelect;
 var _assign = __webpack_require__(3);
 
 var ReactUpdates = __webpack_require__(9);
-var Transaction = __webpack_require__(27);
+var Transaction = __webpack_require__(28);
 
 var emptyFunction = __webpack_require__(7);
 
@@ -8364,7 +8364,7 @@ module.exports = ReactInputSelection;
 var _assign = __webpack_require__(3);
 
 var PooledClass = __webpack_require__(13);
-var Transaction = __webpack_require__(27);
+var Transaction = __webpack_require__(28);
 var ReactInstrumentation = __webpack_require__(8);
 var ReactServerUpdateQueue = __webpack_require__(176);
 
@@ -9046,7 +9046,7 @@ module.exports = isTextInputElement;
 
 
 var ExecutionEnvironment = __webpack_require__(6);
-var escapeTextContentForBrowser = __webpack_require__(28);
+var escapeTextContentForBrowser = __webpack_require__(29);
 var setInnerHTML = __webpack_require__(46);
 
 /**
@@ -9805,7 +9805,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _redux = __webpack_require__(51);
 
-var _reactRedux = __webpack_require__(29);
+var _reactRedux = __webpack_require__(26);
 
 var _server = __webpack_require__(200);
 
@@ -11519,7 +11519,7 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRedux = __webpack_require__(29);
+var _reactRedux = __webpack_require__(26);
 
 var _modalAction = __webpack_require__(96);
 
@@ -11720,11 +11720,17 @@ var Header = function (_React$Component) {
 		var _this = _possibleConstructorReturn(this, _React$Component.call(this, props));
 
 		_this.state = {
-			showSmallMenu: false
+			showSmallMenu: props.showXsNav
 		};
 		_this.toggleSmallMenu = _this.toggleSmallMenu.bind(_this);
 		return _this;
 	}
+
+	Header.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
+		if (this.state.showSmallMenu != nextProps.showXsNav) {
+			this.setState({ showSmallMenu: nextProps.showXsNav });
+		}
+	};
 
 	Header.prototype.toggleSmallMenu = function toggleSmallMenu() {
 		this.setState({ showSmallMenu: !this.state.showSmallMenu });
@@ -11837,7 +11843,7 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRedux = __webpack_require__(29);
+var _reactRedux = __webpack_require__(26);
 
 var _deviceAction = __webpack_require__(52);
 
@@ -12798,13 +12804,7 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRedux = __webpack_require__(29);
-
-var _deviceAction = __webpack_require__(52);
-
-var _connectDataFetchers = __webpack_require__(54);
-
-var _connectDataFetchers2 = _interopRequireDefault(_connectDataFetchers);
+var _reactRedux = __webpack_require__(26);
 
 var _PinterestGrid = __webpack_require__(53);
 
@@ -12849,13 +12849,21 @@ var GraphicPage = function (_React$Component) {
 			minCategory: props.device.phone || props.device.mobile,
 			userOpenCategory: false
 		};
-
+		console.log("GraphicPage", props.device.phone || props.device.mobile);
 		_this.updateHeight = _this.updateHeight.bind(_this);
 		_this.chooseCategory = _this.chooseCategory.bind(_this);
 		_this.userOpenCategory = _this.userOpenCategory.bind(_this);
 		_this.handleCategory = _this.handleCategory.bind(_this);
 		return _this;
 	}
+
+	GraphicPage.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
+		var isMobile = nextProps.device.phone || nextProps.device.mobile;
+		console.log("componentWillReceiveProps", isMobile);
+		if (this.state.minCategory != isMobile) {
+			this.setState({ minCategory: isMobile });
+		}
+	};
 
 	GraphicPage.prototype.componentDidMount = function componentDidMount() {
 		window.addEventListener('resize', this.handleCategory, false);
@@ -12978,7 +12986,7 @@ function mapStateToProps(state, ownProps) {
 	};
 }
 
-GraphicPage = (0, _reactRedux.connect)(mapStateToProps)((0, _connectDataFetchers2.default)(GraphicPage, [_deviceAction.getDevice]));
+GraphicPage = (0, _reactRedux.connect)(mapStateToProps)(GraphicPage);
 
 exports.default = GraphicPage;
 
@@ -13180,6 +13188,8 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouter = __webpack_require__(12);
 
+var _reactRedux = __webpack_require__(26);
+
 var _reactShare = __webpack_require__(83);
 
 var _Header = __webpack_require__(101);
@@ -13187,6 +13197,12 @@ var _Header = __webpack_require__(101);
 var _Footer = __webpack_require__(100);
 
 var _Footer2 = _interopRequireDefault(_Footer);
+
+var _deviceAction = __webpack_require__(52);
+
+var _connectDataFetchers = __webpack_require__(54);
+
+var _connectDataFetchers2 = _interopRequireDefault(_connectDataFetchers);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -13321,6 +13337,8 @@ var Root = function (_React$Component) {
 
 	return Root;
 }(_react2.default.Component);
+
+exports.Root = Root = (0, _reactRedux.connect)(null)((0, _connectDataFetchers2.default)(Root, [_deviceAction.getDevice]));
 
 exports.Root = Root;
 exports.NotFoundPage = NotFoundPage;
@@ -16312,7 +16330,7 @@ module.exports = DefaultEventPluginOrder;
 
 var EventPropagators = __webpack_require__(22);
 var ReactDOMComponentTree = __webpack_require__(5);
-var SyntheticMouseEvent = __webpack_require__(26);
+var SyntheticMouseEvent = __webpack_require__(27);
 
 var eventTypes = {
   mouseEnter: {
@@ -17858,7 +17876,7 @@ var ReactMultiChild = __webpack_require__(168);
 var ReactServerRenderingTransaction = __webpack_require__(67);
 
 var emptyFunction = __webpack_require__(7);
-var escapeTextContentForBrowser = __webpack_require__(28);
+var escapeTextContentForBrowser = __webpack_require__(29);
 var invariant = __webpack_require__(0);
 var isEventSupported = __webpack_require__(45);
 var shallowEqual = __webpack_require__(30);
@@ -19647,7 +19665,7 @@ var DOMChildrenOperations = __webpack_require__(31);
 var DOMLazyTree = __webpack_require__(19);
 var ReactDOMComponentTree = __webpack_require__(5);
 
-var escapeTextContentForBrowser = __webpack_require__(28);
+var escapeTextContentForBrowser = __webpack_require__(29);
 var invariant = __webpack_require__(0);
 var validateDOMNesting = __webpack_require__(47);
 
@@ -21178,7 +21196,7 @@ var PooledClass = __webpack_require__(13);
 var ReactBrowserEventEmitter = __webpack_require__(37);
 var ReactInputSelection = __webpack_require__(66);
 var ReactInstrumentation = __webpack_require__(8);
-var Transaction = __webpack_require__(27);
+var Transaction = __webpack_require__(28);
 var ReactUpdateQueue = __webpack_require__(68);
 
 /**
@@ -22247,7 +22265,7 @@ var SyntheticClipboardEvent = __webpack_require__(182);
 var SyntheticEvent = __webpack_require__(10);
 var SyntheticFocusEvent = __webpack_require__(185);
 var SyntheticKeyboardEvent = __webpack_require__(187);
-var SyntheticMouseEvent = __webpack_require__(26);
+var SyntheticMouseEvent = __webpack_require__(27);
 var SyntheticDragEvent = __webpack_require__(184);
 var SyntheticTouchEvent = __webpack_require__(188);
 var SyntheticTransitionEvent = __webpack_require__(189);
@@ -22597,7 +22615,7 @@ module.exports = SyntheticCompositionEvent;
 
 
 
-var SyntheticMouseEvent = __webpack_require__(26);
+var SyntheticMouseEvent = __webpack_require__(27);
 
 /**
  * @interface DragEvent
@@ -22904,7 +22922,7 @@ module.exports = SyntheticTransitionEvent;
 
 
 
-var SyntheticMouseEvent = __webpack_require__(26);
+var SyntheticMouseEvent = __webpack_require__(27);
 
 /**
  * @interface WheelEvent
@@ -23541,7 +23559,7 @@ module.exports = getVendorPrefixedEventName;
 
 
 
-var escapeTextContentForBrowser = __webpack_require__(28);
+var escapeTextContentForBrowser = __webpack_require__(29);
 
 /**
  * Escapes attribute value to prevent scripting attacks.

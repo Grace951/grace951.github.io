@@ -3,11 +3,7 @@ if (process.env.BROWSER) {
 }
 import React from 'react';
 import { connect } from 'react-redux';
-
-import { getDevice } from '../../actions/deviceAction';
-import connectDataFetchers from '../../lib/connectDataFetchers.jsx';
 import {PinterestGrid} from '../PinterestGrid/PinterestGrid';
-
 import items from '../../data/graphicDesign';
 
 function uniqArray(arrArg){
@@ -26,12 +22,20 @@ let GraphicPage = class GraphicPage extends React.Component{
 			minCategory: (props.device.phone || props.device.mobile),
 			userOpenCategory: false
 		};
-		
+		console.log("GraphicPage", (props.device.phone || props.device.mobile));
 		this.updateHeight = this.updateHeight.bind(this);
 		this.chooseCategory = this.chooseCategory.bind(this);
 		this.userOpenCategory = this.userOpenCategory.bind(this);
 		this.handleCategory = this.handleCategory.bind(this);
     }
+	componentWillReceiveProps(nextProps) {
+		let isMobile = (nextProps.device.phone || nextProps.device.mobile);
+		console.log("componentWillReceiveProps", isMobile);
+		if (this.state.minCategory != isMobile){
+			this.setState({minCategory: isMobile});
+		}
+	}
+	
 	componentDidMount() {
 		window.addEventListener('resize', this.handleCategory, false);
 	}
@@ -111,8 +115,6 @@ function mapStateToProps(state, ownProps) {
   };
 }
 
-GraphicPage = connect(mapStateToProps)(
-    connectDataFetchers(GraphicPage, [ getDevice ])
-);
+GraphicPage = connect(mapStateToProps)(GraphicPage);
 
 export default GraphicPage;
