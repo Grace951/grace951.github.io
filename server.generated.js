@@ -7000,7 +7000,7 @@ var PinterestGrid = function (_React$Component) {
 		    columns = _state2.columns;
 
 		var style = {
-			width: (columnWidth + gutter) * columns
+			width: (columnWidth + gutter) * columns - gutter
 		};
 
 		var ItemViews = loadedItems.slice(0, loadedIndex).map(function (item, id) {
@@ -12858,7 +12858,6 @@ var GraphicPage = function (_React$Component) {
 
 	GraphicPage.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
 		var isMobile = nextProps.device.phone || nextProps.device.mobile;
-		console.log("componentWillReceiveProps", isMobile);
 		if (this.state.minCategory != isMobile) {
 			this.setState({ minCategory: isMobile });
 		}
@@ -12963,7 +12962,7 @@ var GraphicPage = function (_React$Component) {
 					{ className: 'row' },
 					_react2.default.createElement(
 						'div',
-						{ className: 'col-lg-offset-2 col-lg-10 col-md-offset-3 col-md-9 col-sm-offset-2 col-sm-10', style: { padding: 0 } },
+						{ className: 'col-lg-offset-2 col-lg-10 col-md-offset-3 col-md-9 col-sm-offset-2 col-sm-10' },
 						_react2.default.createElement(
 							'div',
 							{ id: 'graphic-design', style: style },

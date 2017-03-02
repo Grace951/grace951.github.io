@@ -88,7 +88,7 @@ let GraphicPage = class GraphicPage extends React.Component{
 				</ul>
               </div>
               <div className="row">
-               <div className="col-lg-offset-2 col-lg-10 col-md-offset-3 col-md-9 col-sm-offset-2 col-sm-10" style={{padding: 0}}>
+               <div className="col-lg-offset-2 col-lg-10 col-md-offset-3 col-md-9 col-sm-offset-2 col-sm-10" >
                  <div id="graphic-design"  style={style}>
 					<PinterestGrid items={items} columnWidth={300} gutter={15} columns={3} container="graphic-design" 
 						updateHeight={this.updateHeight} delay={100} device={this.props.device} hideDesc={true}/>					

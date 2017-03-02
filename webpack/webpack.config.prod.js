@@ -120,9 +120,30 @@ var config = [
 							],
 						})
 				},
-				{ test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/i, loader: "url-loader?limit=10000&mimetype=application/font-woff&name=fonts/[name].[ext]" },
-				{ test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/i, loader: "file-loader?name=fonts/[name].[ext]" },
-				{ test: /\.(gif|jpg|png)(\?v=[0-9]\.[0-9]\.[0-9])?$/i, loader: "file-loader?name=img/[name].[ext]" },					
+				{ test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/i, 
+					loader: "url-loader" ,
+					options: {
+						limit: 10000,
+						mimetype: 'application/font-woff',
+						name: 'fonts/[name].[ext]'
+					},
+					include: [
+						path.resolve(projectRoot, './src/shared/fonts/') ,
+						path.resolve(projectRoot, './node_modules/bootstrap-sass/assets/fonts/') ,
+						path.resolve(projectRoot, './node_modules/font-awesome/fonts/') ,
+					],				
+				},
+				{ test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/i, 
+					loader: "file-loader" ,
+					options: {
+						name: 'fonts/[name].[ext]'
+					},				
+					include: [
+						path.resolve(projectRoot, './src/shared/fonts/') ,
+						path.resolve(projectRoot, './node_modules/bootstrap-sass/assets/fonts/') ,
+						path.resolve(projectRoot, './node_modules/font-awesome/fonts/') ,
+					],
+				},				
 			]
 		},
 		resolveLoader: {

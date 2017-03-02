@@ -146,7 +146,7 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 		const { columnWidth, gutter, items, hideDesc } = this.props;
 		let { loadedItems,  loadedIndex, columns} = this.state;
 		let style = {
-			width: (columnWidth + gutter) * columns,			
+			width: (columnWidth + gutter) * columns - gutter,			
 		};
 
 		let ItemViews = loadedItems.slice(0, loadedIndex ).map((item,id) => {
