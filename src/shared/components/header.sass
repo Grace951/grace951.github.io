@@ -1,5 +1,11 @@
 @import '_mixin.scss'
 
+.share
+	float: right
+	margin-top: 10px
+	.social-share
+		float: left
+		cursor: pointer
 #logo_small 
 	display: none
 	float: none
@@ -148,6 +154,16 @@
 
 
 @include respond-to(xs) 
+	.share
+		position: fixed
+		right: 45px
+		top: -2px
+		float: none
+		margin-top: 10px
+		z-index: 9999
+		.social-share
+			float: left
+			cursor: pointer
 	#grace_header_bg
 		position: fixed
 		height: 40px

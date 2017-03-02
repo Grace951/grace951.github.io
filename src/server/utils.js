@@ -203,7 +203,7 @@ export function getMetaDataFromState({ route, state, params = {}, query = {}, la
             type        : 'ABOUTME',
             title       : "About Me",
             siteName    : "Hope Shelter Design - 希望園地設計",
-            image       : '/images/girl_01.png',
+            image       : '/images/logo.png.png',
             description : `[My Experience]
 								(2006 - 2010) Software Engineer / 3.5 years
 								(2010 - 2011) Take Care of My Father / 1.5 year

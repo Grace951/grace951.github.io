@@ -90,7 +90,7 @@ let Root = class Root extends React.Component{
 	render() {
 		return (
 	<div>
-		<Header/>
+		<Header location={this.props.location}/>
 		<article id="main">		
 			{this.props.children}
 		</article>

@@ -6,6 +6,22 @@ import { Link} from 'react-router';
 import React from 'react';
 import { connect } from 'react-redux';
 import * as modalActions from '../actions/modalAction';
+import { ShareButtons, generateShareIcon} from 'react-share';
+
+const {
+  FacebookShareButton,
+  GooglePlusShareButton,
+  LinkedinShareButton,
+  TwitterShareButton,
+  PinterestShareButton,
+  VKShareButton
+} = ShareButtons;
+
+const FacebookIcon = generateShareIcon('facebook');
+const TwitterIcon = generateShareIcon('twitter');
+const GooglePlusIcon = generateShareIcon('google');
+const LinkedinIcon = generateShareIcon('linkedin');
+const PinterestIcon = generateShareIcon('pinterest');
 
 let Header = class Header extends React.Component{
 	constructor(props) {
@@ -20,9 +36,8 @@ let Header = class Header extends React.Component{
 	}
 	render() {
 		let Baselink = "https://hopeshelter.herokuapp.com";
-		// let link = Baselink;
-		// this.props.location.pathname && (link = Baselink + this.props.location.pathname);
-		// console.log(link, this.props.location.pathname);		
+		let link = Baselink;
+		this.props.location.pathname && (link = Baselink + this.props.location.pathname);
 		let sMenuStyle ={
 			transform: this.state.showSmallMenu?"translateY(0)":"translateY(-130%)"
 		}
@@ -34,7 +49,13 @@ let Header = class Header extends React.Component{
 							<div id="menu-toggle_grace" className="button dark" onClick={this.toggleSmallMenu}>
 								<i className="fa fa-bars" aria-hidden="true" />
 							</div>
-							<div id="navigation_grace">
+							<div className="share">
+								<FacebookShareButton url={link} className="social-share"> <FacebookIcon size={28} round={true} /> </FacebookShareButton>
+								<GooglePlusShareButton url={link} className="social-share"> <GooglePlusIcon size={28} round={true} /> </GooglePlusShareButton>
+								<LinkedinShareButton url={link} className="social-share"> <LinkedinIcon size={28} round={true} /> </LinkedinShareButton>
+								<TwitterShareButton url={link} className="social-share"> <TwitterIcon size={28} round={true} /> </TwitterShareButton>
+							</div>
+							<div id="navigation_grace">							
 								<Link to="/home" className="logo" ><img src="/images/logo.png" alt="hope shelter design web"/></Link>
 								<ul id="main-menu_grace">
 									<li className="current-menu-item"><Link to="/home" activeClassName="active" >Home</Link></li>
@@ -77,7 +98,8 @@ let Header = class Header extends React.Component{
 
 Header.propTypes = {
   showXsNav: React.PropTypes.bool.isRequired,
-  changeXsNavModal: React.PropTypes.func.isRequired
+  changeXsNavModal: React.PropTypes.func.isRequired,
+  location: React.PropTypes.object.isRequired,
 };
 
 function mapStateToProps(state) {
