@@ -94,7 +94,7 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 		if (process.env.BROWSER) {
 			containerWidth = document.getElementById(container).clientWidth;
 		}
-		let newColumns = Math.floor(containerWidth / (columnWidth + gutter));
+		let newColumns = (Math.floor(containerWidth / (columnWidth + gutter))) || 1;
 		let viewport = {
 					top: window.pageYOffset,
 					height: window.innerHeight
@@ -128,7 +128,6 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 			}
 
 		}
-
 		if (first || newColumns !== this.state.columns ){
 			this.setState({
 				viewport,
