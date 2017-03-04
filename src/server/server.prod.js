@@ -25,7 +25,7 @@ let publicPath = path.resolve( process.cwd(), "./public");
 let viewPath = path.resolve(process.cwd(), "./src/server/views");
 const oneDay = 86400000;
 app.use(helmet());
-app.use(helmet.noCache());
+// app.use(helmet.noCache());
 app.use(helmet.contentSecurityPolicy({
 	directives: {
 		defaultSrc: ["'none'"],

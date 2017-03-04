@@ -12962,7 +12962,7 @@ var GraphicPage = function (_React$Component) {
 					{ className: 'row' },
 					_react2.default.createElement(
 						'div',
-						{ className: 'col-lg-offset-2 col-lg-10 col-md-offset-3 col-md-9 col-sm-offset-2 col-sm-10' },
+						{ className: 'col-lg-offset-2 col-lg-10 col-md-offset-3 col-md-9 col-sm-offset-1 col-sm-11' },
 						_react2.default.createElement(
 							'div',
 							{ id: 'graphic-design', style: style },
@@ -25698,7 +25698,7 @@ var publicPath = _path2.default.resolve(process.cwd(), "./public");
 var viewPath = _path2.default.resolve(process.cwd(), "./src/server/views");
 var oneDay = 86400000;
 app.use((0, _helmet2.default)());
-app.use(_helmet2.default.noCache());
+// app.use(helmet.noCache());
 app.use(_helmet2.default.contentSecurityPolicy({
 	directives: {
 		defaultSrc: ["'none'"],

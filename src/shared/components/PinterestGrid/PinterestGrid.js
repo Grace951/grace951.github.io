@@ -58,7 +58,7 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 		props.device && (props.device.phone || props.device.mobile) && (columns = 1);
 		props.device && (props.device.tablet) && (columns = 2);
 
-		columnHeights = Array.from({ length:  columns}, () => 0)
+		columnHeights = Array.from({ length:  columns}, () => 0);
 		for (let i=0; i<items.length; i++){
 			let item = loadedItems[i];
 			item.height = items[i].img_height;	
