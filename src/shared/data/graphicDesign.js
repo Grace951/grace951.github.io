@@ -436,7 +436,7 @@ let items = [{
 	},{
 		images: ["/images/portfolio/small/illustration19.jpg"],
 		title: "吉祥物設計練習 - 陽光小雞",
-		img_height: 381,
+		img_height: 191,
 		fullsrc: "/images/portfolio/full/illustration19.jpg",
 		category: "illustration",		
 		index: "56",

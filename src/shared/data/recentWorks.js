@@ -360,7 +360,7 @@ let items = [
 	},
 	{
 		images: ["/images/portfolio/small/illustration19.jpg"],
-		img_height: 527,
+		img_height: 331,
 		fullsrc: "/images/portfolio/full/illustration19.jpg",
 		category: "illustration",
 		note: "吉祥物設計練習 - 這是練習給憂鬱症防治機構的吉祥物-陽光小雞。這幅主題是陪伴。",
@@ -368,7 +368,7 @@ let items = [
 	},
 	{
 		images: ["/images/portfolio/small/illustration20.jpg"],
-		img_height: 330,
+		img_height: 527,
 		fullsrc: "/images/portfolio/full/illustration20.jpg",
 		category: "illustration",
 		note: "吉祥物設計練習 - 這是練習給憂鬱症防治機構的吉祥物-陽光小雞。這是小雞側面。",
