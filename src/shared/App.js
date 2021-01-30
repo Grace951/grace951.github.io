@@ -1,6 +1,6 @@
 import 'babel-polyfill';
 require ("font-awesome-sass-loader");
-require.context('./fonts', true, /\.?/);
+// require.context('./fonts', true, /\.?/);
 
 import React from 'react';
 import { render } from 'react-dom';
