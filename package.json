@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/Grace951/grace951.github.io#readme",
   "dependencies": {
-    "axios": "^0.15.2",
+    "axios": "^0.21.1",
     "babel-polyfill": "^6.16.0",
     "babel-register": "^6.18.0",
     "bootstrap-sass": "^3.3.7",
