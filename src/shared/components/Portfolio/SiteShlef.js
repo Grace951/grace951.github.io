@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 let SiteShlef = class SiteShlef extends React.Component{
@@ -59,14 +60,14 @@ let SiteShlef = class SiteShlef extends React.Component{
 
 
 SiteShlef.propTypes = {
-    children: React.PropTypes.oneOfType([
-      React.PropTypes.arrayOf(React.PropTypes.node),
-      React.PropTypes.node
+    children: PropTypes.oneOfType([
+      PropTypes.arrayOf(PropTypes.node),
+      PropTypes.node
     ]),
-	web_link: React.PropTypes.object.isRequired,
-	techs: React.PropTypes.string.isRequired,
-	web_logo: React.PropTypes.array.isRequired,
-	web_snap: React.PropTypes.array.isRequired,
+	web_link: PropTypes.object.isRequired,
+	techs: PropTypes.string.isRequired,
+	web_logo: PropTypes.array.isRequired,
+	web_snap: PropTypes.array.isRequired,
 };
 
 export default SiteShlef;

@@ -1,6 +1,7 @@
 if (process.env.BROWSER) {
 	require ('./portfolio.sass');
 }
+import PropTypes from 'prop-types';
 import React from 'react';
 
 const PortfolioPage = (props) => (
@@ -10,9 +11,9 @@ const PortfolioPage = (props) => (
 );
 
 PortfolioPage.propTypes = {
-    children: React.PropTypes.oneOfType([
-      React.PropTypes.arrayOf(React.PropTypes.node),
-      React.PropTypes.node
+    children: PropTypes.oneOfType([
+      PropTypes.arrayOf(PropTypes.node),
+      PropTypes.node
     ])		
 };
 

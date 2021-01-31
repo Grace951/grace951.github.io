@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router';
 let worksData = require('../../data/works.json').mywork.works;
@@ -19,8 +20,8 @@ const RelativeItems = (props) => {
 };
 
 RelativeItems.propTypes = {
-	relative: React.PropTypes.object.isRequired,	
-	parentIndex: React.PropTypes.string.isRequired,	
+	relative: PropTypes.object.isRequired,	
+	parentIndex: PropTypes.string.isRequired,	
 };
 
 export default RelativeItems;

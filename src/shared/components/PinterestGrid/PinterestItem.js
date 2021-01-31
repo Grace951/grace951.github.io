@@ -2,6 +2,7 @@ if (process.env.BROWSER) {
 	require ('./pinterestItem.sass');
 }
 import update from 'immutability-helper';
+import PropTypes from 'prop-types';
 import React from 'react';
 import { PinterestImg } from './PinterestImg';
 let PinterestItem = class PinterestItem extends React.Component{
@@ -71,12 +72,12 @@ let PinterestItem = class PinterestItem extends React.Component{
 PinterestItem.defaultProps = {
 };
 PinterestItem.propTypes = {
-	top: React.PropTypes.number.isRequired,
-	left: React.PropTypes.number.isRequired,
-	columnWidth: React.PropTypes.number.isRequired,
-	item: React.PropTypes.object.isRequired,
-	ssr: React.PropTypes.bool.isRequired,	
-	hideDesc: React.PropTypes.bool.isRequired,	
+	top: PropTypes.number.isRequired,
+	left: PropTypes.number.isRequired,
+	columnWidth: PropTypes.number.isRequired,
+	item: PropTypes.object.isRequired,
+	ssr: PropTypes.bool.isRequired,	
+	hideDesc: PropTypes.bool.isRequired,	
 };
 
 

@@ -1,6 +1,7 @@
 if (process.env.BROWSER) {
 	require ('./home.sass');
 }
+import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 
@@ -55,7 +56,7 @@ let HomePage = class HomePage extends React.Component{
 };
 
 HomePage.propTypes = {
-	device:  React.PropTypes.object.isRequired
+	device:  PropTypes.object.isRequired
 };
 
 function mapStateToProps(state, ownProps) {

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { Router, Route, IndexRoute, IndexLink, browserHistory } from 'react-router';
 
@@ -33,8 +34,8 @@ const Routes = (props) => {
 	</Router>);
 }
 Routes.propTypes = {
-	history: React.PropTypes.object.isRequired,
-	hideXsNav: React.PropTypes.func.isRequired
+	history: PropTypes.object.isRequired,
+	hideXsNav: PropTypes.func.isRequired
 };
 
 

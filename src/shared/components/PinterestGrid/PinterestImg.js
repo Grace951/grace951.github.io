@@ -2,6 +2,8 @@ if (process.env.BROWSER) {
 	require ('./pinterestImg.sass');
 }
 
+import PropTypes from 'prop-types';
+
 import React from 'react';
 let PinterestImg = class PinterestImg extends React.Component{
 	constructor(props) {
@@ -46,11 +48,11 @@ PinterestImg.defaultProps = {
 	alt: "",
 };
 PinterestImg.propTypes = {
-	src: React.PropTypes.string.isRequired,
-	id: React.PropTypes.number,
-	alt: React.PropTypes.string,
-	updateLoaded: React.PropTypes.func,
-	ssr: React.PropTypes.bool.isRequired,
+	src: PropTypes.string.isRequired,
+	id: PropTypes.number,
+	alt: PropTypes.string,
+	updateLoaded: PropTypes.func,
+	ssr: PropTypes.bool.isRequired,
 };
 
 export {PinterestImg};

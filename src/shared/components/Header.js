@@ -3,6 +3,7 @@ if (process.env.BROWSER) {
 }
 
 import { Link} from 'react-router';
+import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import * as modalActions from '../actions/modalAction';
@@ -103,16 +104,16 @@ let Header = class Header extends React.Component{
 };
 
 Header.propTypes = {
-  showXsNav: React.PropTypes.bool.isRequired,
-  changeXsNavModal: React.PropTypes.func.isRequired,
-  location: React.PropTypes.object.isRequired,
+  showXsNav: PropTypes.bool.isRequired,
+  changeXsNavModal: PropTypes.func.isRequired,
+  location: PropTypes.object.isRequired,
 };
 
 function mapStateToProps(state) {
   return { 
 	showXsNav: state.modal.showXsNav,	
   };
-}	
+}
 
 Header = connect(mapStateToProps, { ...modalActions})(Header);
 export {Header};

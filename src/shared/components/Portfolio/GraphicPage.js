@@ -1,6 +1,7 @@
 if (process.env.BROWSER) {
 	require ('./gp.sass');
 }
+import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import {PinterestGrid} from '../PinterestGrid/PinterestGrid';
@@ -104,7 +105,7 @@ let GraphicPage = class GraphicPage extends React.Component{
 
 
 GraphicPage.propTypes = {
-	device:  React.PropTypes.object.isRequired
+	device:  PropTypes.object.isRequired
 };
 
 function mapStateToProps(state, ownProps) {

@@ -1,6 +1,7 @@
 if (process.env.BROWSER) {
 	require ('./global.sass');
 }
+import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
@@ -103,9 +104,9 @@ let Root = class Root extends React.Component{
 };
 
 Root.propTypes = {
-    children: React.PropTypes.oneOfType([
-      React.PropTypes.arrayOf(React.PropTypes.node),
-      React.PropTypes.node
+    children: PropTypes.oneOfType([
+      PropTypes.arrayOf(PropTypes.node),
+      PropTypes.node
     ])	
 };
 

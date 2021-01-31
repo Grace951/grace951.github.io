@@ -1,6 +1,7 @@
 if (process.env.BROWSER) {
 	require ('./pinterestGrid.sass');
 }
+import PropTypes from 'prop-types';
 import React from 'react';
 import { PinterestItem } from './PinterestItem';
 import { Link } from 'react-router';
@@ -166,15 +167,15 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 };
 
 PinterestGrid.propTypes = {
-	items: React.PropTypes.array.isRequired,
-	columns: React.PropTypes.number,
-	hideDesc: React.PropTypes.bool,
-	columnWidth: React.PropTypes.number.isRequired,
-	gutter: React.PropTypes.number.isRequired,	
-	updateHeight: React.PropTypes.func.isRequired,	
-	delay: React.PropTypes.number.isRequired,	
-	device:  React.PropTypes.object	,
-	container:  React.PropTypes.string.isRequired,
+	items: PropTypes.array.isRequired,
+	columns: PropTypes.number,
+	hideDesc: PropTypes.bool,
+	columnWidth: PropTypes.number.isRequired,
+	gutter: PropTypes.number.isRequired,	
+	updateHeight: PropTypes.func.isRequired,	
+	delay: PropTypes.number.isRequired,	
+	device:  PropTypes.object	,
+	container:  PropTypes.string.isRequired,
 };
 
 PinterestItem.defaultProps = {
