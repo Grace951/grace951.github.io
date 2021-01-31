@@ -4,7 +4,7 @@ var ExtractTextPlugin  = require('extract-text-webpack-plugin');
 // var HtmlWebpackPlugin  = require('html-webpack-plugin');
 var autoprefixer  = require('autoprefixer');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
-
+const TerserPlugin = require('terser-webpack-plugin');
 
 var projectRoot = process.cwd(); 
 var assetsPath = path.join(projectRoot,   "public", "build");
