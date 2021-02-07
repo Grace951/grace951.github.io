@@ -24,6 +24,12 @@
 		line-height: 40px
 		overflow: hidden
 		>ul
+			li 
+				ul.modern
+					li
+						width: 160px
+						margin-left: 120px
+		>ul
 			width: 100%
 			float: none
 			display: block
@@ -35,14 +41,6 @@
 				position: relative
 				font-size: 18px
 				font-weight: 600
-				:after
-					content: "\f004"
-					position: absolute
-					color: #DB3615
-					left: 20px
-					top: 40px
-					font-size: 18px
-					font-family: FontAwesome
 				@include respond-to(xs)
 					margin-left: 10px
 		ul li ul
@@ -54,7 +52,7 @@
 			li
 				width: 80px
 				text-align: left
-				margin-left: 170px
+				margin-left: 150px
 				padding-left: 16px
 				position: relative
 				font-size: 14px
@@ -99,13 +97,10 @@
 		text-align: left
 		position: relative	
 	ul.experience li:after
-		content: '\f02e'
+		content: '-'
 		position: absolute
-		color: #DB3615
 		left: -20px
 		top: 2px
-		font-size: 14px
-		font-family: FontAwesome	
 	@include respond-to(xs)
 		width: 100%
 		float: none
@@ -117,17 +112,17 @@
 	clear: both
 	float: none
 %progressbar
-    height: 15px
-    background: #e6e6e6
-    line-height: 15px
-    box-shadow: none
-    border-radius: 0
-    overflow: visible
-    text-align: right
+	height: 15px
+	background: #e6e6e6
+	line-height: 15px
+	box-shadow: none
+	border-radius: 0
+	overflow: visible
+	text-align: right
 .progress-wrap h3
 	margin: 0	
 .progress-wrap .progress-bar
-    @extend %progressbar
+	@extend %progressbar
 .progress-wrap .progress	
 	@extend %progressbar
 	.color1, .color1 .bar-width

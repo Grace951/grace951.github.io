@@ -1,6 +1,4 @@
-if (process.env.BROWSER) {
-	require ('./pinterestItem.sass');
-}
+import './pinterestItem.sass';
 import update from 'immutability-helper';
 import PropTypes from 'prop-types';
 import React from 'react';

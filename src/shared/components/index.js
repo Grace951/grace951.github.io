@@ -1,30 +1,12 @@
-if (process.env.BROWSER) {
-	require ('./global.sass');
-}
+import './global.sass';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { ShareButtons, generateShareIcon} from 'react-share';
-import { Header } from '../components/Header';
+import Header from '../components/Header';
 import  Footer from "./Footer";
 import { getDevice } from '../actions/deviceAction';
 import connectDataFetchers from '../lib/connectDataFetchers.jsx';
-
-const {
-  FacebookShareButton,
-  GooglePlusShareButton,
-  LinkedinShareButton,
-  TwitterShareButton,
-  PinterestShareButton,
-  VKShareButton
-} = ShareButtons;
-
-const FacebookIcon = generateShareIcon('facebook');
-const TwitterIcon = generateShareIcon('twitter');
-const GooglePlusIcon = generateShareIcon('google');
-const LinkedinIcon = generateShareIcon('linkedin');
-const PinterestIcon = generateShareIcon('pinterest');
 
 const NotFoundPage = (props) 	=> (
 		<div className="row">
@@ -92,13 +74,13 @@ let Root = class Root extends React.Component{
 	}
 	render() {
 		return (
-	<div>
-		<Header location={this.props.location}/>
-		<article id="main">		
-			{this.props.children}
-		</article>
-		<Footer/>
-	</div>
+			<div>
+				<Header location={this.props.location}/>
+				<article id="main">		
+					{this.props.children}
+				</article>
+				<Footer/>
+			</div>
 		);
 	}
 };

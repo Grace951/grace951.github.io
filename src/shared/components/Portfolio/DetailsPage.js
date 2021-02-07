@@ -1,9 +1,7 @@
-if (process.env.BROWSER) {
-	require ('../global.sass');
-	require ('./details.sass');
-}
+import '../global.sass';
+import './details.sass';
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import RelativeItems from './RelativeItems';
 
 let worksData = require('../../data/works.json').mywork.works;

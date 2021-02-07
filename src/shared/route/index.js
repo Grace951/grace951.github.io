@@ -1,6 +1,3 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import { Router, Route, IndexRoute, IndexLink, browserHistory } from 'react-router';
 
 import HomePage from '../components/HomePage';
 import AboutPage from '../components/AboutPage';
@@ -9,34 +6,57 @@ import DetailsPage from '../components/Portfolio/DetailsPage';
 import F2EPage from '../components/Portfolio/F2EPage';
 import GraphicPage from '../components/Portfolio/GraphicPage';
 import EditoralPage from '../components/Portfolio/EditoralPage';
-
+import React from 'react';
+import {Route} from "react-router-dom";
 
 import { Root, NotFoundPage, UnauthorizedPage} from '../components/index';
-//https://github.com/reactjs/react-router-redux/issues/179
-
-const Routes = (props) => {
-	let {history} = props;
+function RouteWithSubRoutes(route) {
 	return (
-	<Router history={history}>
-		<Route path="/" component={Root}>
-			<IndexRoute component={HomePage}/>
-			<Route path="home" component={HomePage} onEnter={props.hideXsNav} />
-			<Route path="portfolio" component={PortfolioPage} >
-				<Route path="f2e" component={F2EPage} onEnter={props.hideXsNav} />
-				<Route path="graphic" component={GraphicPage} onEnter={props.hideXsNav} />
-				<Route path="editoral" component={EditoralPage} onEnter={props.hideXsNav} />
-				<Route path=":id" component={DetailsPage} onEnter={props.hideXsNav} />
-			</Route>
-			<Route path="aboutme" component={AboutPage} onEnter={props.hideXsNav} />
-			<Route path="*" component={NotFoundPage} />
-		</Route>
-		<Route path="*" component={NotFoundPage} />
-	</Router>);
+	  <Route
+		path={route.path}
+		render={props => (
+		  // pass the sub-routes down to keep nesting
+		  <route.component {...props} routes={route.routes} />
+		)}
+	  />
+	);
 }
-Routes.propTypes = {
-	history: PropTypes.object.isRequired,
-	hideXsNav: PropTypes.func.isRequired
-};
 
+const routes = [
+	{
+	  path: "/aboutme",
+	  component: AboutPage,
+	},
+	{
+	  path: "/home",
+	  component: HomePage,
+	},
+	{
+	  path: "/portfolio",
+	  component: PortfolioPage,
+	  routes: [
+		{
+		  path: "/portfolio/f2e",
+		  component: F2EPage
+		},
+		{
+		  path: "/portfolio/editoral",
+		  component: EditoralPage
+		},
+		{
+			path: "/portfolio/graphic",
+			component: GraphicPage
+		},
+		{
+			path: "/portfolio/:id",
+			component: DetailsPage
+		}
+	  ]
+	},
+	{
+		path: "/",
+		component: HomePage
+	},
+];
 
-export default Routes;
+export {routes, RouteWithSubRoutes};

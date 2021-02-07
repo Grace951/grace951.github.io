@@ -1,6 +1,4 @@
-if (process.env.BROWSER) {
-	require ('./gp.sass');
-}
+import './gp.sass';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';

@@ -1,6 +1,4 @@
-if (process.env.BROWSER) {
-	require ('./skill.sass');
-}
+import './skill.sass';
 import React from 'react';
 
 class Skill extends React.Component{
@@ -17,24 +15,24 @@ class Skill extends React.Component{
                                 <ul>
                                     <li>
                                         Modern Javascript
-                                        <ul>
-                                            <li>React <img className="skill-logo" style={{width:"30px"}} src="images/skills/reactjs.svg" alt="React"  title="React"/></li>
-                                            <li>Redux <img className="skill-logo" src="images/skills/redux.png" alt="Redux" title="Redux"/></li>
-                                            <li>Angular2 <img className="skill-logo" src="images/skills/angular.png" alt="Angular2" title="Angular2"/></li>
-                                            <li>NodeJs<img className="skill-logo" src="images/skills/node.png" alt="NodeJs" title="NodeJs"/></li>
+                                        <ul className="modern">
                                             <li>ES6<img className="skill-logo" src="images/skills/es6.png" alt="ES6" title="ES6"/></li>
+                                            <li>React with hooks<img className="skill-logo" style={{width:"30px"}} src="images/skills/reactjs.svg" alt="React"  title="React"/></li>
+                                            <li>Redux <img className="skill-logo" src="images/skills/redux.png" alt="Redux" title="Redux"/></li>
+                                            {/* <li>Angular2 <img className="skill-logo" src="images/skills/angular.png" alt="Angular2" title="Angular2"/></li> */}
+                                            <li>Webpack<img className="skill-logo" style={{width:"30px"}} src="images/skills/webpack.svg" alt="Webpack" title="Webpack"/></li>                                            
+                                            <li>Styled Component<img className="skill-logo" src="images/skills/styledComponent.png" alt="Compass" title="Compass"/></li>
+                                            <li>NodeJs<img className="skill-logo" src="images/skills/node.png" alt="NodeJs" title="NodeJs"/></li>
                                         </ul>
                                     </li>
                                     <li>Front-end Development
-                                        <ul>
+                                        <ul className="f2e">
+                                            <li>RWD<img className="skill-logo" src="images/skills/rwd.png" alt="RWD" title="RWD"/></li>
                                             <li>HTML5<img className="skill-logo" src="images/skills/html5.png" alt="HTML5" title="HTML5"/></li>
                                             <li>CSS3<img className="skill-logo" src="images/skills/css3.png" alt="CSS3" title="CSS3"/></li>
                                             <li>SASS<img className="skill-logo" src="images/skills/sass.png" alt="SASS" title="SASS"/></li>
-                                            <li>Compass<img className="skill-logo" src="images/skills/compass.png" alt="Compass" title="Compass"/></li>
+                                            {/* <li>Compass<img className="skill-logo" src="images/skills/compass.png" alt="Compass" title="Compass"/></li> */}
                                             <li>BootStrap<img className="skill-logo" src="images/skills/bootstrap.png" alt="BootStrap" title="BootStrap"/></li>
-                                            <li>Webpack<img className="skill-logo" style={{width:"30px"}} src="images/skills/webpack.svg" alt="Webpack" title="Webpack"/></li>
-                                            <li>NPM<img className="skill-logo" src="images/skills/npm.png" alt="NPM" title="NPM"/></li>
-                                            <li>RWD<img className="skill-logo" src="images/skills/rwd.png" alt="RWD" title="RWD"/></li>
                                             <li style={{height: "40px"}}>jQuery<img className="skill-logo"  alt="jQuery"  title="jQuery" style={{width: "40px", height:"40px", maxHeight:"40px"}} src="images/skills/jquerylogo.png"/></li>
                                         </ul>
                                     </li>
@@ -47,7 +45,7 @@ class Skill extends React.Component{
                                     <li>General Skill
                                         <ul>
                                             <li>Git<img className="skill-logo" src="images/skills/git.png" alt="Git" title="Git"/></li>
-                                            <li>Github<img className="skill-logo" src="images/skills/github.png" alt="Github" title="Github"/></li>
+											<li>NPM<img className="skill-logo" src="images/skills/npm.png" alt="NPM" title="NPM"/></li>
                                             <li>PhotoShop<img className="skill-logo" src="images/skills/photoshop.png" alt="PhotoShop" title="PhotoShop"/></li>
                                             <li>Illustrator<img className="skill-logo" src="images/skills/illustrator.png" alt="Illustrator" title="Illustrator"/></li>
                                         </ul>
@@ -55,7 +53,7 @@ class Skill extends React.Component{
                                 </ul>
                             </div>
                         </div>
-                         <div className="skill-bar ">
+                         {/* <div className="skill-bar ">
                             <h2>My Experience</h2>
                             <ul className="experience">
                                 <li>(2006 - 2010) Software Engineer / 3.5 years </li>
@@ -131,8 +129,8 @@ class Skill extends React.Component{
                                     <span className="bar-width">80%</span>
                                   </div>
                                 </div>
-                            </div>
-                         </div>
+                            </div> 
+                         </div>*/}
                     </div>
                 </div>
 			);

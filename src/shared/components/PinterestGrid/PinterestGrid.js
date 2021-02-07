@@ -1,10 +1,8 @@
-if (process.env.BROWSER) {
-	require ('./pinterestGrid.sass');
-}
+import './pinterestGrid.sass';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { PinterestItem } from './PinterestItem';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 let PinterestGrid = class PinterestGrid extends React.Component{
 	constructor(props) {

@@ -1,6 +1,4 @@
-if (process.env.BROWSER) {
-	require ('./timeline.sass');
-}
+import './timeline.sass';
 import React from 'react';
 
 class Timeline extends React.Component{

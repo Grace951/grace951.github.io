@@ -1,11 +1,15 @@
-var path = require("path");
-var webpack = require("webpack");
-require ('babel-polyfill');
+let path = require("path");
+let webpack = require("webpack");
+let projectRoot = process.cwd();
 
-var config = {
-    devtool: process.env.NODE_ENV === 'production' ? null : 'inline-source-map',
+let config = {
+	devtool: process.env.NODE_ENV === 'production' ? null : 'inline-source-map',
+	mode: "development",
     entry: {
-        vendor: [path.join(__dirname, "..","src", "client", "vendors.js")]
+        commons: [
+			// path.resolve(projectRoot, './webpack/util/polyfills.js'),
+			path.join(__dirname, "..","src", "client", "vendors.js")
+		]
     },
     output: {
         path: path.join(__dirname, "..", "public"),
@@ -24,14 +28,10 @@ var config = {
     ],
     resolve: {
 		modules: [
-		  path.resolve(__dirname, "../src/client"),
-		  "node_modules"
+			path.resolve(__dirname, "../src/client"),
+			"node_modules"
 		]
     }
 };
-
-if (process.env.NODE_ENV === "production"){
-    config.plugins.push(new webpack.optimize.UglifyJsPlugin());
-}
 
 module.exports = config;

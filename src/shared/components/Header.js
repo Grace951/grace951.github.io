@@ -1,28 +1,10 @@
-if (process.env.BROWSER) {
-	require ('./header.sass');
-}
-
-import { Link} from 'react-router';
+import './header.sass';
+import { NavLink} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import * as modalActions from '../actions/modalAction';
-import { ShareButtons, generateShareIcon} from 'react-share';
 
-const {
-  FacebookShareButton,
-  GooglePlusShareButton,
-  LinkedinShareButton,
-  TwitterShareButton,
-  PinterestShareButton,
-  VKShareButton
-} = ShareButtons;
-
-const FacebookIcon = generateShareIcon('facebook');
-const TwitterIcon = generateShareIcon('twitter');
-const GooglePlusIcon = generateShareIcon('google');
-const LinkedinIcon = generateShareIcon('linkedin');
-const PinterestIcon = generateShareIcon('pinterest');
 
 let Header = class Header extends React.Component{
 	constructor(props) {
@@ -57,40 +39,36 @@ let Header = class Header extends React.Component{
 								<i className="fa fa-bars" aria-hidden="true" />
 							</div>
 							<div className="share">
-								<FacebookShareButton url={link} className="social-share"> <FacebookIcon size={28} round={true} /> </FacebookShareButton>
-								<GooglePlusShareButton url={link} className="social-share"> <GooglePlusIcon size={28} round={true} /> </GooglePlusShareButton>
-								<LinkedinShareButton url={link} className="social-share"> <LinkedinIcon size={28} round={true} /> </LinkedinShareButton>
-								<TwitterShareButton url={link} className="social-share"> <TwitterIcon size={28} round={true} /> </TwitterShareButton>
 							</div>
 							<div id="navigation_grace">							
-								<Link to="/home" className="logo" ><img src="/images/logo.png" alt="hope shelter design web"/></Link>
+								<NavLink to="/home" className="logo" ><img src="/images/logo.png" alt="hope shelter design web"/></NavLink>
 								<ul id="main-menu_grace">
-									<li className="current-menu-item"><Link to="/home" activeClassName="active" >Home</Link></li>
-									<li><Link to="/aboutme" activeClassName="active" >About Me</Link></li>
+									<li className="current-menu-item"><NavLink to="/home" activeClassName="active" >Home</NavLink></li>
+									<li><NavLink to="/aboutme" activeClassName="active" >About Me</NavLink></li>
 									<li className="parent">
-										<Link to="/portfolio/f2e" activeClassName="active" >Portfolio</Link>
+										<NavLink to="/portfolio/f2e" activeClassName="active" >Portfolio</NavLink>
 										<ul className="sub-menu_grace">
-											<li><Link to="/portfolio/f2e" > Front-end App</Link></li>
-											<li><Link to="/portfolio/graphic">Graphic Design</Link></li>
-											<li><Link to="/portfolio/editoral">Editorial</Link></li>
+											<li><NavLink to="/portfolio/f2e" > Front-end App</NavLink></li>
+											<li><NavLink to="/portfolio/graphic">Graphic Design</NavLink></li>
+											<li><NavLink to="/portfolio/editoral">Editorial</NavLink></li>
 										</ul>
 									</li>
 								</ul>
 						</div>
 
 						<div id="logo_small" className="logo_small">
-							<Link to="/home"> <img src="/images/ico.png"/></Link>
+							<NavLink to="/home"> <img src="/images/ico.png"/></NavLink>
 						</div>
 						<div id="navigation_grace_small">
 							<ul id="main-menu_grace_small"  style={sMenuStyle}>
-								<li className="current-menu-item"><Link to="/home">Home</Link></li>
-								<li><Link to="/aboutme">About me</Link></li>
+								<li className="current-menu-item"><NavLink to="/home">Home</NavLink></li>
+								<li><NavLink to="/aboutme">About me</NavLink></li>
 								<li className="parent">
-									<Link to="/portfolio/f2e">Portfolio</Link>
+									<NavLink to="/portfolio/f2e">Portfolio</NavLink>
 									<ul className="sub-menu_grace_small">
-										<li><Link to="/portfolio/f2e">Front-end App</Link></li>
-										<li><Link to="/portfolio/graphic">Graphic Design</Link></li>
-										<li><Link to="/portfolio/editoral">Editorial</Link></li>
+										<li><NavLink to="/portfolio/f2e">Front-end App</NavLink></li>
+										<li><NavLink to="/portfolio/graphic">Graphic Design</NavLink></li>
+										<li><NavLink to="/portfolio/editoral">Editorial</NavLink></li>
 									</ul>
 								</li>
 							</ul>
@@ -116,4 +94,4 @@ function mapStateToProps(state) {
 }
 
 Header = connect(mapStateToProps, { ...modalActions})(Header);
-export {Header};
+export default Header;

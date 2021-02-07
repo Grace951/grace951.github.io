@@ -1,5 +1,17 @@
-if (process.env.NODE_ENV === 'production') {
-    module.exports = require('./configureStore.prod');
-} else {
-    module.exports = require('./configureStore.dev');
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
+import rootReducer from '../reducers';
+
+export default function configureAppStore(preloadedState) {
+	const store = configureStore({
+	  reducer: rootReducer,
+	  middleware: getDefaultMiddleware(),
+	  preloadedState,
+	  enhancers: []
+	})
+  
+	if (process.env.NODE_ENV !== 'production' && module.hot) {
+	  module.hot.accept('../reducers', () => store.replaceReducer(rootReducer))
+	}
+  
+	return store
 }

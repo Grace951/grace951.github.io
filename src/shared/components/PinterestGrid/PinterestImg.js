@@ -1,7 +1,4 @@
-if (process.env.BROWSER) {
-	require ('./pinterestImg.sass');
-}
-
+import './pinterestImg.sass';
 import PropTypes from 'prop-types';
 
 import React from 'react';

@@ -1,6 +1,4 @@
-if (process.env.BROWSER) {
-	require ('./f2e.sass');
-}
+import './f2e.sass';
 import React from 'react';
 import SiteShlef from './SiteShlef';
 
