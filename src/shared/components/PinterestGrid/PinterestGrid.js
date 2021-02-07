@@ -18,7 +18,9 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 		window.addEventListener('resize', this.updatePosition, false);
 		window.scrollTo(0, 0);
 		this.props.updateHeight(this.state.height + this.props.gutter);
-		this.updatePosition(true);
+		let st = this.loadProps(this.props);
+		st = this.updatePosition(true, st);
+		this.setState(st);
 	}
 
 	componentWillUnmount() {
@@ -30,7 +32,9 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 			this.props.updateHeight(this.state.height + this.props.gutter);
 
 		if (JSON.stringify(this.props.items) !== JSON.stringify(prevProps.items)){
-			this.updatePosition(true);
+			let st = this.loadProps(this.props);
+			st = this.updatePosition(true, st);
+			this.setState(st);
 		}
 	}
 	loadProps(props){		
@@ -75,9 +79,9 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 		};
 		return state;
 	}
-	updatePosition (first) {
+	updatePosition (first, st) {
 		const { columnWidth, gutter, items, delay, container, hideDesc } = this.props;
-		let { loadedItems, columns, columnHeights, loadedIndex} = this.state;
+		let { loadedItems, columns, columnHeights, loadedIndex} = st;
 		let shortestColumnIndex;
 		let colHeights = [...columnHeights];
 		let newLoadedItems = [...loadedItems];
@@ -90,14 +94,14 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 					top: window.pageYOffset,
 					height: window.innerHeight
 				};
-		if (newColumns !== this.state.columns ){
+		if (newColumns !== columns ){
 			loadedIndex = 0;
 			colHeights = Array.from({ length:  newColumns}, () => 0);
 			newLoadedItems = Array.from({ length: items.length }, (v, i) => ({loaded:false, top: 0, left: 0, ssr:loadedItems[i].ssr}));
 		}
 		shortestColumnIndex = colHeights.indexOf(Math.min(...colHeights));	
-		if (newColumns === this.state.columns && viewport.height + viewport.top < colHeights[shortestColumnIndex] + delay)
-			return; 
+		if (newColumns === columns && viewport.height + viewport.top < colHeights[shortestColumnIndex] + delay)
+			return st; 
 
 
 		for (let i=0; i<items.length; i++){	
@@ -119,17 +123,12 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 			}
 
 		}
-		if (first || newColumns !== this.state.columns ){
-			this.setState({
-				viewport,
-				columns: newColumns,
-				columnHeights : colHeights,
-				loadedItems: newLoadedItems,
-				loadedIndex,
-			});			
+		if (first || newColumns !== columns ){
+			st = {...st, viewport, newColumns, colHeights, newLoadedItems, loadedIndex}
 		}
 		// console.log(loadedIndex, newColumns, newLoadedItems, colHeights);
 		this.props.updateHeight(Math.max(...colHeights) + gutter);
+		return st;
 	}
 	
 	render() {

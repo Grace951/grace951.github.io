@@ -54,7 +54,7 @@ class App extends React.Component {
 		.then(()=>{
 			WebFont.load({
 				google: {
-					families: [ 'Merriweather::latin' , 'Rajdhani:400,500,600:latin' , 'Open+Sans::latin', 'Ubuntu:300italic:latin']
+					families: [ 'Merriweather::latin' , 'Noto Sans TC:100,300,600,700,900&display=swap', 'Rajdhani:400,500,600:latin' , 'Open+Sans::latin', 'Ubuntu:300italic:latin']
 				}
 			});
 		});	
