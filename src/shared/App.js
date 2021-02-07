@@ -12,7 +12,6 @@ import {
 import {hideXsNavAction} from './actions/modalAction';
 import Header from './components/Header';
 import Footer from "./components/Footer";
-import connectDataFetchers from './lib/connectDataFetchers.jsx';
 
 class App extends React.Component {
 	constructor(props) {
@@ -77,8 +76,6 @@ class App extends React.Component {
 	}
 }
 
-App = connect(null)(
-    connectDataFetchers(App, [ getDevice ])
-);
+App = connect(null)(App);
 App = withRouter(App);
 export default App;

@@ -10,18 +10,9 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 		this.loadProps = this.loadProps.bind(this);
 		this.updatePosition = this.updatePosition.bind(this);
 		this.state = this.loadProps(props);
+
 	}
-	componentWillReceiveProps(nextProps){
-		if (this.props.items !== nextProps.items){
-			this.setState(
-				this.loadProps(nextProps)
-			);
-			window.scrollTo(0, 0);
-		}
-	}	
-	componentWillMount() {
-	}
-	
+
 	componentDidMount() {
 		window.addEventListener('scroll', this.updatePosition, false);
 		window.addEventListener('resize', this.updatePosition, false);
@@ -37,7 +28,8 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 	componentDidUpdate(prevProps, prevState) {
 		if (this.state.height != prevState.height)
 			this.props.updateHeight(this.state.height + this.props.gutter);
-		if (this.props.items !== prevProps.items){
+
+		if (JSON.stringify(this.props.items) !== JSON.stringify(prevProps.items)){
 			this.updatePosition(true);
 		}
 	}
@@ -110,7 +102,7 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 
 		for (let i=0; i<items.length; i++){	
 			let item = newLoadedItems[i];
-			if(item.loaded){
+			if(!item || item.loaded){
 				continue;
 			}
 			shortestColumnIndex = colHeights.indexOf(Math.min(...colHeights));			
@@ -148,9 +140,18 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 		};
 
 		let ItemViews = loadedItems.slice(0, loadedIndex ).map((item,id) => {
+			if(id >= items.length){
+				return;
+			}
+			if(items[id].index < 0){
+				return (
+					<PinterestItem key={id} item={items[id]} reRender={!item.loaded} id={id} top={item.top} left={item.left} ssr={item.ssr} 
+							hideDesc={hideDesc} columnWidth={columnWidth}/>
+				);
+			}
 			return (
 				<Link  key={id} to={`/portfolio/${items[id].index}`}>
-					<PinterestItem item={items[id]} reRender={!item.loaded} id={id} top={item.top} left={item.left} ssr={item.ssr} 
+					<PinterestItem item={items[id]} reRender={item && !item.loaded} id={id} top={item.top} left={item.left} ssr={item.ssr} 
 							hideDesc={hideDesc} columnWidth={columnWidth}/>
 				</Link>
 			);

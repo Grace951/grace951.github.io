@@ -3,20 +3,22 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import {PinterestGrid} from '../PinterestGrid/PinterestGrid';
-import items from '../../data/graphicDesign';
+
+import { loadGraphicDesign } from '../../actions/portfolioActions';
 
 function uniqArray(arrArg){
 	return arrArg.filter((elem, pos, arr) => arr.indexOf(elem) == pos);
 }
-let categories = uniqArray(items.map((item, index) => (item.category)));
 
 let GraphicPage = class GraphicPage extends React.Component{
 	constructor(props) {
 		super(props);	
-	
+		let{items} = props;
+		
 		this.state = {
 			height: "100vh",
-			items: items,
+			choose: items.slice(),
+			categories: uniqArray((items||[]).map((item, index) => (item.category))),
 			chooseItem: -1,
 			minCategory: (props.device.phone || props.device.mobile),
 			userOpenCategory: false
@@ -26,15 +28,24 @@ let GraphicPage = class GraphicPage extends React.Component{
 		this.userOpenCategory = this.userOpenCategory.bind(this);
 		this.handleCategory = this.handleCategory.bind(this);
     }
-	componentWillReceiveProps(nextProps) {
-		let isMobile = (nextProps.device.phone || nextProps.device.mobile);
+	componentDidUpdate(prevProps, prevState) {
+		let {items} = this.props;
+		let isMobile = (prevProps.device.phone || prevProps.device.mobile);
+		if (JSON.stringify(items) != JSON.stringify(prevProps.items) && Array.isArray(items)){
+			let categories = uniqArray((items||[]).map((item, index) => (item.category)));
+			this.setState({
+				categories,
+				choose: items.slice(),
+			});
+		}
 		if (this.state.minCategory != isMobile){
 			this.setState({minCategory: isMobile});
 		}
 	}
-	
 	componentDidMount() {
+		let {loadGraphicDesign} = this.props;
 		window.addEventListener('resize', this.handleCategory, false);
+		loadGraphicDesign();
 	}
 	componentWillUnmount() {
 		window.removeEventListener('resize', this.handleCategory);
@@ -55,19 +66,20 @@ let GraphicPage = class GraphicPage extends React.Component{
 		});	
     }
 	chooseCategory(e){
-		let {userOpenCategory, minCategory} = this.state;
+		let {userOpenCategory, minCategory, categories} = this.state;
+		let {items} = this.props;
 		minCategory && (userOpenCategory = !userOpenCategory);
 		let id = parseInt(e.target.getAttribute("data-id"));
 		let select = id===-1?"All":categories[id];
 		let newItems = items.filter((item) => ( select === "All" || select === "all" || item.category===select));
 		this.setState({
-			items:newItems,
+			choose: newItems,
 			userOpenCategory,
 			chooseItem: id
 		});
 	}
 	render() {
-		let {minCategory, items, height, userOpenCategory, chooseItem} = this.state;
+		let {minCategory, height, userOpenCategory, chooseItem, categories, choose} = this.state;
 		let style = {
 			height , 
 			width:"100%",
@@ -77,25 +89,25 @@ let GraphicPage = class GraphicPage extends React.Component{
 		let Category = minCategory?chooseItem===-1?"All":categories[chooseItem]:"Category";
 		
 		return (
-	<section id="graphicdesign-section">
-        <div className="container">
-              <div className="row">
-				<ul className={`galereya-cats ${categoryClass}`}>
-					<li className="galereya-cats-item"  onClick={this.userOpenCategory} >{Category}</li>
-					<li className={`galereya-cats-item ${chooseItem===-1?'active':''}`} data-id="-1" onClick={this.chooseCategory} >All</li>
-					{categories.map((item, id)=>(<li key={id} data-id={id} onClick={this.chooseCategory} className={`galereya-cats-item ${chooseItem===id?'active':''}`}>{item}</li>))}
-				</ul>
-              </div>
-              <div className="row">
-               <div className="col-lg-offset-2 col-lg-10 col-md-offset-3 col-md-9 col-sm-offset-1 col-sm-11" >
-                 <div id="graphic-design"  style={style}>
-					<PinterestGrid items={items} columnWidth={300} gutter={15} columns={3} container="graphic-design" 
-						updateHeight={this.updateHeight} delay={100} device={this.props.device} hideDesc={true}/>					
+			<section id="graphicdesign-section">
+				<div className="container">
+					<div className="row">
+						<ul className={`galereya-cats ${categoryClass}`}>
+							<li className="galereya-cats-item"  onClick={this.userOpenCategory} >{Category}</li>
+							<li className={`galereya-cats-item ${chooseItem===-1?'active':''}`} data-id="-1" onClick={this.chooseCategory} >All</li>
+							{categories.map((item, id)=>(<li key={id} data-id={id} onClick={this.chooseCategory} className={`galereya-cats-item ${chooseItem===id?'active':''}`}>{item}</li>))}
+						</ul>
+					</div>
+					<div className="row">
+					<div className="col-lg-offset-2 col-lg-10 col-md-offset-3 col-md-9 col-sm-offset-1 col-sm-11" >
+						<div id="graphic-design"  style={style}>
+							<PinterestGrid items={choose} columnWidth={300} gutter={15} columns={3} container="graphic-design" 
+								updateHeight={this.updateHeight} delay={100} device={this.props.device} hideDesc={true}/>					
+						</div>
+					</div>
+					</div>
 				</div>
-              </div>
-            </div>
-        </div>
-    </section>
+			</section>
 		);
 	}
 };
@@ -108,10 +120,11 @@ GraphicPage.propTypes = {
 
 function mapStateToProps(state, ownProps) {
   return {
-    device: state.device
+    device: state.device,
+    items: state.graphicDesign
   };
 }
-
-GraphicPage = connect(mapStateToProps)(GraphicPage);
+GraphicPage.serverFetch =  [ loadGraphicDesign ];
+GraphicPage = connect(mapStateToProps,{loadGraphicDesign})(GraphicPage);
 
 export default GraphicPage;

@@ -13,7 +13,8 @@
     "dev": "concurrently --kill-others -p \"[{name}]\" -n \"Client,Server,StartServer\" -c \"bgBlue.bold,bgGreen.bold,bgBlack.bold,black.bgWhite.bold\" \"npm run dev:client\" \"npm run dev:server\" \"npm run dev:start\" ",
     "dev:client": "cross-env BROWSER=true node ./src/server/server.dev.js",
     "dev:server": "cross-env NODE_ENV=development webpack --watch --config=./webpack/webpack.config.dev.server.js",
-    "dev:start": "node dev/server.generated.dev.js",
+    "dev:start": "nodemon dev/server.generated.dev.js",
+    "api": "nodemon apiserver/main.js",
     "stat": "webpack --progress --profile --json --config=webpack/webpack.config.dev.js > stats.json"
   },
   "repository": {

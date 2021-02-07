@@ -1,6 +1,4 @@
-{
-  "mywork": {
-    "works": [
+[
       {
         "index": "0",
         "title": "廣告練習| Avent 奶瓶",
@@ -13,10 +11,10 @@
         "desc": "背景特別設計用以強調 iphone 6 螢慕的鮮豔色彩。以弧型光芒及iphnoe的側視圖製造空間感，使觀看者彷彿親眼所見。",
         "img": "/images/portfolio/full/poster2.jpg",
         "relative": {
-          "img": [{
+          "img": {
             "src": "/images/portfolio/small/poster6.jpg",
             "index": "7"
-          }]
+          }
         }
       },
       {
@@ -37,10 +35,10 @@
         "desc": "將自己在碧潭照的相片用 photoshop 改成水彩效果，運用了photoshop的濾鏡、色彩模色及遮色片功能。",
         "img": "/images/portfolio/full/photo2.jpg",
         "relative": {
-          "img": [{
+          "img": {
             "src": "/images/portfolio/small/photo3.jpg",
             "index": "5"
-          }]
+          }
         }
       },
       {
@@ -49,10 +47,10 @@
         "desc": "將自己在碧潭照的相片用 photoshop 改成油畫效果，運用了photoshop的藝術家步驟筆刷工具、濾鏡、 色彩模色及遮色片功能。",
         "img": "/images/portfolio/full/photo3.jpg",
         "relative": {
-          "img": [{
+          "img": {
             "src": "/images/portfolio/small/photo2.jpg",
             "index": "4"
-          }]
+          }
         }
       },
       {
@@ -67,10 +65,10 @@
         "desc": "背景特別設計，用以強調 iphone 6 金色質感，以弧型光芒及蘋果Logo曲度柔化 iphone 6 的剛硬感。",
         "img": "/images/portfolio/full/poster6.jpg",
         "relative": {
-          "img": [{
+          "img": {
             "src": "/images/portfolio/small/poster2.jpg",
             "index": "1"
-          }]
+          }
         }
       },
       {
@@ -79,10 +77,10 @@
         "desc": "這是為貓頭鷹親子教育協會所繪製的活動DM海報，本作品以繽紛色彩的小朋友插圖及高對比的標題字， 吸引觀看者注意。設計力求活動資訊一目了然。",
         "img": "/images/portfolio/full/poster7.jpg",
         "relative": {
-          "img": [{
+          "img": {
             "src": "/images/portfolio/small/web1.jpg",
             "index": "41"
-          }]
+          }
         }
       },
       {
@@ -153,10 +151,10 @@
         "desc": "右方Logo設計理念為:\"書本給人方向\"。 因此以由書本形狀組成方向指標牌，象徵閱讀給我們人生的方向。 左方Logo以帆船的帆桅為風向的意象，象徵藉由書本得到動力來源。",
         "img": "/images/portfolio/full/branding2.jpg",
         "relative": {
-          "img": [{
+          "img": {
             "src": "/images/portfolio/small/branding5.jpg",
             "index": "26"
-          }]
+          }
         }
       },
       {
@@ -165,10 +163,10 @@
         "desc": "這是一系列為書店LOGO設計練習，由於書店主人喜愛大自然，希望LOGO中有植物的元素， 且樹苗象徵生命力，因此右圖以樹苗為設計發想捷和書本，象徵書本帶給人生命力。左圖象徵赤子之心。",
         "img": "/images/portfolio/full/branding4.jpg",
         "relative": {
-          "img": [{
+          "img": {
             "src": "/images/portfolio/small/branding3.jpg",
             "index": "14"
-          }]
+          }
         }
       },
       {
@@ -177,10 +175,10 @@
         "desc": "這是一系列為書店LOGO設計練習，由於書店主人喜愛大自然，希望LOGO中有植物的元素， 且樹苗象徵生命力，因此以樹苗為設計發想結合書本，象徵書本帶給人生命力。",
         "img": "/images/portfolio/full/branding3.jpg",
         "relative": {
-          "img": [{
+          "img": {
             "src": "/images/portfolio/small/branding4.jpg",
             "index": "13"
-          }]
+          }
         }
       },
       {
@@ -283,10 +281,10 @@
         "desc": "這是一份三摺兩頁的DM設計練習。封面以草綠色嫩葉呈現 Aveda 的環保自然形象， 對比色的橘色標題字，呈現清新亮眼的效果。封底則以紅色營造節慶的感覺。",
         "img": "/images/portfolio/full/DM3.jpg",
         "relative": {
-          "img": [{
+          "img": {
             "src": "/images/portfolio/small/DM4.jpg",
             "index": "20"
-          }]
+          }
         }
       },
       {
@@ -295,10 +293,10 @@
         "desc": "這是一份三摺兩頁的DM設計練習的內頁，主要訴求為資訊一目了然。並以刷淡LOGO為背景， 重覆出現於每個商品背後，營造品牌一致感。",
         "img": "/images/portfolio/full/DM4.jpg",
         "relative": {
-          "img": [{
+          "img": {
             "src": "/images/portfolio/small/DM3.jpg",
             "index": "19"
-          }]
+          }
         }
       },
       {
@@ -397,10 +395,10 @@
         "desc": "此VI設計理念為:\"書本給人方向\"。 因此以由書本形狀組成方向指標牌，象徵閱讀給我們人生的方向。",
         "img": "/images/portfolio/full/branding5.jpg",
         "relative": {
-          "img": [{
+          "img": {
             "src": "/images/portfolio/small/branding2.jpg",
             "index": "12"
-          }]
+          }
         }
       },
       {
@@ -415,10 +413,10 @@
         "desc": "這是為貓頭鷹親子教育協會所設計的T-shirt，設計理念如下:\"閱讀給我們人生的方向，象徵站 在人生十字路口的小朋友，藉由貓頭鷹親子教育協會獲得人生 未來的方向。",
         "img": "/images/portfolio/full/branding12.jpg",
         "relative": {
-          "img": [{
+          "img": {
             "src": "/images/portfolio/small/branding13.jpg",
             "index": "29"
-          }]
+          }
         }
       },
       {
@@ -427,10 +425,10 @@
         "desc": "這是為貓頭鷹親子教育協會所設計的T-shirt，設計理念如下:\"閱讀給我們人生的方向，象徵站 在人生十字路口的小朋友，藉由貓頭鷹親子教育協會獲得人生 未來的方向。",
         "img": "/images/portfolio/full/branding13.jpg",
         "relative": {
-          "img": [{
+          "img": {
             "src": "/images/portfolio/small/branding12.jpg",
             "index": "28"
-          }]
+          }
         }
       },
       {
@@ -451,7 +449,7 @@
         "desc": "聖誕節插畫練習。",
         "img": "/images/portfolio/full/illustration2.jpg",
         "relative": {
-          "img":[{ "src": "/images/portfolio/small/illustration2-1.jpg" }]
+          "img": { "src": "/images/portfolio/small/illustration2-1.jpg" }
         }
       },
       {
@@ -985,5 +983,4 @@
         }
       }
     ]
-  }
-}
+

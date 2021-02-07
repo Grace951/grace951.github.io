@@ -1,5 +1,5 @@
 /* eslint import/no-unresolved: 0*/
-let worksDetailsAll = require('../shared/data/works.json').mywork.works;
+let worksDetailsAll = require('../shared/data/works.json');
 
 export function fetchComponentsData({ dispatch, components, params, query, locale, route, device }) {
     const promises = components.map(current => {

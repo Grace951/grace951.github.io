@@ -13,19 +13,13 @@ let PinterestItem = class PinterestItem extends React.Component{
 		this.loadedImgDirty = Array.from({ length: props.item.images.length }, () => ( {loaded: false, height: 0})), 		
 		this.updateLoaded = this.updateLoaded.bind(this);
 	}
-	componentWillReceiveProps(nextProps){
-		if (nextProps.item === this.props.item)
+	componentDidUpdate(prevProps, prevState) {
+		if (JSON.stringify(prevProps.item) === JSON.stringify(this.props.item))
 			return;
 		this.setState({
-			loadedImg: Array.from({ length: nextProps.item.images.length }, () => ( {loaded: false, height: 0})), 						
+			loadedImg: Array.from({ length: prevProps.item.images.length }, () => ( {loaded: false, height: 0})), 						
 			done: false,
 		});
-	}
-	componentDidMount() {
-	}
-	componentWillMount() {
-	}
-	componentDidUpdate(prevProps, prevState) {
 	}
     updateLoaded(id, done, height ) {
 		// Do not get source from this.state.loadedImg, because loadedImg may not update( due to setState() will not update sync )

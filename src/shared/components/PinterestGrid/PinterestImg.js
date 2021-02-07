@@ -7,13 +7,7 @@ let PinterestImg = class PinterestImg extends React.Component{
 		super(props);
 		this.handleImageLoaded = this.handleImageLoaded.bind(this);
 	}
-	componentWillReceiveProps(nextProps){
-		if (nextProps.src === this.props.src)
-			return;
-
-		this.props.updateLoaded(this.props.id, false, 0);
-	}
-	componentDidUpdate(prevProps) {
+	componentDidUpdate(prevProps, prevState) {
 		if (prevProps.src === this.props.src)
 			return;
 		let img = this.Img;

@@ -6,6 +6,8 @@ import expressStaticGzip from './compression';
 import { Provider } from 'react-redux'
 import { StaticRouter } from "react-router-dom";
 import configureAppStore from "../shared/store/configureStore";
+import { matchPath } from "react-router";
+import {routes} from '../shared/route/index';
 
 import App from "../shared/App.js";
 import { renderToString, renderToNodeStream } from 'react-dom/server'
@@ -48,32 +50,68 @@ function getAssetInfo() {
 }
 
 function handleRender(req, res) {
-	// Read the counter from the request, if provided
-	const params = qs.parse(req.query)
-	const context = {};
-
-	// Compile an initial state
 	let preloadedState = {}
-
-	// Create a new Redux store instance
+	var query = req.query;
 	const store = configureAppStore(preloadedState);
+	let match = {};
+	let components = [];
+	const location = req.url;
+	routes.some(route => {
+		match = matchPath(location, route);
+		if (match){
+			components.push(route.component);
+			route.routes && route.routes.some(r => {
+				match = matchPath(location, r);
+				if (match){
+					// console.log(r.path);
+					components.push(r.component);
+				}
+				return match;
+			});
+		}
+		return match;
+	});
+	if(!components || !components.length){
+		res.send(renderFullPage(location, store));
+		return;
+	}
+	let {params} = match;
+	let actionCreators = components.reduce((acc, cur)=>{
+		if(cur.serverFetch && Array.isArray(cur.serverFetch)){
+			acc = acc.concat(cur.serverFetch);
+		}
+		return acc;
+	}, []);
 
-	// Render the component to a string
+	let fPara = {dispatch:store.dispatch, actionCreators, params, query};
+	fetchData(fPara).then(()=>{
+		res.send(renderFullPage(location, store));
+	}).catch((err)=>{
+		console.log(err)
+	});
+}
+
+function fetchData({ actionCreators, dispatch, params = {}, query = {},  }) {          
+	let promiseArray = actionCreators.map(actionCreator => {                 
+			return actionCreator?(dispatch(actionCreator({ params, query}))):null;
+		});
+	return Promise.all( promiseArray );
+}
+function renderFullPage(location, store) {
+	const context = {};
+	// Grab the initial state from our Redux store
+	const finalState = store.getState()
+
 	const html = renderToString(
 		<Provider store={store}>
-			<StaticRouter location={req.url} context={context}>
+			<StaticRouter location={location} context={context}>
 				<App />
 			</StaticRouter>
 		</Provider>
 	)
 
-	// Grab the initial state from our Redux store
-	const finalState = store.getState()
 
 	// Send the rendered page back to the client
-	res.send(renderFullPage(html, finalState))
-}
-function renderFullPage(html, preloadedState) {
 	let info = getAssetInfo();
 	return `
 	  <!doctype html>
@@ -87,7 +125,7 @@ function renderFullPage(html, preloadedState) {
 		  <script>
 			// WARNING: See the following for security issues around embedding JSON in HTML:
 			// https://redux.js.org/recipes/server-rendering/#security-considerations
-			window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(
+			window.__PRELOADED_STATE__ = ${JSON.stringify(finalState).replace(
 				/</g,
 				'\\u003c'
 			)}

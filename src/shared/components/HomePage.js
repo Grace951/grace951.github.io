@@ -4,10 +4,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { getDevice } from '../actions/deviceAction';
-import connectDataFetchers from '../lib/connectDataFetchers.jsx';
+import { loadRecentsWorks } from '../actions/portfolioActions';
 import {PinterestGrid} from './PinterestGrid/PinterestGrid';
-import items from '../data/recentWorks';
-
 
 let LoadingDiv = class LoadingDiv extends React.Component{
 	constructor(props) {
@@ -34,6 +32,8 @@ let HomePage = class HomePage extends React.Component{
 		this.updateHeight = this.updateHeight.bind(this);
     }
 	componentDidMount() {
+		let{loadRecentsWorks} = this.props;
+		loadRecentsWorks();
 	}	
     updateHeight( height ) {
 		this.setState({
@@ -41,11 +41,12 @@ let HomePage = class HomePage extends React.Component{
 		});	
     }
 	render() {
+		let {recents} = this.props;
 		let style = {height: this.state.height , width:"100%"};	
 		return (
 			<div id="home" >				
 				<div id="containerb"  style={style}>
-					<PinterestGrid items={items} columnWidth={280} gutter={20} columns={5} container="containerb" updateHeight={this.updateHeight}
+					<PinterestGrid items={recents ||[]} columnWidth={280} gutter={20} columns={5} container="containerb" updateHeight={this.updateHeight}
 						delay={100} device={this.props.device} hideDesc={false}/>					
 				</div>
 			</div>
@@ -59,13 +60,11 @@ HomePage.propTypes = {
 
 function mapStateToProps(state, ownProps) {
   return {
-    device: state.device
+    device: state.device,
+    recents: state.recents
   };
 }
 
-HomePage = connect(mapStateToProps)(
-    connectDataFetchers(HomePage, [ getDevice ])
-);
-
-
+HomePage.serverFetch =  [ getDevice, loadRecentsWorks ];
+HomePage = connect(mapStateToProps, {loadRecentsWorks})(HomePage);
 export default HomePage;

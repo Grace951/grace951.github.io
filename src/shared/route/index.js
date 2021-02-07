@@ -9,7 +9,6 @@ import EditoralPage from '../components/Portfolio/EditoralPage';
 import React from 'react';
 import {Route} from "react-router-dom";
 
-import { Root, NotFoundPage, UnauthorizedPage} from '../components/index';
 function RouteWithSubRoutes(route) {
 	return (
 	  <Route

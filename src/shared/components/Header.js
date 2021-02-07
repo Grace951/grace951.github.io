@@ -14,12 +14,12 @@ let Header = class Header extends React.Component{
 		}
 		this.toggleSmallMenu = this.toggleSmallMenu.bind(this);
 	}
-	componentWillReceiveProps(nextProps) {
-		if (this.state.showSmallMenu != nextProps.showXsNav){
-			this.setState({showSmallMenu: nextProps.showXsNav});
+	componentDidUpdate(prevProps, prevState) {
+		if (this.state.showSmallMenu != prevProps.showXsNav){
+			this.setState({showSmallMenu: prevProps.showXsNav});
 		}
 	}
-	
+
 	toggleSmallMenu(){
 		this.setState({showSmallMenu: !this.state.showSmallMenu});
 	}
