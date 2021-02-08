@@ -6,7 +6,8 @@ import { connect } from 'react-redux';
 
 let RelativeItems = ({portfolio, relative, parentIndex}) => {
 	if(relative.img && Array.isArray(relative.img)){
-		if(imgItem.index){
+		let imgItem = relative.img;	
+		if(imgItem && imgItem.index){
 			return (
 			<div>
 				{relative.img.map( (imgItem, i) => {								
@@ -33,10 +34,9 @@ let RelativeItems = ({portfolio, relative, parentIndex}) => {
 			}
 		</div>)
 	}
-	
-	let imgItem = relative.img;								
+	let imgItem = relative.img;					
 	let relaiveItem = (imgItem.index < portfolio.length && portfolio[imgItem.index]) || {};
-	if(imgItem.index){
+	if(imgItem && imgItem.index){
 		return (
 			<div>
 				<Link to={`/portfolio/${imgItem.index||parentIndex}`}>

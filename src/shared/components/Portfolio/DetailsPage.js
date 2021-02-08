@@ -25,8 +25,9 @@ let DetailsPage = class DetailsPage extends React.Component{
 		}
 	}
 	componentDidMount() {
-		let {match:{params}, loadDetails} = this.props;
+		let {match:{params}, loadDetails, loadPortfolio} = this.props;
 		loadDetails({params});
+		loadPortfolio({params});
 		let bigImg = this.bigImg;
 		if (!this.state.showImg && bigImg && bigImg.complete && bigImg.naturalHeight !== 0){
 			this.setState({showImg: true});
@@ -44,7 +45,7 @@ let DetailsPage = class DetailsPage extends React.Component{
 		let bigImgWrapStyle = {
 			width: (this.state.showImg && this.bigImg && this.bigImg.naturalWidth)?(this.bigImg.naturalWidth + 30):"100%"
 		} ;
-		
+
 	return (
 	<section id="detailinfo">
         <div className="container">
@@ -113,5 +114,5 @@ function mapStateToProps(state, ownProps) {
 	};
 }
 DetailsPage.serverFetch =  [ loadPortfolio, loadDetails ];
-DetailsPage = connect(mapStateToProps,{loadDetails})(DetailsPage);
+DetailsPage = connect(mapStateToProps,{loadDetails, loadPortfolio})(DetailsPage);
 export default DetailsPage;
