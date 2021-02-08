@@ -16,8 +16,12 @@ let DetailsPage = class DetailsPage extends React.Component{
 	}
 	componentDidUpdate(prevProps) {
 		let {match:{params}, loadDetails} = this.props;
-		if (prevProps.match.params.id == params.id)
+		if (prevProps.match.params.id == params.id){
 			return;
+		}
+		else{
+			this.setState({showImg: false});
+		}
 		loadDetails({params});
 		let bigImg = this.bigImg;
 		if (!this.state.showImg && bigImg && bigImg.complete && bigImg.naturalHeight !== 0){
