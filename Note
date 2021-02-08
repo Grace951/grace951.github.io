@@ -157,6 +157,7 @@ Docker
 			- shutdown container => exit
 			- exit container's terminal => ctrl + p 之後再輸入 ctrl + q
 		sudo docker ps -a
+		docker image rm <name>
 
 		sudo docker build 
 			會在目前目錄尋找 Dockerfile 或 dockerfile
@@ -198,7 +199,7 @@ Docker
 
 			- ADD [–chown=<user>:<group>] [“<src>”,… “<dest>”]
 
-		WORKDIR: 指定docker執行起來時候的預設目錄位置
+		WORKDIR: 指定 docker 執行起來時候的預設目錄位置
 				當設定WORKDIR後，Dockerfile中的RUN、CMD、ENTRYPOINT、COPY、ADD等指令就會在該工作目錄下執行，以下是官方的示範：
 			WORKDIR /path/to/workdir
 
@@ -243,3 +244,6 @@ Docker
 sudo docker pull node:14.15.4
 sudo docker run -it node:14.15.4 /bin/bash
 
+sudo docker -f Dockerfile_ssr build -t node-ssr:v1 .
+sudo docker -f Dockerfile_api build -t node-api:v1 .
+sudo docker -f Dockerfile_nginx build -t home-nginx:v1 .
