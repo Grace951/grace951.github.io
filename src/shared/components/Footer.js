@@ -1,6 +1,4 @@
-if (process.env.BROWSER) {
-	require ('./footer.sass');
-}
+require ('./footer.sass');
 
 import { Link} from 'react-router-dom';
 import React from 'react';
