@@ -1,0 +1,245 @@
+Free Domain
+------------------------------------------------------------------
+https://www.noip.com/
+https://www.noip.com/login?utm_campaign=getting-started&utm_medium=notice&utm_source=email
+
+
+SSL
+------------------------------------------------------------------
+https://letsencrypt.org/getting-started/
+https://certbot.eff.org/
+https://certbot.eff.org/lets-encrypt/ubuntufocal-nginx
+https://www.ssllabs.com/ssltest/analyze.html?d=hopeshelter.ddns.net&latest
+https://blog.hellojcc.tw/setup-https-with-letsencrypt-on-nginx/
+
+https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04
+sudo apt install certbot python3-certbot-nginx
+sudo certbot --nginx -d hopeshelter.ddns.net
+
+
+Nginx
+------------------------------------------------------------------
+	sudo apt install nginx
+	sudo apt install net-tools
+	sudo netstat -tlnp | grep nginx
+	https://magiclen.org/ubuntu-server-nginx/
+
+	sudo vim /etc/nginx/nginx.conf
+
+	改設定檔
+	=>    sudo nginx -t
+	=>    sudo nginx -s reload
+	sudo systemctl reload nginx
+	sudo systemctl stop nginx
+	sudo systemctl start nginx
+
+	https://stackoverflow.com/questions/37624062/nginx-including-conf-from-conf-d-but-still-loading-default-settings
+	#       include /etc/nginx/conf.d/*.conf;
+	#       include /etc/nginx/sites-enabled/*;
+
+
+Security
+https://aws.amazon.com/premiumsupport/knowledge-center/ec2-connect-internet-gateway/
+-----------------------------------------------------------------------------------------------------
+	sudo ufw status verbose
+	sudo iptables -L
+	sudo iptables -L -t nat
+	firewall-cmd --list-services
+	sudo netstat -tulpn 
+	wget localhost
+	wget http://3.140.245.184/
+	wget http://hopeshelter.ddns.net/
+	wget https://hopeshelter.ddns.net/
+
+
+Ubuntu service
+-----------------------------------------------------------------------
+	sudo vim /etc/systemd/system/nodeHomepage.service
+	-----------------------------------------------------------------------
+		[Unit]
+			Description=node homepage service
+			After=network.target
+			StartLimitIntervalSec=0
+		[Service]
+			WorkingDirectory=/home/ubuntu/homepage
+			ExecStart=/usr/bin/node dist/server.generated.js
+			Restart=always
+			RestartSec=10
+			StandardOutput=syslog
+			StandardError=syslog
+			SyslogIdentifier=homepage SSR
+			Environment=NODE_ENV=production
+
+		[Install]
+			WantedBy=multi-user.target
+
+	sudo vim /etc/systemd/system/nodeApi.service
+	-----------------------------------------------------------------------
+		[Unit]
+			Description=node homepage api service
+			After=network.target
+			StartLimitIntervalSec=0
+		[Service]
+			WorkingDirectory=/home/ubuntu/homepage
+			ExecStart=/usr/bin/node apiserver/main.js
+			Restart=always
+			RestartSec=10
+			StandardOutput=syslog
+			StandardError=syslog
+			SyslogIdentifier=homepage API
+			Environment=NODE_ENV=production
+
+		[Install]
+			WantedBy=multi-user.target
+
+	sudo chmod 644 /etc/systemd/system/nodeHomepage.service
+	sudo chmod 644 /etc/systemd/system/nodeApi.service
+	sudo systemctl daemon-reload
+	sudo systemctl start nodeApi
+	sudo systemctl enable nodeApi
+	sudo systemctl status nodeApi
+	sudo systemctl stop nodeApi
+	sudo systemctl start nodeHomepage
+	sudo systemctl status nodeHomepage
+	sudo systemctl stop nodeHomepage
+	sudo systemctl enable nodeHomepage
+
+
+Docker
+----------------------------------------------------------------------------------------------------
+	Docker的基本原則是，一個container只負責一項服務
+	但基本上不太可能一個APP只用到一個服務 (node SSR + node API + nginx)
+	=>  需要 docker-compose 來一次幫你把你的 APP開好
+
+	Installl docker 
+		https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
+		sudo apt update
+		sudo apt install apt-transport-https ca-certificates curl software-properties-common
+		curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+		sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+		sudo apt update
+		apt-cache policy docker-ce
+		sudo apt install docker-ce
+		sudo systemctl status docker
+
+	Install docker-compose
+		https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04
+		sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+		sudo chmod +x /usr/local/bin/docker-compose
+
+
+
+	Docker image：
+		- 它是 Docker 的映像檔主要是一個唯讀的檔案，是啟動 Docker container 要使用到的檔案。
+		- From 
+			- 從網路上的 Docker Hub pull下來
+			- 從另外一台電腦上的 Docker image export 出來，然後再 import 到自已的電腦
+			- 自行撰寫 Dockerfile
+
+	Docker Container：
+		- Docker Container 是透過 Docker image 執行起來的 Process，同一個 Docker image 可以啟動多個 Docker Container。
+
+	Docker Hub：
+		Docker Hub 可以把它想像成 GitHub，GitHub是用來存放程式碼的倉庫，Docker Hub是來存放 Docker image的倉庫。
+	
+	CMD
+		- docker search 搜尋 Docker Image 有哪些的指令
+		- docker pull 指 Docker Image 下載回 local
+		- docker images 顯示出在 local 下載了哪些 Docker Image
+		- docker run 使用 Docker Image 啟動執行 Docker Container
+		- docker ps 顯示了啟動了哪些的 Docker Container
+
+	1. Ubuntu - Download ubuntu image and run  
+		sudo docker search ubuntu -f is-official=true
+		sudo docker pull ubuntu
+		sudo docker images
+		sudo docker run -it ubuntu /bin/bash 
+			- shutdown container => exit
+			- exit container's terminal => ctrl + p 之後再輸入 ctrl + q
+		sudo docker ps -a
+
+		sudo docker build 
+			會在目前目錄尋找 Dockerfile 或 dockerfile
+			-t：Name and optionally a tag in the ‘name:tag’ format，指定映像檔名稱、標籤
+				sudo docker build -t myimage:v1 .
+			-f: 來指定Dockerfile的位置時，後面接的目錄(及其子目錄)需要能夠找到 Dockerfile，否則會出現 context 錯誤
+				sudo docker build -f /path/to/a/Dockerfile -t myimage:v3 .
+
+	Dockerfile
+		Docker的基本原則是，一個container只負責一項服務
+		但基本上不太可能一個APP只用到一個服務 (node SSR + node API + nginx)
+		=>  需要 docker-compose 來一次幫你把你的 APP開好
+			- 一個 Dockerfile 可以build成一個 image，
+			- 一個 container 則是一個 image 的實體，
+			- 而 docker-compose.yml 就是描述很多個 container (or service) 之間的交互作用。
+
+		FROM： 使用到的 Docker Image 名稱
+		MAINTAINER： 用來說明，撰寫和維護這個 Dockerfile 的人是誰，也可以給 E-mail的資訊
+		RUN： 環境設定需要的命令
+			- RUN <command> <param1> <param2> ...
+				以shell的形式執行，Linux的預設是/bin/sh -c，而Windows上的預設環境則是cmd /S /C
+				RUN mkdir -p /home/demo/docker
+
+			- RUN ["executable", "param1", "param2"]
+				以exec的形式執行指令，例如Linux上不想用預設的shell執行指令，那麼就可以透過RUN [“/bin/bash”, “-c”, “echo hello”]指定想要的shell
+				RUN ["apt-get", "install", "python3"]
+
+		COPY： 複製本地端的檔案/目錄到映像檔的指定位置中，其格式為：
+			- COPY [–chown=<user>:<group>] <src>… <dest>
+				COPY file1.txt file2.js file3.json ./
+			- COPY [–chown=<user>:<group>] [“<src>”,… “<dest>”]
+				COPY ["file1.txt", "file2.js", "file3.json" "./"]
+
+		ADD： 和COPY一樣，可將本地端的檔案/目錄加到映像檔的指定位置內。
+			ADD的來源路徑支援URL，也就是說可以加入遠端的檔案，COPY則不支援URL
+			若來源檔案是壓縮檔(副檔名為gzip、bzip2、xz)，則使用ADD加入檔案時會自動解壓縮，而COPY不會
+			- ADD [–chown=<user>:<group>] <src>… <dest>
+				ADD file1.txt file2.js file3.json ./
+
+			- ADD [–chown=<user>:<group>] [“<src>”,… “<dest>”]
+
+		WORKDIR: 指定docker執行起來時候的預設目錄位置
+				當設定WORKDIR後，Dockerfile中的RUN、CMD、ENTRYPOINT、COPY、ADD等指令就會在該工作目錄下執行，以下是官方的示範：
+			WORKDIR /path/to/workdir
+
+		ENV： 用來設定環境變數
+			- ENV <key> <value>
+				Key後面的第一個空白鍵後會視為Value
+			- ENV <key>=<value> …
+				用等於符號來定義，每一組中間以空白鍵隔開
+
+		CMD：指定Instance啟動後所要執行的指令
+			- CMD [“executable”, ”param1″, ”param2″]
+				exec形式，官方推薦此種方式
+				CMD [ "sh", "-c", "echo $HOME" ]
+				
+			- CMD [“param1″, ”param2”]
+				適用於有定義ENTRYPOINT指令的時候，CMD中的參數會做為ENTRYPOINT的預設參數
+
+			- CMD <command> <param1> <param2> ...
+				會以shell的形式執行，預設是在「/bin/sh -c」下執行，適合在需要互動的指令時
+				CMD echo "This is a test." | wc -
+
+		ENTRYPOINT: 和CMD一樣，用來設定映像檔啟動Container時要執行的指令，但不同的是，ENTRYPOINT一定會被執行，而不會有像CMD覆蓋的情況發生，支援二種格式：
+			- ENTRYPOINT [“executable”, “param1”, “param2”]
+				exec形式，官方推薦此種方式
+			- ENTRYPOINT command param1 param2
+				shell的形式
+		EXPOSE: 宣告在映像檔中預設要使用(對外)的連接埠
+			EXPOSE <port> [<port>/<protocol>…]
+			使用EXPOSE所定義的連接埠並不會自動的啟用，而只是做提示的作用而已，要將連接埠啟用需要在執行docker run時，搭配-p或-P的參數來啟用。
+				- 小寫的-p可以自行指定與主機關聯的連接埠，例如：
+					docker run -p 80:80/tcp -p 80:80/udp demo
+				
+				- 大寫的-P則會啟用所有EXPOSE所定義的連接埠，並動態(隨機)的關聯到主機的連接埠，例如：EXPOSE 80 可能隨機關聯到主機的 45123 連接埠，其範例如下：
+					docker run -P demo
+
+
+	docker-compose
+		https://hackmd.io/@sKYXGS0dRD2ucgf4KVOsaw/SJZq1jr8-?type=view
+	
+
+
+sudo docker pull node:14.15.4
+sudo docker run -it node:14.15.4 /bin/bash
+
