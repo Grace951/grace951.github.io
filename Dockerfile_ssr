@@ -9,12 +9,15 @@ COPY package.json .babelrc ./
 COPY public ./public/
 COPY src ./src/
 COPY webpack ./webpack/
+COPY apiserver ./apiserver/
 
 RUN cd /home/project
 RUN npm i
 RUN npm run build
 
+CMD [ "npm", "run", "api" ]
+CMD [ "npm", "run", "start" ]
+
 EXPOSE 3000
-ENTRYPOINT node dist/server.generated.js
 
 # CMD ["pm2-docker", "process.yml"]

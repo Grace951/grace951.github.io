@@ -254,7 +254,23 @@ sudo docker build -f Dockerfile_nginx -t home-nginx:v1 .
 sudo docker rm [Container ID]
 sudo docker run -p 3000:3000/tcp -it node-ssr:v1 /bin/bash
 
+sudo docker build -f Dockerfile_all -t homepage:v1 .
+sudo docker run -p 80:80/tcp -it homepage:v1 /bin/bash
+sudo docker run -p 3000:3000/tcp -p 3200:3200/tcp -it homepage:v1 /bin/bash
+sudo docker run -p 80:3000/tcp -d homepage:v1
+sudo docker logs 099dfa9bcb51da17afa7cad55ddad38a148da6ccf17187ed0ea5bd11f9d7226b
+
+
+
+Delete all containers
+------------------------------------------------------
+sudo docker rm $(sudo docker ps -a -q) 
+
+Delete all images
+------------------------------------------------------
+sudo docker rmi $(sudo docker images -q)
+
 
 sudo docker run -d -t --network networkname  --name containername
 sudo docker network inspect host
-https://stackoverflow.com/questions/37063822/econnrefused-nodejs-with-express-inside-docker-container
+https://pythonspeed.com/articles/docker-connection-refused/

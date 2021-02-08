@@ -14,7 +14,7 @@
     "dev:client": "cross-env BROWSER=true node ./src/server/server.dev.js",
     "dev:server": "cross-env NODE_ENV=development webpack --watch --config=./webpack/webpack.config.dev.server.js",
     "dev:start": "nodemon dev/server.generated.dev.js",
-    "api": "nodemon apiserver/main.js",
+    "api": "node apiserver/main.js",
     "stat": "webpack --progress --profile --json --config=webpack/webpack.config.dev.js > stats.json"
   },
   "repository": {

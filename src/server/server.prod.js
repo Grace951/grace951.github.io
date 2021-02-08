@@ -37,7 +37,8 @@ app.use(express.static(publicPath, {
 
 
 app.use(handleRender)
-app.listen(port)
+app.listen(port, '0.0.0.0')
+//for docker 
 
 function getAssetInfo() {
 	return { asset };
