@@ -5,16 +5,16 @@ RUN cd /home
 RUN mkdir project
 
 WORKDIR /home/project
-COPY package.json .babelrc .
-COPY public .
-COPY src .
-COPY webpack .
+COPY package.json .babelrc ./
+COPY public ./public/
+COPY src ./src/
+COPY webpack ./webpack/
 
 RUN cd /home/project
 RUN npm i
 RUN npm run build
 
-EXPOSE 3100
+EXPOSE 3000
 ENTRYPOINT node dist/server.generated.js
 
 # CMD ["pm2-docker", "process.yml"]

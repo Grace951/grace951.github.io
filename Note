@@ -242,8 +242,15 @@ Docker
 
 
 sudo docker pull node:14.15.4
-sudo docker run -it node:14.15.4 /bin/bash
+sudo docker run -it node-ssr:v1 /bin/bash
 
-sudo docker -f Dockerfile_ssr build -t node-ssr:v1 .
-sudo docker -f Dockerfile_api build -t node-api:v1 .
-sudo docker -f Dockerfile_nginx build -t home-nginx:v1 .
+sudo docker build -f Dockerfile_ssr -t node-ssr:v1 .
+sudo docker build -f Dockerfile_api -t node-api:v1 .
+sudo docker build -f Dockerfile_nginx -t home-nginx:v1 .
+sudo docker rm [Container ID]
+sudo docker run -p 3000:3000/tcp -it node-ssr:v1 /bin/bash
+
+
+sudo docker run -d -t --network networkname  --name containername
+sudo docker network inspect host
+https://stackoverflow.com/questions/37063822/econnrefused-nodejs-with-express-inside-docker-container

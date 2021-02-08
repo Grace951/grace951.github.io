@@ -5,8 +5,8 @@ RUN cd /home
 RUN mkdir project
 
 WORKDIR  /home/project
-COPY package.json .babelrc .
-COPY apiserver .
+COPY package.json .babelrc ./
+COPY apiserver ./apiserver/
 
 RUN cd /home/project
 RUN npm i
