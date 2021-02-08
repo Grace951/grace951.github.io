@@ -7,9 +7,7 @@
 * Bootstrap + SASS 
 * RWD (Responsive Web Design)
 * Pure React App with Pinterest Like or Pinterest-style 
-* Webpack2 + Hot Reload
-* ES6 with ESLint development enviroment
-* Have Deployed to heroku for Demo
+* Webpack 5
 * SEO friendly
 
 # Notes
@@ -19,7 +17,7 @@
 MIT
 
 ## Live Demo 
-Live demo: [`https://hopeshelter.herokuapp.com/`](https://hopeshelter.herokuapp.com/)
+Live demo: [`http://hopeshelter.ddns.net/`](http://hopeshelter.ddns.net/)
 
 # Build locally
 ```
