@@ -1,0 +1,16 @@
+		[Unit]
+			Description=node homepage service
+			After=network.target
+			StartLimitIntervalSec=0
+		[Service]
+			WorkingDirectory=/home/project
+			ExecStart=/usr/bin/node dist/server.generated.js
+			Restart=always
+			RestartSec=10
+			StandardOutput=syslog
+			StandardError=syslog
+			SyslogIdentifier=homepage SSR
+			Environment=NODE_ENV=production
+
+		[Install]
+			WantedBy=multi-user.target

@@ -1,0 +1,16 @@
+		[Unit]
+			Description=node homepage api service
+			After=network.target
+			StartLimitIntervalSec=0
+		[Service]
+			WorkingDirectory=/home/project
+			ExecStart=/usr/bin/node apiserver/main.js
+			Restart=always
+			RestartSec=10
+			StandardOutput=syslog
+			StandardError=syslog
+			SyslogIdentifier=homepage API
+			Environment=NODE_ENV=production
+
+		[Install]
+			WantedBy=multi-user.target

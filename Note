@@ -17,6 +17,10 @@ sudo apt install certbot python3-certbot-nginx
 sudo certbot --nginx -d hopeshelter.ddns.net
 
 
+Install Node
+------------------------------------------------------------------
+https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04
+
 Nginx
 ------------------------------------------------------------------
 	sudo apt install nginx

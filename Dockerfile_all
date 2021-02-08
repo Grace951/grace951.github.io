@@ -1,11 +1,22 @@
 FROM ubuntu:focal 
 
-RUN sudo apt install nginx
-COPY docker/nginx.conf /etc/nginx/nginx.conf
+ENV NODE_VERSION=14.15.4
+RUN apt-get update && \
+	apt-get install wget curl ca-certificates rsync -y
+RUN wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+ENV NVM_DIR=/root/.nvm
+RUN . "$NVM_DIR/nvm.sh" && nvm install ${NODE_VERSION}
+RUN . "$NVM_DIR/nvm.sh" &&  nvm use v${NODE_VERSION}
+RUN . "$NVM_DIR/nvm.sh" && nvm alias default v${NODE_VERSION}
+RUN cp /root/.nvm/versions/node/v${NODE_VERSION}/bin/node /usr/bin/
+RUN cp /root/.nvm/versions/node/v${NODE_VERSION}/bin/npm /usr/bin/
+RUN /root/.nvm/versions/node/v${NODE_VERSION}/bin/npm install  leasot@latest -g
+RUN apt-get install nginx -y
+COPY docker/nginx/nginx.conf /etc/nginx/nginx.conf
 RUN cd /home
 RUN mkdir project
-RUN sudo systemctl reload nginx
-RUN sudo systemctl start nginx
+RUN systemctl reload nginx
+RUN systemctl start nginx
 
 
 WORKDIR /home/project
@@ -21,11 +32,11 @@ RUN npm run build
 
 COPY docker/services/nodeHomepage.service /etc/systemd/system/nodeHomepage.service
 COPY docker/services/nodeApi.service /etc/systemd/system/nodeApi.service
-RUN sudo systemctl daemon-reload
-RUN sudo systemctl enable nodeApi
-RUN sudo systemctl enable nodeHomepage
-RUN sudo systemctl start nodeApi
-RUN sudo systemctl start nodeHomepage
+RUN systemctl daemon-reload
+RUN systemctl enable nodeApi
+RUN systemctl enable nodeHomepage
+RUN systemctl start nodeApi
+RUN systemctl start nodeHomepage
 
 EXPOSE 80
 ENTRYPOINT node dist/server.generated.js
