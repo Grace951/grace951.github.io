@@ -54,7 +54,7 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 			ww = window.innerWidth;
 		}
 		columns = Math.floor(ww / ( columnWidth + gutter ));
-		console.log("loadProps columns", columns);
+
 		let shortestColumnIndex, loadedIndex = 0;
 		props.device && (props.device.phone || props.device.mobile) && (columns = 1);
 		props.device && (props.device.tablet) && (columns = 2);
@@ -73,8 +73,7 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 				loadedIndex++;	
 			}
 		}
-		console.log("loadProps columnHeights", columnHeights);
-		console.log("loadProps loadedItems", loadedItems);
+
 		state={
 			viewport,
 			height,
@@ -110,9 +109,6 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 			colHeights = Array.from({ length:  newColumns}, () => 0);
 			newLoadedItems = Array.from({ length: items.length }, (v, i) => ({loaded:false, top: 0, left: 0, ssr:loadedItems[i].ssr}));
 		}
-		console.log("updatePosition newColumns", newColumns);
-		console.log("updatePosition containerWidth", containerWidth);
-		console.log("updatePosition newLoadedItems", newLoadedItems);
 		shortestColumnIndex = colHeights.indexOf(Math.min(...colHeights));	
 		if (newColumns === columns && viewport.height + viewport.top < colHeights[shortestColumnIndex] + delay){
 			return st; 
