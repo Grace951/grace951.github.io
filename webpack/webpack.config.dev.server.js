@@ -82,7 +82,7 @@ let config =
 			},	
 			{
 				test: /(\.jsx)|(\.js)$/,
-				exclude: [/node_modules/, /ffmpeg/],
+				exclude: [/node_modules/],
 				include: [
 					path.join(projectRoot, "src" ) //important for performance!
 				],

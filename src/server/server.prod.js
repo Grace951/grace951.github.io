@@ -31,12 +31,6 @@ app.get('/build/bundle/*', expressStaticGzip(path.resolve(process.cwd(), "./publ
 	enableBrotli: true,
 	maxAge: oneDay * 8
 }));
-app.get('/assets/*', expressStaticGzip(path.resolve(process.cwd(), "./public"), {
-	urlContains: 'assets/',
-	fallthrough: false,
-	enableBrotli: true,
-	maxAge: oneDay * 8
-}));
 app.use(express.static(publicPath, {
 	maxAge: oneDay * 7
 }));

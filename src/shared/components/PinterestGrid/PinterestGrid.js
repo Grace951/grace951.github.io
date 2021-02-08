@@ -1,6 +1,7 @@
 import './pinterestGrid.sass';
 import PropTypes from 'prop-types';
 import React from 'react';
+import update from 'immutability-helper';
 import { PinterestItem } from './PinterestItem';
 import { Link } from 'react-router-dom';
 
@@ -9,23 +10,23 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 		super(props);
 		this.loadProps = this.loadProps.bind(this);
 		this.updatePosition = this.updatePosition.bind(this);
-		this.state = this.loadProps(props);
-
+		this.updatePositionWrap = this.updatePositionWrap.bind(this);
+		this.st = {...this.state = this.loadProps(props)};
 	}
 
 	componentDidMount() {
-		window.addEventListener('scroll', this.updatePosition, false);
-		window.addEventListener('resize', this.updatePosition, false);
+		window.addEventListener('scroll', this.updatePositionWrap, false);
+		window.addEventListener('resize', this.updatePositionWrap, false);
 		window.scrollTo(0, 0);
 		this.props.updateHeight(this.state.height + this.props.gutter);
 		let st = this.loadProps(this.props);
-		st = this.updatePosition(true, st);
-		this.setState(st);
+		this.st = this.updatePosition(true, st);
+		this.setState(this.st);
 	}
 
 	componentWillUnmount() {
-		window.removeEventListener('scroll', this.updatePosition);
-		window.removeEventListener('resize', this.updatePosition);
+		window.removeEventListener('scroll', this.updatePositionWrap);
+		window.removeEventListener('resize', this.updatePositionWrap);
 	}
 	componentDidUpdate(prevProps, prevState) {
 		if (this.state.height != prevState.height)
@@ -33,8 +34,8 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 
 		if (JSON.stringify(this.props.items) !== JSON.stringify(prevProps.items)){
 			let st = this.loadProps(this.props);
-			st = this.updatePosition(true, st);
-			this.setState(st);
+			this.st = this.updatePosition(true, st);
+			this.setState(this.st);
 		}
 	}
 	loadProps(props){		
@@ -79,7 +80,11 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 		};
 		return state;
 	}
-	updatePosition (first, st) {
+	updatePositionWrap (e) {
+		this.st = this.updatePosition(true, this.st);
+		this.setState(this.st);
+	}
+	updatePosition (first, st = this.st) {
 		const { columnWidth, gutter, items, delay, container, hideDesc } = this.props;
 		let { loadedItems, columns, columnHeights, loadedIndex} = st;
 		let shortestColumnIndex;
@@ -100,8 +105,9 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 			newLoadedItems = Array.from({ length: items.length }, (v, i) => ({loaded:false, top: 0, left: 0, ssr:loadedItems[i].ssr}));
 		}
 		shortestColumnIndex = colHeights.indexOf(Math.min(...colHeights));	
-		if (newColumns === columns && viewport.height + viewport.top < colHeights[shortestColumnIndex] + delay)
+		if (newColumns === columns && viewport.height + viewport.top < colHeights[shortestColumnIndex] + delay){
 			return st; 
+		}
 
 
 		for (let i=0; i<items.length; i++){	
@@ -124,7 +130,7 @@ let PinterestGrid = class PinterestGrid extends React.Component{
 
 		}
 		if (first || newColumns !== columns ){
-			st = {...st, viewport, newColumns, colHeights, newLoadedItems, loadedIndex}
+			st = update(st, {$merge: {viewport, newColumns, columnHeights: colHeights, newLoadedItems, loadedIndex}});
 		}
 		// console.log(loadedIndex, newColumns, newLoadedItems, colHeights);
 		this.props.updateHeight(Math.max(...colHeights) + gutter);

@@ -83,7 +83,7 @@ var config = [
 				{
 					test: /\.s[ac]ss$/i,
 					include: [
-						path.resolve(projectRoot, './src/shared/components/'),
+						path.resolve(projectRoot, './src/shared/'),
 						path.resolve(projectRoot, './node_modules/bootstrap-sass/assets/stylesheets/'),
 					],
 					use: [
@@ -176,8 +176,8 @@ var config = [
 				__DEVTOOLS__: false
 			}),
 			new MiniCssExtractPlugin({
-				filename: 'main.css',
-			}),
+				filename: "../public/build/main.css"
+			})
 		],
 		externals: [
 			{ "./webpack-assets.json": "./webpack-assets.json" },	
@@ -188,7 +188,7 @@ var config = [
 				{
 					test: /\.s[ac]ss$/i,
 					include: [
-						path.resolve(projectRoot, './src/shared/components/'),
+						path.resolve(projectRoot, './src/shared/'),
 						path.resolve(projectRoot, './node_modules/bootstrap-sass/assets/stylesheets/'),
 					],
 					use: [
@@ -199,6 +199,30 @@ var config = [
 						'sass-loader',				
 					],
 				},
+				{ test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/i, 
+					loader: "url-loader" ,
+					options: {
+						limit: 10000,
+						mimetype: 'application/font-woff',
+						name: 'fonts/[name].[ext]'
+					},
+					include: [
+						path.resolve(projectRoot, './src/shared/fonts/') ,
+						path.resolve(projectRoot, './node_modules/bootstrap-sass/assets/fonts/') ,
+						path.resolve(projectRoot, './node_modules/font-awesome/fonts/') ,
+					 ],				
+				},
+				{ test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/i, 
+					loader: "file-loader" ,
+					options: {
+						name: 'fonts/[name].[ext]'
+					},				
+					include: [
+						path.resolve(projectRoot, './src/shared/fonts/') ,
+						path.resolve(projectRoot, './node_modules/bootstrap-sass/assets/fonts/') ,
+						path.resolve(projectRoot, './node_modules/font-awesome/fonts/') ,
+					 ],
+				},					
 				{
 					test: /(\.jsx)|(\.js)$/,
 					exclude: /node_modules/,
@@ -223,11 +247,9 @@ var config = [
 									],
 								],
 								plugins: [
+									"@babel/plugin-syntax-dynamic-import",
 									"@babel/plugin-proposal-object-rest-spread",
 									"@babel/plugin-proposal-class-properties",
-									"@babel/plugin-syntax-dynamic-import",
-									"@babel/plugin-transform-react-constant-elements",
-									"@babel/plugin-transform-react-inline-elements",
 								],
 							},
 						}
