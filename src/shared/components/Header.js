@@ -9,26 +9,20 @@ import * as modalActions from '../actions/modalAction';
 let Header = class Header extends React.Component{
 	constructor(props) {
 		super(props);
-		this.state = {
-			showSmallMenu: props.showXsNav
-		}
 		this.toggleSmallMenu = this.toggleSmallMenu.bind(this);
-	}
-	componentDidUpdate(prevProps, prevState) {
-		if (this.state.showSmallMenu != prevProps.showXsNav){
-			this.setState({showSmallMenu: prevProps.showXsNav});
-		}
 	}
 
 	toggleSmallMenu(){
-		this.setState({showSmallMenu: !this.state.showSmallMenu});
+		let{changeXsNavModal, showXsNav} = this.props;
+		changeXsNavModal(!showXsNav);
 	}
 	render() {
+		let{showXsNav} = this.props;
 		let Baselink = "https://hopeshelter.herokuapp.com";
 		let link = Baselink;
 		this.props.location.pathname && (link = Baselink + this.props.location.pathname);
 		let sMenuStyle ={
-			transform: this.state.showSmallMenu?"translateY(0)":"translateY(-130%)"
+			transform: showXsNav?"translateY(0)":"translateY(-130%)"
 		}
 		return (
 			<header id="grace_header_h">
@@ -36,7 +30,7 @@ let Header = class Header extends React.Component{
 					<div >
 						<div className="inner relative">
 							<div id="menu-toggle_grace" className="button dark" onClick={this.toggleSmallMenu}>
-								<i className="fa fa-bars" aria-hidden="true" />
+								<img src="/images/menu-24px.svg" alt=""/>
 							</div>
 							<div className="share">
 							</div>
@@ -83,7 +77,6 @@ let Header = class Header extends React.Component{
 
 Header.propTypes = {
   showXsNav: PropTypes.bool.isRequired,
-  changeXsNavModal: PropTypes.func.isRequired,
   location: PropTypes.object.isRequired,
 };
 

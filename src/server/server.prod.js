@@ -111,7 +111,11 @@ function renderFullPage(location, store) {
 	  <!doctype html>
 	  <html>
 		<head>
+		  <meta charset="utf-8">
+		  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		  <meta name="description" content="希望園地設計|Portfolio|作品集|平面設計|網頁設計">
 		  <title>Hopeshelter Design</title>
+		  <link rel="shortcut icon" href="/images/ico/favicon.ico">
 		  <link rel="stylesheet" type="text/css" href='${info.asset.css}'>		  
 		</head>
 		<body>
