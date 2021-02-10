@@ -20,7 +20,7 @@ let asset = require("./webpack-assets.json");
 if (process.env.NODE_ENV != 'production') {
 	asset.vendor = {};
 	asset.vendor.js = '/dll.commons.js';
-	asset.vendor.css= "/dev/main.css";
+	asset.bundle.css= "/dev/main.css";
 }
 const oneDay = 86400000;
 const app = express()
