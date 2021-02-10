@@ -61,6 +61,10 @@ var config = [
 				verbose: true,
 				//exclude: ['shared.js']
 			}),
+			new CssMinimizerPlugin(),
+			new MiniCssExtractPlugin({
+				filename: "main.[contenthash].css"
+			}),
 			new AssetsPlugin({
 				fullPath: true,
 				path: path.join(projectRoot, './dist')
@@ -87,8 +91,11 @@ var config = [
 						path.resolve(projectRoot, './node_modules/bootstrap-sass/assets/stylesheets/'),
 					],
 					use: [
-						"style-loader",
+						{
+							loader: MiniCssExtractPlugin.loader
+						},
 						'css-loader?url=false',
+						"postcss-loader",		
 						'sass-loader',				
 					],
 				},
@@ -175,9 +182,7 @@ var config = [
 				__DEVELOPMENT__: false,
 				__DEVTOOLS__: false
 			}),
-			new MiniCssExtractPlugin({
-				filename: "../public/build/main.css"
-			})
+			new MiniCssExtractPlugin()
 		],
 		externals: [
 			{ "./webpack-assets.json": "./webpack-assets.json" },	

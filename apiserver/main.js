@@ -7,7 +7,7 @@ let all_details = require("./public/details.json");
 
 app.get("/work/:id/details.json",(req, res)=>{
 	let id = req.params.id;
-	console.log(all_details[id])
+	// console.log(all_details[id])
 	res.status(200).send(all_details[id]);
 });
 app.use(express.static(publicPath));

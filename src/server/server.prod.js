@@ -12,14 +12,15 @@ import {routes} from '../shared/route/index';
 import App from "../shared/App.js";
 import { renderToString, renderToNodeStream } from 'react-dom/server'
 
+delete process.env.BROWSER;
+
 let publicPath = path.resolve(process.cwd(), "./public");
 let port = 3000;
 let asset = require("./webpack-assets.json");
-asset.css= "/build/main.css";
 if (process.env.NODE_ENV != 'production') {
 	asset.vendor = {};
 	asset.vendor.js = '/dll.commons.js';
-	asset.css= "/dev/main.css";
+	asset.vendor.css= "/dev/main.css";
 }
 const oneDay = 86400000;
 const app = express()
@@ -117,7 +118,7 @@ function renderFullPage(location, store) {
 		  <meta name="description" content="希望園地設計|Portfolio|作品集|平面設計|網頁設計">
 		  <title>Hopeshelter Design</title>
 		  <link rel="shortcut icon" href="/images/ico/favicon.ico">
-		  <link rel="stylesheet" type="text/css" href='${info.asset.css}'>		  
+		  <link rel="stylesheet" type="text/css" href='${info.asset.bundle.css}'>		  
 		</head>
 		<body>
 		  <div id="rootWrap">${html}</div>
