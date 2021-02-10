@@ -1,10 +1,26 @@
-nginx:
-    build: ./nginx
-    links:
-        - nodejs:nodejs
-    ports:
-        - "80:80"
-nodejs:
-    build: ./node
-    ports:
-        - "8080"
+version: '3'
+services:
+    nginx:
+        build:
+            context: .
+            dockerfile: Dockerfile.nginx
+        depends_on:
+            - api
+            - ssr
+        ports:
+            - "80:80"
+        environment:
+            - ENABLE_SSL=0
+    ssr:
+        build:
+            context: .
+            dockerfile: Dockerfile.ssr
+        environment:
+            - NGINX_HOST=nginx
+            - ENABLE_SSL=0
+    api:
+        build:
+            context: .
+            dockerfile: Dockerfile.api
+        environment:
+            - ENABLE_SSL=0

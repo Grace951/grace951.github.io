@@ -147,21 +147,38 @@ Docker
 		Docker Hub 可以把它想像成 GitHub，GitHub是用來存放程式碼的倉庫，Docker Hub是來存放 Docker image的倉庫。
 	
 	CMD
-		- docker search 搜尋 Docker Image 有哪些的指令
-		- docker pull 指 Docker Image 下載回 local
-		- docker images 顯示出在 local 下載了哪些 Docker Image
-		- docker run 使用 Docker Image 啟動執行 Docker Container
-		- docker ps 顯示了啟動了哪些的 Docker Container
+		- sudo docker search 搜尋 Docker Image 有哪些的指令
+		- sudo docker pull 指 Docker Image 下載回 local
+		- sudo docker images 顯示出在 local 下載了哪些 Docker Image
+		- sudo docker run 使用 Docker Image 啟動執行 Docker Container
+			sudo docker run = docker create + docker start
+		- sudo docker ps 顯示了啟動了哪些的 Docker Container
+		- sudo docker ps --all
+		- sudo docker start -a <ID>
+		- sudo docker image rm <name>
+		- sudo docker system prune
+		- sudo docker logs <ID>
+		- sudo docker stop <ID>
+		- sudo docker kill <ID>
+		- sudo docker commit -c <cmd> <ID>
+
+		execute command in running containers
+			- sudo docker exec -it <ID> <command>
+			- sudo docker exec -it <ID> bash
+			- sudo docker exec -it <ID> sh
+				- ctrl + D to exit shell
+			- -i => stdin, -t 
 
 	1. Ubuntu - Download ubuntu image and run  
 		sudo docker search ubuntu -f is-official=true
 		sudo docker pull ubuntu
 		sudo docker images
 		sudo docker run -it ubuntu /bin/bash 
-			- shutdown container => exit
-			- exit container's terminal => ctrl + p 之後再輸入 ctrl + q
-		sudo docker ps -a
-		docker image rm <name>
+			- /bin/bash => 取代 container 原本要執行的 startup command
+			- to shutdown container => type exit
+			- to exit container's terminal => ctrl + p 之後再輸入 ctrl + q
+			-
+		sudo docker ps --all
 
 		sudo docker build 
 			會在目前目錄尋找 Dockerfile 或 dockerfile
@@ -246,20 +263,20 @@ Docker
 
 
 sudo docker pull node:14.15.4
-sudo docker run -it node-ssr:v1 /bin/bash
+sudo docker run -it node-ssr:v1 
 
 sudo docker build -f Dockerfile_ssr -t node-ssr:v1 .
 sudo docker build -f Dockerfile_api -t node-api:v1 .
 sudo docker build -f Dockerfile_nginx -t home-nginx:v1 .
 sudo docker rm [Container ID]
-sudo docker run -p 3000:3000/tcp -it node-ssr:v1 /bin/bash
+sudo docker run -p 3000:3000/tcp -it node-ssr:v1 
 
 sudo docker build -f Dockerfile_all -t homepage:v1 .
-sudo docker run -p 80:80/tcp -it homepage:v1 /bin/bash
-sudo docker run -p 3000:3000/tcp -p 3200:3200/tcp -it homepage:v1 /bin/bash
+sudo docker run -p 80:80/tcp homepage:v1 
+sudo docker run -p 3000:3000/tcp -p 3200:3200/tcp homepage:v1 
 sudo docker run -p 80:3000/tcp -d homepage:v1
 sudo docker logs 099dfa9bcb51da17afa7cad55ddad38a148da6ccf17187ed0ea5bd11f9d7226b
-
+sudo docker run -p 3000:3000/tcp -v /app/node_modules -v $(pwd):/app homepage:v1 
 
 
 Delete all containers
@@ -274,3 +291,54 @@ sudo docker rmi $(sudo docker images -q)
 sudo docker run -d -t --network networkname  --name containername
 sudo docker network inspect host
 https://pythonspeed.com/articles/docker-connection-refused/
+
+
+
+docker-compose
+--------------------------------------------------------
+docker-compose up			= docker run myimage
+docker-compose up --build   = docker build . + docker run myimage
+code 裡 netwok host 要改成 container name(service name)
+docker-compose up -d        = docker run myimage -D
+docker-compose down
+docker-compose ps
+	=> 去查當前目錄下的 docker-compose.yml 的 status
+
+docker-compose.yml
+--------------------------------------------------------
+version: '3'
+services:
+	service_a:
+		restart: always
+		image: 'iname_name_a'
+	service_b:
+		restart: always
+		build: .
+		ports:
+			- "80:3000"
+
+
+CI/CD
+---------------------------------------------------------
+https://aws.amazon.com/tw/elasticbeanstalk/pricing/
+https://aws.amazon.com/tw/free/webapps/
+
+docker build -t grace/ssr:v1 -f Dockerfile.ssr .
+docker build -t grace/nginx:v1 -f Dockerfile.nginx .
+docker run -d grace/nginx:v1
+docker exec -it <ID> sh
+docker run  -p 80:80/tcp -d grace/nginx:v1
+
+
+docker-compose up --build
+docker-compose ps
+https://snyk.io/blog/10-best-practices-to-containerize-nodejs-web-applications-with-docker/
+
+
+
+https://towardsdatascience.com/sample-load-balancing-solution-with-docker-and-nginx-cf1ffc60e644
+https://whien.medium.com/docker-compose-%E8%AE%93-nginx-%E8%88%87-nodejs-web-server%E5%85%B1%E8%88%9E-load-balancing-5d3fc41bab9e
+https://codeburst.io/load-balancing-go-api-with-docker-nginx-digital-ocean-d7f05f7c9b31
+https://codeburst.io/scaling-out-with-docker-and-nginx-8eda9fb1654c
+
+

@@ -1,11 +1,18 @@
 import axios from 'axios';
 import { ajaxErr } from '../lib/ajax';
 
+let prefix = "";
+if (!process.env.BROWSER) {
+	//SSR
+	console.log("process.env.ENABLE_SSL", process.env.ENABLE_SSL);
+	prefix = process.env.ENABLE_SSL=="1"?"https://":"http://" + process.env.NGINX_HOST;
+}
+
 class PortfolioApi {
 	static getAllPortfolio() {
 		return axios({
 			method: 'get',
-			url: '/api/works.json',
+			url: prefix + '/api/works.json',
 			dataType: 'JSON'
 		}).then((response) => {
 			return response.data;
@@ -17,7 +24,7 @@ class PortfolioApi {
 	static getRecentsWorks() {
 		return axios({
 			method: 'get',
-			url: '/api/recentWorks.json',
+			url: prefix + '/api/recentWorks.json',
 			dataType: 'JSON'
 		}).then((response) => {
 			return response.data;
@@ -29,7 +36,7 @@ class PortfolioApi {
 	static getF2eWorks() {
 		return axios({
 			method: 'get',
-			url: '/api/f2eWorks.json',
+			url: prefix + '/api/f2eWorks.json',
 			dataType: 'JSON'
 		}).then((response) => {
 			return response.data;
@@ -53,7 +60,7 @@ class PortfolioApi {
 	static getGraphicDesign() {
 		return axios({
 			method: 'get',
-			url: '/api/graphicDesign.json',
+			url: prefix + '/api/graphicDesign.json',
 			dataType: 'JSON'
 		}).then((response) => {
 			return response.data;
