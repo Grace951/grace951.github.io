@@ -1,6 +1,6 @@
 function serverSideRendering(){
   try {
-    return !(document !== undefined)
+    return !(typeof document !== "undefined")
   } catch(e) {
     return true;
   }

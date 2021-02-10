@@ -39,12 +39,13 @@ class Skill extends React.Component{
                                     <li>Back-end Development
                                         <ul>
                                             <li>NodeJs<img className="skill-logo" src="images/skills/node.png" alt="NodeJs" title="NodeJs"/></li>
-                                            <li>MongoDB<img className="skill-logo" src="images/skills/mongodb.png" alt="MongoDB" title="MongoDB"/></li>
+                                            {/* <li>MongoDB<img className="skill-logo" src="images/skills/mongodb.png" alt="MongoDB" title="MongoDB"/></li> */}
                                         </ul>
                                     </li>
                                     <li>General Skill
                                         <ul>
                                             <li>Git<img className="skill-logo" src="images/skills/git.png" alt="Git" title="Git"/></li>
+                                            <li>Docker<img className="skill-logo" src="images/skills/horizontal-logo-monochromatic-white.png" alt="Docker" title="Docker"/></li>
 											<li>NPM<img className="skill-logo" src="images/skills/npm.png" alt="NPM" title="NPM"/></li>
                                             <li>PhotoShop<img className="skill-logo" src="images/skills/photoshop.png" alt="PhotoShop" title="PhotoShop"/></li>
                                             <li>Illustrator<img className="skill-logo" src="images/skills/illustrator.png" alt="Illustrator" title="Illustrator"/></li>
