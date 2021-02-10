@@ -35,7 +35,7 @@ let SiteShlef = class SiteShlef extends React.Component{
 					<div className="row">
 						<div className="web_desc col-sm-6 col-xs-12">
 							{brief}
-							{source_code && <p className="source_code" style={{fontWeight: "normal", fontSize:"16px"}}>
+							{source_code && <p className="source_code" >
 								Source code: <a target="_blank" href={source_code}>{source_code}</a>
 							</p>}
 							{video && !this.state.showSnap && <div className="view_snap shake hidden-xs" style={web_snap_btn_style} onClick={this.view_snap}> {this.state.showSnap?"Hide video":"View video"}</div> }

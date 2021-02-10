@@ -16,6 +16,7 @@ $nav-xs-height: 40px;
 $navoffset: 70px;
 
 $break-xxs: 320px;
+$break-xs1: 500px;
 $break-xs: 767px;
 $break-smmd: 991px;
 $break-lg: 1440px;
@@ -62,6 +63,9 @@ $secondary-font: 'Open Sans', sans-serif;
   @else if $media == xs {
     @media only screen and (max-width: $break-xs) { @content; }
   }  
+  @else if $media == xs1 {
+  	@media only screen and (max-width: $break-xs1) { @content; }
+  }  
   @else if $media == sm {
     @media only screen and (min-width: $break-xs + 1) and (max-width: $break-smmd - 1) { @content; }
   }
@@ -92,6 +96,9 @@ $L:     1170px;
 
 @mixin MQ($canvas) {
   @if $canvas == XS {
+    @media only screen and (max-width: $S) { @content; }
+  }
+  @if $canvas == XS1 {
     @media only screen and (max-width: $S) { @content; }
   }
   @else if $canvas == S {

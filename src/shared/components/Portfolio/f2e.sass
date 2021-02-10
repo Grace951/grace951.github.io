@@ -91,6 +91,10 @@
 					line-height: 1.7
 					font-weight: 300
 					color: #000
+					.source_code
+						font-weight: normal
+						font-size: 16px
+						word-break: break-all
 					.view_snap
 						width: 140px
 						margin: 0 auto
@@ -110,7 +114,7 @@
 		.container
 			.siteshelf
 				.web_brief
-					.web_link						
+					.web_link	
 						h2, h2.novo
 							margin-top: 0
 							width: 50px
@@ -134,10 +138,8 @@
 				.web_brief
 					padding: 30px 0
 					.web_link						
-						padding: 0
+						padding: 0 10px
 						a, h1, h2
-							width: 100%
-							float: none
 							margin: 10px 0 0 0
 							padding: 0
 							display: block
@@ -148,7 +150,7 @@
 								max-width: 100%
 						h2, h2.novo
 							text-align: left
-							margin-top: 20px
+							margin-top: 10px
 							width: 50px
 						h1, h1.novo
 							height: 60px
@@ -163,3 +165,31 @@
 							margin: 0 auto
 							display: block
 
++respond-to(xs1) 
+	#webdesign
+		.container
+			.siteshelf
+				.web_brief
+					padding: 0px 0 30px
+					.tech_logo 
+						.web_logo 
+							.webtech-logo
+								height: 30px
+					.web_desc
+						font-size: 14px
+					.web_link	
+						padding: 10px 10px 0
+						margin-bottom: 0
+						>a
+							display: none
+						h1, h1.novo
+							height: 50px
+							font-size: 20px
+							padding: 0
+						h2, h2.novo
+							margin-top: 0
+							a
+								height: 40px
+								width: 40px
+								font-size: 16px
+								line-height: 40px

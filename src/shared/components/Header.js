@@ -10,8 +10,13 @@ let Header = class Header extends React.Component{
 	constructor(props) {
 		super(props);
 		this.toggleSmallMenu = this.toggleSmallMenu.bind(this);
+		this.closeSmallMenu = this.closeSmallMenu.bind(this);
 	}
 
+	closeSmallMenu(){
+		let{changeXsNavModal} = this.props;
+		changeXsNavModal(false);
+	}
 	toggleSmallMenu(){
 		let{changeXsNavModal, showXsNav} = this.props;
 		changeXsNavModal(!showXsNav);
@@ -37,14 +42,14 @@ let Header = class Header extends React.Component{
 							<div id="navigation_grace">							
 								<NavLink to="/home" className="logo" ><img src="/images/logo.png" alt="hope shelter design web"/></NavLink>
 								<ul id="main-menu_grace">
-									<li className="current-menu-item"><NavLink to="/home" activeClassName="active" >Home</NavLink></li>
-									<li><NavLink to="/aboutme" activeClassName="active" >About Me</NavLink></li>
-									<li className="parent">
+									<li onClick={this.closeSmallMenu} className="current-menu-item"><NavLink to="/home" activeClassName="active" >Home</NavLink></li>
+									<li onClick={this.closeSmallMenu}><NavLink to="/aboutme" activeClassName="active" >About Me</NavLink></li>
+									<li className="parent"> 
 										<NavLink to="/portfolio/f2e" activeClassName="active" >Portfolio</NavLink>
 										<ul className="sub-menu_grace">
-											<li><NavLink to="/portfolio/f2e" > Front-end App</NavLink></li>
-											<li><NavLink to="/portfolio/graphic">Graphic Design</NavLink></li>
-											<li><NavLink to="/portfolio/editoral">Editorial</NavLink></li>
+											<li onClick={this.closeSmallMenu}><NavLink to="/portfolio/f2e" > Front-end App</NavLink></li>
+											<li onClick={this.closeSmallMenu}><NavLink to="/portfolio/graphic">Graphic Design</NavLink></li>
+											<li onClick={this.closeSmallMenu}><NavLink to="/portfolio/editoral">Editorial</NavLink></li>
 										</ul>
 									</li>
 								</ul>
@@ -55,14 +60,14 @@ let Header = class Header extends React.Component{
 						</div>
 						<div id="navigation_grace_small">
 							<ul id="main-menu_grace_small"  style={sMenuStyle}>
-								<li className="current-menu-item"><NavLink to="/home">Home</NavLink></li>
-								<li><NavLink to="/aboutme">About me</NavLink></li>
+								<li onClick={this.closeSmallMenu} className="current-menu-item"><NavLink to="/home">Home</NavLink></li>
+								<li onClick={this.closeSmallMenu}><NavLink to="/aboutme">About me</NavLink></li>
 								<li className="parent">
 									<NavLink to="/portfolio/f2e">Portfolio</NavLink>
 									<ul className="sub-menu_grace_small">
-										<li><NavLink to="/portfolio/f2e">Front-end App</NavLink></li>
-										<li><NavLink to="/portfolio/graphic">Graphic Design</NavLink></li>
-										<li><NavLink to="/portfolio/editoral">Editorial</NavLink></li>
+										<li onClick={this.closeSmallMenu}><NavLink to="/portfolio/f2e">Front-end App</NavLink></li>
+										<li onClick={this.closeSmallMenu}><NavLink to="/portfolio/graphic">Graphic Design</NavLink></li>
+										<li onClick={this.closeSmallMenu}><NavLink to="/portfolio/editoral">Editorial</NavLink></li>
 									</ul>
 								</li>
 							</ul>
