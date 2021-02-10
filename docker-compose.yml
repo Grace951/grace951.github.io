@@ -11,6 +11,7 @@ services:
             - "80:80"
         environment:
             - ENABLE_SSL=0
+            - DOCKERMODE=true            
     ssr:
         build:
             context: .
@@ -18,9 +19,11 @@ services:
         environment:
             - NGINX_HOST=nginx
             - ENABLE_SSL=0
+            - DOCKERMODE=true            
     api:
         build:
             context: .
             dockerfile: Dockerfile.api
         environment:
             - ENABLE_SSL=0
+            - DOCKERMODE=true            
