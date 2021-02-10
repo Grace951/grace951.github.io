@@ -49,7 +49,7 @@
 		"brief":"這個網站蒐集了本人的所有設計作品，乃將自己 2017 年求職時的網站更新到最新版本的 react/redux/webpack。除了挑戰 Pinterest-style 瀑布流 Layout ，並已完成導入 Docker + docker-compose + nginx，未來將導入更完整的 CI/CD。",
 		"source_code": "https://github.com/Grace951/grace951.github.io",
 		"web_link": {
-			"src": "https://www.novods.com", "img": "/images/logo.png",
+			"src": "http://hopeshelter.ddns.net", "img": "/images/logo.png",
 			"title": "我的設計作品集合網站",
 			"className": "novo"
 		},
