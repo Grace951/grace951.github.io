@@ -21,7 +21,7 @@ class Skill extends React.Component{
                                             <li>Redux <img className="skill-logo" src="images/skills/redux.png" alt="Redux" title="Redux"/></li>
                                             {/* <li>Angular2 <img className="skill-logo" src="images/skills/angular.png" alt="Angular2" title="Angular2"/></li> */}
                                             <li>Webpack<img className="skill-logo" style={{width:"30px"}} src="images/skills/webpack.svg" alt="Webpack" title="Webpack"/></li>                                            
-                                            <li>Styled Component<img className="skill-logo" src="images/skills/styledComponent.png" alt="Compass" title="Compass"/></li>
+                                            <li>Styled Component<img className="skill-logo" src="images/skills/styledComponent.png" alt="styled-components" title="styled-components"/></li>
                                             <li>NodeJs<img className="skill-logo" src="images/skills/node.png" alt="NodeJs" title="NodeJs"/></li>
                                         </ul>
                                     </li>

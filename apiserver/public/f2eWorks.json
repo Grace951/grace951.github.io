@@ -7,6 +7,7 @@
 			"title": "NovoDS Digital Signage Solution",
 			"className": "novo"
 		},
+		"video": "/video/WysiwygEditor_s.mp4",
 		"web_logo":[
 			{
 				"link": "https://facebook.github.io/react/",
@@ -44,12 +45,65 @@
 		]
 	},
 	{
+		"techs": "React / Redux / Webpack / SASS / Bootstrap / SSR ( Server Side Rendering) / Docker / nginx ",
+		"brief":"這個網站蒐集了本人的所有設計作品，乃將自己 2017 年求職時的網站更新到最新版本的 react/redux/webpack。除了挑戰 Pinterest-style 瀑布流 Layout ，並已完成導入 Docker + docker-compose + nginx，未來將導入更完整的 CI/CD。",
+		"source_code": "https://github.com/Grace951/grace951.github.io",
+		"web_link": {
+			"src": "https://www.novods.com", "img": "/images/logo.png",
+			"title": "我的設計作品集合網站",
+			"className": "novo"
+		},
+		"web_logo":[
+			{
+				"link": "https://facebook.github.io/react/",
+				"img":  "/images/skills/reactjs.svg"
+			},
+			{
+				"link": "https://github.com/reactjs/redux",
+				"img":  "/images/skills/redux.png"
+			},{
+				"link": "https://webpack.js.org/",
+				"img":  "/images/skills/webpack.svg"
+			},{
+				"link": "https://www.docker.com/",
+				"img":  "/images/skills/horizontal-logo-monochromatic-white.png"
+			},{
+				"link": "/images/web/au/html5css3badges.png",
+				"img":  "/images/skills/es6.png"				
+			},{
+				"link": "http://sass-lang.com/",
+				"img":  "/images/web/au/logo-sass.svg",
+				"style": {"width":"auto", "height":"50px"}
+			},{
+				"link": "https://nodejs.org/en/",
+				"img":  "/images/skills/node.png"
+			},{
+				"link": "https://www.nginx.com/",
+				"img":  "/images/skills/Nginx-Logo.png"
+			},{
+				"link": "",
+				"img":  "/images/web/au/html5css3badges.png"
+			},{
+				"link": "http://getbootstrap.com/",
+				"img":  "/images/web/au/Boostrap_logo.png"
+			}			
+		],
+		"web_snap": [
+			{"img": "/images/web/auv2/au_list1.png"},
+			{"img": "/images/web/auv2/au_list2.png"},
+			{"img": "/images/web/auv2/au_list3.png"},
+			{"img": "/images/web/auv2/au_list4.png"},
+			{"img": "/images/web/auv2/au_list5.png"}
+		]
+	},
+	{
 		"techs":"Angular JS / RWD / Bootstrap / Compass / SASS / HTML5 / CSS3 / AJAX",
 		"brief":"此網站為我六年前用Angular JS(Angular1)，幫阿姨建置的 RWD 官網。首頁等待阿姨提供首頁內容。全站由個人負責製作，包含所有美術、切圖、前端JS...。",
 		"web_link": {
 			"src": "http://www.hitechdigitalcctv.com.au/#/home", "img": "/images/web/au/logo.png",
 			"title": "Hi-Tech Digital CCTV"
 		},
+		"source_code": "https://github.com/Grace951/angular1-demo",		
 		"web_logo":[
 			{
 				"link": "http://angularjs.org/",
@@ -81,6 +135,7 @@
 			"src": "http://paints.byethost4.com", "img": "/images/web/paints/logo-c.png",
 			"title": "經典名畫"
 		},
+		"source_code": "https://github.com/Grace951/paints",
 		"web_logo":[
 			{
 				"link": "http://compass-style.org/",
