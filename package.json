@@ -11,9 +11,13 @@
     "build": "cross-env NODE_ENV=production webpack --config=webpack/webpack.config.prod.js",
     "start": "node dist/server.generated.js",
     "dev": "concurrently --kill-others -p \"[{name}]\" -n \"Client,Server,StartServer\" -c \"bgBlue.bold,bgGreen.bold,bgBlack.bold,black.bgWhite.bold\" \"npm run dev:client\" \"npm run dev:server\" \"npm run dev:start\" ",
-    "dev:client": "cross-env BROWSER=true node ./src/server/server.dev.js",
+    "dev:client": "webpack serve --config=./webpack/webpack.config.dev.client.js",
     "dev:server": "cross-env NODE_ENV=development webpack --watch --config=./webpack/webpack.config.dev.server.js",
+    "predev": "concurrently \"npm run dev:prepare-client\" \"npm run dev:prepare-server\"",
+    "dev:prepare-server": "cross-env NODE_ENV=development webpack --config=./webpack/webpack.config.dev.server.js",
+    "dev:prepare-client": "cross-env NODE_ENV=development webpack --config=./webpack/webpack.config.dev.client.js",
     "dev:start": "nodemon dev/server.generated.dev.js",
+    "dev:api": "cross-env NODE_ENV=development nodemon apiserver/main.js",
     "api": "node apiserver/main.js",
     "stat": "webpack --progress --profile --json --config=webpack/webpack.config.dev.js > stats.json"
   },
@@ -104,6 +108,7 @@
     "webpack": "^5.19.0",
     "webpack-cli": "^4.4.0",
     "webpack-dev-middleware": "^4.1.0",
+    "webpack-dev-server": "^3.11.2",
     "webpack-node-externals": "^2.5.2"
   }
 }

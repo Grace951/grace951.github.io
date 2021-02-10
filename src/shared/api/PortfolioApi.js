@@ -5,7 +5,10 @@ let prefix = "";
 if (!process.env.BROWSER) {
 	//SSR
 	console.log("process.env.ENABLE_SSL", process.env.ENABLE_SSL);
-	prefix = process.env.ENABLE_SSL=="1"?"https://":"http://" + process.env.NGINX_HOST;
+	prefix = (process.env.ENABLE_SSL=="1"?"https://":"http://") + "localhost";
+	if(process.env.DOCKERMODE == "true"){
+		prefix = (process.env.ENABLE_SSL=="1"?"https://":"http://") + process.env.NGINX_HOST;
+	}
 }
 
 class PortfolioApi {

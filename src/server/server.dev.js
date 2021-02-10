@@ -40,7 +40,7 @@ let compiler = webpack(config);
 app.use(devMiddleware(compiler, serverOptions));
 
 
-app.listen(port, function(err) {
+app.listen(port, '0.0.0.0', function(err) {
 	if (err) {
 		console.log(err);
 	} else {

@@ -1,0 +1,19 @@
+[Unit]
+	Description=homepage service
+	Requires=docker.service
+	After=docker.service
+
+[Service]
+	WorkingDirectory=/home/ubuntu/grace951.github.io
+	ExecStart=/usr/local/bin/docker-compose up
+	ExecStop=/usr/local/bin/docker-compose down
+	TimeoutStartSec=0
+	Restart=on-failure
+	StartLimitIntervalSec=60
+	StartLimitBurst=3
+	StandardOutput=syslog
+	StandardError=syslog
+	SyslogIdentifier=homepage
+
+[Install]
+	WantedBy=multi-user.target

@@ -1,0 +1,42 @@
+version: '3'
+services:
+    nginx-dev:
+        build:
+            context: .
+            dockerfile: Dockerfile.dev.nginx
+        depends_on:
+            - api-dev
+            - ssr-dev
+        ports:
+            - "80:80"
+        environment:
+            - ENABLE_SSL=0
+            - DOCKERMODE=true            
+    ssr-dev:
+        build:
+            context: .
+            dockerfile: Dockerfile.dev.ssr
+        volumes:
+            - ./node_modules
+            - ./package.json:/home/project/package.json
+            - ./public:/home/project/public
+            - ./webpack:/home/project/webpack
+            - ./src:/home/project/src
+        environment:
+            - NGINX_HOST=nginx-dev
+            - DOCKERMODE=true
+            - ENABLE_SSL=0
+            - CHOKIDAR_USEPOLLING=true
+        ports:
+            - "3100:3100"            
+    api-dev:
+        build:
+            context: .
+            dockerfile: Dockerfile.dev.api
+        environment:
+            - CHOKIDAR_USEPOLLING=true
+            - DOCKERMODE=true            
+        volumes:
+            - ./node_modules
+            - ./package.json:/home/project/package.json
+            - ./apiserver:/home/project/apiserver

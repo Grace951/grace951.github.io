@@ -56,7 +56,34 @@ https://aws.amazon.com/premiumsupport/knowledge-center/ec2-connect-internet-gate
 	wget https://hopeshelter.ddns.net/
 
 
-Ubuntu service
+Ubuntu service with docker-compose
+-----------------------------------------------------------------------
+sudo vim /etc/systemd/system/homepage.service
+	-----------------------------------------------------------------------
+	[Unit]
+		Description=homepage service
+		Requires=docker.service
+		After=docker.service
+
+	[Service]
+		WorkingDirectory=/home/ubuntu/grace951.github.io
+		ExecStart=/usr/local/bin/docker-compose up
+		ExecStop=/usr/local/bin/docker-compose down
+		TimeoutStartSec=0
+		Restart=on-failure
+		StartLimitIntervalSec=60
+		StartLimitBurst=3
+		StandardOutput=syslog
+		StandardError=syslog
+		SyslogIdentifier=homepage
+
+	[Install]
+		WantedBy=multi-user.target
+sudo systemctl enable homepage.service
+sudo systemctl start homepage.service
+
+
+Ubuntu service without docker env
 -----------------------------------------------------------------------
 	sudo vim /etc/systemd/system/nodeHomepage.service
 	-----------------------------------------------------------------------
@@ -330,6 +357,9 @@ docker exec -it <ID> sh
 docker run  -p 80:80/tcp -d grace/nginx:v1
 
 
+docker-compose -f docker-compose-dev.yml up --build --remove-orphans
+docker-compose -f docker-compose-dev.yml up --build
+docker-compose -f docker-compose-dev.yml down
 docker-compose up --build
 docker-compose ps
 https://snyk.io/blog/10-best-practices-to-containerize-nodejs-web-applications-with-docker/

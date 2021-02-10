@@ -7,9 +7,20 @@ const AssetsPlugin = require('assets-webpack-plugin');
 let projectRoot = process.cwd();
 let assetsPath = path.join(projectRoot,   "public", "build");
 let publicPath = `/build/`;
-let distPath = projectRoot;
+let host = "0.0.0.0";
 
 let config = {
+    devServer: {
+		inline: true,
+		host,
+		port: 3100,
+		hot: true,
+		disableHostCheck: true,
+		contentBase: assetsPath,
+		watchOptions: {
+		  poll: true
+		}
+    },	
 	cache: false,
 	// devtool: 'cheap-module-eval-source-map',
 	devtool: 'eval',

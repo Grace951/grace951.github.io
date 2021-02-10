@@ -12,10 +12,9 @@ COPY public ./public/
 COPY src ./src/
 COPY webpack ./webpack/
 
-RUN cd /home/project
-RUN npm run build
+RUN npm run build:dll
 
-CMD [ "npm", "run", "start" ]
+CMD [ "npm", "run", "dev" ]
 
 EXPOSE 3000
 

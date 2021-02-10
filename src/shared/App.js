@@ -63,7 +63,7 @@ class App extends React.Component {
 		return (
 			<div id="main">
 				<Header location={this.props.location}/>
-				<div className="mainContent">
+				<div className="mainContent" id="mainContent">
 					<Switch>
 						{routes.map((route, i) => (
 							<RouteWithSubRoutes key={route.path} {...route} />
