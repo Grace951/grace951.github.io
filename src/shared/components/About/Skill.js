@@ -1,60 +1,223 @@
-import './skill.sass';
-import React from 'react';
+import "./skill.sass";
+import React from "react";
 
-class Skill extends React.Component{
-		constructor(props) {
-			super(props);
-		}
-		render() {
-			return (						                
-				<div className="main-skill">
-                    <div className="skill">
-                        <div className="skill-overview">
-                            <h2>Favorite Skills</h2>
-                            <div className="skilltree">
-                                <ul>
-                                    <li>
-                                        Modern Javascript
-                                        <ul className="modern">
-                                            <li>ES6<img className="skill-logo" src="images/skills/es6.png" alt="ES6" title="ES6"/></li>
-                                            <li>React with hooks<img className="skill-logo" style={{width:"30px"}} src="images/skills/reactjs.svg" alt="React"  title="React"/></li>
-                                            <li>Redux <img className="skill-logo" src="images/skills/redux.png" alt="Redux" title="Redux"/></li>
-                                            {/* <li>Angular2 <img className="skill-logo" src="images/skills/angular.png" alt="Angular2" title="Angular2"/></li> */}
-                                            <li>Webpack<img className="skill-logo" style={{width:"30px"}} src="images/skills/webpack.svg" alt="Webpack" title="Webpack"/></li>                                            
-                                            <li>Styled Component<img className="skill-logo" src="images/skills/styledComponent.png" alt="styled-components" title="styled-components"/></li>
-                                            <li>NodeJs<img className="skill-logo" src="images/skills/node.png" alt="NodeJs" title="NodeJs"/></li>
-                                        </ul>
-                                    </li>
-                                    <li>Front-end Development
-                                        <ul className="f2e">
-                                            <li>RWD<img className="skill-logo" src="images/skills/rwd.png" alt="RWD" title="RWD"/></li>
-                                            <li>HTML5<img className="skill-logo" src="images/skills/html5.png" alt="HTML5" title="HTML5"/></li>
-                                            <li>CSS3<img className="skill-logo" src="images/skills/css3.png" alt="CSS3" title="CSS3"/></li>
-                                            <li>SASS<img className="skill-logo" src="images/skills/sass.png" alt="SASS" title="SASS"/></li>
-                                            {/* <li>Compass<img className="skill-logo" src="images/skills/compass.png" alt="Compass" title="Compass"/></li> */}
-                                            <li>BootStrap<img className="skill-logo" src="images/skills/bootstrap.png" alt="BootStrap" title="BootStrap"/></li>
-                                            <li style={{height: "40px"}}>jQuery<img className="skill-logo"  alt="jQuery"  title="jQuery" style={{width: "40px", height:"40px", maxHeight:"40px"}} src="images/skills/jquerylogo.png"/></li>
-                                        </ul>
-                                    </li>
-                                    <li>Back-end Development
-                                        <ul>
-                                            <li>NodeJs<img className="skill-logo" src="images/skills/node.png" alt="NodeJs" title="NodeJs"/></li>
-                                            {/* <li>MongoDB<img className="skill-logo" src="images/skills/mongodb.png" alt="MongoDB" title="MongoDB"/></li> */}
-                                        </ul>
-                                    </li>
-                                    <li>General Skill
-                                        <ul>
-                                            <li>Git<img className="skill-logo" src="images/skills/git.png" alt="Git" title="Git"/></li>
-                                            <li>Docker<img className="skill-logo" src="images/skills/horizontal-logo-monochromatic-white.png" alt="Docker" title="Docker"/></li>
-											<li>NPM<img className="skill-logo" src="images/skills/npm.png" alt="NPM" title="NPM"/></li>
-                                            <li>PhotoShop<img className="skill-logo" src="images/skills/photoshop.png" alt="PhotoShop" title="PhotoShop"/></li>
-                                            <li>Illustrator<img className="skill-logo" src="images/skills/illustrator.png" alt="Illustrator" title="Illustrator"/></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                         {/* <div className="skill-bar ">
+class Skill extends React.Component {
+	constructor(props) {
+		super(props);
+	}
+	render() {
+		return (
+			<div className="main-skill">
+				<div className="skill">
+					<div className="skill-overview">
+						<h2>Favorite Skills</h2>
+						<div className="skilltree">
+							<ul>
+								<li>
+									Modern Javascript
+									<ul className="modern">
+										<li>
+											TypeScript
+											<img
+												className="skill-logo"
+												src="images/skills/typescript.png"
+												alt="TypeScript"
+												title="TypeScript"
+											/>
+										</li>
+										<li>
+											ES6
+											<img
+												className="skill-logo"
+												src="images/skills/es6.png"
+												alt="ES6"
+												title="ES6"
+											/>
+										</li>
+										<li>
+											React with hooks
+											<img
+												className="skill-logo"
+												style={{ width: "30px" }}
+												src="images/skills/reactjs.svg"
+												alt="React"
+												title="React"
+											/>
+										</li>
+										<li>
+											Redux{" "}
+											<img
+												className="skill-logo"
+												src="images/skills/redux.png"
+												alt="Redux"
+												title="Redux"
+											/>
+										</li>
+										{/* <li>Angular2 <img className="skill-logo" src="images/skills/angular.png" alt="Angular2" title="Angular2"/></li> */}
+										<li>
+											Webpack
+											<img
+												className="skill-logo"
+												style={{ width: "30px" }}
+												src="images/skills/webpack.svg"
+												alt="Webpack"
+												title="Webpack"
+											/>
+										</li>
+										<li>
+											Styled Component
+											<img
+												className="skill-logo"
+												src="images/skills/styledComponent.png"
+												alt="styled-components"
+												title="styled-components"
+											/>
+										</li>
+										<li>
+											NodeJs
+											<img
+												className="skill-logo"
+												src="images/skills/node.png"
+												alt="NodeJs"
+												title="NodeJs"
+											/>
+										</li>
+									</ul>
+								</li>
+								<li>
+									Front-end Development
+									<ul className="f2e">
+										<li>
+											RWD
+											<img
+												className="skill-logo"
+												src="images/skills/rwd.png"
+												alt="RWD"
+												title="RWD"
+											/>
+										</li>
+										<li>
+											HTML5
+											<img
+												className="skill-logo"
+												src="images/skills/html5.png"
+												alt="HTML5"
+												title="HTML5"
+											/>
+										</li>
+										<li>
+											CSS3
+											<img
+												className="skill-logo"
+												src="images/skills/css3.png"
+												alt="CSS3"
+												title="CSS3"
+											/>
+										</li>
+										<li>
+											SASS
+											<img
+												className="skill-logo"
+												src="images/skills/sass.png"
+												alt="SASS"
+												title="SASS"
+											/>
+										</li>
+										{/* <li>Compass<img className="skill-logo" src="images/skills/compass.png" alt="Compass" title="Compass"/></li> */}
+										<li>
+											BootStrap
+											<img
+												className="skill-logo"
+												src="images/skills/bootstrap.png"
+												alt="BootStrap"
+												title="BootStrap"
+											/>
+										</li>
+										<li style={{ height: "40px" }}>
+											jQuery
+											<img
+												className="skill-logo"
+												alt="jQuery"
+												title="jQuery"
+												style={{
+													width: "40px",
+													height: "40px",
+													maxHeight: "40px",
+												}}
+												src="images/skills/jquerylogo.png"
+											/>
+										</li>
+									</ul>
+								</li>
+								<li>
+									Back-end Development
+									<ul>
+										<li>
+											NodeJs
+											<img
+												className="skill-logo"
+												src="images/skills/node.png"
+												alt="NodeJs"
+												title="NodeJs"
+											/>
+										</li>
+										{/* <li>MongoDB<img className="skill-logo" src="images/skills/mongodb.png" alt="MongoDB" title="MongoDB"/></li> */}
+									</ul>
+								</li>
+								<li>
+									General Skill
+									<ul>
+										<li>
+											Git
+											<img
+												className="skill-logo"
+												src="images/skills/git.png"
+												alt="Git"
+												title="Git"
+											/>
+										</li>
+										<li>
+											Docker
+											<img
+												className="skill-logo"
+												src="images/skills/horizontal-logo-monochromatic-white.png"
+												alt="Docker"
+												title="Docker"
+											/>
+										</li>
+										<li>
+											NPM
+											<img
+												className="skill-logo"
+												src="images/skills/npm.png"
+												alt="NPM"
+												title="NPM"
+											/>
+										</li>
+										<li>
+											PhotoShop
+											<img
+												className="skill-logo"
+												src="images/skills/photoshop.png"
+												alt="PhotoShop"
+												title="PhotoShop"
+											/>
+										</li>
+										<li>
+											Illustrator
+											<img
+												className="skill-logo"
+												src="images/skills/illustrator.png"
+												alt="Illustrator"
+												title="Illustrator"
+											/>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+					{/* <div className="skill-bar ">
                             <h2>My Experience</h2>
                             <ul className="experience">
                                 <li>(2006 - 2010) Software Engineer / 3.5 years </li>
@@ -132,9 +295,9 @@ class Skill extends React.Component{
                                 </div>
                             </div> 
                          </div>*/}
-                    </div>
-                </div>
-			);
-		}
+				</div>
+			</div>
+		);
+	}
 }
-export {Skill};
+export { Skill };
